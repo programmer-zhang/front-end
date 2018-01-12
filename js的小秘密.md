@@ -1,4 +1,4 @@
-###js 除法 取整
+### js 除法 取整
  
 * 丢弃小数部分,保留整数部分
 	* js:parseInt(7/2)
@@ -10,7 +10,7 @@
 	* js: Math.floor(7/2)
 * 注：都是JS内置对象
 
-###HTML input 标签输入限制
+### HTML input 标签输入限制
 * 文本框只能输入数字代码(小数点也不能输入) 
 
 ```
@@ -77,7 +77,7 @@ onafterpaste="this.value=this.value.replace(/\D/g,'')">
 <input onkeyup="this.value=this.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3')"> 
 ```
 
-###JS判断字符串是不是全是空格
+### JS判断字符串是不是全是空格
 
 ```
 var test = "   \n   ";

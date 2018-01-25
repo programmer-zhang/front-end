@@ -95,3 +95,31 @@ if(test.match(/^\s*$/)){
     console.log("all space or \\n or empty")
 }
 ```
+
+### JS获取数组最小值和最大值的方法
+
+```
+var arr = new Array();
+arr[0] = 100;
+arr[1] = 0;
+arr[2] = 50;
+var min = Math.min.apply(null, arr),
+max = Math.max.apply(null, arr);
+
+```
+* 以下是补充
+
+```
+var a=[1,2,3,5];
+alert(Math.max.apply(null, a));//最大值
+alert(Math.min.apply(null, a));//最小值
+```
+
+* 多维数组可以这样修改
+
+```
+var a=[1,2,3,[5,6],[1,4,8]];
+var ta=a.join(",").split(",");//转化为一维数组
+alert(Math.max.apply(null,ta));//最大值
+alert(Math.min.apply(null,ta));//最小值
+```

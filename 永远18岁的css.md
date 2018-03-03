@@ -9,7 +9,7 @@
 ### 如何让一段文字自动换行
 #### 第一种方案（适合webkit内核的浏览器或移动端浏览器）
 * HTML
-	* 使用&lt;pre&gt;&lt;/pre&gt;包裹要换行的内容
+	* 使用&lt;pre&gt;&lt;/pre&gt;包裹要换行的内容 
 * css
 	* 添加css
 

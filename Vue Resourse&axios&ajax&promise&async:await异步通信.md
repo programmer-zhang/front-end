@@ -1,0 +1,103 @@
+## 在VUE中引入jQuery使用$.ajax（）
+* 在package.json中添加jQuery并npm install
+* 利用vue脚手架 webpack.config.js中添加plugin
+
+```
+  plugins: [
+      new webpack.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery"
+      })
+   ]
+```
+* 然后在全局js中去引用
+	* import $ from 'jquery' 
+
+## vue.resource（ 2.0后不再更新不建议使用）
+* 在package.json中添加vue-resource并npm install
+* main.js中引用将接口暴露出来
+
+```
+	import VueResource from 'vue-resource'
+	Vue.use(VueResource)
+```
+* 使用方式
+
+```
+this.$http.get('api.xxx.com/data').then(function(res){
+              alert(res.data);
+          },function(){
+              alert('false')
+          });
+```
+
+## axios
+* 在package.json中添加axios并npm install
+* 使用时在组件中import
+
+```
+import Vue from 'vue'
+import Axios from 'axios'
+```
+* 也可以自己封装一次将接口export default暴露出来，利用axios.create()写入需要的http配置，方便后期维护
+* axios提供了很多请求方式
+
+```
+axios.request(config)
+
+axios.get(url[, config])
+
+axios.delete(url[, config])
+
+axios.head(url[, config])
+
+axios.post(url[, data[, config]])
+
+axios.put(url[, data[, config]])
+
+axios.patch(url[, data[, config]])
+```
+
+## ES6 Promise
+* Promise对象的更详细的介绍请参考阮一峰的ES6语法入门
+* 利用promise封装一些请求接口异步通信
+
+```
+// Promise
+// 封装 Ajax，返回一个 Promise
+function requestP(url) {
+    return new Promise(function(resolve, reject) {
+        ajax(url, (response) => {
+            resolve(JSON.parse(response));
+        });
+    });
+}
+```
+## ES7 async / await
+* ES7的async / await结合ES6promise去异步通信简直碉堡了
+
+```
+// 封装 Ajax，返回一个 Promise
+function requestP(url) {
+    return new Promise(function(resolve, reject) {
+        ajax(url, (response) => {
+            resolve(JSON.parse(response));
+        });
+    });
+}
+
+(async () => {
+    // 获取产品数据
+    let data = await requestP('products.json');
+
+     // 获取用户数据
+    let users = await requestP('users.json');
+
+     // 获取评论数据
+    let products = await requestP('comments.json');
+
+    console.log('ES7 Async/products >>>', products);
+    console.log('ES7 Async/users >>>', users);
+    console.log('ES7 Async/comments >>>', comments);
+}());
+```

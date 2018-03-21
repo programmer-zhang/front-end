@@ -1,4 +1,4 @@
-### oblique字体和italic字体在css样式中的差别
+## oblique字体和italic字体在css样式中的差别
 * 区别
 	* italic: 指的是一种单独的字体风格，对每个字母的结构有一些小改动，来反映外观的变化,不一定每种字体都有这种风格
 	* oblique: 指的是将正常竖直文本倾斜
@@ -6,7 +6,7 @@
 	* italic：斜体，对于没有斜体变量的特殊字体，将应用oblique
 	* oblique：倾斜的字体
 
-### 如何让一段文字自动换行
+## 如何让一段文字自动换行
 #### 第一种方案（适合webkit内核的浏览器或移动端浏览器）
 * HTML
 	* 使用&lt;pre&gt;&lt;/pre&gt;包裹要换行的内容 
@@ -19,7 +19,7 @@ word-wrap: break-word!important;
 *white-space:normal!important;  
 ```
 
-### 多行文本溢出显示省略号
+## 多行文本溢出显示省略号
 * 一个不规范的css属性 ：-webkit-line-clamp 
 	* 限制在一个块元素显示的文本的行数，为了实现该效果，需要组合其他webkit属性
 * 相关属性

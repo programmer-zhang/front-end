@@ -123,3 +123,27 @@ var ta=a.join(",").split(",");//转化为一维数组
 alert(Math.max.apply(null,ta));//最大值
 alert(Math.min.apply(null,ta));//最小值
 ```
+
+### JS扩大checkbox的点击区域
+* 试用场景：在表格中点击 td 也能选中 ，或者在父节点也能点击触发事件
+* 做法：为 td 元素添加点击事件，在点击事件里面触发checkbox的点击事件：
+
+```
+<td onclick="clickTd($(this))">
+	<input type="checkbox" name="task"  onclick="oncheckAll(event)">
+</td>
+
+function clickTd($t){
+    $t.children("input").click();
+}
+```
+
+* bug浮现：点击checkbox的时候，因为页面元素所在区域重叠，点击事件向上传递，会首先触发checkbox的点击事件，然后触发 td 的点击事件，然后 td 的点击事件会被再次触发，就相当于checkbox点击了两次，所以需要 checkbox 的点击事件执行完之后，让该点击事件停止传递。
+
+* 解决方案：checkbox的点击事件里面加入拦截即可：
+
+```
+function oncheckAll(event){
+    event.stopPropagation();
+}
+```

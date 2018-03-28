@@ -70,5 +70,45 @@ readcookie: function(name) {
 	}   
 	return cookievalue;   
 }
+```
 
+## js删除cookie
+
+```
+delCookie: function(name) {
+	let exp = new Date();
+	exp.setTime(exp.getTime() - 1);
+	let cval=getCookie(name);
+	if(cval!=null)
+	document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
+//使用示例
+setCookie("name","hayden");
+alert(getCookie("name"));
+//如果需要设定自定义过期时间
+//那么把上面的setCookie　函数换成下面两个函数就ok;
+//程序代码
+setCookie:function(name,value,time) {
+	let strsec = getsec(time);
+	let exp = new Date();
+	exp.setTime(exp.getTime() + strsec*1);
+	document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+getsec:function(str) {
+	alert(str);
+	let str1=str.substring(1,str.length)*1;
+	let str2=str.substring(0,1);
+	if (str2=="s") {
+		return str1*1000;
+	}else if (str2=="h"){
+		return str1*60*60*1000;
+	}else if (str2=="d") {
+		return str1*24*60*60*1000;
+	}
+}
+//这是有设定过期时间的使用示例：
+//s20是代表20秒
+//h是指小时，如12小时则是：h12
+//d是天数，30天则：d30
+setCookie("name","hayden","s20");
 ```

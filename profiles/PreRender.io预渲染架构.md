@@ -32,7 +32,7 @@
 
 # PreRender预渲染流程
 
-![PreRender预渲染流程](./images/PreRender流程.png)
+![PreRender预渲染流程](../images/PreRender流程.png)
 
 * 用户浏览：
 	* 用户输入url发生在浏览器与负载均衡之间，负载均衡将用户分配到不同的NGINX服务器上，然后浏览相关的站点

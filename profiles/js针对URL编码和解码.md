@@ -15,19 +15,19 @@
 
 ## 正题：针对URI的编码和解码
 * 除了encodeURI、encodeURIComponent、decodeURI、decodeURIComponent四个用来编码和解码 URI 的函数之外 ECMAScript 语言自身不提供任何使用 URL 的支持。
-![URIcode](./images/URIcode.png)
+![URIcode](../images/URIcode.png)
 
 ### URI
-* ![URI](./images/URI.png)
+* ![URI](../images/URI.png)
 
 ### encodeURI
-* ![encodeURI](./images/encodeURI.png)
+* ![encodeURI](../images/encodeURI.png)
 
 ### decodeURI
-* ![decodeURI](./images/decodeURI.png)
+* ![decodeURI](../images/decodeURI.png)
 
 ### encodeURIComponent
-* ![encodeURIComponent](./images/encodeURIComponent.png)
+* ![encodeURIComponent](../images/encodeURIComponent.png)
 
 ### decodeURIComponent
-* ![decodeURIComponent](./images/decodeURIComponent.png)
+* ![decodeURIComponent](../images/decodeURIComponent.png)

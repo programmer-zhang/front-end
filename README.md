@@ -12,7 +12,7 @@
 ## js相关 :speak_no_evil:
 > [js的小秘密](./profiles/js的小秘密.md)
 
-> [js针对cookie 的操作](./profiles/js针对cookie 的操作.md)
+> [js针对cookie 的操作](./profiles/js针对cookie的操作.md)
 
 > [js针对URL编码和解码](./profiles/js针对URL编码和解码.md)
 

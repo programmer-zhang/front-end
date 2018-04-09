@@ -28,7 +28,7 @@
 
 > [SSR服务器端渲染](./profiles/SSR服务器端渲染.md)
 
-##持续构建 :articulated_lorry:
+## 持续构建 :articulated_lorry:
 > [webpack](./profiles/webpack.md)
 
 ## 软件工程 :wrench:

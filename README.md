@@ -47,4 +47,5 @@
 ## 硬件 :computer:
 > [计算机硬件相关](./profiles/计算机硬件相关.md)
 
-
+## 其他 :hankey:
+> [程序员保佑指南 :pray: ](./profiles/程序员保佑指南.md)

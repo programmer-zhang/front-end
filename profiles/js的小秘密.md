@@ -201,6 +201,7 @@ alert(" 相差 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
 ### 一个数组去重的小方法
 
 ```
+//es6方法
 arr2=[1,1,1,2,2,2,3,4]
 arr1 = Array.from(new Set(arr2))
 =>arr1=[1,2,3,4]

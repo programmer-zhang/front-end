@@ -198,11 +198,36 @@ alert(" 相差 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
     console.log(getNum(str));//默认不加1，即不会把提取出来的0去掉
 ```
 
-### 一个数组去重的小方法
+### 几个数组去重的小方法
+
+* ES6
 
 ```
 //es6方法
 arr2=[1,1,1,2,2,2,3,4]
 arr1 = Array.from(new Set(arr2))
 =>arr1=[1,2,3,4]
+```
+* push( )
+
+```
+var arr2 = [];  
+for(var i = 0; i < arr.length; i++) {  
+    (function(i) {  
+        if(arr2.indexOf(arr[i]) == -1) { //不包含该值则返回-1  
+            arr2.push(arr[i]);  
+        }  
+    }(i))  
+}  
+console.log(arr2); 
+//如果当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的，忽略掉。否则存入结果数组  
+var arr3 = [arr[0]];  
+for(var i = 1; i < arr.length; i++) {  
+    (function(i) {  
+        if(arr.indexOf(arr[i]) == i) {  
+            arr3.push(arr[i]);  
+        }  
+    }(i))  
+}  
+console.log(arr3);  
 ```

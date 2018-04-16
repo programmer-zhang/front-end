@@ -23,6 +23,8 @@
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)
 
+> [HTTP状态码](./profiles/HTTP状态码.md)
+
 ## 架构框架相关 :construction:
 > [前端自动化构建](./profiles/前端自动化构建.md)
 

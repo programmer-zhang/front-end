@@ -59,3 +59,5 @@
 > [嘿嘿嘿](./profiles/嘿嘿嘿.md)
 
 > [一个外国友人的motherFucking Website](http://motherfuckingwebsite.com/)
+
+> [一个好用的mac终端替代方案](./profiles/一个好用的mac终端替代方案.md)

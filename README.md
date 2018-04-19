@@ -57,3 +57,5 @@
 > [程序员保佑指南 :pray: ](./profiles/程序员保佑指南.md)
 
 > [嘿嘿嘿](./profiles/嘿嘿嘿.md)
+
+> [一个外国友人的motherFucking Website](http://motherfuckingwebsite.com/)

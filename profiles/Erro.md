@@ -43,3 +43,11 @@ swiper1 = new Swiper('.swiper-container', {
 * 因为他们是两个不同的项目，要把两个不同的项目合并，git需要添加一句代码，在git pull，这句代码是在git 2.9.2版本发生的，最新的版本需要添加--allow-unrelated-histories
 
 * 假如我们的源是origin，分支是master，那么我们需要这样写`git pull origin master --allow-unrelated-histories`需要知道，我们的源可以是本地的路径
+
+### 解决每次push都要输入password和username的方法
+* push 到 Github 每次都要输入密码，原因是使用了 Https 的方式添加远程仓库
+* 解决方案：
+	* 创建SSH Key，把id_rsa.pub中的内容添加到 Github 的SSH keys。
+	* 或者使用本机已存在的SSH key
+	* git remote rm origin
+	* git remote add origin git@github.com:XXX.git

@@ -33,7 +33,7 @@
 	* npm run dev
 
 ## 流程图与生命周期
- ![流程图](./images/nuxt-schema.png)
+ ![流程图](../images/nuxt-schema.png)
  
  * 调用 nuxtServerInit 方法
 	* 当请求打入时，最先调用的即是 nuxtServerInit 方法，可以通过这个方法预先将服务器的数据保存，如已登录的用户信息等。另外，这个方法中也可以执行异步操作，并等待数据解析后返回。

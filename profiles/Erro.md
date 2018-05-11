@@ -36,3 +36,10 @@ swiper1 = new Swiper('.swiper-container', {
 });  
 ```
 * 个人建议使用第一种，两种结合来用也可以，第一种方案可以完美解决失效问题。
+
+### git 初次提交远程仓库出现refusing to merge unrelated histories报错
+* 先pull，因为两个仓库不同，报错 ` refusing to merge unrelated histories`，无法pull
+
+* 因为他们是两个不同的项目，要把两个不同的项目合并，git需要添加一句代码，在git pull，这句代码是在git 2.9.2版本发生的，最新的版本需要添加--allow-unrelated-histories
+
+* 假如我们的源是origin，分支是master，那么我们需要这样写`git pull origin master --allow-unrelated-histories`需要知道，我们的源可以是本地的路径

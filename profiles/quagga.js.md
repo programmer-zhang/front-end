@@ -10,9 +10,13 @@
 ### 安装和使用
 * 官方推荐使用依赖管理工具进行安装
 `npm install quagga`
-* 在项目中引入<br>
- `import Quagga from 'quagga'; // ES6`
- `const Quagga = require('quagga').default; // Common JS (important: default)`
+* 在项目中引入
+
+```
+import Quagga from 'quagga'; // ES6`
+const Quagga = require('quagga').default; // Common JS (important: default)
+```
+
 * 初始化quagga
 
 ```

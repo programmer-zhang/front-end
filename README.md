@@ -66,4 +66,4 @@
 
 > [chrome开发者工具各种骚技巧(外链资料)](https://juejin.im/post/5af53823f265da0b75282b0f?utm_source=gold_browser_extension)
 
-> [前端实现条形码扫描的小方案]()
+> [前端实现条形码扫描的小方案](./profiles/quagga.js.md)

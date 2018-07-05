@@ -34,3 +34,21 @@ Quagga.init({
       Quagga.start();
   });
 ```
+
+* 输出结果
+
+```
+
+Quagga.onDetected(function(data){
+    if (data && data.codeResult) {
+       console.log(data.codeResult.code);
+       return ;
+       }
+    })
+    
+```
+* 可以通过打印data查看扫码结果
+
+### 各种回调函数
+* Quagga.start（）
+	* 初始化库时，该方法启动视频流并开始定位和解码图像。

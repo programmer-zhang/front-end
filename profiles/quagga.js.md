@@ -72,5 +72,5 @@ Quagga.onDetected(function(data){
 	* 如果onDetected事件不再相关，则从事件队列中offDetected删除给定handler事件。
 
 ### 相关扩展
-* quagga中的条码是通过init()中的解码器进行配置的，官方提供了很多的解码器，常用的解码形式还是code_128_reader
+* quagga中的条码是通过init()中的解码器进行配置的，官方提供了很多的解码器，常用的解码形式还是`code_128_reader`
 * 官方文档[GitHub地址](https://github.com/serratus/quaggaJS)

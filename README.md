@@ -38,6 +38,10 @@
 
 > [SSR服务器端渲染](./profiles/SSR服务器端渲染.md)
 
+> [前端性能优化](./profiles/前端性能优化.md)
+
+> [更友好的使用Chorme浏览器](./profiles/chorme浏览器.md)
+
 ## 持续构建 :articulated_lorry:
 > [webpack](./profiles/webpack.md)
 

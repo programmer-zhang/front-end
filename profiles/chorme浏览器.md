@@ -1,3 +1,12 @@
+### 网页打开前的时间进行了哪些工作
+* 给定一个网页资源地址后，浏览器检查本地缓存和应用缓存。
+	* 如果之前获取过并且有相应的缓存信息(appropriate cache headers)(如Expires, Cache-Control, etc.), 就会用缓存数据填充这个请求，毕竟最快的请求就是没有请求(the fastest request is a request not made)。
+	* 否则，我们重新验证资源，如果已经失效(expired),或者根本就没见过，一个耗费网络的请求就无法避免地发送了。
+* DNS解析
+* 三次握手/四次握手
+	*  SYN > SYN-ACK > ACK
+![三次握手](../images/三次握手.png)
+
 ## 工欲善其事必先利其器
 ### 用好Chrome Devtools
 #### console的骚操作（例）

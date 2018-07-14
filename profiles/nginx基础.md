@@ -37,8 +37,33 @@
 	* `ngx_accept_disabled`的变量来控制是否去竞争`accept_mutex`锁
 
 ### request
+![nginx处理网络请求的生命周期](../images/nginx处理网络请求过程.png)
+
 * `ngx_http_request_t`是对一个http请求的封装，用来保存解析请求与输出响应相关的数据
 * 从`ngx_http_init_request`开始，这个函数设置读事件`ngx_http_process_request_line`来处理请求行，通过`ngx_http_read_request_header`来处理请求头
 	* 以请求行中的host域来查找虚拟机
 * 解析到的数据会存储在`ngx_http_request_t`结构中
-* 
+* nginx解析到两个回车换行符表示请求头结束，调用`ngx_http_process_request`来处理请求
+* `ngx_http_process_request`设置处理函数为`ngx_http_request_handler`
+* 然后调用`ngx_http_handler`来真正地处理一个完整的HTTP请求
+
+### keepalive
+* 除了http1.0不带content-length以及http1.1非chunked不带content-length外，body的长度是可知的
+* 客户端的请求头中的connection为close，则表示客户端需要关掉长连接
+* 如果为keep-alive，则客户端需要打开长连接
+* 如果客户端的请求中没有connection这个头，那么根据协议，如果是http1.0，则默认为close，如果是http1.1，则默认为keep-alive
+* 如果服务端最后决定keepalive打开，响应头中会包含connection:keep-alive,否则就是connection:close
+* keepalive开启的好处:客户端一次访问需要多次访问同一个server时，会减少大量time-wait的数量
+
+### pipe
+* pipeline流水线作业，是keepalive的一种升华
+* 与keepalive相同也是基于长连接
+* 利用一个连接做多次请求
+* 与keepalive的区别
+	* keepalive：第二个请求必须等到第一个请求的响应接受完全后才能发起
+	* pipeline：nginx对pipeline中的多个请求处理不是并行的，依然一个请求一个请求的处理，只是在处理第一个请求的时候，客户端就可以发起第二个请求
+* 实现原理：nginx读取数据时，会将读取的数据放到一个buffer里，，处理完前一个请求后，如果发现buffer里还有数据，就会认为是下一个请求的开始，然后处理下一个请求，否则设置keepalive
+
+### lingering_close
+* 延迟关闭，当nginx关闭连接时，先关闭tcp的写，等待一段时间再关闭连接的读
+* 保持更好的客户端兼容性。需要消耗更多的额外资源(比如连接会被一直占用)

@@ -42,6 +42,8 @@
 
 > [更友好的使用Chorme浏览器](./profiles/chorme浏览器.md)
 
+> [nginx架构介绍](./profiles/nginx基础.md)
+
 ## 持续构建 :articulated_lorry:
 > [webpack](./profiles/webpack.md)
 

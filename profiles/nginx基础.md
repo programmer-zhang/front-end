@@ -1,4 +1,11 @@
 * [nginx](http://tengine.taobao.org/book/chapter_02.html)
+
+##  nginx的作用
+* webserver
+* 反向代理服务器
+* 负载均衡
+
+## 初探nginx架构
 * 多进程模式 
 * 支持手动关闭后台模式，让nginx在前台运行，通过配置取消master进程，使nginx以单进程方式运行
 * nginx启动后，会有一个master进程和多个worker进程
@@ -8,15 +15,13 @@
 * 多个worker进程对等，同等竞争来自客户端的请求，各进程互相之间是独立的
 * 一个请求只能在一个worker进程中处理
 * 一个worker进程不能处理其他进程的请求
-* 当前请求的worker进程异常退出，没有可供使用的进程，是直接返回失败还是等待？？？
 * worker进程数可以设置，一般设置为与机器cpu核数相同
-* nginx从容重启：首先master进程在接到信号后，会先重新加载配置文件，然后再启动新的worker进程，并向所有老的worker进程发送信号，告诉他们可以光荣退休了。新的worker在启动后，就开始接收新的请求，而老的worker在收到来自master的信号后，就不再接收新的请求，并且在当前进程中的所有未处理完的请求处理完成后，再退出
-* 服务不中断？
-* `nginx -s reload`
-* nginx进程模型
-	* 每个worker进程fork master进程(在master进程完成建立好listen的socket之后)
-	* 为保证只有一个worker进程处理这个请求，在worker注册listenfd事件前抢accept_mutex,抢到的注册事件
-	* 读事件里调用accept接受该链接，读取请求，解析请求，处理请求，产生数据并返回，断开连接
+* `nginx -s reload`nginx从容重启：首先master进程在接到信号后，会先重新加载配置文件，然后再启动新的worker进程，并向所有老的worker进程发送信号，告诉他们可以光荣退休了。新的worker在启动后，就开始接收新的请求，而老的worker在收到来自master的信号后，就不再接收新的请求，并且在当前进程中的所有未处理完的请求处理完成后，再退出
+
+### nginx进程模型
+* 每个worker进程fork master进程(在master进程完成建立好listen的socket之后)
+* 为保证只有一个worker进程处理这个请求，在worker注册listenfd事件前抢accept_mutex,抢到的注册事件
+* 读事件里调用accept接受该链接，读取请求，解析请求，处理请求，产生数据并返回，断开连接
 * 该模型好处
 	* 独立进程不加锁，省事
 	* 相互之间不影响，服务不中断
@@ -67,3 +72,72 @@
 ### lingering_close
 * 延迟关闭，当nginx关闭连接时，先关闭tcp的写，等待一段时间再关闭连接的读
 * 保持更好的客户端兼容性。需要消耗更多的额外资源(比如连接会被一直占用)
+
+## nginx的配置系统
+* 由一个主配置文件和其他一些辅助配置文件构成
+* 这些文件都是纯文本文件
+* 全部位于nginx安装目录的conf目录下
+* 只有主配置文件nginx.conf是在任何情况下都会被使用
+* nginx.conf中，若干配置项由配置指令和指令参数两个部分构成
+
+### 指令
+* 配置指令是一个字符串
+* 可以用单引号或者双引号括起来，也可以不
+* 如果配置指令包含空格，一定要引起来。
+
+### 指令参数
+* 指令参数使用一个或多个空格或者TAB字符与指令隔开
+* 指令参数有一个或多个TOKEN串组成，TOKEN串之间由空格或者TAB键分隔
+* 简单配置项：`error_page   500 502 503 504  /50x.html;`
+* 复杂配置项：
+
+	```
+	location / {
+	    root   /home/jizhao/nginx-book/build/html;
+	    index  index.html index.htm;
+	}
+	```
+
+### 指令上下文
+* nginx.conf中的配置信息根据逻辑上的意义，进行分类，分成了多个作用域(配置指令上下文)
+* 不同的作用域含有一个或者多个配置项
+* nginx支持的几个指令上下文
+
+指令上下文|含义
+:--:|:--
+main|nginx在运行时与具体业务功能（比如http服务或者email服务代理）无关的一些参数，比如工作进程数，运行的身份等
+http|与提供http服务相关的一些配置参数。例如：是否使用keepalive啊，是否使用gzip进行压缩等
+server|http服务上支持若干虚拟主机。每个虚拟主机一个对应的server配置项，配置项里面包含该虚拟主机相关的配置。在提供mail服务的代理时，也可以建立若干server.每个server通过监听的地址来区分
+location|http服务中，某些特定的URL对应的一系列配置项
+mail|实现email相关的SMTP/IMAP/POP3代理时，共享的一些配置项（因为可能实现多个代理，工作在多个监听地址上）
+
+## nginx的模块化体系结构
+* nginx的内部结构是由核心部分和一系列的功能模块所组成
+* 好处：使每个模块的功能相对简单，便于开发，同时便于对系统进行功能扩展
+### 模块概述
+* 将各功能模块组织成一个链，有请求到达时，请求依次经过这条链上的部分或者全部模块，进行处理。
+* 有两个模块比较特殊，他们居于nginx core和各功能模块的中间。这两个模块就是http模块和mail模块。
+* http模块和mail模块在nginx core之上实现了另外一层抽象，处理与HTTP协议和email相关协议（SMTP/POP3/IMAP）有关的事件，并且确保这些事件能被以正确的顺序调用其他的一些功能模块
+
+### 模块的分类
+
+类型|功能
+:--:|:--
+event module|搭建了独立于操作系统的事件处理机制的框架，及提供了各具体事件的处理。包括ngx_events_module， ngx_event_core_module和ngx_epoll_module等。nginx具体使用何种事件处理模块，这依赖于具体的操作系统和编译选项
+phase handler|此类型的模块也被直接称为handler模块。主要负责处理客户端请求并产生待响应内容，比如ngx_http_static_module模块，负责客户端的静态页面请求处理并将对应的磁盘文件准备为响应内容输出
+output filter|也称为filter模块，主要是负责对输出的内容进行处理，可以对输出进行修改。例如，可以实现对输出的所有html页面增加预定义的footbar一类的工作，或者对输出的图片的URL进行替换之类的工作
+upstream|upstream模块实现反向代理的功能，将真正的请求转发到后端服务器上，并从后端服务器上读取响应，发回客户端。upstream模块是一种特殊的handler，只不过响应内容不是真正由自己产生的，而是从后端服务器上读取的
+load-balancer|负载均衡模块，实现特定的算法，在众多的后端服务器中，选择一个服务器出来作为某个请求的转发服务器
+
+### 请求的处理流程
+* 初始化HTTP Request（读取来自客户端的数据，生成HTTP Request对象，该对象含有该请求所有的信息）
+* 处理请求头
+* 处理请求体
+* 如果有的话，调用与此请求（URL或者Location）关联的handler
+* 依次调用各phase handler进行处理
+* 通常情况下，一个phase handler对这个request进行处理，并产生一些输出。通常phase handler是与定义在配置文件中的某个location相关联的
+* 一个phase handler通常执行以下几项任务：
+	* 获取location配置
+	* 产生适当的响应
+	* 发送response header
+	* 发送response body

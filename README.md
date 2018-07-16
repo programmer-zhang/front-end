@@ -44,6 +44,8 @@
 
 > [nginx架构介绍](./profiles/nginx基础.md)
 
+> [nginx配置](./profiles/nginx配置.md)
+
 ## 持续构建 :articulated_lorry:
 > [webpack](./profiles/webpack.md)
 

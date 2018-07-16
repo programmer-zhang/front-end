@@ -3,10 +3,12 @@
 * MAC上装有homebrew，使用其下载nginx `brewinstall nginx`
 * nginx下载成功后，有三个目录比较重要
 	* `/usr/local/etc/nginx`nginx的默认安装目录
+	![nginx安装目录](../images/nginx安装目录.jpg)
 	* ` /usr/local/etc/nginx`
 	* `/usr/local/var/www` nginx的服务器文件存放位置
 ## nginx相关操作
 * 进入`/usr/local/etc/nginx`
 * 执行`sudo nginx -c nginx.conf`，nginx启用默认配置启动
 * `sudo nginx -s reload` 优雅重启Nginx
-* `sudo nginx -s quit` 
+* `sudo nginx -s quit` 退出nginx
+* 

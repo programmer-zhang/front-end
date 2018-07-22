@@ -24,6 +24,8 @@
 
 > [js内存图](./profiles/js内存图.md)
 
+> [js对DOM树的操作](./profiles/js对DOM树的操作)
+
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)
 

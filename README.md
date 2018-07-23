@@ -7,12 +7,12 @@
 > [自用代码规范](./profiles/自用代码规范.md)
 
 ## css相关 :european_castle:
-> [永远18岁的css](./profiles/永远18岁的css.md)
+> [永远18岁的css(持续更新)](./profiles/永远18岁的css.md)
 
 > [硬件加速css来提高网站性能(外链资料)](http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
 
 ## js相关 :speak_no_evil:
-> [js的小秘密](./profiles/js的小秘密.md)
+> [js的小秘密(持续更新)](./profiles/js的小秘密.md)
 
 > [js针对cookie 的操作](./profiles/js针对cookie的操作.md)
 
@@ -40,7 +40,7 @@
 
 > [SSR服务器端渲染](./profiles/SSR服务器端渲染.md)
 
-> [前端性能优化](./profiles/前端性能优化.md)
+> [前端性能优化(持续更新)](./profiles/前端性能优化.md)
 
 > [更友好的使用Chorme浏览器](./profiles/chorme浏览器.md)
 
@@ -57,15 +57,15 @@
 > [web-front-performance](./profiles/web-front-performance.md)
 
 ## 微信相关 :envelope:
-> [微信安全域名的坑](./profiles/微信安全域名的坑.md)
+> [微信安全域名的坑(持续更新)](./profiles/微信安全域名的坑.md)
 
 ## 编码实践 :paperclip:
-> [Erro](./profiles/Erro.md)
+> [Erro(持续更新)](./profiles/Erro.md)
 
 > [Git不仅仅是get](./profiles/Git不仅仅是get.md)
 
 ## 硬件 :computer:
-> [计算机硬件相关](./profiles/计算机硬件相关.md)
+> [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)
 
 ## 其他 :hankey:
 > [程序员保佑指南 :pray: ](./profiles/程序员保佑指南.md)

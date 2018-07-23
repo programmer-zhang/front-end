@@ -31,6 +31,8 @@
 
 > [HTTP状态码](./profiles/HTTP状态码.md)
 
+> [HTTP-header(缓存相关)](./profiles/HTTP_header.md)
+
 ## 架构框架相关 :construction:
 > [前端自动化构建](./profiles/前端自动化构建.md)
 

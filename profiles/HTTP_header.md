@@ -34,9 +34,14 @@
 * no-store — 强制缓存在任何情况下都不要保留任何副本
 * must-revalidate — 告诉缓存必须遵循所有你给予副本的新鲜度的
 * proxy-revalidate — 和 must-revalidate 类似，除了他只对缓存代理服务器起作用
-举例:
-Cache-Control: max-age=3600, must-revalidate
-给静态资源(HTML文件，图片文件等）的Repsone加上Expires/Cache-Control Header是很有效的一招。如果HTTP Response中有Expires这样的Header的话，浏览器会Cache这个资源，理想状况下（注意，只是理想状况），在Expire Date之前，不会再发HTTP请求给Server要这个资源，不过Expires的值只能是一个固定日期，比如“Thu 27 Nov 2008 07:00:00 GMT”，不能是一个类似“从现在开始之后10年”这样一个随机浮动的值，如果要这样的效果，可以用Cache-Control这样的Header，如果 HTTP Response中有这样的Header:“Cache-Control: max-age = 100”，表示这个资源在cache中的最大寿命是100秒。一般说来这种静态文件永远不应该过期，如果真的要给这个Cache加上一个期限，那我希望是 ——一万年，“Cache-Control: max-age = 315360000000”
-其实就应该给Expires设一个永远不会过期的时间，比如你现在有一个文件叫logo.gif，需要用一个新的logo的时候，你不要去 覆盖原来的文件，而把新的logo存成logo_v2.gif，让相关网页引用新的logo_v2.gif，这样可以让新老网页同时工作，实在犯不上为了 节省存储空间覆盖原有文件。
 
-对Apache服务器，使用mod_expires，在httpd.conf或者.htaccess中加上
+### Last-Modified/If-Modified-Since
+* 通常服务器知道你所请求的数据的最后修改时间，并且 HTTP 为服务器提供了一种将最近修改数据连同你请求的数据一同发送的方法。
+* 如果你第二次 (或第三次，或第四次) 请求相同的数据，告诉服务器上一次获得的最后修改日期：在请求中发送一个 If-Modified-Since 头信息，它包含了上一次从服务器连同数据所获得的日期。
+* 如果数据从那时起没有改变，服务器将返回一个特殊的 HTTP 状态代码 304，这意味着 “从上一次请求后这个数据没有改变”。
+* 当服务器发送状态编码 304 时，不再重新发送数据。所以当数据没有更新时，你不需要一次又一次地下载相同的数据
+* 所有现代的浏览器都支持 (last-modified) 的数据检查。
+
+### ETag/If-None-Match
+* ETag : 没有变化时不重新下载数据。
+* 工作方式 : 服务器发送响应数据的同时，发送某种数据的 hash (在 ETag 头信息中给出)。hash 的确定完全取决于服务器。当第二次请求相同的数据时，你需要在 If-None-Match: 头信息中包含 ETag hash，如果数据没有改变，服务器将返回 304 状态代码。与最近修改数据检查相同，服务器仅仅 发送 304 状态代码；第二次将不为你发送相同的数据。在第二次请求时，通过包含 ETag hash，

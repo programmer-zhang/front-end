@@ -206,3 +206,31 @@ import(`./section-modules/${someVariable}.js`)
 	    main.textContent = err.message;
   });
 ```
+
+### import()
+* 按需加载
+	* import模块在事件监听函数中，只有用户点击了按钮，才会加载这个模块。
+
+```
+button.addEventListener('click', event => {
+  import('./dialogBox.js')
+  .then(dialogBox => {
+	    dialogBox.open();
+  })
+  .catch(error => {
+	    /* Error handling */
+  })
+});
+```
+* 条件加载
+	* import()可以放在if...else语句中，实现条件加载。
+
+```
+if (condition) {
+  import('moduleA').then(...);
+} else {
+  import('moduleB').then(...);
+}
+```
+
+

@@ -52,6 +52,8 @@
 
 > [nginx配置](./profiles/nginx配置.md)
 
+> [nginx upstream模块](./profiles/nginx_upstream模块.md)
+
 ## 持续构建 :articulated_lorry:
 > [webpack](./profiles/webpack.md)
 

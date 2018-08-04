@@ -258,3 +258,22 @@ for(let i = 0, len = arr6.length; i < len; i++) {
 console.log(arr6); 
 ```
 ### 用好 filter，map，和其它 ES6 新增的高阶遍历函数
+* 将数组中的false值去掉
+
+```
+const array = [3, 4, 5, 2, 3, undefined, null, 0, ""];
+const compact = arr => arr.filter(Boolean);
+compact(array);
+//[3, 4, 5, 2, 3]
+```
+*  判断用户是否全部是成年人
+
+```
+const users = [
+  { name: "Jim", age: 23 },
+  { name: "Lily", age: 17 },
+  { name: "Will", age: 25 }
+];
+users.every(user => user.age >= 18);
+//false
+```

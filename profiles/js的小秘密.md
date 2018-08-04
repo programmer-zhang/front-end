@@ -257,3 +257,4 @@ for(let i = 0, len = arr6.length; i < len; i++) {
 }  
 console.log(arr6); 
 ```
+### 用好 filter，map，和其它 ES6 新增的高阶遍历函数

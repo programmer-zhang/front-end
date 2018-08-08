@@ -38,6 +38,8 @@
 ## 架构框架相关 :construction:
 > [前端自动化构建](./profiles/前端自动化构建.md)
 
+> [第三方前端性能监控(外链资料)](https://docs.sentry.io/quickstart/)
+
 > [NUXT小试牛刀](./profiles/NUXT小试牛刀.md)
 
 > [PreRender.io预渲染架构](./profiles/PreRender.io预渲染架构.md)

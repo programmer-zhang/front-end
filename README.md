@@ -6,7 +6,7 @@
 ## HTML相关 :house:
 > [自用代码规范](./profiles/自用代码规范.md)
 
-> [HTMLDOM节点绑定事件](./profiles/HTML_tabindex.md)
+> [HTMLDOM节点绑定事件(待完善)](./profiles/HTML_tabindex.md)
 
 ## css相关 :european_castle:
 > [永远18岁的css(持续更新)](./profiles/永远18岁的css.md)

@@ -30,6 +30,7 @@
 
 > [js中require和import的区别](./profiles/js中require和import的区别.md)
  
+> [通过js去判断PC端还是移动端的几种方式](./profiles/js判断设备.md)
 
 
 ## 网络相关 :postbox:

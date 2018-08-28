@@ -61,3 +61,6 @@ p::after {
 	2. 结束的省略好用了半透明的png做了减淡的效果，或者设置背景颜色；
 	3. IE6-7不显示content内容，所以要兼容IE6-7可以是在内容中加入一个标签，比如用`<span class="line-clamp">...</span>`去模拟；
 	4. 要支持IE8，需要将::after替换成:after；
+
+## 清除浏览器的默认蓝色选中框
+* `outline: none;`

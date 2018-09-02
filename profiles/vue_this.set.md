@@ -6,4 +6,4 @@
 	* e 是添加的对象属性
 	* value 是添加的对象属性的值
 
-* [一个简单的小例子(vue实现倒计时)](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/count-down.vue)
+* [一个简单的小例子(vue实现倒计时)](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/countDown.vue)

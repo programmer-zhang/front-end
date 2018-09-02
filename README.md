@@ -45,15 +45,15 @@
 
 > [第三方前端性能监控(外链资料)](https://docs.sentry.io/quickstart/)
 
+> [前端性能优化(持续更新)](./profiles/前端性能优化.md)
+
+> [更友好的使用Chorme浏览器](./profiles/chorme浏览器.md)
+
 > [NUXT小试牛刀](./profiles/NUXT小试牛刀.md)
 
 > [PreRender.io预渲染架构](./profiles/PreRender.io预渲染架构.md)
 
 > [SSR服务器端渲染](./profiles/SSR服务器端渲染.md)
-
-> [前端性能优化(持续更新)](./profiles/前端性能优化.md)
-
-> [更友好的使用Chorme浏览器](./profiles/chorme浏览器.md)
 
 > [nginx架构介绍](./profiles/nginx基础.md)
 

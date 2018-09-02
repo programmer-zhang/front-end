@@ -82,6 +82,8 @@
 
 > [js实现模糊搜索高亮显示的几种方法](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/highLight.vue)
 
+> [vue实现多个日期倒计时](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/count-down.vue)
+
 ## 硬件 :computer:
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)
 

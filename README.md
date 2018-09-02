@@ -61,6 +61,8 @@
 
 > [nginx upstream模块](./profiles/nginx_upstream模块.md)
 
+> [vue2.0 this.$set的正确打开方式](./profiles/vue_this.set.md)
+
 ## 持续构建 :articulated_lorry:
 > [webpack](./profiles/webpack.md)
 

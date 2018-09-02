@@ -3,4 +3,7 @@
 ## 使用 this.$set 进行属性的更新
 * `Vue.set(vm.obj, 'e', value)` 或 `this.$set(vm.obj, 'e', value)`进行属性的添加，从而修改对象的同时进行试图更新
 	* vm.obj 是要添加属性的对象
-	* 
+	* e 是添加的对象属性
+	* value 是添加的对象属性的值
+
+* [一个简单的小例子]()

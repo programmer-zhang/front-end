@@ -42,14 +42,6 @@
 > [HTTP-header(缓存相关)](./profiles/HTTP_header.md)
 
 ## 架构框架相关 :construction:
-> [前端自动化构建](./profiles/前端自动化构建.md)
-
-> [第三方前端性能监控(外链资料)](https://docs.sentry.io/quickstart/)
-
-> [前端性能优化(持续更新)](./profiles/前端性能优化.md)
-
-> [更友好的使用Chorme浏览器](./profiles/chorme浏览器.md)
-
 > [NUXT小试牛刀](./profiles/NUXT小试牛刀.md)
 
 > [PreRender.io预渲染架构](./profiles/PreRender.io预渲染架构.md)
@@ -71,8 +63,16 @@
 
 ## 软件工程 :wrench:
 > [敏捷开发](./profiles/敏捷开发.md)
+ 
+> [前端自动化构建](./profiles/前端自动化构建.md)
 
 > [web-front-performance](./profiles/web-front-performance.md)
+ 
+> [第三方前端性能监控(外链资料)](https://docs.sentry.io/quickstart/)
+
+> [前端性能优化(持续更新)](./profiles/前端性能优化.md)
+
+> [更友好的使用Chorme浏览器](./profiles/chorme浏览器.md)
 
 ## 微信相关 :envelope:
 > [微信安全域名的坑(持续更新)](./profiles/微信安全域名的坑.md)

@@ -277,3 +277,7 @@ const users = [
 users.every(user => user.age >= 18);
 //false
 ```
+
+### 解决图形验证码接口返回文件流图片
+* 将图片按照相关格式转码即可
+* `<img class="image-code" :src="'data:image/png;base64,'+imgCodeUrl"/>`

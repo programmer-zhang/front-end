@@ -36,6 +36,8 @@
  
 > [通过js去判断PC端还是移动端的几种方式(完善中...)](./profiles/js判断设备.md)
 
+> [js解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
+
 
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)

@@ -40,3 +40,22 @@ copyRoles() {
 ```
 
 ## 粘贴
+* 粘贴现在没有发现什么比较好的方案，不经过用户主动操作去进行粘贴操作，直接用js去操作粘贴板兼容性极差，建议考虑一种合理的方案去实现这个功能。简单来说就是：该需求！
+* JavaScript 的clipboardData对象提供三个方法对粘贴板进行访问
+	* clearData(sDataformat):删除剪贴板中指定格式的数据 
+	* setData(sDataformat,sData):给剪贴板赋予指定格式的数据，返回true则操作成功 
+	* getData(sDataformat):从剪贴板获取指定格式的数据
+	
+```
+let text = "123"; 
+if (!window.clipboardData.setData()) {
+	return;
+}
+window.clipboardData.setData('Text', text) // 赋予 text 格式的数据 
+alert("复制失败!"); 
+text = window.clipboardData.getData('Text'); // 获取 text 格式的数据 
+alert(text); 
+window.clipboardData.clearData('Text'); // 清除 text 格式的数据 
+text = window.clipboardData.getData('Text'); 
+alert(text); 
+```

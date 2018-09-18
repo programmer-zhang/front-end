@@ -9,4 +9,34 @@
 	* 是指一个隐藏的输入框
 	* 获取输入框的value
 	* 调用官方api进行复制
-* 
+
+	
+```
+//roles为需要复制的data
+//HTML部分
+<button @click="copyRoles">复制权限</button>
+<input v-if="roles && roles.length>0" 
+	id="clipBoard" 
+	v-model="roles" 
+	style="position: absolute; opacity: 0;">
+</input>
+
+//js部分
+copyRoles() {
+	let data = '';
+	if(this.roles && this.roles.length > 0) {
+		let spanSelect = document.querySelector('#clipBoard');
+		spanSelect.select();
+		if(document.execCommand('copy')) {
+			document.execCommand('copy');
+			console.log(`用户${this.formData.userName}的权限信息已复制成功`);
+		} else {
+			console.log('复制失败!');
+		}
+	} else {
+		console.log('复制失败!');
+	}
+}
+```
+
+## 粘贴

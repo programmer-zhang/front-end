@@ -89,7 +89,7 @@
 
 > [vue实现多个日期倒计时](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/countDown.vue)
 
-> [js实现复制粘贴]()
+> [js实现复制粘贴](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/copy.vue)
 
 ## 硬件 :computer:
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)

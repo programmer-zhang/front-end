@@ -93,6 +93,8 @@
 
 > [js实现复制粘贴](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/copy.vue)
 
+> [js实现随机变换模块](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/changeDatas.vue)
+
 ## 硬件 :computer:
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)
 

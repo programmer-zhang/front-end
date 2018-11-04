@@ -51,3 +51,6 @@ swiper1 = new Swiper('.swiper-container', {
 	* 或者使用本机已存在的SSH key
 	* git remote rm origin
 	* git remote add origin git@github.com:XXX.git
+
+### 微信小程序开发数据传输限制
+* 报错内容 'invokeWebviewMethod 数据传输长度为 xxxxx 已经超过最大长度 1048576'

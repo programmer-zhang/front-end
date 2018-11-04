@@ -54,7 +54,7 @@ swiper1 = new Swiper('.swiper-container', {
 
 ### 微信小程序开发数据传输限制
 * 报错内容 'invokeWebviewMethod 数据传输长度为 xxxxx 已经超过最大长度 1048576'
-* 原因：wx:for 渲染的数据长度过长
+* 原因：wx:for 渲染的数据长度过长,每次setData的时候传入的更新数据太多
 * 解决方法：
 	* 后台的数据接口传值简化
 	* 前端优化数据，只保留需要的数据

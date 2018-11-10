@@ -281,3 +281,16 @@ users.every(user => user.age >= 18);
 ### 解决图形验证码接口返回文件流图片
 * 将图片按照相关格式转码即可
 * `<img class="image-code" :src="'data:image/png;base64,'+imgCodeUrl"/>`
+
+### 获取数组最大值和最小值
+* 排序法
+	* 针对数组进行排序，数组第一个和最后一个就是最大值和最小值
+
+```
+let arr = [1,2,3,4,5,6,7];
+arr.sort(function (a, b) {
+	 return a-b;
+}); 
+let min = arr[0]; // 1
+let max = arr[arr.length - 1]; //7
+```

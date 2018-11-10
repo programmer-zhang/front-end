@@ -294,3 +294,12 @@ arr.sort(function (a, b) {
 let min = arr[0]; // 1
 let max = arr[arr.length - 1]; //7
 ```
+* 使用math中的max/min方法
+	* 可以使用apply来实现。apply传入的是一个数组
+
+```
+let arr = [1,2,3,4,5,6,7];
+let max = Math.max.apply(null, arr);
+let min = Math.min.apply(null, arr);
+console.log(max, min) // 7,1
+```

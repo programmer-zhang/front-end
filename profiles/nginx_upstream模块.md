@@ -32,7 +32,7 @@ upstream linuxidc{
       server 10.0.0.77 weight=5; 
       server 10.0.0.88 weight=10; 
 }
-# 10.0.0.88的訪问比率要比10.0.0.77的訪问比率高一倍
+# 10.0.0.88的訪问比率要比10.0.0.77的访问比率高一倍
 ```
 * 每一个请求按訪问ip的hash结果分配(ip_hash)。这样每一个訪客固定訪问一个后端服务器，能够解决session的问题
 
@@ -67,8 +67,8 @@ upstream favresin{
 
 ### upstream设备设置状态值
 * down 表示单前的server临时不參与负载.
-* weight 默觉得1.weight越大，负载的权重就越大。
-* max_fails ：同意请求失败的次数默觉得1.当超过最大次数时，返回proxy_next_upstream 模块定义的错误.
+* weight 默认为1.weight越大，负载的权重就越大。
+* max_fails ：同意请求失败的次数默认为1.当超过最大次数时，返回proxy_next_upstream 模块定义的错误.
 * fail_timeout : max_fails次失败后。暂停的时间。
 * backup： 其他全部的非backup机器down或者忙的时候，请求backup机器。所以这台机器压力会最轻。
 

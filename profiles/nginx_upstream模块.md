@@ -25,7 +25,7 @@ location / {
 * 若后端服务器down掉，能自己主动剔除
 
 ### upstream的分配策略
-* 指定轮询几率(weight)，weight和訪问比率成正比，用于后端服务器性能不均的情况
+* 指定轮询几率(weight)，weight和访问比率成正比，用于后端服务器性能不均的情况
 
 ```
 upstream linuxidc{ 

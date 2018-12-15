@@ -99,6 +99,8 @@
 
 > [js+css实现底部横滑收起展开栏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/components/bottom-tip.vue)
 
+> [前端实现条形码扫描的小方案](./profiles/quagga.js.md)
+
 ## 硬件 :computer:
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)
 
@@ -113,4 +115,4 @@
 
 > [chrome开发者工具各种骚技巧(外链资料)](https://juejin.im/post/5af53823f265da0b75282b0f?utm_source=gold_browser_extension)
 
-> [前端实现条形码扫描的小方案](./profiles/quagga.js.md)
+

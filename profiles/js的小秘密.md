@@ -104,7 +104,7 @@ arr[0] = 100;
 arr[1] = 0;
 arr[2] = 50;
 var min = Math.min.apply(null, arr),
-max = Math.max.apply(null, arr);
+var max = Math.max.apply(null, arr);
 
 ```
 * 以下是补充

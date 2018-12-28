@@ -76,6 +76,11 @@ onafterpaste="this.value=this.value.replace(/\D/g,'')">
 ```
 <input onkeyup="this.value=this.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3')"> 
 ```
+*  input的type设置为number后可以输入e
+
+```
+<input type='number' onkeypress='return( /[\d]/.test(String.fromCharCode(event.keyCode) ) )' />
+```
 
 ### JS判断字符串是不是全是空格
 

@@ -8,19 +8,41 @@
 > 也欢迎大家关注我的Github，共同学习，共同提高。编者不才，如有问题，欢迎雅正，若有收获，请尽情用star羞辱我。另附[Github地址](https://github.com/programmer-zhang)
 
 
-## 充分利用JavaScript自带原生方法
+## 充分利用JavaScript自带原生方法解决问题
 > 前端页面和数据处理虽然看起来简单，但是一个优秀的前端工程师对于细节的把控也是至关重要的，如何合理处理业务也体现前端工程师对性能优化的功力(后期我会专门出一期性能优化的长文，敬请期待。)
 
-### js 除法 取整
- 
+### 获取数组最大值和最小值
+* 利用sort排序方法
+	* 针对数组进行排序，数组第一个和最后一个就是最大值和最小值
+
+```
+let arr = [1,2,3,4,5,6,7];
+arr.sort(function (a, b) {
+	 return a-b;
+}); 
+//sort传入一个排序函数，a-b为升序排序，b-a为降序排序
+let min = arr[0]; // 1
+let max = arr[arr.length - 1]; //7
+```
+* 使用Math中的max/min方法
+	* 可以使用apply来实现。apply传入的是一个数组
+
+```
+let arr = [1,2,3,4,5,6,7];
+let max = Math.max.apply(null, arr);
+let min = Math.min.apply(null, arr);
+console.log(max, min) // 7,1
+```
+
+### 浮点数取整
 * 丢弃小数部分,保留整数部分
-	* js:parseInt(7/2)
+	* `parseInt(7/2)`
 * 向上取整,有小数就整数部分加1
-	* js: Math.ceil(7/2)
+	* `Math.ceil(7/2)`
 * 四舍五入
-	* js: Math.round(7/2)
+	* `Math.round(7/2)`
 * 向下取整
-	* js: Math.floor(7/2)
+	* `Math.floor(7/2)`
 * 注：都是JS内置对象
 
 ### HTML input 标签输入限制
@@ -112,34 +134,6 @@ if(test.match(/^[ ]*$/)){
 if(test.match(/^\s*$/)){
     console.log("all space or \\n or empty")
 }
-```
-
-### JS获取数组最小值和最大值的方法
-
-```
-var arr = new Array();
-arr[0] = 100;
-arr[1] = 0;
-arr[2] = 50;
-var min = Math.min.apply(null, arr),
-var max = Math.max.apply(null, arr);
-
-```
-* 以下是补充
-
-```
-var a=[1,2,3,5];
-alert(Math.max.apply(null, a));//最大值
-alert(Math.min.apply(null, a));//最小值
-```
-
-* 多维数组可以这样修改
-
-```
-var a=[1,2,3,[5,6],[1,4,8]];
-var ta=a.join(",").split(",");//转化为一维数组
-alert(Math.max.apply(null,ta));//最大值
-alert(Math.min.apply(null,ta));//最小值
 ```
 
 ### JS扩大checkbox的点击区域
@@ -300,24 +294,3 @@ users.every(user => user.age >= 18);
 * 将图片按照相关格式转码即可
 * `<img class="image-code" :src="'data:image/png;base64,'+imgCodeUrl"/>`
 
-### 获取数组最大值和最小值
-* 排序法
-	* 针对数组进行排序，数组第一个和最后一个就是最大值和最小值
-
-```
-let arr = [1,2,3,4,5,6,7];
-arr.sort(function (a, b) {
-	 return a-b;
-}); 
-let min = arr[0]; // 1
-let max = arr[arr.length - 1]; //7
-```
-* 使用math中的max/min方法
-	* 可以使用apply来实现。apply传入的是一个数组
-
-```
-let arr = [1,2,3,4,5,6,7];
-let max = Math.max.apply(null, arr);
-let min = Math.min.apply(null, arr);
-console.log(max, min) // 7,1
-```

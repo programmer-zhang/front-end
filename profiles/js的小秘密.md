@@ -45,6 +45,65 @@ console.log(max, min) // 7,1
 	* `Math.floor(7/2)`
 * 注：都是JS内置对象
 
+### 数组去重
+
+* ES6
+
+```
+//es6方法
+arr2=[1,1,1,2,2,2,3,4]
+arr1 = Array.from(new Set(arr2)) //arr1=[1,2,3,4]
+```
+* push( )去重
+
+```
+var arr3 = [];  
+for(var i = 0; i < arr.length; i++) {  
+    (function(i) {  
+        if(arr3.indexOf(arr[i]) == -1) { //不包含该值则返回-1  
+            arr3.push(arr[i]);  
+        }  
+    }(i))  
+}  
+console.log(arr3); 
+//如果当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的，忽略掉。否则存入结果数组  
+var arr4 = [arr[0]];  
+for(var i = 1; i < arr.length; i++) {  
+    (function(i) {  
+        if(arr.indexOf(arr[i]) == i) {  
+            arr4.push(arr[i]);  
+        }  
+    }(i))  
+}  
+console.log(arr4);  
+```
+* sort()去重
+
+```
+var arrSort = arr.sort();  
+var arr5 = [];  
+for(let i = 0; i< arrSort.length; i++) {  
+    if(arrSort[i] != arrSort[i+1]) {  
+        arr5.push(arrSort[i]);  
+    }  
+}  
+console.log(arr5);  
+```
+* splice( )去重
+
+```
+for(let i = 0, len = arr6.length; i < len; i++) {  
+    for(let j = i + 1; j < len; j++) {  
+        if(arr6[i] === arr6[j]) {  
+            arr6.splice(i,1);  
+            len--;  
+            j--;  
+        }  
+    }  
+}  
+console.log(arr6); 
+```
+
 ### HTML input 标签输入限制
 * 文本框只能输入数字代码(小数点也不能输入) 
 
@@ -210,65 +269,7 @@ alert(" 相差 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
     console.log(getNum(str));//默认不加1，即不会把提取出来的0去掉
 ```
 
-### 几个数组去重的小方法
 
-* ES6
-
-```
-//es6方法
-arr2=[1,1,1,2,2,2,3,4]
-arr1 = Array.from(new Set(arr2))
-=>arr1=[1,2,3,4]
-```
-* push( )去重
-
-```
-var arr3 = [];  
-for(var i = 0; i < arr.length; i++) {  
-    (function(i) {  
-        if(arr3.indexOf(arr[i]) == -1) { //不包含该值则返回-1  
-            arr3.push(arr[i]);  
-        }  
-    }(i))  
-}  
-console.log(arr3); 
-//如果当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的，忽略掉。否则存入结果数组  
-var arr4 = [arr[0]];  
-for(var i = 1; i < arr.length; i++) {  
-    (function(i) {  
-        if(arr.indexOf(arr[i]) == i) {  
-            arr4.push(arr[i]);  
-        }  
-    }(i))  
-}  
-console.log(arr4);  
-```
-* sort()去重
-
-```
-var arrSort = arr.sort();  
-var arr5 = [];  
-for(let i = 0; i< arrSort.length; i++) {  
-    if(arrSort[i] != arrSort[i+1]) {  
-        arr5.push(arrSort[i]);  
-    }  
-}  
-console.log(arr5);  
-```
-* splice( )去重
-
-```
-for(let i = 0, len = arr6.length; i < len; i++) {  
-    for(let j = i + 1; j < len; j++) {  
-        if(arr6[i] === arr6[j]) {  
-            arr6.splice(i,1);  
-            len--;  
-            j--;  
-        }  
-    }  
-}  
-console.log(arr6); 
-```
 ### 用好 filter，map，和其它 ES6 新增的高阶遍历函数
 * 将数组中的false值去掉
 

@@ -50,14 +50,13 @@ console.log(max, min) // 7,1
 * ES6
 
 ```
-//es6方法
 arr2=[1,1,1,2,2,2,3,4]
 arr1 = Array.from(new Set(arr2)) //arr1=[1,2,3,4]
 ```
 * push( )去重
 
 ```
-var arr3 = [];  
+let arr3 = [];  
 for(var i = 0; i < arr.length; i++) {  
     (function(i) {  
         if(arr3.indexOf(arr[i]) == -1) { //不包含该值则返回-1  
@@ -67,7 +66,7 @@ for(var i = 0; i < arr.length; i++) {
 }  
 console.log(arr3); 
 //如果当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的，忽略掉。否则存入结果数组  
-var arr4 = [arr[0]];  
+let arr4 = [arr[0]];  
 for(var i = 1; i < arr.length; i++) {  
     (function(i) {  
         if(arr.indexOf(arr[i]) == i) {  
@@ -80,8 +79,8 @@ console.log(arr4);
 * sort()去重
 
 ```
-var arrSort = arr.sort();  
-var arr5 = [];  
+let arrSort = arr.sort();  
+let arr5 = [];  
 for(let i = 0; i< arrSort.length; i++) {  
     if(arrSort[i] != arrSort[i+1]) {  
         arr5.push(arrSort[i]);  
@@ -104,7 +103,41 @@ for(let i = 0, len = arr6.length; i < len; i++) {
 console.log(arr6); 
 ```
 
-### HTML input 标签输入限制
+### 用好 filter，map，every, find和其它 ES6 新增的高阶遍历函数
+* 将数组中的false值去掉
+
+```
+const array = [3, 4, 5, 2, 3, undefined, null, 0, ""];
+const compact = arr => arr.filter(Boolean);
+compact(array);
+//[3, 4, 5, 2, 3]
+```
+* 判断用户是否全部是成年人
+
+```
+const users = [
+  { name: "Jim", age: 23 },
+  { name: "Lily", age: 17 },
+  { name: "Will", age: 35 }
+];
+users.every(user => user.age >= 18);
+//false
+```
+* 判断用户中是否有30岁以上的人
+
+```
+const users = [
+  { name: "Jim", age: 23 },
+  { name: "Lily", age: 17 },
+  { name: "Will", age: 35 }
+];
+users.find(item => item.age>30);
+//{name: "Will", age: 35}
+```
+
+## 合理利用正则表达式解决问题
+
+### `<input>` 标签输入限制
 * 文本框只能输入数字代码(小数点也不能输入) 
 
 ```
@@ -176,11 +209,10 @@ onafterpaste="this.value=this.value.replace(/\D/g,'')">
 <input type='number' onkeypress='return( /[\d]/.test(String.fromCharCode(event.keyCode) ) )' />
 ```
 
-### JS判断字符串是不是全是空格
+### JS判断字符串是否全是空格
 
 ```
-var test = "   \n   ";
-//var test = "      ";
+let test = "   \n   ";
 if(test.match(/^\s+$/)){
     console.log("all space or \\n")
 }
@@ -270,26 +302,7 @@ alert(" 相差 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
 ```
 
 
-### 用好 filter，map，和其它 ES6 新增的高阶遍历函数
-* 将数组中的false值去掉
 
-```
-const array = [3, 4, 5, 2, 3, undefined, null, 0, ""];
-const compact = arr => arr.filter(Boolean);
-compact(array);
-//[3, 4, 5, 2, 3]
-```
-*  判断用户是否全部是成年人
-
-```
-const users = [
-  { name: "Jim", age: 23 },
-  { name: "Lily", age: 17 },
-  { name: "Will", age: 25 }
-];
-users.every(user => user.age >= 18);
-//false
-```
 
 ### 解决图形验证码接口返回文件流图片
 * 将图片按照相关格式转码即可

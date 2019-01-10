@@ -6,11 +6,11 @@
 
 #### 新建一个目录，将其初始化为Git代码库
 
-* $git init [project-name]
+* $ git init [project-name]
 
 #### 下载一个项目和它的整个代码历史
 
-* $git clone [url]
+* $ git clone [url]
 
 ## 配置
 
@@ -81,13 +81,13 @@
 * $ git commit --amend [file1] [file2] ...
 
 #### 跟踪所有改动过的文件
-* git add .
+* $ git add .
 
 #### 跟踪指定文件
-* git add [file]
+* $ git add [file]
 
 #### 提交修改
-* git push [branch]
+* $ git push [branch]
 
 ## 分支
 

@@ -43,7 +43,8 @@
 	```
 
 	* 自定义样式与css伪类
-		* 使用全局样式sass、scss,
+		* 使用全局样式sass、scss
+		* 合理使用原生选择器，如：
 		
 		`:focus`
 		`input[type=checkbox]:checked{}`

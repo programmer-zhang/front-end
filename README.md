@@ -17,28 +17,28 @@
 
 > [css小图形](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTest.vue)
 
-## js相关 :speak_no_evil:
-> [js的小秘密(持续更新)](./profiles/js的小秘密.md)
+## JavaScript相关 :speak_no_evil:
+> [JS的小秘密(持续更新)](./profiles/js的小秘密.md)
 
-> [js数组操作方法小结](./profiles/js数组操作.md)
+> [JS数组操作方法小结](./profiles/js数组操作.md)
 
-> [js针对cookie 的操作](./profiles/js针对cookie的操作.md)
+> [JS针对 cookie 的操作](./profiles/js针对cookie的操作.md)
 
-> [js针对URL编码和解码](./profiles/js针对URL编码和解码.md)
+> [JS针对URL编码和解码](./profiles/js针对URL编码和解码.md)
 
-> [js的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
+> [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
 > [jsonp跨域原理](./profiles/jsonp跨域原理.md)
 
-> [js内存图](./profiles/js内存图.md)
+> [JS内存图](./profiles/js内存图.md)
 
-> [js对DOM树的操作](./profiles/js对DOM树的操作.md)
+> [JS对DOM树的操作](./profiles/js对DOM树的操作.md)
 
-> [js中require和import的区别](./profiles/js中require和import的区别.md)
+> [JS模块化编程资源引入方式](./profiles/js模块化编程资源引入方式.md)
  
-> [通过js去判断PC端还是移动端的几种方式(完善中...)](./profiles/js判断设备.md)
+> [JS判断PC端还是移动端的几种方式(完善中...)](./profiles/js判断设备.md)
 
-> [js解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
+> [JS解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
 
 
 ## 网络相关 :postbox:

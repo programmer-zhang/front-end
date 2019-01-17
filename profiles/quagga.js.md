@@ -13,7 +13,7 @@
 * 在项目中引入
 
 ```
-import Quagga from 'quagga'; // ES6`
+import Quagga from 'quagga'; // ES6
 const Quagga = require('quagga').default; // Common JS (important: default)
 ```
 

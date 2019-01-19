@@ -43,14 +43,14 @@
 		width: 100%;
 		height: 20px;
 	```
-
-	* 自定义样式与css伪类
-		* 使用全局样式sass、scss
-		* 合理使用原生选择器，如：
-		
-		`:focus`
-		`input[type=checkbox]:checked{}`
-		`@media`
+	* 自定义radio/checkbox样式
+	
+	```
+	input[type=checkbox]{}
+	input[type=checkbox]:checked{}
+	```
+	* 巧用css伪类，合理使用原生选择器，如：`:focus、@media、input[type=email]:invalid`
+	* 使用全局样式sass、scss
 	
 * 优化HTML标签
 	* 文字`<p>``<h1>`减少css代码
@@ -78,14 +78,24 @@
 * 0值去单位
 	* 对于为0的值，尽量不要加单位，增加兼容性
 
-### js优化
+### JS优化
 * 减少前端代码耦合
+	* 使用传参的方法减少耦合
 	* 利用策略模式抽离公共组件、参数、封装请求
-* js书写优化
-	* 字面量与局部变量的访问速度最快，数组元素和对象成员相对较慢
+* JS书写优化
 	* 按照强类型风格去写代码，指明变量类型和返回类型
+	* 字面量与局部变量的访问速度最快，数组元素和对象成员相对较慢
 	
 	```
+	//bad
+	let num,
+		str,
+		obj;
+	//good
+	let num = 0;
+		str = '',
+		obj = null;
+		
 	//bad
 	getPrice:function(price){
 		if (price < 0) {
@@ -106,7 +116,8 @@
 	//优化回滚：编译器已经编译完成函数，类型变化导致回滚到通用状态，重新生成函数
 	```
 	
-	* 减少作用域查找，尽量少的不要让代码暴露在全局作用域下，变量从局部作用域到全局作用域的搜索过程越长速度越慢
+	* 减少作用域查找
+		* 尽量少的不要让代码暴露在全局作用域下，变量从局部作用域到全局作用域的搜索过程越长速度越慢
 	
 	```
 	//bad
@@ -127,4 +138,55 @@
 		* 无意义的对象嵌套拖累读取速度
 	* 避免 == 的使用
 		* 确定类型的情况下直接使用 ===
+	* 合并表达式
+		* 用三目运算符代替简单的if-else
+	
+	```
+	//bad
+	function getPrice(count){
+		if(count < 0){
+			return -1;
+		}else {
+			return count * 100;
+		}
+	}
+	//good
+	function getPrice(count){
+		return count <0 ? return -1 : count * 100;
+	}
+	//在进行代码压缩的时候，即时书写的是if-else，压缩工具也会帮你把它改成三目运算符的形式
+	```
 * 使用ES6简化代码
+	* 使用箭头函数取代小函数
+	
+	```
+	var num = [4,6,8,3,1,0]
+	//bad
+	num.sort(function (a,b){
+		return a-b;
+	})
+	//good
+	num.sort(a,b => a-b);
+	```
+	* 使用ES6的class
+	
+	```
+	class Person {
+		constructor(name, age) {
+			this.name = name;
+			this.age = age;
+		}
+		addAge() {
+			this.age++;
+		}
+		setName(name) {
+			this.name = name;
+		}
+	}
+	```
+	* 字符串拼接
+	
+	```
+	let url = `/list.html?page=${page}&type=${type}`;
+	```
+	* 块级作用域变量，使用let代替var

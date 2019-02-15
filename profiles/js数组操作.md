@@ -1,3 +1,6 @@
+> 啥也别说先附上一张方便大家记忆的图片
+
+![arrayFunction](../images/arrayFunction.png)
 > var arr = [1, 2, 3, 4, 5];
 
 * 删除并返回数组中第一个元素
@@ -59,3 +62,4 @@ alert(theSep);//-1-10-11-12-5-6-7-8 string
 var theRev = arrCon.reverse();
 alert(theRev);//8,7,6,5,12,11,10,-1
 ```
+

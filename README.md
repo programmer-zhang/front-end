@@ -3,7 +3,6 @@
 * 本人仍在积极整理中，还请见谅，如有问题，请及时更正，万分感谢 :stuck_out_tongue_closed_eyes:
 * PS:is free :grin: 
 * 如有喜欢，请尽情用star羞辱我
-* count 49
 
 ## HTML相关 :house:
 > [自用代码规范](./profiles/自用代码规范.md)
@@ -28,7 +27,7 @@
 
 > [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
-> [jsonp跨域原理](./profiles/jsonp跨域原理.md)
+> [JSONP跨域原理](./profiles/jsonp跨域原理.md)
 
 > [JS内存图](./profiles/js内存图.md)
 
@@ -55,16 +54,16 @@
 
 > [SSR服务器端渲染](./profiles/SSR服务器端渲染.md)
 
-> [nginx架构介绍](./profiles/nginx基础.md)
+> [Nginx架构介绍](./profiles/nginx基础.md)
 
-> [nginx配置](./profiles/nginx配置.md)
+> [Nginx配置](./profiles/nginx配置.md)
 
-> [nginx upstream模块](./profiles/nginx_upstream模块.md)
+> [Nginx upstream模块](./profiles/nginx_upstream模块.md)
 
-> [vue2.0 this.$set的正确打开方式](./profiles/vue_this.set.md)
+> [Vue2.0 this.$set的正确打开方式](./profiles/vue_this.set.md)
 
 ## 持续构建 :articulated_lorry:
-> [webpack](./profiles/webpack.md)
+> [Webpack](./profiles/webpack.md)
 
 > [Git不仅仅是get](./profiles/Git不仅仅是get.md)
 
@@ -72,14 +71,16 @@
 > [敏捷开发](./profiles/敏捷开发.md)
  
 > [前端自动化构建](./profiles/前端自动化构建.md)
-
-> [web-front-performance](./profiles/web-front-performance.md)
  
 > [第三方前端性能监控(外链资料)](https://docs.sentry.io/quickstart/)
 
-> [前端性能优化(持续更新)](./profiles/前端性能优化.md)
+> [前端性能优化: HTML、CSS、JS篇](./profiles/[前端性能优化]HTML、CSS、JS篇.md)
 
-> [更友好的使用Chorme浏览器](./profiles/chorme浏览器.md)
+> [前端性能优化: 页面加载速度优化](./profiles/[前端性能优化]页面加载速度优化.md)
+
+> [前端性能优化: 网络传输层优化](./profiles/[前端性能优化]网络传输层优化.md)
+
+> [更友好的使用Chorme浏览器](./profiles/Chrome-Devtools.md)
 
 ## 微信相关 :envelope:
 > [微信安全域名的坑(持续更新)](./profiles/微信安全域名的坑.md)
@@ -89,15 +90,15 @@
 ## 编码实践 :paperclip:
 > [Erro(持续更新)](./profiles/Erro.md)
 
-> [js实现模糊搜索高亮显示的几种方法](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/highLight.vue)
+> [JS实现模糊搜索高亮显示的几种方法](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/highLight.vue)
 
 > [vue实现多个日期倒计时](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/countDown.vue)
 
-> [js实现复制粘贴](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/copy.vue)
+> [JS实现复制粘贴](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/copy.vue)
 
-> [js实现随机变换模块](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/changeDatas.vue)
+> [JS实现随机变换模块](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/changeDatas.vue)
 
-> [js+css实现底部横滑收起展开栏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/components/bottom-tip.vue)
+> [JS+CSS实现底部横滑收起展开栏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/components/bottom-tip.vue)
 
 > [前端实现条形码扫描的小方案](./profiles/quagga.js.md)
 
@@ -113,6 +114,6 @@
 
 > [一个好用的mac终端替代方案](./profiles/一个好用的mac终端替代方案.md)
 
-> [chrome开发者工具各种骚技巧(外链资料)](https://juejin.im/post/5af53823f265da0b75282b0f?utm_source=gold_browser_extension)
+> [Chrome开发者工具各种骚技巧(外链资料)](https://juejin.im/post/5af53823f265da0b75282b0f?utm_source=gold_browser_extension)
 
 

@@ -61,4 +61,7 @@ swiper1 = new Swiper('.swiper-container', {
 
 ### VueSSR造成内存溢出
 * https://gitbook.cn/books/591170568b2c1f0f85f3b8fb/index.html
-* 
+* https://blog.csdn.net/qq_34309704/article/details/80852449
+* http://www.cnblogs.com/chuaWeb/p/5196330.html
+* https://www.cnblogs.com/alongWind/p/7683624.html
+* https://yq.aliyun.com/articles/682846

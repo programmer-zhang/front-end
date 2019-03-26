@@ -58,3 +58,7 @@ swiper1 = new Swiper('.swiper-container', {
 * 解决方法：
 	* 后台的数据接口传值简化
 	* 前端优化数据，只保留需要的数据
+
+### VueSSR造成内存溢出
+* https://gitbook.cn/books/591170568b2c1f0f85f3b8fb/index.html
+* 

@@ -72,3 +72,7 @@ swiper1 = new Swiper('.swiper-container', {
 
 ### swiper在Vue项目中引入失败
 * swiper若是本地js引入，需要放在`Vue  static`文件夹中，否则会被Vue打包后识别不到。
+
+### 解决图形验证码接口返回文件流图片
+* 将图片按照相关格式转码即可
+* `<img class="image-code" :src="'data:image/png;base64,'+imgCodeUrl"/>`

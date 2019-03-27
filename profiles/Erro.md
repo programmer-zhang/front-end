@@ -66,4 +66,6 @@ swiper1 = new Swiper('.swiper-container', {
 * https://www.cnblogs.com/alongWind/p/7683624.html
 * https://yq.aliyun.com/articles/682846
 
-### 
+### Vue Router 二级路径在Nginx转发后访问不通
+* Vue cli config配置中的build    assetsPublicPath: '/',
+* 

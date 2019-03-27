@@ -68,4 +68,7 @@ swiper1 = new Swiper('.swiper-container', {
 
 ### Vue Router 二级路径在Nginx转发后访问不通
 * Vue cli config配置中的build    assetsPublicPath: '/',
-* 
+
+
+### swiper在Vue项目中引入失败
+* swiper若是本地js引入，需要放在`Vue  static`文件夹中，否则会被Vue打包后识别不到。

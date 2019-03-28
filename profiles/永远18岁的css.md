@@ -64,3 +64,6 @@ p::after {
 
 ## 清除浏览器的默认蓝色选中框
 * `outline: none;`
+
+## 英文字符串自动折行
+* `word-wrap: break-word;`

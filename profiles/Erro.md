@@ -76,3 +76,8 @@ swiper1 = new Swiper('.swiper-container', {
 ### 解决图形验证码接口返回文件流图片
 * 将图片按照相关格式转码即可
 * `<img class="image-code" :src="'data:image/png;base64,'+imgCodeUrl"/>`
+
+### Git报错
+* 报错内容: `There is no tracking information for the current branch. Please specify which branch you want to merge with.`
+* 原因: 本地仓库未与远程仓库相关联,使用`git branch -vv`指令可以查看仓库的相互关联
+* 解决方案: `git branch --set-upstream-to=origin/远程分支的名字  本地分支的名字`

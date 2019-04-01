@@ -22,7 +22,7 @@ let readfile = _fs.readfile;
 ```
 import { stat, exists, readFile } from 'fs';
 ```
-* 从fs加载“stat, exists, readFile” 三个方法，其他方法不加载
+* 从fs加载“stat, exists, readFile” 三个方法，其他方法不加载。
 
 ### Export
 * 模块是独立的文件，该文件内部的所有的变量外部都无法获取。如果希望获取某个变量，必须通过export输出。
@@ -33,7 +33,7 @@ export var firstName = 'Michael';
 export var lastName = 'Jackson';
 export var year = 1958;
 ```
-* 或者用更好的方式：用大括号指定要输出的一组变量
+* 或者用更好的方式：用大括号指定要输出的一组变量。
 
 ```
 // profile.js
@@ -43,14 +43,14 @@ var year = 1958;
 
 export {firstName, lastName, year};
 ```
-* 除了输出变量，还可以输出函数或者类（class），
+* 除了输出变量，还可以输出函数或者类（class）。
 
 ```
 export function multiply(x, y) {
   return x * y;
 };
 ```
-* 还可以批量输出，同样是要包含在大括号里，也可以用as重命名
+* 还可以批量输出，同样是要包含在大括号里，也可以用as重命名。
 
 ```
 function v1() { ... }
@@ -62,7 +62,7 @@ export {
   v2 as streamLatestVersion
 };
 ```
-* export 命令规定的是对外接口，必须与模块内部变量建立一一对应的关系
+* export 命令规定的是对外接口，必须与模块内部变量建立一一对应的关系。
 
 ```
 // 写法一
@@ -79,8 +79,8 @@ export 1;
 var m = 1;
 export m;
 ```
-* 报错的写法原因是：没有提供对外的接口，第一种直接输出1，第二种虽然有变量m，但还是直接输出1，导致无法解构
-* 同样的，function和class的输出，也必须遵守这样的写法
+* 报错的写法原因是：没有提供对外的接口，第一种直接输出1，第二种虽然有变量m，但还是直接输出1，导致无法解构。
+* 同样的，function和class的输出，也必须遵守这样的写法。
 
 ```
 // 报错
@@ -103,7 +103,7 @@ foo()
 ```
 
 ### Import
-* export定义了模块的对外接口后，其他JS文件就可以通过import来加载这个模块
+* export定义了模块的对外接口后，其他JS文件就可以通过import来加载这个模块。
 
 ```
 // main.js
@@ -124,7 +124,7 @@ import { lastName as surname } from './profile';
 * 因为import是静态执行的，不能使用表达式和变量，即在运行时才能拿到结果的语法结构（eg. if...else...）
 
 ### module
-* 除了指定加载某个输出值，还可以用（*）指定一个对象，所有的变量都会加载在这个对象上
+* 除了指定加载某个输出值，还可以用（*）指定一个对象，所有的变量都会加载在这个对象上。
 
 ```
 // circle.js。输出两个函数
@@ -145,7 +145,7 @@ import * as circle from './circle';
 console.log('圆面积：' + circle.area(4));
 console.log('圆周长：' + circle.circumference(14));
 ```
-* 模块整体加载所在的那个对象（上例是circle），应该是可以静态分析的，所以不允许运行时改变
+* 模块整体加载所在的那个对象（上例是circle），应该是可以静态分析的，所以不允许运行时改变。
 
 ```
 import * as circle from './circle';
@@ -155,7 +155,7 @@ circle.foo = 'hello';
 circle.area = function () {};
 ```
 ### export default
-* 之前的例子中，使用import导入时，都需要知道模块中所要加载的变量名或函数名，用户可能不想阅读源码，只想直接使用接口，就可以用export default命令，为模块指定输出
+* 之前的例子中，使用import导入时，都需要知道模块中所要加载的变量名或函数名，用户可能不想阅读源码，只想直接使用接口，就可以用export default命令，为模块指定输出。
 
 ```
 // export-default.js

@@ -5,7 +5,6 @@
 * 如有喜欢，请尽情用star羞辱我
 
 ## HTML相关 :house:
-> [自用代码规范](./profiles/自用代码规范.md)
 
 > [HTMLDOM节点绑定事件](./profiles/HTML_tabindex.md)
 

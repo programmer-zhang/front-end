@@ -38,3 +38,36 @@
 * 环境：
 	* Web 前端的代码主要运行在浏览器端，但是也能在 Node 环境运行，通过 Vue-ssr Node 端插件，同样的前端代码也可以通过服务器端将 Html 渲染出来。
 	* 正式的部署中，Node 的进程管理是通过 PM2（process manager 2），它可以帮你检查进程的健康情况，并提供强大的接口，让你很容易的了解 Node 在服务器中的运行情况。
+
+#### 框架层
+* 框架层主要解决：算法、存储、通讯和 UI 4 大问题。
+	* Vue
+* 核心框架采用 Vue 及其 Vue 系列插件：
+	* Vue-ssr 服务器端渲染模块
+	* Vue-Router 路由模块
+	* Vuex 数据流模块
+* 选择Vue作为核心框架的原因：
+	* Vue 更加轻量级
+	* Vue 入门成本更低
+	* Vue 中文社区比较多，中文文档也翻译的很好
+	* Vue 在 GitHub 中对问题的回复也很及时
+	* Vue 语法更加忠于前端语言
+	* Vue 的解决方案更加齐全
+
+#### 公共业务层
+* 主要解决站点的业务问题，例如：系统配置、获取用户信息、与后端接口的交互等。
+* Config: 公共环境变量相关
+* Buiness:
+	* user.js 用户信息相关
+	* filter 业务相关filter
+* Plugins:
+	* bsae.js  基础公共方法库
+	* cookie.js 针对cookie操作公共方法
+	* gotoapps.js hyBrid公共方法
+	* h5toapp.js  hyBrid公共方法
+	* url.js  针对url操作公共方法
+	* weixinShare.js  分享公共方法
+* Components:  公共组件
+* Widgets: 公共插件
+
+#### 应用层

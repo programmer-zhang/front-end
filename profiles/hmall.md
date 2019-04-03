@@ -30,4 +30,6 @@
 	* 应用层
 ![](../images/hmall-basic.jpg)
 
-
+#### 语言&环境
+* 语言：采用 Html 控制各个模块的结构；采用 Sass 做样式的预处理；采用 ECMAScript 6 来开发逻辑和交互，然后通过 Webpack 和 Babel 将高级版本的 JS 编译成当下流行浏览器能够解析的 ECMAScript 5。
+* 环境：Web 前端的代码主要运行在浏览器端，但是也能在 Node 环境运行，通过 Vue-ssr Node 端插件，同样的前端代码也可以通过服务器端将 Html 渲染出来。正式的部署中，Node 的进程管理是通过 PM2（process manager 2），它可以帮你检查进程的健康情况，并提供强大的接口，让你很容易的了解 Node 在服务器中的运行情况。

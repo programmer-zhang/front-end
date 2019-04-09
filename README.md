@@ -59,9 +59,11 @@
 
 > [Nginx架构介绍](./profiles/nginx基础.md)
 
-> [Nginx配置](./profiles/nginx配置.md)
+> [Nginx基本配置](./profiles/nginx配置.md)
 
-> [Nginx upstream模块](./profiles/nginx_upstream模块.md)
+> [Nginx_upstream](./profiles/nginx_upstream模块.md)
+
+> [Nginx_location](./profiles/nginx_location.md)
 
 > [Vue2.0 this.$set的正确打开方式](./profiles/vue_this.set.md)
 

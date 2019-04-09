@@ -81,3 +81,8 @@ swiper1 = new Swiper('.swiper-container', {
 * 报错内容: `There is no tracking information for the current branch. Please specify which branch you want to merge with.`
 * 原因: 本地仓库未与远程仓库相关联,使用`git branch -vv`指令可以查看仓库的相互关联
 * 解决方案: `git branch --set-upstream-to=origin/远程分支的名字  本地分支的名字`
+
+### Nginx报错
+* 报错内容：`unknown directive "xxx" in /usr/local/etc/nginx/servers/hmall-shop.conf:32`
+* 原因：nginx配置书写错误
+* 解决方案：根据nginx报错内容，合理修改不合语法的配置，有时一个末尾的空格都会引起错误

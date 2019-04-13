@@ -41,7 +41,7 @@
 	}
 	```
 
-### ReWrite语法规则
+### Rewrite语法规则
 * last – 基本上都用这个Flag，表示完成Rewrite
 * break – 中止Rewirte，不在继续匹配
 	* last和break的区别
@@ -50,26 +50,44 @@
 		* break和last都能组织继续执行后面的rewrite指令
 * redirect – 返回临时重定向的HTTP状态302，地址栏显示跳转后的地址
 * permanent – 返回永久重定向的HTTP状态301，地址栏显示跳转后的地址
+	* redirect 和 permanent
+		* 临时重定向：对旧网址没有影响，但新网址不会有排名
+		* 永久重定向：新网址完全继承旧网址，旧网址的排名等完全清零
 
 ### 常见全局变量
-* `$args` ： 这个变量等于请求行中的参数，同$query_string
-* `$content_length` ： 请求头中的Content-length字段。
-* `$content_type` ： 请求头中的Content-Type字段。
-* `$document_root` ： 当前请求在root指令中指定的值。
-* `$host` ： 请求主机头字段，否则为服务器名称。
-* `$http_user_agent` ： 客户端agent信息
-* `$http_cookie` ： 客户端cookie信息
-* `$limit_rate` ： 这个变量可以限制连接速率。
-* `$request_method` ： 客户端请求的动作，通常为GET或POST。
-* `$remote_addr` ： 客户端的IP地址。
-* `$remote_port` ： 客户端的端口。
-* `$remote_user` ： 已经经过Auth Basic Module验证的用户名。
-* `$request_filename` ： 当前请求的文件路径，由root或alias指令与URI请求生成。
-* `$scheme` ： HTTP方法（如http，https）。
-* `$server_protocol` ： 请求使用的协议，通常是HTTP/1.0或HTTP/1.1。
-* `$server_addr` ： 服务器地址，在完成一次系统调用后可以确定这个值。
-* `$server_name` ： 服务器名称。
-* `$server_port` ： 请求到达服务器的端口号。
-* `$request_uri` ： 包含请求参数的原始URI，不包含主机名，如：”/foo/bar.php?arg=baz”。
-* `$uri` ： 不带请求参数的当前URI，$uri不包含主机名，如”/foo/bar.html”。
-* `$document_uri` ： 与$uri相同。
+* `$args`： 这个变量等于请求行中的参数，同$query_string
+* `$content_length`： 请求头中的Content-length字段。
+* `$content_type`： 请求头中的Content-Type字段。
+* `$document_root`： 当前请求在root指令中指定的值。
+* `$host`： 请求主机头字段，否则为服务器名称。
+* `$http_user_agent`： 客户端agent信息
+* `$http_cookie`： 客户端cookie信息
+* `$limit_rate`： 这个变量可以限制连接速率。
+* `$request_method`： 客户端请求的动作，通常为GET或POST。
+* `$remote_addr`： 客户端的IP地址。
+* `$remote_port`： 客户端的端口。
+* `$remote_user`： 已经经过Auth Basic Module验证的用户名。
+* `$request_filename`： 当前请求的文件路径，由root或alias指令与URI请求生成。
+* `$scheme`： HTTP方法（如http，https）。
+* `$server_protocol`： 请求使用的协议，通常是HTTP/1.0或HTTP/1.1。
+* `$server_addr`： 服务器地址，在完成一次系统调用后可以确定这个值。
+* `$server_name`： 服务器名称。
+* `$server_port`： 请求到达服务器的端口号。
+* `$request_uri`： 包含请求参数的原始URI，不包含主机名，如：”/abc/index.html?token=1a”
+* `$uri`： 不带请求参数的当前URI，$uri不包含主机名，如”/foo/bar.html”。
+* `$document_uri`： 与$uri相同。
+
+### 一个关于重定向的参数处理问题
+* 问题描述：Nginx在进行rewrite后都会自动添加上旧地址中的参数部分，而这对于重定向到的新地址来说可能是多余
+* 解决方案：
+	* 转发规则添加 `? `后缀
+* 问题实例：
+	* 把http://xxx.com/test.html?params=xxx 重定向到 http://xxx.com/new.html
+	* 若按照默认的写法：rewrite ^/test.html(.*) /new permanent;
+	* 重定向后的结果是：http://xxx.com/new.html?params=xxx
+	* 如果改写成：rewrite ^/test.html(.*) /new.html? permanent;
+	* 那结果就是：http://xxx.com/new.html
+* 指定参数Rewirte
+	* rewrite  ^/test.html  /new.html  permanent;       //重写向带参数的地址
+	* rewrite  ^/test.html  /new.html?  permanent;      //重定向后不带参数
+	* rewrite  ^/test.html  /new.html?id=$arg_id?  permanent;    //重定向后带指定的参数

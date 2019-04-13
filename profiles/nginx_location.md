@@ -15,7 +15,7 @@
 
 	```
 	location = / {
-	    proxy_pass http://tomcat:8080/index
+	    proxy_pass http://xxxx.com/index
 	}
 	```
 * 必选规则
@@ -37,7 +37,7 @@
 	
 	```
 	location /api/ {
-	    proxy_pass http://tomcat:8080/
+	    proxy_pass http://xxxx.com/api/abc
 	}
 	```
 

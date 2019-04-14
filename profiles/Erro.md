@@ -7,12 +7,6 @@
 	* 重装ruby
 		* 使用homebrew获得ruby：brew install ruby
 
-
-### &lt;input type="number"&gt;maxlength失效
-* 移动端页面为了方便用户交互通常将手机号输入框和数字输入框设置type属性，在用户触发fcous（）时手机键盘自动弹出数字键盘。
-* 解决方案：修改为&lt;input
-type="tel"&gt;可以起到同样的效果
-
 ### npm包缺失报错
 * 删除项目中的node_modules 并尝试重新 npm install,如重新安装之后还是报相同错误，请尝试下面的做法
 * 删除本地项目node_modules包，复制相同项目相同操作系统的依赖包

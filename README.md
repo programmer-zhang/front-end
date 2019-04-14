@@ -4,11 +4,11 @@
 * PS:is free :grin: 
 * 如有喜欢，请尽情用star羞辱我
 
-## HTML相关 :house:
+## HTML & CSS相关 :european_castle:
+> [HTML_DOM节点绑定事件](./profiles/HTML_tabindex.md)
 
-> [HTMLDOM节点绑定事件](./profiles/HTML_tabindex.md)
+> [HTML&CSS遇到的Error](./profiles/HTML_error.md)
 
-## css相关 :european_castle:
 > [永远18岁的css(持续更新)](./profiles/永远18岁的css.md)
 
 > [硬件加速css来提高网站性能(外链资料)](http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)

@@ -1,3 +1,5 @@
+> 此文件主要留存日常代码书写过程中的 框架架构依赖 相关的报错与解决方案，部分方案参考自网络，如有侵权，请联系chinajnzhang@hotmail.com删除
+
 ### grunt angular项目sass报错
 * sass模块报错
 	* 重装sass
@@ -46,13 +48,6 @@ swiper1 = new Swiper('.swiper-container', {
 	* git remote rm origin
 	* git remote add origin git@github.com:XXX.git
 
-### 微信小程序开发数据传输限制
-* 报错内容 'invokeWebviewMethod 数据传输长度为 xxxxx 已经超过最大长度 1048576'
-* 原因：wx:for 渲染的数据长度过长,每次setData的时候传入的更新数据太多
-* 解决方法：
-	* 后台的数据接口传值简化
-	* 前端优化数据，只保留需要的数据
-
 ### VueSSR造成内存溢出
 * https://gitbook.cn/books/591170568b2c1f0f85f3b8fb/index.html
 * https://blog.csdn.net/qq_34309704/article/details/80852449
@@ -63,13 +58,8 @@ swiper1 = new Swiper('.swiper-container', {
 ### Vue Router 二级路径在Nginx转发后访问不通
 * Vue cli config配置中的build    assetsPublicPath: '/',
 
-
 ### swiper在Vue项目中引入失败
 * swiper若是本地js引入，需要放在`Vue  static`文件夹中，否则会被Vue打包后识别不到。
-
-### 解决图形验证码接口返回文件流图片
-* 将图片按照相关格式转码即可
-* `<img class="image-code" :src="'data:image/png;base64,'+imgCodeUrl"/>`
 
 ### Git报错
 * 报错内容: `There is no tracking information for the current branch. Please specify which branch you want to merge with.`

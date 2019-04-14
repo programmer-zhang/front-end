@@ -1,6 +1,13 @@
-* 整理一下最近微信内部分享后安全域名和微信配置出现的一些问题，勿喷
+> 此文件主要留存日常代码书写过程中的 微信相关开发 相关的报错与解决方案，部分方案参考自网络，如有侵权，请联系chinajnzhang@hotmail.com删除
 
-## 欣赏一波官方说明
+### 微信小程序开发数据传输限制
+* 报错内容 'invokeWebviewMethod 数据传输长度为 xxxxx 已经超过最大长度 1048576'
+* 原因：wx:for 渲染的数据长度过长,每次setData的时候传入的更新数据太多
+* 解决方法：
+	* 后台的数据接口传值简化
+	* 前端优化数据，只保留需要的数据
+
+### 微信安全域名的坑
 * [微信网页授权官方文档](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842)
 * 具体的微信安全域名配置就不说了，大家都知道的，也可自行百度
 * 略微提几点
@@ -8,7 +15,7 @@
 	* 域名配置仅配置域名就可以，不需要加上传输协议名称。
 	* 大家可根据需要直接配置一级或者二级域名，避免以后重复添加和修改，微信安全域名同一个微信公众号仅可配置三个微信安全域名，每月仅支持修改三次。
 
-## 踩过的那些坑
+#### 踩过的那些坑
 * invalid URL domain（域名绑定失败或者域名不存在）
 	* 检查后台是否设置：右上角公众号名称--功能设置--JS接口安全域名
 	* 检查代码里的appid和公众号后台的id是否一致
@@ -22,7 +29,7 @@
 		* 官方提供的解决方案 使用`encodeURIComponent(location.href.split('#')[0])即可`
 	   * 未知原因会造成页面请求的url被encode，需要多加一层encode
 
-## 浏览器端模拟微信打开
+### 浏览器端模拟微信打开
 
 * UA-Android
 Mozilla/5.0 (Linux; U; Android 4.1.2; zh-cn; Chitanda/Akari) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/6.0.0.58_r884092.501 NetType/WIFI

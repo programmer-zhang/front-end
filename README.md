@@ -7,7 +7,7 @@
 ## HTML & CSS相关 :european_castle:
 > [HTML_DOM节点绑定事件](./profiles/HTML_tabindex.md)
 
-> [HTML&CSS遇到的Error](./profiles/HTML_error.md)
+> [HTML&CSS遇到的Error](./profiles/HTML&CSS_error.md)
 
 > [永远18岁的css(持续更新)](./profiles/永远18岁的css.md)
 
@@ -38,7 +38,7 @@
 
 > [JS解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
 
-> [深拷贝和浅拷贝](./profiles/深拷贝和浅拷贝.md**)
+> [深拷贝和浅拷贝](./profiles/深拷贝和浅拷贝.md)
 
 > [防抖与节流](./profiles/节流和防抖.md)
 
@@ -51,6 +51,8 @@
 > [HTTP-header(缓存相关)](./profiles/HTTP_header.md)
 
 ## 架构框架相关 :construction:
+> [Framework遇到的error](./profiles/framework_error.md)
+
 > [NUXT小试牛刀](./profiles/NUXT小试牛刀.md)
 
 > [PreRender.io预渲染架构](./profiles/PreRender.io预渲染架构.md)
@@ -88,7 +90,7 @@
 > [更友好的使用Chorme浏览器](./profiles/Chrome-Devtools.md)
 
 ## 微信相关 :envelope:
-> [微信安全域名的坑(持续更新)](./profiles/微信安全域名的坑.md)
+> [wechat遇到的Error](./profiles/wechat_error.md)
 
 > [微信小程序攻略(外链资料)](https://juejin.im/post/5b8fd1416fb9a05cf3710690?utm_source=gold_browser_extension)
 

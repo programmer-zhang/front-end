@@ -193,6 +193,18 @@ export default {
     }
 };
 ```
+### 页面引用
+
+```
+import quillConfig from '../plugins/quillEditorConfig.js';
+
+data() {
+	return {
+		content: '',
+		editorOption: quillConfig,
+	}
+},
+```
 
 ## 更多插件
 * [更多vue-quill-editor插件](https://github.com/search?o=desc&p=4&q=quill+module&s=stars&type=Repositories&utf8=%E2%9C%93)

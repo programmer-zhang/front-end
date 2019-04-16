@@ -146,31 +146,22 @@ const handlers = {
                     formData.append('token', uploadConfig.token)
                 }
                 // 图片上传
-                var xhr = new XMLHttpRequest();
-                xhr.open(uploadConfig.methods, uploadConfig.action, true);
-                // 上传数据成功，会触发
-                xhr.onload = function (e) {
-                    if (xhr.status === 200) {
+                $axios.post(uploadConfig.action,{
+                    file: formData,
+                    platform: 'advertisement'
+                }).then(res => {
+                    console.log('上传res', res);
+                    if (res && res.data && res.data.code == 10000) {
                         var res = JSON.parse(xhr.responseText);
                         let length = self.quill.getSelection(true).index;
                         //这里很重要，你图片上传成功后，img的src需要在这里添加，res.path就是你服务器返回的图片链接。            
                         self.quill.insertEmbed(length, 'image', res.path);
-                        self.quill.setSelection(length + 1)
+                        self.quill.setSelection(length + 1);       
                     }
-                    fileInput.value = ''
-                };
-                // 开始上传数据
-                xhr.upload.onloadstart = function (e) {
-                    fileInput.value = ''
-                };
-                // 当发生网络异常的时候会触发，如果上传数据的过程还未结束
-                xhr.upload.onerror = function (e) {
-                };
-                // 上传数据完成（成功或者失败）时会触发
-                xhr.upload.onloadend = function (e) {
-                    // console.log('上传结束')
-                };
-                xhr.send(formData)
+                    fileInput.value = '';
+                }).catch(error => {
+                    console.log('图片上传失败');
+                })
             });
             this.container.appendChild(fileInput);
         }

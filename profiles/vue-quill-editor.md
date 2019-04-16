@@ -75,3 +75,10 @@ export default {
 	@import 'quill/dist/quill.bubble.css';
 </style>
 ```
+
+* 引入成功
+
+<img style="border: 1px solid #000" src="../images/vue-quill-editor.png">
+
+## 自定义属性及配置
+### 

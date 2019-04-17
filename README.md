@@ -69,6 +69,8 @@
 
 > [Vue2.0 this.$set的正确打开方式](./profiles/vue_this.set.md)
 
+> [Vue 好用的富文本编辑器 vue-quill-editor ](./profiles/vue-quill-editor.md)
+
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
 

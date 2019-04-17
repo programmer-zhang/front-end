@@ -8,3 +8,11 @@ type="tel"&gt;可以起到同样的效果
 ### 解决图形验证码接口返回文件流图片
 * 将图片按照相关格式转码即可
 * `<img class="image-code" :src="'data:image/png;base64,'+imgCodeUrl"/>`
+
+### 火狐浏览器去掉`type="number"的箭头`
+
+```
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+```

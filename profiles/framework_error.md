@@ -1,5 +1,6 @@
 > 此文件主要留存日常代码书写过程中的 框架架构依赖 相关的报错与解决方案，部分方案参考自网络，如有侵权，请联系chinajnzhang@hotmail.com删除
 
+## 包管理ERROR
 ### grunt angular项目sass报错
 * sass模块报错
 	* 重装sass
@@ -18,6 +19,10 @@
 	* 如果没有重新安装指定依赖和版本
 `npm install webpack-merge --save-dev`
 
+## Swiper EROOR
+### swiper在Vue项目中引入失败
+* swiper若是本地js引入，需要放在`Vue  static`文件夹中，否则会被Vue打包后识别不到。
+
 ### swiper滑动失效
 * 使用swiper会碰到模块滑动失败的问题，这种问题在vue、angular这种框架下发生几率高，原因在于模块数据未加载完成就开始初始化swiper导致
 * 解决方案：
@@ -33,6 +38,7 @@ swiper1 = new Swiper('.swiper-container', {
 ```
 * 个人建议使用第一种，两种结合来用也可以，第一种方案可以完美解决失效问题。
 
+## Git ERROR
 ### git 初次提交远程仓库出现refusing to merge unrelated histories报错
 * 先pull，因为两个仓库不同，报错 ` refusing to merge unrelated histories`，无法pull
 
@@ -48,6 +54,12 @@ swiper1 = new Swiper('.swiper-container', {
 	* git remote rm origin
 	* git remote add origin git@github.com:XXX.git
 
+### Git报错
+* 报错内容: `There is no tracking information for the current branch. Please specify which branch you want to merge with.`
+* 原因: 本地仓库未与远程仓库相关联,使用`git branch -vv`指令可以查看仓库的相互关联
+* 解决方案: `git branch --set-upstream-to=origin/远程分支的名字  本地分支的名字`
+
+## Vue ERROR
 ### VueSSR造成内存溢出
 * https://gitbook.cn/books/591170568b2c1f0f85f3b8fb/index.html
 * https://blog.csdn.net/qq_34309704/article/details/80852449
@@ -58,14 +70,7 @@ swiper1 = new Swiper('.swiper-container', {
 ### Vue Router 二级路径在Nginx转发后访问不通
 * Vue cli config配置中的build    assetsPublicPath: '/',
 
-### swiper在Vue项目中引入失败
-* swiper若是本地js引入，需要放在`Vue  static`文件夹中，否则会被Vue打包后识别不到。
-
-### Git报错
-* 报错内容: `There is no tracking information for the current branch. Please specify which branch you want to merge with.`
-* 原因: 本地仓库未与远程仓库相关联,使用`git branch -vv`指令可以查看仓库的相互关联
-* 解决方案: `git branch --set-upstream-to=origin/远程分支的名字  本地分支的名字`
-
+## Nginx ERROR
 ### Nginx报错
 * 报错内容：`unknown directive "xxx" in /usr/local/etc/nginx/servers/hmall-shop.conf:32`
 * 原因：nginx配置书写错误

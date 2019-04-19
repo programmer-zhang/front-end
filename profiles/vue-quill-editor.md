@@ -123,11 +123,10 @@ const uploadConfig = {
 const handlers = {
     image: function image() {
         var self = this;
- 
-        var fileInput = this.container.querySelector('input.ql-image[type=file]');
+		 var fileInput = this.container.querySelector('input.ql-image[type=file]')
         if (fileInput === null) {
-            fileInput = document.createElement('input');
-            fileInput.setAttribute('type', 'file');
+            fileInput = document.createElement('input')
+            fileInput.setAttribute('type', 'file')
             // 设置图片参数名
             if (uploadConfig.name) {
                 fileInput.setAttribute('name', uploadConfig.name);
@@ -137,35 +136,35 @@ const handlers = {
             fileInput.classList.add('ql-image');
             // 监听选择文件
             fileInput.addEventListener('change', function () {
-                // 创建formData
-                var formData = new FormData();
-                formData.append(uploadConfig.name, fileInput.files[0]);
-                formData.append('object','product');
-                // 如果需要token且存在token
-                if (uploadConfig.token) {
-                    formData.append('token', uploadConfig.token)
-                }
-                // 图片上传
-                $axios.post(uploadConfig.action,{
-                    file: formData,
-                    platform: 'advertisement'
-                }).then(res => {
-                    console.log('上传res', res);
-                    if (res && res.data && res.data.code == 10000) {
-                        var res = JSON.parse(xhr.responseText);
-                        let length = self.quill.getSelection(true).index;
-                        //这里很重要，你图片上传成功后，img的src需要在这里添加，res.path就是你服务器返回的图片链接。            
-                        self.quill.insertEmbed(length, 'image', res.path);
-                        self.quill.setSelection(length + 1);       
+                var formData = new FormData()
+                formData.append(uploadConfig.name, fileInput.files[0])
+                // formData.append('platform','yxpt')
+                formData.append('platform','yhcw')
+
+                const instance = $axios.create({
+                    withCredentials: true,
+                    headers: {
+	                    //设置请求格式为formData
+                        'Content-Type':'multipart/form-data'
                     }
-                    fileInput.value = '';
-                }).catch(error => {
-                    console.log('图片上传失败');
                 })
-            });
-            this.container.appendChild(fileInput);
+                instance.post(uploadConfig.action, formData).then(res => {
+                    if (res && res.data && res.data.data.id) {
+                        let imgUrl = 'http://xxx.com/fileserver/view?id=' + res.data.data.id
+
+                        let length = self.quill.getSelection(true).index
+                        //这里很重要，你图片上传成功后，img的src需要在这里添加，res.path就是你服务器返回的图片链接。 
+                        self.quill.insertEmbed(length, 'image', imgUrl)
+                        self.quill.setSelection(length + 1)       
+                    }
+                    fileInput.value = ''
+                }).catch(error => {
+                    console.log('图片上传失败',error)
+                })
+            })
+            this.container.appendChild(fileInput)
         }
-        fileInput.click();
+        fileInput.click()
     }
 };
 ```

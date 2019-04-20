@@ -68,7 +68,19 @@ swiper1 = new Swiper('.swiper-container', {
 * https://yq.aliyun.com/articles/682846
 
 ### Vue Router 二级路径在Nginx转发后访问不通
-* Vue cli config配置中的build    assetsPublicPath: '/',
+* Vue cli config配置中的build    assetsPublicPath: '/'
+
+### Vue中使用axios method formData传输图片出错
+* axios中添加`withCredentials: true`
+
+```
+const instance = $axios.create({
+    withCredentials: true,
+    headers: {
+        'Content-Type':'multipart/form-data'
+    }
+})
+```
 
 ## Nginx ERROR
 ### Nginx报错

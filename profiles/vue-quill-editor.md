@@ -202,5 +202,28 @@ data() {
 },
 ```
 
+### 存储及反显字符串
+* 后台接收到数据后可能会将字符中的标签进行转码，所以我们要先进行一个解码的操作让他变成标签形式的字符串：
+* 例如后台接收的数据如下：`"&lt;h1&gt;title&lt;"`对应解码后就是`<h1>title</h1>`
+
+```
+//把实体格式字符串转义成HTML格式的字符串
+escapeStringHTML(str) {
+    str = str.replace(/&lt;/g,'<');
+    str = str.replace(/&gt;/g,'>');
+    return str;
+}
+```
+* 在页面其他地方预览编辑好的文章
+
+```
+// 绑定文章字符串后可能会反显不成功，原因是部分css未成功引入，或dom节点定义有问题，可参考编辑器中的class进行重绘
+<div class="ql-container ql-snow">
+    <div class="ql-editor" v-html="articleData"></div>
+</div>
+```
+
 ## 更多插件
 * [更多vue-quill-editor插件](https://github.com/search?o=desc&p=4&q=quill+module&s=stars&type=Repositories&utf8=%E2%9C%93)
+
+> 写在最后，vue-quill-editor有严格的浏览器限制，只兼容IE10以上版本，没有做向下兼容，在使用过程中要考虑好风险。

@@ -66,6 +66,12 @@ export default {
 	        }
 		}
 	},
+	methods: {
+		 onEditorReady(editor) {} // 准备编辑器
+        onEditorBlur(){}, // 失去焦点事件
+        onEditorFocus(){}, // 获得焦点事件
+        onEditorChange(){}, // 内容改变事件
+	},
 	components: {
 		quillEditor
 	}
@@ -106,7 +112,7 @@ const toolOptions = [
 ];
 
 ```
-### 自定义图片上传配置
+### 自定义利用axios图片上传配置
 
 ```
 /*Quill-Editor图片上传配置*/

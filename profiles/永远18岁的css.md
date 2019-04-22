@@ -67,3 +67,5 @@ p::after {
 
 ## 英文字符串自动折行
 * `word-wrap: break-word;`
+
+## CSS实现横向滚动

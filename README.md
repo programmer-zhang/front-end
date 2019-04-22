@@ -38,6 +38,8 @@
 
 > [JS解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
 
+> [JS判断数据类型]
+
 > [深拷贝和浅拷贝](./profiles/深拷贝和浅拷贝.md)
 
 > [防抖与节流](./profiles/节流和防抖.md)
@@ -53,15 +55,17 @@
 ## 架构框架相关 :construction:
 > [Framework遇到的error](./profiles/framework_error.md)
 
-> [NUXT小试牛刀](./profiles/NUXT小试牛刀.md)
+> [NUXT 小试牛刀](./profiles/NUXT小试牛刀.md)
 
-> [PreRender.io预渲染架构](./profiles/PreRender.io预渲染架构.md)
+> [NUXT 使用指南]
 
-> [SSR服务器端渲染](./profiles/SSR服务器端渲染.md)
+> [PreRender.io 预渲染架构](./profiles/PreRender.io预渲染架构.md)
 
-> [Nginx架构介绍](./profiles/nginx基础.md)
+> [SSR 服务器端渲染](./profiles/SSR服务器端渲染.md)
 
-> [Nginx基本配置](./profiles/nginx配置.md)
+> [Nginx 架构介绍](./profiles/nginx基础.md)
+
+> [Nginx 基本配置](./profiles/nginx配置.md)
 
 > [Nginx_upstream](./profiles/nginx_upstream模块.md)
 
@@ -70,6 +74,8 @@
 > [Vue2.0 this.$set的正确打开方式](./profiles/vue_this.set.md)
 
 > [Vue 好用的富文本编辑器 vue-quill-editor ](./profiles/vue-quill-editor.md)
+
+> [PM2 使用指南]
 
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
@@ -96,8 +102,14 @@
 
 > [微信小程序攻略(外链资料)](https://juejin.im/post/5b8fd1416fb9a05cf3710690?utm_source=gold_browser_extension)
 
+> [微信授权]
+
 ## 编码实践 :paperclip:
 > [Erro(持续更新)](./profiles/Erro.md)
+
+> [JS实现飞入购物车]
+
+> [JS实现千分符]
 
 > [JS实现模糊搜索高亮显示的几种方法](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/highLight.vue)
 

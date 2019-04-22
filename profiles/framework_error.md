@@ -81,6 +81,23 @@ const instance = $axios.create({
     }
 })
 ```
+### IVIEW中调用resetFields失效，无法充值
+* 需要在form-item中添加与绑定的数据相同的prop
+
+```
+<Form inline ref="formCustom" :model="formCustom" :label-width="80">
+    <FormItem label="状态" prop="status">
+        <Select v-model="formCustom.status">
+          <Option value="">全部</Option>
+          <Option value="0">已上架</Option>
+          <Option value="1">已下架</Option>
+        </Select>
+    </FormItem>
+    <FormItem :label-width="0" prop="title">
+      <Input placeholder='请输入文章标题搜索' v-model="formCustom.title"></Input>
+    </FormItem>
+</Form>
+```
 
 ## Nginx ERROR
 ### Nginx报错

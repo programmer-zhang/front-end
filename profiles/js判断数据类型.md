@@ -27,3 +27,11 @@ new Date() instanceof Date, //true
 /^[a-zA-Z]{5,20}$/ instanceof RegExp, //true
 new Error() instanceof Error //true
 ```
+* Number，String，Boolean没有检测出他们的类型，但是如果使用下面的写法则可以检测出来：
+
+```
+var num = new Number(123);
+var str = new String('dsfsf');
+var boolean = new Boolean(false);
+```
+* 还需要注意`null`和`undefined`都返回了false，这是因为它们的类型就是自己本身，并不是`Object`创建出来它们，所以返回了false。

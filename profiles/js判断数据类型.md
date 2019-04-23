@@ -35,3 +35,6 @@ var str = new String('dsfsf');
 var boolean = new Boolean(false);
 ```
 * 还需要注意`null`和`undefined`都返回了false，这是因为它们的类型就是自己本身，并不是`Object`创建出来它们，所以返回了false。
+
+### constructor
+* constructor是prototype对象上的属性，指向构造函数

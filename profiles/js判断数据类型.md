@@ -40,6 +40,23 @@ var boolean = new Boolean(false);
 * constructor是prototype对象上的属性，指向构造函数
 
 ### toString()
+* 可以通过toString() 来获取每个对象的类型。为了每个对象都能通过 Object.prototype.toString() 来检测，需要以 Function.prototype.call() 或者 Function.prototype.apply() 的形式来调用
+
+```
+var toString = Object.prototype.toString;
+
+toString.call(123); //"[object Number]"
+toString.call('abcdef'); //"[object String]"
+toString.call(true); //"[object Boolean]"
+toString.call([1, 2, 3, 4]); //"[object Array]"
+toString.call({name:'wenzi', age:25}); //"[object Object]"
+toString.call(function(){ console.log('this is function'); }); //"[object Function]"
+toString.call(undefined); //"[object Undefined]"
+toString.call(null); //"[object Null]"
+toString.call(new Date()); //"[object Date]"
+toString.call(/^[a-zA-Z]{5,20}$/); //"[object RegExp]"
+toString.call(new Error()); //"[object Error]"
+```
 
 ### 一个获取变量准确类型的函数
 

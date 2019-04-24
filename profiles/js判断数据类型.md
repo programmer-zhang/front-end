@@ -37,10 +37,44 @@ var boolean = new Boolean(false);
 * 还需要注意`null`和`undefined`都返回了false，这是因为它们的类型就是自己本身，并不是`Object`创建出来它们，所以返回了false。
 
 ### constructor
-* constructor是prototype对象上的属性，指向构造函数
+* `constructor` 是 `prototype` 对象上的属性，指向构造函数
+* 根据实例对象寻找属性的顺序，若实例对象上没有实例属性或方法时，就去原型链上寻找，因此，实例对象也是能使用 `constructor` 属性的。
+
+```
+var num  = 123;
+var str  = 'abcdef';
+var bool = true;
+var arr  = [1, 2, 3, 4];
+var json = {name:'wenzi', age:25};
+var func = function(){ console.log('this is function'); }
+var und  = undefined;
+var nul  = null;
+var date = new Date();
+var reg  = /^[a-zA-Z]{5,20}$/;
+var error= new Error();
+
+function Person(){}
+var tom = new Person();
+
+// undefined和null没有constructor属性
+console.log(
+    tom.constructor==Person,
+    num.constructor==Number,
+    str.constructor==String,
+    bool.constructor==Boolean,
+    arr.constructor==Array,
+    json.constructor==Object,
+    func.constructor==Function,
+    date.constructor==Date,
+    reg.constructor==RegExp,
+    error.constructor==Error
+);
+//所有结果均为true
+```
 
 ### toString()
-* 可以通过toString() 来获取每个对象的类型。为了每个对象都能通过 Object.prototype.toString() 来检测，需要以 Function.prototype.call() 或者 Function.prototype.apply() 的形式来调用
+* 可以通过`toString()` 来获取每个对象的类型。
+* 为了每个对象都能通过 `Object.prototype.toString()` 来检测，需要以 `Function.prototype.call()` 或者 `Function.prototype.apply()` 的形式来调用
 
 ```
 var toString = Object.prototype.toString;

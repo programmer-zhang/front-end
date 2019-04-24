@@ -38,3 +38,5 @@ var boolean = new Boolean(false);
 
 ### constructor
 * constructor是prototype对象上的属性，指向构造函数
+
+### toString()

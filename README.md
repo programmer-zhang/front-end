@@ -102,7 +102,9 @@
 
 > [微信小程序攻略(外链资料)](https://juejin.im/post/5b8fd1416fb9a05cf3710690?utm_source=gold_browser_extension)
 
-> [微信授权]
+> [微信内嵌H5页面授权]
+
+> [微信解决localStorge存储问题]
 
 ## 编码实践 :paperclip:
 > [Erro(持续更新)](./profiles/Erro.md)

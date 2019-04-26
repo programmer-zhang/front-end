@@ -161,3 +161,9 @@
 
 ### 已推送
 * `git reset --hard HEAD^` 然后执行 `git push -f`
+
+## 将多次commit合并为一个并merge到master
+* 举个栗子，想把 `feature-6793` 分支的所有提交在上线前合并成一个提交：
+* 基于`master`新建`branch``feature-6793-push`
+* `git checkout -b feature-6793-push`切换分支* `git merge --squash origin/feature-6793`合并为一个分支* `git commit -m '这次上线的需求描述'` commit请求
+* `git push origin master` 推到远程分支master

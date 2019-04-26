@@ -292,7 +292,7 @@ var seconds=Math.round(leave3/1000)
 alert(" 相差 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
 ```
 
-### js提取字符串中连续的数字
+### JS提取字符串中连续的数字
 
 ```
 let str = "013d1we22ewfa33rr4rwq0dsf00dsf9fas999";
@@ -321,5 +321,21 @@ let getNum = function (Str,isFilter) {
 console.log(getNum(str));//默认不加1，即不会把提取出来的0去掉
 ```
 
+### JS获取项目根目录
+
+```
+function getRootPath(){
+    //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+    var curWwwPath=window.document.location.href;
+    //获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
+    var pathName=window.document.location.pathname;
+    var pos=curWwwPath.indexOf(pathName);
+    //获取主机地址，如： http://localhost:8083
+    var localhostPaht=curWwwPath.substring(0,pos);
+    //获取带"/"的项目名，如：/uimcardprj
+    var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+    return(localhostPaht+projectName);
+}
+```
 
 

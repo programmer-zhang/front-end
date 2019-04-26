@@ -2,7 +2,7 @@
 * typeof 返回值对应表
 
 | 类型| 结果 |
-| ------ | ------ | ------ |
+| ------ | ------ |
 | String	| "string" |
 | Number	| "number" |
 | Boolean	| "boolean" |

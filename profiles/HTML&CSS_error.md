@@ -16,3 +16,10 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 ```
+
+### 只能输入数字的正则表达式在火狐的兼容问题解决方法
+* 加入了event.which  保证了火狐的兼容问题
+
+```
+<input alt="" class="" name='' type="text" onkeypress="return (/[\d.]/.test(String.fromCharCode(event.which||event.KeyCode)))"/>
+```

@@ -32,6 +32,36 @@
 	* 服务端返回用户信息
 * 完全由服务端主导的授权方式
 
+### 客户端中转的授权方式技术实现
+* 获取微信授权`code`
+
+```
+let redirectUri = encodeURI(window.location.href)
+window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=xxx&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect`
+```
+* 携带`code`向服务器端获取用户授权
+
+```
+let code = getQuery(window.location.href).code
+axios.get("/xxx/getWxInfo?code=" + code).then(res => {
+	if (res && res.data && res.data.code == 10000) {
+		this.userInfo = res.data.data
+		//获取成功后将userInfo存储在cookie中方便其他页面使用
+		//localstorge存储在微信端存在问题，建议使用cookie存储
+		//后续会写篇文章专门讲解微信端cookie存储和localstorge存储
+		setCookie('userInfo', this.userInfo);
+	}else {
+		alert('微信授权失败，请重新微信授权后打开文章', res.code)
+	}
+}).catch(error => {
+	this.userInfo = ''
+	alert('微信授权失败，请重新微信授权后打开', res.code)
+	console.log('获取微信授权出错了', error)
+})
+```
+* 授权成功，此时已经拿到用户的微信的授权信息和个人信息
+
+## 微信分享
 
 ## 部分参考文献(排名不分先后)
 * [网站应用微信登录开发指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN)

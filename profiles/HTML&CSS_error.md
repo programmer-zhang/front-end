@@ -23,3 +23,12 @@ input[type="number"] {
 ```
 <input alt="" class="" name='' type="text" onkeypress="return (/[\d.]/.test(String.fromCharCode(event.which||event.KeyCode)))"/>
 ```
+
+### 设置两个DIV为display:inline-block出现上下错位问题
+* 原因：
+	* 同一行的行内元素对齐方式默认是底部对齐，即vertical-align：baseline
+	* 对于内容为空的inline-block元素而言，该元素的基线就是它的margin底边缘，否则就是元素的内部最后一行内联元素的基线
+* 解决方式：
+	* `float`（考虑脱离流后后面元素不易控制，故不首选）
+	* `vertical-align: top`
+

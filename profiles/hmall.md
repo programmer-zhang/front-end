@@ -102,8 +102,8 @@
 
 #### 部分解决方案技术实现
 * 开启多线程
-* 利用node 的 `cluster` 模块可以创建共享服务器端口的子进程
-* [参考官方文档](http://nodejs.cn/api/cluster.html)
+	* 利用node 的 `cluster` 模块可以创建共享服务器端口的子进程
+	* [参考官方文档](http://nodejs.cn/api/cluster.html)
 
 ```
 const cluster = require('cluster')
@@ -123,6 +123,9 @@ if (cluster.isMaster) {
     })
 }
 ```
+
+* PM2进程监控策略
+	* `pm2 start app.js --max-memory-restart 1024M`
 
 ## 最终解决方案
 * 修改底层框架，去除服务器端渲染配置，改由打包后直接由nginx做路由转发，不再使用node服务器作为底层服务器进行开发

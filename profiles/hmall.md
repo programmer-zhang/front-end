@@ -100,6 +100,30 @@
 * 分析原因
 	* 服务器端获取不到url上的参数，导致部分接口请求报错，页面阻塞
 
+#### 部分解决方案技术实现
+* 开启多线程
+* 利用node 的 `cluster` 模块可以创建共享服务器端口的子进程
+* [参考官方文档](http://nodejs.cn/api/cluster.html)
+
+```
+const cluster = require('cluster')
+const numCPUs = require('os').cpus().length
+
+if (cluster.isMaster) {
+    console.log('Master is running');
+    for (var i = 0; i < numCPUs; i++) {
+        cluster.fork();
+    }
+    cluster.on('exit', function (worker, code, signal) {
+        console.log('worker ${worker.process.pid} died');
+    });
+} else {
+    app.listen(port, () => {
+        console.log(`server started at localhost:${port}`)
+    })
+}
+```
+
 ## 最终解决方案
 * 修改底层框架，去除服务器端渲染配置，改由打包后直接由nginx做路由转发，不再使用node服务器作为底层服务器进行开发
 * 修改后的架构仍然维持了node服务器版本的绝大部分架构，仅是去除了服务器端渲染和VueX，去掉了部分不再需要用到的依赖，并增加了keep-alive缓存，并将部分静态支持JS文件改由npm依赖包获取，如sha256算法等

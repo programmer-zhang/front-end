@@ -1,7 +1,24 @@
 > 近期新上线项目，用到了微信授权获取用户信息和分享，掉坑无数次，遂写此篇，为后人指路
 
 ## 微信授权能获取到什么
-* 
+* 微信授权获得的基本信息
+
+```
+{
+    "openid":"xxx-xxx",
+    "unionid":"xxxx",
+    "nickname":"nickName",
+    "sex":1, //1: 男性 2: 女性
+    "language":"zh_CN",
+    "city":"济南",
+    "province":"山东",
+    "country":"中国",
+    "headimgurl":"http:xxxxxxxx",
+    "privilege":[]
+}
+```
+* `openid`和`unionid`的区别
+	* 在不同的公众账号下`openid`是不一样的，而他们的`unionid`却是一样的
 
 ## 项目情况
 ### 技术选型

@@ -69,3 +69,24 @@ p::after {
 * `word-wrap: break-word;`
 
 ## CSS实现横向滚动
+
+## 改变浏览器网页内容鼠标选中效果
+* 代码实现
+
+```
+::selection {
+	color:#ff0000;
+}
+::-moz-selection {
+	color:#ff0000;
+}
+::-webkit-selection {
+	color:#ff0000;
+}
+```
+* 官方定义和用法
+	* `::selection` 选择器匹配元素中被用户选中或处于高亮状态的部分。
+	* `::selection` 只可以应用于少数的CSS属性：color, background, cursor,outline
+* 浏览器支持
+	* IE9+, Opera, Google Chrome和Safari支持 `::selection` 选择器
+	* Firefox 通过其私有属性 `::-moz-selection` 支持

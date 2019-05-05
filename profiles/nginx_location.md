@@ -82,12 +82,34 @@
 * 解决方案：
 	* 转发规则添加 `? `后缀
 * 问题实例：
-	* 把http://xxx.com/test.html?params=xxx 重定向到 http://xxx.com/new.html
-	* 若按照默认的写法：rewrite ^/test.html(.*) /new permanent;
-	* 重定向后的结果是：http://xxx.com/new.html?params=xxx
-	* 如果改写成：rewrite ^/test.html(.*) /new.html? permanent;
-	* 那结果就是：http://xxx.com/new.html
+	* 把 `http://xxx.com/test.html?params=xxx` 重定向到 `http://xxx.com/new.html`
+	* 若按照默认的写法：`rewrite ^/test.html(.*) /new permanent;`
+	* 重定向后的结果是：`http://xxx.com/new.html?params=xxx`
+	* 如果改写成：`rewrite ^/test.html(.*) /new.html? permanent;`
+	* 那结果就是：`http://xxx.com/new.html`
 * 指定参数Rewirte
-	* rewrite  ^/test.html  /new.html  permanent;       //重写向带参数的地址
-	* rewrite  ^/test.html  /new.html?  permanent;      //重定向后不带参数
-	* rewrite  ^/test.html  /new.html?id=$arg_id?  permanent;    //重定向后带指定的参数
+	* `rewrite  ^/test.html  /new.html  permanent;`       //重写向带参数的地址
+	* `rewrite  ^/test.html  /new.html?  permanent;`      //重定向后不带参数
+	* `rewrite  ^/test.html  /new.html?id=$arg_id?  permanent;`    //重定向后带指定的参数
+
+### 消除 `proxy_pass` 转发 `/`的恐怖阴影
+* 在配置Nginx过程中路由转发的一个小小 `/` 可能会给你带来很多麻烦，虽然只是一个小小的斜杠，但是转发的结果千差万别
+* 两种情况
+	* `proxy_pass` 不带`/`
+	
+	```
+	location /alpha/ {
+	    proxy_pass  http://192.168.xxx.xxx:80;
+	}
+	http://domain/alpha/ --> http://192.168.xxx.xxx:80/alpha/
+	http://domain/alpha/beta/abc --> http://192.168.xxx.xxx:80/alpha/beta/abc
+	```
+	* `proxy_pass` 带`/`
+	
+	```
+	location /alpha/ {
+	    proxy_pass  http://192.168.xxx.xxx:80/;
+	}
+	http://domain/alpha/ --> http://192.168.xxx.xxx:80/
+	http://domain/alpha/beta/abc --> http://192.168.xxx.xxx:80/beta/abc
+	```

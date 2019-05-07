@@ -337,5 +337,25 @@ function getRootPath(){
     return(localhostPaht+projectName);
 }
 ```
+### JS判断小数点后几位
+* `num.toString().split(".")[1].length`
 
+### JS截取数字小数点后N位
+* 利用`math.round`
 
+```
+var original=28.453
+// 保留小数点后两位
+var result = Math.round(original*100)/100;  //returns 28.45
+// 保留小数点后一位
+var result = Math.round(original*10)/10;  //returns 28.5
+```
+* 利用`toFixed`
+
+```
+var original=28.453
+// 保留小数点后两位
+var result=original.toFixed(2); //returns 28.45
+// 保留小数点后一位
+var result=original.toFixed(1); //returns 28.5
+```

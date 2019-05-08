@@ -373,3 +373,17 @@ function clearNoNum(value) {
     }
 }
 ```
+
+### JS校验手机号和座机号的方法
+
+```
+function $isPhoneAvailable(str) {
+    let isMob=/^[1][3,4,5,6,7,8,9][0-9]{9}$/;
+    let isPhone = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
+    if (isPhone.test(str) || isMob.test(str)) {
+        return true;
+    }else {
+        return false;
+    }
+}
+```

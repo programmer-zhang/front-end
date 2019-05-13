@@ -1,7 +1,7 @@
 > 此文件主要留存日常代码书写过程中的 微信相关开发 相关的报错与解决方案，部分方案参考自网络，如有侵权，请联系chinajnzhang@hotmail.com删除
 
 ### 微信小程序开发数据传输限制
-* 报错内容 'invokeWebviewMethod 数据传输长度为 xxxxx 已经超过最大长度 1048576'
+* 报错内容 `invokeWebviewMethod 数据传输长度为 xxxxx 已经超过最大长度 1048576`
 * 原因：wx:for 渲染的数据长度过长,每次setData的时候传入的更新数据太多
 * 解决方法：
 	* 后台的数据接口传值简化
@@ -41,3 +41,8 @@ Mozilla/5.0 (Linux; U; Android 4.1.2; zh-cn; Chitanda/Akari) AppleWebKit/534.30 
 
 * UA-ios
 Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12A365 MicroMessenger/5.4.1 NetType/WIFI
+
+### 关于微信中的localStorage及使用cookie的解决方案
+* 微信环境其实是个webview组件而已，并不是真正意义上的什么内置浏览器。
+* 安卓版微信直接调用系统浏览器内核，它是用chrome改造做的一套WKwebView,概念上类似是一套组建, iOS则是调用safari。所以把微信内置的第三方网页看成是在整个浏览器环境下的想法是错误的。
+* 

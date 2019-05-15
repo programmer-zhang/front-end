@@ -81,7 +81,7 @@ const instance = $axios.create({
     }
 })
 ```
-### IVIEW中调用resetFields失效，无法充值
+### IVIEW中调用resetFields失效，无法重置
 * 需要在form-item中添加与绑定的数据相同的prop
 
 ```
@@ -97,6 +97,12 @@ const instance = $axios.create({
       <Input placeholder='请输入文章标题搜索' v-model="formCustom.title"></Input>
     </FormItem>
 </Form>
+```
+### IVIEW中Input标签on-change时间失效
+
+```
+// 将on-change改为@on-change，其余写法都不生效
+<Input placeholder="请输入文章作者" @on-change="changeStatus()"></Input>
 ```
 
 ## Nginx ERROR

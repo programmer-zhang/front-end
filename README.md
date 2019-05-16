@@ -106,6 +106,8 @@
 
 > [微信解决localStorge存储问题]
 
+> [微信云开发小程序改造]
+
 ## 编码实践 :paperclip:
 > [Erro(持续更新)](./profiles/Erro.md)
 

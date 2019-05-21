@@ -79,7 +79,7 @@
 	
 	```
 	QRCode.makeCode(text) // 	设置二维码内容
-	QRCode.clear  // 	清除二维码
+	QRCode.clear()  // 	清除二维码
 	```
 
 ### 重置 Image 对象
@@ -114,5 +114,6 @@
 
 
 ## 实现效果
+![weche-qrcode.gif](../images/wechat-qrcode.gif)
 
 ## 源码地址

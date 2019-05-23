@@ -105,13 +105,41 @@
 * 我的处理方式是两个二维码都保留，将二维码图片进行重新定位，将重置的二维码图片置于不能识别二维码上层，不去频繁操作DOM节点的显示隐藏。
 * 生成的二维码通过 `append` 的方式插入到dom节点中，在关闭操作时需要将之前生成的 `canvas` 和 `image` 去除
 
-### 另：微信内置浏览器生成canvas图片保存
+## 另：微信内置浏览器生成canvas图片保存
 * 上述教程可以实现动态生成二维码进行保存和长按识别，但是如果需要将HTML内容生成canvas保存就存在问题了。
 * 针对保存需要注意的几个问题：
 	* canvas禁止跨域
 	* 安卓微信长按不能保存base64图片
 	* 微信限制Blob类型图片的保存
-	* 使用 `canvas.toDataURL` 绘制时的类型使用 `image/jpeg`进行保存
+	* 使用 `canvas.toDataURL` 绘制时的类型使用 `image/jpeg` 进行保存
+
+### 引入第三方JS库
+* 使用 `html2canvas`
+
+```
+import html2canvas from 'html2canvas'
+```
+### 组件中调用
+* HTML
+
+```
+<div class="html2canvas-conetent" ref="canvasContent">
+	<img src="/static/images/canvas.jpg">
+	<span>测试Title</span>
+</div>
+<button @click="showCanvas()">生成canvas图片</button>
+```
+* JS
+
+```
+showCanvas() {
+	let self = this;
+	html2canvas(self.$refs.canvasContent).then(function(canvas) {
+        self.imgUrl = canvas.toDataURL();
+        self.showCanvasImg = true;
+	});
+}
+```
 
 
 ## 实现效果

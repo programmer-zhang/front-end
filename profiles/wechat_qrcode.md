@@ -1,4 +1,4 @@
-> 现如今围绕微信生态相关开发已经非常常见，本期带来如何通过 `qrcode.js` 实现微信内置浏览器动态生成二维码并能够长按识别
+> 现如今围绕微信生态相关开发已经非常常见，本期带来如何通过 `qrcode.js` 实现微信内置浏览器动态生成二维码并能够长按识别  以及  通过 `html2canvas` 生成图片并长按保存
 
 ## 说几个知识点
 * 微信长按弹出识别选项的原理
@@ -23,6 +23,15 @@
 	* 本例采用第三方js库实现生成二维码
 	* 针对生成的base64编码的图片微信无法长按识别需要在前端进行格式和image对象重新转换
 	* 生成的图片弹窗展示，避免出现其他元素影响微信识别率
+
+## 开发环境
+* 开发平台
+	* MacOS
+* 开发环境
+	* Vue + node
+* 客户端环境
+	* Google Chrome
+	* Wechat Webview
 
 ## 技术实现
 > 本例的技术实现方案均在Vue项目环境下实现的
@@ -101,11 +110,11 @@
 	```
 
 ### 后续细节处理
-* 至此，一个能够满足长按识别的动态二维码已经生成，不继续处理的话会有两张二维码，长按对比就能看出， `qrcode.js` 生成的二维码长按无法识别，而经过重置之后的对象是可以实现此功能的。
+* 至此，一个能够满足长按识别的动态二维码已经生成，不继续处理的话会有两张二维码，长按对比就能看出，`qrcode.js` 生成的二维码长按无法识别，而经过重置之后的对象是可以实现此功能的。
 * 我的处理方式是两个二维码都保留，将二维码图片进行重新定位，将重置的二维码图片置于不能识别二维码上层，不去频繁操作DOM节点的显示隐藏。
 * 生成的二维码通过 `append` 的方式插入到dom节点中，在关闭操作时需要将之前生成的 `canvas` 和 `image` 去除
 
-## 另：微信内置浏览器生成canvas图片保存
+## 微信内置浏览器生成canvas图片保存
 * 上述教程可以实现动态生成二维码进行保存和长按识别，但是如果需要将HTML内容生成canvas保存就存在问题了。
 * 针对保存需要注意的几个问题：
 	* canvas禁止跨域
@@ -113,12 +122,29 @@
 	* 微信限制Blob类型图片的保存
 	* 使用 `canvas.toDataURL` 绘制时的类型使用 `image/jpeg` 进行保存
 
+### 技术选型
+* 使用第三方JS库 `html2canvas` 进行处理
+* 识别和生成原理：
+	* 脚本直接在用户浏览器上截取网页或部分网页的"屏幕截图"
+	* "屏幕截图"基于DOM，因此它可能不是真实表示的100％准确，因为它没有制作实际的屏幕截图，而是根据页面上可用的信息构建屏幕截图
+* 存在的问题：
+	* 正是因为 `html2canvas` 不是基于真正的屏幕截图去识别处理，所以脱离了文档流，或者文档流异常的元素会无法被截取下来
+	* `html2canvas` 只会截取到目标元素宽高范围内的内容
+	* 对部分css样式支持不好，[兼容性差的属性列表](http://html2canvas.hertzen.com/features/)
+* 一些可能需要的参数
+	* `useCORS` : 是否尝试使用CORS从服务器加载图像
+	* `async` : 是否异步解析和呈现元素
+	* `scale` : 用于渲染的比例。默认为浏览器设备像素比率`window.devicePixelRatio`
+	* `allowTaint` : 是否允许画布被污染，被污染的canvas是没法使用toDataURL()转base64流的，部分细节请 [参考这里](https://developer.mozilla.org/zh-CN/docs/Web/HTML/CORS_enabled_image)
+	* [更多 `html2canvas` 参数请点击这里](https://html2canvas.hertzen.com/configuration)
+
 ### 引入第三方JS库
 * 使用 `html2canvas`
 
 ```
 import html2canvas from 'html2canvas'
 ```
+
 ### 组件中调用
 * HTML
 
@@ -130,6 +156,7 @@ import html2canvas from 'html2canvas'
 <button @click="showCanvas()">生成canvas图片</button>
 ```
 * JS
+	* 使用 `html2canvas` 推荐的promise方法
 
 ```
 showCanvas() {
@@ -139,10 +166,22 @@ showCanvas() {
         self.showCanvasImg = true;
 	});
 }
-```
+// 异步解析调用和呈现元素
+showCanvas() {
+	let self = this;
+	html2canvas(self.$refs.canvasContent  {
+		async: true
+	}).then(canvas => {
+		self.imgUrl = canvas.toDataURL();
+		self.showCanvasImg = true;
+	});
+}
 
+```
 
 ## 实现效果
 ![weche-qrcode.gif](../images/wechat-qrcode.gif)
+![wechat-canvas.gif](../images/wechat-canvas.gif)
 
 ## 源码地址
+* [Github地址](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/wechat.vue)

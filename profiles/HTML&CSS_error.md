@@ -35,3 +35,6 @@ input[type="number"] {
 ### input textarea 实现placeholder换行
 * 当我们在使用`<input type="textarea">`时，`placeholder`属性需要设置换行时可以使用unicode字符`&#10`进行处理
 `<input type="textarea" rows="5" placeholder="测试换行符&#10;这是第二行的placeholder">`
+
+### ios webview  flex-wrap兼容性问题
+* IOS部分版本内嵌H5页面 `flex-wrap` 无法生效，会造成 `flex` 盒子失效

@@ -173,8 +173,10 @@ onafterpaste="this.value=this.value.replace(/\D/g,'')">
 * 只能输入字母和汉字 
 
 ```
-<input onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="
-		clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))" 
+<input onkeyup="value=value.replace(/[\d]/g,'') "
+		onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))" 
+		maxlength=10 name="Numbers"> 
+<input onkeyup="value=value.replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,'')" 		onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,''))" 
 		maxlength=10 name="Numbers"> 
 ```
 

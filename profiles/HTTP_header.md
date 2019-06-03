@@ -47,9 +47,12 @@
 * 工作方式 : 服务器发送响应数据的同时，发送某种数据的 hash (在 ETag 头信息中给出)。hash 的确定完全取决于服务器。当第二次请求相同的数据时，你需要在 If-None-Match: 头信息中包含 ETag hash，如果数据没有改变，服务器将返回 304 状态代码。与最近修改数据检查相同，服务器仅仅 发送 304 状态代码；第二次将不为你发送相同的数据。在第二次请求时，通过包含 ETag hash
 
 ## 几种缓存策略的对比
-### 两种强缓存机制对比 Expires VS Cache-Control
+### 两种强缓存机制对比 `Expires` VS `Cache-Control`
 * 两者的差别不大，区别就是 `Expires` 是 `HTTP1.0` 的产物，而 `Cache-Control` 是 `HTTP1.1` 的产物
 * 在优先级上，两者同时存在的话，`Cache-Control` 优先级高于 `Expires` ,`Expires` 更像是一种备选方案，在某些不支持 `Cache-Control` 的环境中发挥作用
 * 二者共同的弊端就是这种强缓存的机制仅仅关心缓存是否超出或者超过某个过期时间，并不关心服务器端的资源是否已经更新，所以单纯使用这两种缓存策略会导致客户端拿到的资源不是最新的
 
-### 两种协商缓存机制对比 Last-Modified/If-Modified-Since VS ETag/If-None-Match
+### 两种协商缓存机制对比 `Last-Modified/If-Modified-Since` VS `ETag/If-None-Match`
+* 精度上，`ETag` 要明显优于前者，`Last-Modified/If-Modified-Since` 策略的时间单位为秒，这就意味着在秒级的请求上，做不到真正的及时更新，但是 `ETag` 每次请求都会对其进行改变从而确保精度，并且在使用负载均衡的服务器上，各个服务器生成的 `Last-Modified` 也有可能不相同
+* 性能上，`ETag` 要逊于 `Last-Modified/If-Modified-Since` 策略，毕竟 `Last-Modified/If-Modified-Since` 策略只是记录时间，而 `ETag` 需要进行一步hash运算
+* 优先级上，服务器会优先考虑 `ETag`

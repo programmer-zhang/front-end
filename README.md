@@ -48,7 +48,7 @@
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)
 
-> [HTTP状态码](./profiles/HTTP状态码.md)
+> [HTTP状态码](./profiles/HTTP_status.md)
 
 > [HTTP-header(缓存相关)](./profiles/HTTP_header.md)
 

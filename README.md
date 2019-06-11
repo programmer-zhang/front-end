@@ -7,13 +7,15 @@
 ## HTML & CSS相关 :european_castle:
 > [HTML_DOM节点绑定事件](./profiles/HTML_tabindex.md)
 
-> [HTML&CSS遇到的Error](./profiles/HTML&CSS_error.md)
+> [HTML & CSS遇到的Error](./profiles/HTML&CSS_error.md)
 
 > [永远18岁的css(持续更新)](./profiles/永远18岁的css.md)
 
 > [硬件加速css来提高网站性能(外链资料)](http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
 
 > [css小图形](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTest.vue)
+
+> [自用部分代码规范](./profiles/自用代码规范.md)
 
 ## JavaScript相关 :speak_no_evil:
 > [JS的小秘密(持续更新)](./profiles/js的小秘密.md)
@@ -22,15 +24,15 @@
 
 > [JS针对 cookie 的操作](./profiles/js针对cookie的操作.md)
 
-> [JS针对URL编码和解码](./profiles/js针对URL编码和解码.md)
+> [JS针对 URL 编码和解码](./profiles/js针对URL编码和解码.md)
+
+> [JS对DOM树的操作](./profiles/js对DOM树的操作.md)
 
 > [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
 > [JSONP跨域原理](./profiles/jsonp跨域原理.md)
 
 > [JS内存图](./profiles/js内存图.md)
-
-> [JS对DOM树的操作](./profiles/js对DOM树的操作.md)
 
 > [JS模块化编程资源引入方式](./profiles/js模块化编程资源引入方式.md)
  
@@ -48,7 +50,7 @@
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)
 
-> [HTTP状态码](./profiles/HTTP_status.md)
+> [HTTP-status](./profiles/HTTP_status.md)
 
 > [HTTP-header(缓存相关)](./profiles/HTTP_header.md)
 
@@ -74,6 +76,10 @@
 > [Vue2.0 this.$set的正确打开方式](./profiles/vue_this.set.md)
 
 > [Vue 好用的富文本编辑器 vue-quill-editor ](./profiles/vue-quill-editor.md)
+
+> [Vue 中慎用style标签的scoped属性]
+
+> [Vue 组建通信]
 
 > [PM2 使用指南]
 
@@ -119,7 +125,7 @@
 
 > [vue实现多个日期倒计时](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/countDown.vue)
 
-> [JS实现复制粘贴](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/copy.vue)
+> [JS实现前端复制粘贴](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/copy.vue)
 
 > [JS实现随机变换模块](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/changeDatas.vue)
 

@@ -1,6 +1,6 @@
 > 此文件主要留存日常代码书写过程中的 框架架构依赖 相关的报错与解决方案，部分方案参考自网络，如有侵权，请联系chinajnzhang@hotmail.com删除
 
-## 包管理ERROR
+## 包管理 ERROR
 ### grunt angular项目sass报错
 * sass模块报错
 	* 重装sass

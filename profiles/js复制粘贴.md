@@ -14,7 +14,7 @@
 ```
 //roles为需要复制的data
 //HTML部分
-<button @click="copyRoles">复制权限</button>
+<button @click="copyRoles">复制</button>
 <input v-if="roles && roles.length>0" 
 	id="clipBoard" 
 	v-model="roles" 
@@ -29,7 +29,7 @@ copyRoles() {
 		spanSelect.select();
 		if(document.execCommand('copy')) {
 			document.execCommand('copy');
-			console.log(`用户${this.formData.userName}的权限信息已复制成功`);
+			console.log(`信息已复制成功`);
 		} else {
 			console.log('复制失败!');
 		}
@@ -59,7 +59,7 @@ if (!window.clipboardData.setData()) {
 window.clipboardData.setData('Text', text) // 赋予 text 格式的数据 
 alert("复制失败!"); 
 text = window.clipboardData.getData('Text'); // 获取 text 格式的数据 
-alert(text); 
+alert(text);
 window.clipboardData.clearData('Text'); // 清除 text 格式的数据 
 text = window.clipboardData.getData('Text'); 
 alert(text); 
@@ -71,4 +71,4 @@ alert(text);
 	* 右击鼠标按钮在上下文菜单中选择 "Paste（粘贴）"
 * 通过这三种方式，我们的解决方案主要有两个方面
 	* 主动提示引导用户将剪贴板中的内容复制到input框，或者textarea中，从而获取值
-	* `window.addEvent("paste",function(e){ });`通过监听事件，监听用户的粘贴操作，从而拿到想要的数据
+	* `window.addEvent("paste",function(e){ });` 通过监听事件，监听用户的粘贴操作，从而拿到想要的数据

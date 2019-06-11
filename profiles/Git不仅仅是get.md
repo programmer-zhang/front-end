@@ -120,6 +120,9 @@
 #### 新建一个分支，并切换到该分支 
 *  git checkout -b [branch]
 
+#### 快速切换到上一个分支
+*  git checkout -
+
 #### 新建一个分支，指向指定commit 
 *  git branch [branch] [commit]
 
@@ -134,6 +137,9 @@
 
 #### 合并指定分支到当前分支 
 *  git merge [branch]
+
+#### 快速合并刚才使用过的分支
+*  git merge -
 
 #### 选择一个commit,合并进当前分支　　　　 
 *  git cherry-pick [commit]

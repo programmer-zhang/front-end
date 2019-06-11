@@ -38,3 +38,5 @@ input[type="number"] {
 
 ### ios webview  flex-wrap兼容性问题
 * IOS部分版本内嵌H5页面 `flex-wrap` 无法生效，会造成 `flex` 盒子失效
+
+### input type=tel & type=number

@@ -104,6 +104,7 @@ const instance = $axios.create({
 // 将on-change改为@on-change，其余写法都不生效
 <Input placeholder="请输入文章作者" @on-change="changeStatus()"></Input>
 ```
+### IVIEW中双向绑定问题
 
 ## Nginx ERROR
 ### Nginx报错

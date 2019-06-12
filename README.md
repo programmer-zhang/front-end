@@ -79,7 +79,7 @@
 
 > [Vue 中慎用style标签的scoped属性]
 
-> [Vue 组建通信]
+> [Vue 组件通信]
 
 > [PM2 使用指南]
 
@@ -87,6 +87,8 @@
 > [Webpack](./profiles/webpack.md)
 
 > [Git不仅仅是get](./profiles/Git不仅仅是get.md)
+
+> [jest单元测试]
 
 ## 软件工程 :wrench:
 > [敏捷开发](./profiles/敏捷开发.md)
@@ -117,23 +119,25 @@
 ## 编码实践 :paperclip:
 > [Erro(持续更新)](./profiles/Erro.md)
 
-> [JS实现飞入购物车]
+> [JS 实现飞入购物车]
 
-> [JS实现千分符]
+> [JS 实现千分符]
 
-> [JS实现模糊搜索高亮显示的几种方法](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/highLight.vue)
+> [JS 实现模糊搜索高亮显示的几种方法](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/highLight.vue)
 
-> [vue实现多个日期倒计时](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/countDown.vue)
+> [Vue 实现多个日期倒计时](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/countDown.vue)
 
-> [JS实现前端复制粘贴](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/copy.vue)
+> [JS 实现前端复制粘贴](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/copy.vue)
 
-> [JS实现随机变换模块](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/changeDatas.vue)
+> [JS 实现随机变换模块](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/changeDatas.vue)
 
-> [JS+CSS实现底部横滑收起展开栏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/components/bottom-tip.vue)
+> [JS+CSS 实现底部横滑收起展开栏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/components/bottom-tip.vue)
 
 > [前端实现条形码扫描的小方案](./profiles/quagga.js.md)
 
-> [一个长得像原生IOS滑动选择窗口的模块](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/widgets/wg-scroll.vue)
+> [一个滑动选择窗口组件](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/widgets/wg-scroll.vue)
+
+> [Vue 实现自动展开组件]
 
 ## 硬件 :computer:
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)

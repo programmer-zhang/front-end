@@ -4,6 +4,8 @@
 * PS:is free :grin: 
 * 如有喜欢，请尽情用star羞辱我
 
+![github commit](https://ghchart.rshah.org/programmer-zhang)
+
 ## HTML & CSS相关 :european_castle:
 > [HTML_DOM节点绑定事件](./profiles/HTML_tabindex.md)
 

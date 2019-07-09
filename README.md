@@ -143,7 +143,7 @@
 
 > [一个滑动选择窗口组件](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/widgets/wg-scroll.vue)
 
-> [Vue 实现自动展开组件]
+> [Vue 实现自动展开更多组件]
 
 ## 硬件 :computer:
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)

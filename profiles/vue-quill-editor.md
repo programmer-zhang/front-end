@@ -61,16 +61,16 @@ export default {
 	data() {
 		return {
 			content: '<h2>I am Example</h2>',
-	        editorOption: {
-	          // some quill options
-	        }
+			editorOption: {
+			  // some quill options
+			}
 		}
 	},
 	methods: {
-		 onEditorReady(editor) {} // 准备编辑器
-        onEditorBlur(){}, // 失去焦点事件
-        onEditorFocus(){}, // 获得焦点事件
-        onEditorChange(){}, // 内容改变事件
+		onEditorReady(editor) {} // 准备编辑器
+		onEditorBlur(){}, // 失去焦点事件
+		onEditorFocus(){}, // 获得焦点事件
+		onEditorChange(){}, // 内容改变事件
 	},
 	components: {
 		quillEditor
@@ -128,8 +128,8 @@ const uploadConfig = {
 // 自定义handlers
 const handlers = {
     image: function image() {
-        var self = this;
-		 var fileInput = this.container.querySelector('input.ql-image[type=file]')
+        let self = this;
+	let fileInput = this.container.querySelector('input.ql-image[type=file]')
         if (fileInput === null) {
             fileInput = document.createElement('input')
             fileInput.setAttribute('type', 'file')
@@ -144,7 +144,6 @@ const handlers = {
             fileInput.addEventListener('change', function () {
                 var formData = new FormData()
                 formData.append(uploadConfig.name, fileInput.files[0])
-                // formData.append('platform','yxpt')
                 formData.append('platform','yhcw')
 
                 const instance = $axios.create({

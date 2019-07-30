@@ -30,7 +30,7 @@ input[type="number"] {
 	* 对于内容为空的`inline-block`元素而言，该元素的基线就是它的`margin`底边缘，否则就是元素的内部最后一行内联元素的基线
 * 解决方式：
 	* `float`（考虑脱离流后后面元素不易控制，故不首选）
-	* `vertical-align: top`
+	* `vertical-align: top;`
 
 ### input textarea 实现placeholder换行
 * 当我们在使用`<input type="textarea">`时，`placeholder`属性需要设置换行时可以使用unicode字符`&#10`进行处理

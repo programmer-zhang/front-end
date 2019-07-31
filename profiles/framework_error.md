@@ -81,6 +81,17 @@ const instance = $axios.create({
     }
 })
 ```
+
+### vue 报错 vuex requires a Promise polyfill in this browser
+* 浏览器不支持es6-promise，多发生在IE浏览器中，需要添加 [es6-promise](https://github.com/stefanpenner/es6-promise#auto-polyfill) 依赖进行处理
+* 解决方式：
+
+```
+1. npm install es6-promise
+2. import 'es6-promise/auto' // main.js
+
+```
+
 ### IVIEW中调用resetFields失效，无法重置
 * 需要在form-item中添加与绑定的数据相同的prop
 

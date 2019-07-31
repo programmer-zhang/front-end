@@ -51,8 +51,9 @@ swiper1 = new Swiper('.swiper-container', {
 * 解决方案：
 	* 创建SSH Key，把id_rsa.pub中的内容添加到 Github 的SSH keys。
 	* 或者使用本机已存在的SSH key
-	* git remote rm origin
-	* git remote add origin git@github.com:XXX.git
+	* `git remote rm origin`
+	* `git remote add origin git@github.com:XXX.git`
+	* 或者直接修改项目文件夹 `.git/config` 修改 `remote url`
 
 ### Git报错
 * 报错内容: `There is no tracking information for the current branch. Please specify which branch you want to merge with.`

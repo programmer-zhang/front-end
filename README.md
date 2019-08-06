@@ -155,10 +155,10 @@
 
 > [嘿嘿嘿](./profiles/嘿嘿嘿.md)
 
-> [一个外国友人的motherFucking Website(外链资料)](http://motherfuckingwebsite.com/)
+> [一个外国友人的 MotherFucking Website (外链资料)](http://motherfuckingwebsite.com/)
 
-> [一个好用的mac终端替代方案](./profiles/一个好用的mac终端替代方案.md)
+> [一个好用的 mac 终端替代方案](./profiles/一个好用的mac终端替代方案.md)
 
-> [Chrome开发者工具各种骚技巧(外链资料)](https://juejin.im/post/5af53823f265da0b75282b0f?utm_source=gold_browser_extension)
+> [Chrome 开发者工具各种骚技巧(外链资料)](https://juejin.im/post/5af53823f265da0b75282b0f?utm_source=gold_browser_extension)
 
-
+> [MarkDown 中使用特殊字符]()

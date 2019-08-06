@@ -43,6 +43,9 @@
 * `Socket.bufferedAmount`: 只读属性 bufferedAmount 已被 send() 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数。
 
 ### 方法(创建了webscoket实例的情况下)
-* 
+* `Socket.onopen`: 连接建立时触发
+* `Scoket.onmessage`: 客户端接收服务端数据时触发
+* `Scoket.onerror`: 通信发生错误时触发
+* `Scoket.onclose`: 连接关闭时触发
 
 ## 使用 Webscoket

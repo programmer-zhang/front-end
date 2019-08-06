@@ -26,12 +26,23 @@
 
 ### 统一资源标识符
 * `ws` 和 `wss`
-* 按照HTML5标准是有对应关系的 `HTTP -> ws HTTPS -> wss`
+* 按照HTML5标准是有对应关系的 `HTTP -> ws; HTTPS -> wss`
 
 ### 心跳检测
 * 链接时间长无数据来往会自动断线，浏览器不会为你维持连接，需要增加心跳检测来保持通道畅通
 
 ### 断线重连
 * 由于网络原因或服务器不稳定造成的 webscoket 断线，需要进行重连
+
+### 属性(创建了webscoket实例的情况下)
+* `Socket.readyState`: 只读属性 readyState 表示连接状态
+	* 0 - 表示连接尚未建立。
+	* 1 - 表示连接已建立，可以进行通信。
+	* 2 - 表示连接正在进行关闭。
+	* 3 - 表示连接已经关闭或者连接不能打开。
+* `Socket.bufferedAmount`: 只读属性 bufferedAmount 已被 send() 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数。
+
+### 方法(创建了webscoket实例的情况下)
+* 
 
 ## 使用 Webscoket

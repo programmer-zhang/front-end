@@ -40,7 +40,7 @@
 	* 1 - 表示连接已建立，可以进行通信。
 	* 2 - 表示连接正在进行关闭。
 	* 3 - 表示连接已经关闭或者连接不能打开。
-* `Socket.bufferedAmount`: 只读属性 bufferedAmount 已被 send() 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数。
+* `Socket.bufferedAmount`: 只读属性 `bufferedAmount` 已被 `send()` 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数。
 
 ### 方法(创建了webscoket实例的情况下)
 * `Socket.onopen`: 连接建立时触发
@@ -49,3 +49,43 @@
 * `Scoket.onclose`: 连接关闭时触发
 
 ## 使用 Webscoket
+### 创建实例
+* `var Socket = new WebSocket(url, [protocol]);`
+	* 第一个参数 url, 指定连接的 URL。第二个参数 protocol 是可选的，指定了可接受的子协议。
+
+### 发送消息
+* 链接成功后向服务器 send 消息 (JSON格式)
+
+```
+Socket.onopen = function(){
+  // Web Socket 已连接上，使用 send() 方法发送数据
+  let params = {
+  		data: '测试发送数据'
+	}
+  Socket.send(JSON.stringify(params))
+  alert("数据发送中...")
+}
+```
+
+### 接收消息
+* 使用 webscoket 自带方法接收服务器推送消息 (JSON格式)
+
+```
+Socket.onmessage = function (e) { 
+  let res = JSON.parse(e.data)
+  alert("数据已接收...")
+}
+```
+
+### 关闭连接
+* 发生 error 或者主动关闭连接
+
+```
+Scoket.onerror = function(){
+	// 发生错误
+}
+Socket.onclose = function(){ 
+  // 关闭 websocket
+  alert("连接已关闭...")
+}
+```

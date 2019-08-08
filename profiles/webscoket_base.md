@@ -17,7 +17,7 @@
 * 在单个 TCP 连接上进行全双工（能够同一时候发送和接收）通讯的协议
 
 ### 基于HTTP进行链接
-* Webscoket 并不是全新的协议，而是利用了 HTTP 协议来建立连接
+* Webscoket 并不是全新的协议，而是利用了 HTTP 协议来建立连接(完成握手)
 * 一次握手，永久连接，双向数据传输
 * 通过查看浏览器的request这是一个以HTTP协议为基础的get请求，握手只会进行一次，随后便可以进行双向数据传递
 
@@ -35,7 +35,7 @@
 ### 断线重连
 * 由于网络原因或服务器不稳定造成的 webscoket 断线，需要进行重连
 
-### 属性(创建了webscoket实例的情况下)
+## 属性(已创建webscoket实例的情况下)
 * `Socket.readyState`: 只读属性 readyState 表示连接状态
 	* 0 - 表示连接尚未建立。
 	* 1 - 表示连接已建立，可以进行通信。
@@ -43,11 +43,26 @@
 	* 3 - 表示连接已经关闭或者连接不能打开。
 * `Socket.bufferedAmount`: 只读属性 `bufferedAmount` 已被 `send()` 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数。
 
-### 方法(创建了webscoket实例的情况下)
+## 方法(已创建webscoket实例的情况下)
 * `Socket.onopen`: 连接建立时触发
 * `Scoket.onmessage`: 客户端接收服务端数据时触发
 * `Scoket.onerror`: 通信发生错误时触发
 * `Scoket.onclose`: 连接关闭时触发
+
+## 握手阶段
+* 一个握手请求
+
+```
+GET /chat HTTP/1.1
+Host: server.xxx.com
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: xxxx
+Sec-WebSocket-Protocol: chat, superchat
+Sec-WebSocket-Version: 13
+Origin: http://xxx.com
+```
+* 相比正常的 HTTP request ，多了两个参数 `Upgrade: websocket` 和 `Connection: Upgrade` ，这两个参数是告诉服务器，我发起的是webscoket请求。
 
 ## 使用 Webscoket
 ### 创建实例

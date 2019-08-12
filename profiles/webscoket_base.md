@@ -67,7 +67,8 @@ Origin: http://xxx.com
 ## 使用 Webscoket
 ### 创建实例
 * `var Socket = new WebSocket(url, [protocol]);`
-	* 第一个参数 url, 指定连接的 URL。第二个参数 protocol 是可选的，指定了可接受的子协议。
+	* 第一个参数 url, 指定连接的 URL
+	* 第二个参数 protocol 是可选的，指定了可接受的子协议
 
 ### 发送消息
 * 链接成功后向服务器 send 消息 (JSON格式)

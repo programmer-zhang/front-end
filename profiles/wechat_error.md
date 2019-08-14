@@ -81,7 +81,50 @@ function getCookie(c_name) {
 	4. 包裹 scroll-view 的大盒子有明确的宽和加上样式 `overflow: hidden; white-space:  nowrap;`
 
 ```
-
+// HTML
+<scroll-view class="play-item-scroll" scroll-x="true">
+	<block wx:for="{{activityLog.leave}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+	  <view class="scroll-content">
+	    <span class="scroll-item-img" style="background-image: url({{item.userInfo.avatarUrl || '/assets/img/user-active.png'}});"></span>
+	    <span class="scroll-item-name">{{item.realName || '错误'}}</span>
+	  </view>
+	</block>
+</scroll-view>
+// CSS
+.play-item-scroll {
+    float: left;
+    width: 86%;
+    height: 80px;
+    overflow:hidden;
+    white-space:nowrap;
+}
+.play-item-scroll .scroll-content{
+    display: inline-block;
+    position: relative;
+    height: 80px;
+    width: 60px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+.scroll-item-img {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.scroll-item-name {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
 ```
 
 ### 微信号

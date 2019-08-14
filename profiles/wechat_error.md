@@ -127,6 +127,26 @@ function getCookie(c_name) {
 }
 ```
 
+### 微信小程序 wx.showModal content 文字换行
+* 本身并没有换行，需要通过换行符进行实现
+* 注：在微信开发者工具中不一定能看到效果，需要在真机中才能看到
+
+```
+wx.showModal({
+  title: '提交成功',
+  content: '足球真正的魅力不是输赢，而是有它的地方就有兄弟姐妹。\r\n很多年后，当我们老得只能坐在场边，你会发现最怀念的不是踢足球，而是陪你踢球的那群人。',
+  showCancel: false,
+  confirmText: '前往首页',
+  success: function(res) {
+    if (res.confirm) {
+      wx.navigateTo({
+        url: '/pages/index/index'
+      })
+    }
+  }
+})
+```
+
 ### 微信号
 
 ```

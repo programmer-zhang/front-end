@@ -42,7 +42,7 @@ Mozilla/5.0 (Linux; U; Android 4.1.2; zh-cn; Chitanda/Akari) AppleWebKit/534.30 
 * UA-ios
 Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12A365 MicroMessenger/5.4.1 NetType/WIFI
 
-### 关于微信中的localStorage及使用cookie的解决方案
+### 关于微信中的 localStorage 及使用 cookie 的解决方案
 * 微信环境其实是个webview组件而已，并不是真正意义上的什么内置浏览器。
 * 安卓版微信直接调用系统浏览器内核，它是用chrome改造做的一套WKwebView,概念上类似是一套组建, iOS则是调用safari。所以把微信内置的第三方网页看成是在整个浏览器环境下的想法是错误的。
 * 微信内置浏览器中的localstorge是可以用的，但是会有兼容性问题，并且问题比较严重，会有部分机型存储不了localstorge，或者微信关闭及页面退出的时候会被清空

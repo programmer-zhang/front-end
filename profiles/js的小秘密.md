@@ -135,6 +135,24 @@ users.find(item => item.age>30);
 //{name: "Will", age: 35}
 ```
 
+### JS判断点击区域
+* 适用场景：显示页面弹窗时,用户点击页面其他地方弹窗自动关闭.
+
+```
+// HTML exitContent.vue
+<div id="facePanel">
+	<div v-show="showFace">这是个弹窗</div>
+</div>
+
+// JavaScript
+handleClick(e) {
+	let facePanel = document.getElementById('facePanel')
+	if(!facePanel.contains(e.target) && this.$refs.editContent.showFace){
+	  this.$refs.editContent.showFace = false
+	}
+},
+```
+
 ## 合理利用正则表达式解决问题
 
 ### `<input>` 标签输入限制

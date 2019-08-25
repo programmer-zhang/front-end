@@ -18,3 +18,61 @@
 * 实例添加公用心跳检测
 
 ### Ready State 抽离
+* 实例封装 readystate 状态，便于获取
+
+### 断线重连
+* 断线重连单独在使用示例时进行处理
+
+## 代码部分
+### 实例部分
+
+```
+// scoket.js
+const webscketurl = process.env.BACKEND_URL // 利用node环境变量设置scoket path
+
+class WebSocketUtil{
+  constructor(wspath){
+    let protocol = (window.location.protocol == 'https:') ? 'wss://' : 'ws://';
+    // 判断当前使用协议头(上一篇webscoket基础已讲过)
+    let wsuri = protocol + webscketurl + wspath
+    
+    this.websock = new WebSocket(wsuri)
+    // new 实例
+  }
+  heartCheck(){ // 心跳检测
+    let self = this;
+    if (this.timeoutObj) {
+      clearInterval(this.timeoutObj)
+    }
+    this.timeoutObj = setInterval(function(){
+      // 这里发送一个心跳，后端收到后，返回一个心跳消息，
+      // onmessage拿到返回的心跳就说明连接正常
+      if (self.readyState() != 1) {
+        clearInterval(self.timeoutObj)
+      }
+      self.websock.send("HeartBeat");
+      // 发送心跳检测
+      console.log("HeartBeat");
+    }, 10000)
+  }
+  
+  on(funName,handler){
+  // 实例创建后自定义创建 handler
+    this.websock[`on${funName}`] = handler
+    // 封装onmessage、onclose、onopen、onerror方法
+  }
+ 
+  send(msg){
+  // 发送scoket数据
+    this.websock.send(msg)
+  }
+  
+  readyState(){
+  // 监听websock链接状态
+  // 获取webscoket实例链接状态 0：正在建立连接连接,还没有完成 1：连接成功,可以进行通信 2：连接正在进行关闭握手,即将关闭 3：连接已经关闭或者根本没有建立
+    return this.websock.readyState;
+  }
+}
+export default WebSocketUtil
+// 导出实例
+``` 

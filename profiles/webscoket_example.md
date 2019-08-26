@@ -24,7 +24,7 @@
 * 断线重连单独在使用示例时进行处理
 
 ## 代码部分
-### 实例部分
+### webSocket部分
 
 ```
 // scoket.js
@@ -39,7 +39,9 @@ class WebSocketUtil{
     this.websock = new WebSocket(wsuri)
     // new 实例
   }
-  heartCheck(){ // 心跳检测
+  
+  // 心跳检测
+  heartCheck(){ 
     let self = this;
     if (this.timeoutObj) {
       clearInterval(this.timeoutObj)
@@ -56,23 +58,65 @@ class WebSocketUtil{
     }, 10000)
   }
   
-  on(funName,handler){
   // 实例创建后自定义创建 handler
-    this.websock[`on${funName}`] = handler
+  on(funName,handler){
+      this.websock[`on${funName}`] = handler
     // 封装onmessage、onclose、onopen、onerror方法
   }
  
-  send(msg){
   // 发送scoket数据
+  send(msg){
     this.websock.send(msg)
   }
   
-  readyState(){
   // 监听websock链接状态
+  readyState(){
   // 获取webscoket实例链接状态 0：正在建立连接连接,还没有完成 1：连接成功,可以进行通信 2：连接正在进行关闭握手,即将关闭 3：连接已经关闭或者根本没有建立
     return this.websock.readyState;
   }
 }
-export default WebSocketUtil
+
 // 导出实例
+export default WebSocketUtil
 ``` 
+### 实例创建部分
+
+```
+// index.vue
+import $WebSocketUtil from '../../api/scoket.js'
+
+// 实例化聊天scoket
+initScoket() {
+	let token = this.$cookies.get('token')
+	let pathData = '/chat?token=' + token
+	this.webscoketChat = new $WebSocketUtil(pathData)
+	this.webscoketChat.on('message', this.websocketonmessage)
+	this.webscoketChat.on('open', this.websocketonpen)
+	this.webscoketChat.on('error', this.websocketonerror)
+	this.webscoketChat.on('close', this.websocketonerror)
+	Vue.prototype.$scoketChat = this.webscoketChat
+},
+
+// socket建立成功后开始进行心跳检测
+websocketonpen() {
+	this.webscoketChat.heartCheck()
+},
+
+// 发生错误断线重连
+websocketonerror() {
+	let self = this
+	if (this.reconnectChat) { return }
+	this.reconnectChat = true
+	setTimeout(function () {
+	  self.initScoket()
+	  console.log("Chat正在重连...")
+	  self.reconnectChat = false
+	}, 10000)
+},
+
+// 接收 webscoket 消息
+websocketonmessage(e) {
+	let res = JSON.parse(e.data);
+	HandleChat(res.type,res.data,res.wxId || '');
+},
+```

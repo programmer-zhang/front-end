@@ -120,3 +120,6 @@ websocketonmessage(e) {
 	HandleChat(res.type,res.data,res.wxId || '');
 },
 ```
+
+## 写在最后
+* 本实例仅是根据自身需求和代码逻辑编写，并不一定适合所有项目，需要根据实际情况进行改进，如果您有更好的想法，欢迎交流 chinajnzhang@hotmail.com

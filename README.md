@@ -58,7 +58,7 @@
 
 > [WebScoket 基础介绍](./profiles/webscoket_base.md)
 
-> [WebScoket 实例]
+> [WebScoket 实例](./profiles/webscoket_example.md)
 
 ## 架构框架相关 :construction:
 > [Framework遇到的error](./profiles/framework_error.md)

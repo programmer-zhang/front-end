@@ -61,3 +61,20 @@
 * 元素的实际宽度：document.getElementById("div").offsetWidth
 * 元素的实际距离左边界的距离：document.getElementById("div").offsetLeft
 * 元素的实际距离上边界的距离：document.getElementById("div").offsetTop
+
+## JS判断滚动到底部
+
+```
+judgeScrollBottom(e) {
+	let el = e.target
+	let scrollTop = el.scrollTop;
+	let windowHeight = el.clientHeight;
+	let scrollHeight = el.scrollHeight;
+	if ( (scrollTop + windowHeight) == scrollHeight) {
+		// 滚动到底了
+	}
+}
+
+let el = this.$refs.scrollPanel // scrollPanel 必须是一个能 scroll 的 DOM
+el.addEventListener('scroll', this.judgeScrollBottom)
+```

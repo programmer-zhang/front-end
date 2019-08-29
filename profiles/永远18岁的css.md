@@ -91,3 +91,15 @@ p::after {
 	* IE9+, Opera, Google Chrome和Safari支持 `::selection` 选择器
 	* Firefox 通过其私有属性 `::-moz-selection` 支持
 
+## 手机浏览器支持弹性滚动
+* iOS页面非body元素的滚动操作会非常卡(Android不会出现此情况)，通过 `overflow-scrolling:touch` 调用Safari原生滚动来支持弹性滚动，增加页面滚动的流畅度
+* 代码实现
+
+```
+body {
+    -webkit-overflow-scrolling: touch;
+}
+.elem {
+    overflow: auto;
+}
+```

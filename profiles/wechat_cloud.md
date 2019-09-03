@@ -22,7 +22,29 @@
 
 ## 准备工作
 ### 文件结构变动
+* 原生小程序文件结构
 
+```
+|-pages	// 页面源码文件夹
+|-utils	// 公共方法
+|-app.js	// 全局入口js文件
+|-app.json	// 全局基础配置
+|-app.wxss	// 全局css文件
+|-project.config.json	// 开发配置
+```
+* 云开发小程序文件结构
+
+```
+|-cloudfunctions		// 云函数文件夹
+|-miniprogram		// 小程序源码
+	|-assets	// 静态资源文件
+	|-pages	// 页面源码文件夹
+	|-utils	// 公共方法
+	|-app.js	// 全局入口js文件
+	|-app.json	// 全局基础配置
+	|-app.wxss	// 全局css文件
+|-project.config.json	// 开发配置
+```
 
 ## 云开发改造与开发
 

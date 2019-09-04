@@ -1,4 +1,5 @@
 # 微信小程序云开发改造
+> 文章仅介绍改造过程和部分细节改造，如果您没有小程序开发经验建议先查看官方文档
 
 > 本小程序仅针对从原生小程序迁移到云开发小程序进行改造，目前微信小程序自动支持使用脚手架工具生成云开发小程序，官方文档的使用教程很详细，这里不再赘述
 
@@ -30,7 +31,7 @@
 |-app.js	// 全局入口js文件
 |-app.json	// 全局基础配置
 |-app.wxss	// 全局css文件
-|-project.config.json	// 开发配置
+|-project.config.json	// 项目配置
 ```
 * 云开发小程序文件结构
 
@@ -43,8 +44,18 @@
 	|-app.js	// 全局入口js文件
 	|-app.json	// 全局基础配置
 	|-app.wxss	// 全局css文件
-|-project.config.json	// 开发配置
+|-project.config.json	// 项目配置
 ```
+### 小程序配置信息修改
+* `project.config.json` 增加小程序与云函数根目录配置
+
+```
+"miniprogramRoot": "miniprogram/",
+"cloudfunctionRoot": "cloudfunctions/"
+```
+* 启用云函数模板模式
+
+`"cloudfunctionTemplateRoot": "cloudfunctionTemplate"`
 
 ## 云开发改造与开发
 

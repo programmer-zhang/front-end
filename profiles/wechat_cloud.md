@@ -57,6 +57,11 @@
 
 `"cloudfunctionTemplateRoot": "cloudfunctionTemplate"`
 
+### 云控制台设置
+* 开通云开发
+* 配置云环境
+* 云控制台配置数据库、存储库等
+
 ## 云开发改造与开发
 
 ## 部署与发布

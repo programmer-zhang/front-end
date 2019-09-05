@@ -58,11 +58,15 @@
 `"cloudfunctionTemplateRoot": "cloudfunctionTemplate"`
 
 ### 云控制台设置
+> 这一部分[官方文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/quickstart.html#_1-%E6%96%B0%E5%BB%BA%E4%BA%91%E5%BC%80%E5%8F%91%E6%A8%A1%E6%9D%BF)写的很清楚，不再详细讲述
+
 * 开通云开发
 * 配置云环境
 * 云控制台配置数据库、存储库等
 
 ## 云开发改造与开发
+### 云函数、云数据库连接
+* 
 
 ## 部署与发布
 

@@ -66,9 +66,37 @@
 
 ## 云开发改造与开发
 ### 添加云函数
-### 本地调试
+* 利用模板创建云函数
+<img src="../images/wechat-cloud-addfun.png" style="width:300px;display: block;">
+
 ### 上传并部署
+* 查看上传与否方式：`云开发 => 云函数 => 云函数列表` 查看有无该云函数
+* 当前版本利用模板创建云函数后会自动上传并部署
+* 未自动上传的可以手动上传
+<img src="../images/wechat-cloud-upload.png" style="width:300px;display:block;">
+
 ### 本地使用云函数
+
+```
+// 初始化云函数
+wx.cloud.init({
+    env: 'prodId',		// 使用云环境ID
+    traceUser: true,  // 是否将用户的访问记录添加到控制台中
+})
+// 云函数：获取openId ，本实例采用回调方式，也可使用promise方式
+wx.cloud.callFunction({
+    name: 'login',	// 云函数名称
+    data: {},		// 传递数据
+    success: res => {
+      console.log('[云函数] [login] user openid: ', res.result.openid)
+      this.globalData.openid = res.result.openid
+    },
+    fail: err => {
+      console.error('[云函数] [login] 调用失败', err)
+    }
+}) 
+```
+
 ### 实例化云数据库
 ### 增删改查数据库数据
 ### 存储静态资源

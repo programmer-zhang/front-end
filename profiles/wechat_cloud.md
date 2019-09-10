@@ -130,16 +130,39 @@ wx.cloud.callFunction({
 const db = wx.cloud.database({ env: app.globalData.databaseEnv })
 ```
 ### 增删改查数据库数据
+* 获取数据
+
+```
+// 获取数据库并引用单条数据
+const myTodo = db.collection('todos').doc('my-todo-id')
+```
+
 * 增加数据
 
 ```
-db.collection('activityList').add({
-	data: this.data.activityData,
+// 向云数据库中已存在的数据库增加数据集合
+db.collection(dbId).add({
+	data: data,
 	success: function(resp) {
-		console.log(resp)
+      console.log(resp)
 	},
 	fail: function(err) {
 		console.log(err)
+	}
+})
+```
+
+* 更新数据
+
+```
+db.collection(dbId).doc(docId).update({
+	// data 传入需要局部更新的数据
+	data: data,
+	success: function(res) {
+		console.log('docupdata成功', res)
+	},
+	fail: function(err) {
+		console.log('docupdata失败', err)
 	}
 })
 ```

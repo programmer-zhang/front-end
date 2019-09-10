@@ -69,6 +69,29 @@
 * 利用模板创建云函数
 <img src="../images/wechat-cloud-addfun.png" style="width:300px;display: block;">
 
+* 云函数模板
+
+```
+const cloud = require('wx-server-sdk') // 引入模块
+
+cloud.init()	// 初始化云函数
+
+// event 参数包含小程序端调用传入的 data
+exports.main = (event, context) => {
+  // console.log 的内容可以在云开发云函数调用日志查看
+
+  // 获取 WX Context (微信调用上下文)，包括 OPENID、APPID、及 UNIONID（需满足 UNIONID 获取条件）
+  const wxContext = cloud.getWXContext()
+
+  return {
+    event,
+    openid: wxContext.OPENID,
+    appid: wxContext.APPID,
+    unionid: wxContext.UNIONID,
+  }
+}
+```
+
 ### 上传并部署
 * 查看上传与否方式：`云开发 => 云函数 => 云函数列表` 查看有无该云函数
 * 当前版本利用模板创建云函数后会自动上传并部署
@@ -99,7 +122,28 @@ wx.cloud.callFunction({
 ```
 
 ### 实例化云数据库
+* 初始化云数据库
+
+```
+// 获取多环境云数据库
+// 这里我在 app.js 中定义了一个全局数据库环境变量 databaseEnv
+const db = wx.cloud.database({ env: app.globalData.databaseEnv })
+```
 ### 增删改查数据库数据
+* 增加数据
+
+```
+db.collection('activityList').add({
+	data: this.data.activityData,
+	success: function(resp) {
+		console.log(resp)
+	},
+	fail: function(err) {
+		console.log(err)
+	}
+})
+```
+
 ### 存储静态资源
 
 ## 部署与发布

@@ -76,14 +76,15 @@
 <img src="../images/wechat-cloud-upload.png" style="width:300px;display:block;">
 
 ### 本地使用云函数
+* 初次使用云函数，若返回response成功，则调用成功，若控制台报错，则调用失败
 
 ```
 // 初始化云函数
 wx.cloud.init({
-    env: 'prodId',		// 使用云环境ID
-    traceUser: true,  // 是否将用户的访问记录添加到控制台中
+    env: 'prodId',		// 非必填项，使用云环境ID，默认为第一个创建的环境
+    traceUser: true,  // 非必填项，是否将用户的访问记录添加到控制台中
 })
-// 云函数：获取openId ，本实例采用回调方式，也可使用promise方式
+// 云函数：获取openId ，本实例采用回调方式 ，也可使用promise方式
 wx.cloud.callFunction({
     name: 'login',	// 云函数名称
     data: {},		// 传递数据

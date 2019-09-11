@@ -7,6 +7,19 @@
 ### 改造背景
 球队需要一个管理与报名工具，初期打算前后端分离，小程序端交互和逻辑由本人开发，后端由另一位队友开发，无奈开发初期赶上18年年底行业寒冬，大家工作变动和适应新公司，开发进度缓慢。最后猪年伊始决定直接使用腾讯云服务搭建后台，全部在小程序端实现。
 
+### 必要条件
+* 基于原生微信小程序开发语言、框架、规范进行编写
+* 涉及小程序开发技术文档
+	* [微信小程序框架参考文档](https://developers.weixin.qq.com/miniprogram/dev/reference/)
+	* [微信小程序组件参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/)
+	* [微信小程序API参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/)
+	* [微信小程序云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+* 开发工具
+	* 微信开发者工具
+	* Sublime Text
+* 代码管理
+	* Github
+
 ### 必要功能(优先级自上而下递减)
 * 踢球活动报名(done)
 * 发布踢球活动(done)
@@ -130,11 +143,13 @@ wx.cloud.callFunction({
 const db = wx.cloud.database({ env: app.globalData.databaseEnv })
 ```
 ### 增删改查数据库数据
+> 本实例均采用回调方式书写，promise方式可查看小程序官方文档
+
 * 获取数据
 
 ```
 // 获取数据库并引用单条数据
-const myTodo = db.collection('todos').doc('my-todo-id')
+const myTodo = db.collection('dbId').doc('docId')
 ```
 
 * 增加数据
@@ -155,6 +170,7 @@ db.collection(dbId).add({
 * 更新数据
 
 ```
+// 更新云数据库中已存在数据集合
 db.collection(dbId).doc(docId).update({
 	// data 传入需要局部更新的数据
 	data: data,
@@ -163,6 +179,21 @@ db.collection(dbId).doc(docId).update({
 	},
 	fail: function(err) {
 		console.log('docupdata失败', err)
+	}
+})
+```
+
+* 分页获取数据
+
+```
+db.collection('activityList').limit(this.data.pageSize).skip(this.data.pageSize * this.data.pageNum).orderBy('submitTime', 'desc').get({
+	success: function(res) {
+		self.setData({
+		  activityList: [...self.data.activityList, ... res.data]
+		})
+	},
+	fail: function(err) {
+		console.log('error', err)
 	}
 })
 ```

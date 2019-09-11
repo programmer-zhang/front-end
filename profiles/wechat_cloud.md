@@ -149,7 +149,16 @@ const db = wx.cloud.database({ env: app.globalData.databaseEnv })
 
 ```
 // 获取数据库并引用单条数据
-const myTodo = db.collection('dbId').doc('docId')
+const myTodo = db.collection(dbId).doc(docId)
+// 获取数据库全部数据 List
+db.collection(dbId).get({
+	success: function(res) {
+	    console.log(res)
+	},
+	fail: function(err) {
+		console.log('error', err)
+	}
+})
 ```
 
 * 增加数据
@@ -182,6 +191,8 @@ db.collection(dbId).doc(docId).update({
 	}
 })
 ```
+
+* 
 
 * 分页获取数据
 

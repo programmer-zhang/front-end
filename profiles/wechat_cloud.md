@@ -192,7 +192,18 @@ db.collection(dbId).doc(docId).update({
 })
 ```
 
-* 
+* 删除数据
+
+```
+db.collection(dbId).doc(docId).remove({
+	success: function(res){
+		console.log(res)
+	},
+	fail: function(err){
+		console.log(err)
+	}
+})
+```
 
 * 分页获取数据
 

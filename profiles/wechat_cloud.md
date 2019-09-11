@@ -142,7 +142,7 @@ wx.cloud.callFunction({
 // 这里我在 app.js 中定义了一个全局数据库环境变量 databaseEnv
 const db = wx.cloud.database({ env: app.globalData.databaseEnv })
 ```
-### 增删改查数据库数据
+### 常用数据库操作
 > 本实例均采用回调方式书写，promise方式可查看小程序官方文档
 
 * 获取数据

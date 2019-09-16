@@ -145,6 +145,8 @@ const db = wx.cloud.database({ env: app.globalData.databaseEnv })
 ### 常用数据库操作
 > 本实例均采用回调方式书写，promise方式可查看小程序官方文档
 
+> 仅介绍项目中常用的几个操作，其他相关操作请查看小程序官方文档
+
 * 获取数据
 
 ```
@@ -168,7 +170,7 @@ db.collection(dbId).get({
 db.collection(dbId).add({
 	data: data,
 	success: function(resp) {
-      console.log(resp)
+		console.log(resp)
 	},
 	fail: function(err) {
 		console.log(err)
@@ -219,6 +221,10 @@ db.collection('activityList').limit(this.data.pageSize).skip(this.data.pageSize 
 	}
 })
 ```
+
+### 云开发数据库权限问题
+* 云开发数据库存在权限管理，主要是基于用户创建数据时的 `_openId` 来区分写操作的用户
+* 共有四种权限设置
 
 ### 存储静态资源
 

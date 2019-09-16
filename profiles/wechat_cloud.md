@@ -231,37 +231,63 @@ db.collection('activityList').limit(this.data.pageSize).skip(this.data.pageSize 
 * 云数据库的权限管理是基于用户创建数据时的 `_openId` 来区分写操作的用户，所以在不进行处理的情况，云数据库中的数据都不能由除了创建者和管理员修改的
 * 实现数据库数据可修改的方式---通过云函数创建
 * 解决方案
-
-```
-// 参数
-event = {
-	dbId: dbId, // 数据库ID
-	docId: docId, // 数据库数据ID
-	data: data // 存储的数据库集合
-}
-// 云函数： 增加数据库集合
-const cloud = require('wx-server-sdk')
-
-cloud.init()
-const db = cloud.database()
-
-exports.main = async (event, context) => {
-  try {
-    return await db.collection(event.dbId).add({
-      // data 传入需要局部更新的数据
-      data: event.data,
-      success: function(res) {
-        console.log('add成功', res.data)
+	* 云函数部分
+	
+	```
+	// 参数
+	event = {
+		dbId: dbId, // 数据库ID
+		data: data // 存储的数据库数据
+	}
+	// 云函数： 增加数据库集合
+	const cloud = require('wx-server-sdk')
+	
+	cloud.init()
+	const db = cloud.database()
+	
+	exports.main = async (event, context) => {
+	  try {
+	    return await db.collection(event.dbId).add({
+	      // data 传入需要局部更新的数据
+	      data: event.data,
+	      success: function(res) {
+	        console.log('add成功', res.data)
+	      },
+	      fail: function(err) {
+	        console.log('add失败', err)
+	      }
+	    })
+	  } catch (e) {
+	    console.error(e)
+	  }
+	}
+	```
+	* 调用部分
+	
+	```
+	let data = {
+      dbId: 'activityLog',
+      data: {
+        _id: id,		// 指定数据集合ID存储
+        submit: [],
+        leave: [],
+        undetermined: []
+      }
+    }
+	wx.cloud.callFunction({
+      name: 'docadd',
+      data: data,
+      success: function (res) {
+        console.log('addlog', res)
       },
-      fail: function(err) {
-        console.log('add失败', err)
+      fail:function(err){
+        console.error(err)
       }
     })
-  } catch (e) {
-    console.error(e)
-  }
-}
-```
+	```
+	
+* 通过云函数创建数据集合的作用
+	* 生成的数据库集合不会保留 `_openid` 字段, 因此没有权限问题存在，数据可供其他人操作，可用作报名等业务状态下的处理方式
 
 ### 存储静态资源
 

@@ -120,7 +120,7 @@
 
 > [微信内置浏览器动态生成二维码并长按识别](./profiles/wechat_qrcode.md)
 
-> [微信小程序云开发改造]
+> [微信小程序云开发改造](./profiles/wechat_cloud.md)
 
 ## 编码实践 :paperclip:
 > [Erro(持续更新)](./profiles/Erro.md)

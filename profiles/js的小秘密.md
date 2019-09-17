@@ -439,3 +439,6 @@ function $isPhoneAvailable(str) {
 
 ### JS indexOf() 不区分大小写实现
 * 使用 `str.toLowerCase()` 或者 `str.toUpperCase()` 将对比字符串全都转换成 大 (小) 写
+
+### JS replace() 如何针对key进行替换
+* `str.replace(new RegExp('要替换的keyword','g'), '替换后的内容'`)

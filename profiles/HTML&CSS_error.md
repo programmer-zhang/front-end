@@ -40,3 +40,8 @@ input[type="number"] {
 * IOS部分版本内嵌H5页面 `flex-wrap` 无法生效，会造成 `flex` 盒子失效
 
 ### input type=tel & type=number
+
+### `pointer-events: none` 鼠标穿透
+* 属性：
+	* `auto` : 效果和没有定义pointer-events属性相同，鼠标不会穿透当前层。在SVG中，该值和visiblePainted的效果相同。
+	* `none` : 元素不再是鼠标事件的目标，鼠标不再监听当前层而去监听下面的层中的元素。

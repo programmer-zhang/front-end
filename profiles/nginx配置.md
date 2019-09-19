@@ -98,6 +98,10 @@ http {
              proxy_pass http://192.168.200.248:80;
              proxy_set_header     Host $host;
         }
+        #禁止页面缓存
+        location ~* \.(js|css|png|jpg|gif)$ {
+				add_header Cache-Control no-store;
+		  }
         add_header Access-Control-Allow-Origin "*";
     }
 }

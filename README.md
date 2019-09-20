@@ -92,7 +92,7 @@
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
 
-> [Git不仅仅是get](./profiles/Git不仅仅是get.md)
+> [Git 使用指南](./profiles/git.md)
 
 > [jest单元测试]
 

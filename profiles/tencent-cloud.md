@@ -15,8 +15,9 @@
 * SSH 秘钥创建
 
 ## 服务器环境设置
-### 安装node
+### 手动安装node
 * 根据云主机系统选择node版本
+	* [NodeJS官方下载地址](https://nodejs.org/en/download/)
 * 登录云主机 并 下载node安装包(记住安装路径，免得下载完找不到安装包)
 	* 方式一：直接下载
 
@@ -26,10 +27,10 @@
 	* 方式二：本地拷贝 拷贝到云主机地址下的文件夹
 
 	```
-	scp /local/file/path  root@111.230.105.177:/tmp
+	scp /local/file/path  root@111.230.105.xxx:/tmp
 	```
 * 解压安装包
-	* 由于安装包是.xz格式的，我们首先需要先解压
+	* 由于安装包是.gz格式的，我们首先需要先解压
 
 	```
 	tar -zxvf node-v8.9.4-linux-x64.tar.gz
@@ -39,11 +40,20 @@
 	```
 	mv node-v8.9.4-linux-x64 node
 	```	
-* 全局设置 node 环境变量 找到.bash_profile文件并修改
+* 全局设置 node 环境变量 
+	* 找到.bash_profile文件
+
 	```
 	vim ~/.bash_profile
 	```
+	* 修改文件
+
+	```
 	PATH=$PATH:$HOME/bin:/usr/local/src/node/bin
+	```
+	* 保存文件
+
 	```
 	source ~/.bash_profile
 	```
+* 检查 NodeJS 是否安装成功 `node -v`

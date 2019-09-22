@@ -10,7 +10,7 @@
 * 高性能云硬盘
 
 ## 准备工作
-* 实例启动
+* 服务器实例启动
 * web端登录实例
 * SSH 秘钥创建
 
@@ -57,6 +57,9 @@
 	source ~/.bash_profile
 	```
 * 检查 NodeJS 是否安装成功 `node -v`
+
+	![](../images/node-success.png)
+
 * 检查 云服务 是否正常
 	* 在机器中创建server.js
 	
@@ -71,5 +74,22 @@
 	```
 	* 启动 server 服务 `node server.js`
 * 访问机器外网IP，访问成功即为云服务器搭建成功
+
+	![](../images/server-success.png)
+
 * 访问机器外网IP，访问失败请按照腾讯云服务器自检文档进行自检
+	* [自检地址](https://cloud.tencent.com/document/product/213/14633)
+
+## 项目创建
+### Vue项目本地创建
+### 项目本地启动
+##### 本地 node 启动访问 (开发、测试、生产环境启动)
+##### 本地 nginx 访问静态包 (测试、生产环境)
+### git 关联并上传
+### 服务器添加项目
+### 服务器启动项目
+##### 使用 PM2 进行 node 启动
+##### nginx 访问静态包
+### 访问网站
+
 	

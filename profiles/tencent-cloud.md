@@ -57,3 +57,19 @@
 	source ~/.bash_profile
 	```
 * 检查 NodeJS 是否安装成功 `node -v`
+* 检查 云服务 是否正常
+	* 在机器中创建server.js
+	
+	```
+	// 创建HTTP服务
+	var http = require('http');
+	http.createServer(function (req, res) {
+		res.writeHead(200, {'Content-Type': 'text/plain'});
+		res.end('Welcome Node.js');
+	}).listen(8080, '0.0.0.0'); //注意这里是监听 0.0.0.0 的端口
+	console.log('Server running at http://0.0.0.0:8080/');
+	```
+	* 启动 server 服务 `node server.js`
+* 访问机器外网IP，访问成功即为云服务器搭建成功
+* 访问机器外网IP，访问失败请按照腾讯云服务器自检文档进行自检
+	

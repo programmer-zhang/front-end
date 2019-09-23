@@ -69,7 +69,7 @@
 	http.createServer(function (req, res) {
 		res.writeHead(200, {'Content-Type': 'text/plain'});
 		res.end('Welcome Node.js');
-	}).listen(8080, '0.0.0.0'); //注意这里是监听 0.0.0.0 的端口
+	}).listen(8080, '0.0.0.0'); // 注意这里是监听 0.0.0.0 的端口
 	console.log('Server running at http://0.0.0.0:8080/');
 	```
 	* 启动 server 服务 `node server.js`
@@ -81,6 +81,8 @@
 	* [自检地址](https://cloud.tencent.com/document/product/213/14633)
 
 ## 项目创建
+> 本项目基于 Vue-cli 搭建
+
 ### Vue项目本地创建
 ### 项目本地启动
 ##### 本地 node 启动访问 (开发、测试、生产环境启动)
@@ -91,5 +93,6 @@
 ##### 使用 PM2 进行 node 启动
 ##### nginx 访问静态包
 ### 访问网站
-
+### 查看监控信息
+### 开发个人网站
 	

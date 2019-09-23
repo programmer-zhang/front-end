@@ -41,7 +41,7 @@
 	* 1 - 表示连接已建立，可以进行通信。
 	* 2 - 表示连接正在进行关闭。
 	* 3 - 表示连接已经关闭或者连接不能打开。
-* `Socket.bufferedAmount`: 只读属性 `bufferedAmount` 已被 `send()` 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数。
+* `Socket.bufferedAmount`: 只读属性 `bufferedAmount` 已被 `send()` 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数，也可根据此属性进行判断 webscoket 数据是否发送完成 。
 
 ## 方法(已创建webscoket实例的情况下)
 * `Socket.onopen`: 连接建立时触发
@@ -55,11 +55,11 @@
 ```
 GET /chat HTTP/1.1
 Host: server.xxx.com
-Upgrade: websocket
-Connection: Upgrade
-Sec-WebSocket-Key: xxxx
+Connection: Upgrade // 表示要升级协议
+Upgrade: websocket	// 升级到 webscoket 协议
+Sec-WebSocket-Key: xxxx	 // 提供基本防护，判定是否是恶意或无意的连接
 Sec-WebSocket-Protocol: chat, superchat
-Sec-WebSocket-Version: 13
+Sec-WebSocket-Version: 13 // 表示 webscoket 版本，如果服务器不支持此版本，会返回 Sec-WebSocket-Versionheader ，里面包含服务器支持的版本
 Origin: http://xxx.com
 ```
 * 相比正常的 HTTP request ，多了两个参数 `Upgrade: websocket` 和 `Connection: Upgrade` ，这两个参数是告诉服务器，我发起的是webscoket请求。

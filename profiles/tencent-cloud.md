@@ -59,6 +59,13 @@
 * 检查 NodeJS 是否安装成功 `node -v`
 
 	![](../images/node-success.png)
+* Git 安装
+
+	`sudo yum install git`
+
+* 检查 git 是否安装成功
+
+	`git --version`
 
 * 检查 云服务 是否正常
 	* 在机器中创建server.js
@@ -90,10 +97,18 @@
 
 ### 项目本地启动
 * 启动方式具体查看 package.json
-* 
+
+```
+npm install // 安装依赖
+```
 
 ##### 本地 node 启动访问 (开发、测试、生产环境启动)
+
+`npm run dev`
 ##### 本地 nginx 访问静态包 (测试、生产环境)
+* 配合 nginx 启动
+`npm run build`
+
 ### git 关联并上传
 ### 服务器添加项目
 ### 服务器启动项目

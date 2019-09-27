@@ -7,7 +7,7 @@
 	* 远程仓库(Remote Repository)
 * 五种状态
 	* 未修改(Origin) 
-	* 已修改(Modified) 
+	* 已修改(Modified)
 	* 已暂存(Staged)
 	* 已提交(Committed) 
 	* 已推送(Pushed)
@@ -173,3 +173,7 @@
 * 基于`master`新建`branch``feature-6793-push`
 * `git checkout -b feature-6793-push`切换分支* `git merge --squash origin/feature-6793`合并为一个分支* `git commit -m '这次上线的需求描述'` commit请求
 * `git push origin master` 推到远程分支master
+
+## 一张随时可看的指令图片
+
+![](../images/git-order.jpg)

@@ -42,7 +42,7 @@
 	* `ngx_accept_disabled`的变量来控制是否去竞争`accept_mutex`锁
 
 ### request
-![nginx处理网络请求的生命周期](../images/nginx处理网络请求过程.png)
+![nginx处理网络请求的生命周期](../images/nginx-manage-scoket.png)
 
 * `ngx_http_request_t`是对一个http请求的封装，用来保存解析请求与输出响应相关的数据
 * 从`ngx_http_init_request`开始，这个函数设置读事件`ngx_http_process_request_line`来处理请求行，通过`ngx_http_read_request_header`来处理请求头

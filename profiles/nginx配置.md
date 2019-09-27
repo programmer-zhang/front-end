@@ -3,7 +3,8 @@
 * MAC上装有homebrew，使用其下载nginx `brewinstall nginx`
 * nginx下载成功后，有三个目录比较重要
 	* `/usr/local/etc/nginx`nginx的默认安装目录
-	![nginx安装目录](../images/nginx安装目录.jpg)
+
+	![nginx安装目录](../images/nginx-dir.jpg)
 	* ` /usr/local/etc/nginx`
 	* `/usr/local/var/www` nginx的服务器文件存放位置
 

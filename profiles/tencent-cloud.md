@@ -104,18 +104,26 @@ npm install // 安装依赖
 
 ##### 本地 node 启动访问 (开发、测试、生产环境启动)
 
-`npm run dev`
+```
+npm run dev
+```
 
 ##### 本地 nginx 访问静态包 (测试、生产环境)
-* 配合 nginx 启动
+* 项目打包成静态资源
 
-`npm run build`
+```
+npm run build
+```
+
+* 配置 nginx
 
 ### git 关联并上传
+* 
+
 ### 服务器添加项目
 * 使用 Git 进行 clone 项目
 
-`git clone 项目git地址`
+`git clone < 项目git地址 >`
 
 ### 服务器启动项目
 ##### 使用 PM2 进行 node 启动

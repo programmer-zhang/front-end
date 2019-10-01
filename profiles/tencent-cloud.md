@@ -95,21 +95,26 @@
 
 `npm install vue -g`
 
+* 使用 vuw-cli 创建本地初始项目
+
+`vue init webpack project-name`
+
 ### 项目本地启动
-* 启动方式具体查看 package.json
+* 安装 node 依赖
 
 ```
 npm install // 安装依赖
 ```
 
 ##### 本地 node 启动访问 (开发、测试、生产环境启动)
+* 启动指令具体查看 package.json
 
 ```
 npm run dev
 ```
 
 ##### 本地 nginx 访问静态包 (测试、生产环境)
-* 项目打包成静态资源
+* 项目打包成静态资源(打包指令具体查看 package.json)
 
 ```
 npm run build
@@ -145,8 +150,24 @@ npm run build
 `git clone < 项目git地址 >`
 
 ### 服务器启动项目
-##### 使用 PM2 进行 node 启动
+* 服务器安装 node 依赖
+
+`node install`
+
+* 若依赖安装失败可使用本地运行时的依赖(建议打包后移动)
+
+`scp /Personal/web-projects/xxx/node_modules.tar  root@182.254.xxx.xxx:/项目地址`
+
+##### 进行 node 启动
+* 服务器启动
+
+`npm run dev`
+
 ##### nginx 访问静态包
+
+`npm run build`
+
+
 ### 访问网站
 * 若能正常打开首页即为部署成功
 

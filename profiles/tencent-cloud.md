@@ -118,7 +118,26 @@ npm run build
 * 配置 nginx
 
 ### git 关联并上传
-* 
+* git 创建远程分支
+* 本地项目 git 初始化
+
+`git init`
+
+* 关联远程分支
+
+`git remote add < git 远程地址 >`
+
+* 将本地分支加入项目管理
+
+`git add .`
+
+* 提交本地分支到远程分支并添加注释
+
+`git commit -m "注释内容" `
+
+* 推送到远程分支
+
+`git push origin <feature>`
 
 ### 服务器添加项目
 * 使用 Git 进行 clone 项目

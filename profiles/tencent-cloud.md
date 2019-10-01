@@ -59,13 +59,6 @@
 * 检查 NodeJS 是否安装成功 `node -v`
 
 	![](../images/node-success.png)
-* Git 安装
-
-	`sudo yum install git`
-
-* 检查 git 是否安装成功
-
-	`git --version`
 
 * 检查 云服务 是否正常
 	* 在机器中创建server.js
@@ -86,6 +79,20 @@
 
 * 访问机器外网IP，访问失败请按照腾讯云服务器自检文档进行自检
 	* [自检地址](https://cloud.tencent.com/document/product/213/14633)
+
+### 安装 Git
+* Git 安装
+
+	`sudo yum install git`
+
+* 检查 git 是否安装成功
+
+	`git --version`
+	
+### 安装 Nginx
+* 使用 yum 安装
+
+`sudo yum install nginx`
 
 ## 项目创建
 > 本项目基于 Vue-cli 搭建, Vue 项目 的搭建想必熟悉前端开发的同学已经很熟悉，所有本文这部分一笔带过，不做过多赘述
@@ -166,7 +173,6 @@ npm run build
 ##### nginx 访问静态包
 
 `npm run build`
-
 
 ### 访问网站
 * 若能正常打开首页即为部署成功

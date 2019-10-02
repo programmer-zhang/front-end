@@ -10,9 +10,8 @@
 * 高性能云硬盘
 
 ## 准备工作
-* 服务器实例启动
+* 服务器实例正常启动
 * web端登录实例
-* SSH 秘钥创建
 
 ## 服务器环境设置
 ### 手动安装node
@@ -27,7 +26,7 @@
 	* 方式二：本地拷贝 拷贝到云主机地址下的文件夹
 
 	```
-	scp /local/file/path  root@111.230.105.xxx:/tmp
+	scp /local/file/path  root@187.xxx.xxx.xxx:/test
 	```
 * 解压安装包
 	* 由于安装包是.gz格式的，我们首先需要先解压
@@ -92,7 +91,7 @@
 ### 安装 Nginx
 * 使用 yum 安装
 
-`sudo yum install nginx`
+	`sudo yum install nginx`
 
 ## 项目创建
 > 本项目基于 Vue-cli 搭建, Vue 项目 的搭建想必熟悉前端开发的同学已经很熟悉，所有本文这部分一笔带过，不做过多赘述

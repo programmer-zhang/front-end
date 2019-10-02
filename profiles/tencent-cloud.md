@@ -82,34 +82,62 @@
 ### 安装 Git
 * Git 安装
 
-	`sudo yum install git`
+```
+sudo yum install git
+```
 
 * 检查 git 是否安装成功
 
-	`git --version`
+```
+git --version
+```
 	
 ### 安装 Nginx
 * 使用 yum 安装
 
-	`sudo yum install nginx`
+```
+sudo yum install nginx
+```
+* 修改 Nginx 配置
 
-## 项目创建
+```
+server {
+    listen  80;
+    root /home/project/dist;
+    server_name localhost; 
+
+    location / {
+       try_files $uri $uri/ @router;
+       index index.html;
+    }
+
+    location @router {
+       rewrite ^.*$ /index.html last;
+    }
+}
+```
+
+## 项目本地创建与测试
 > 本项目基于 Vue-cli 搭建, Vue 项目 的搭建想必熟悉前端开发的同学已经很熟悉，所有本文这部分一笔带过，不做过多赘述
 
 ### Vue项目本地创建
 * 使用 NPM 安装 vue-cli
 
-`npm install vue -g`
+```
+npm install vue -g
+```
 
 * 使用 vuw-cli 创建本地初始项目
 
-`vue init webpack project-name`
+```
+vue init webpack <project-name>
+```
 
 ### 项目本地启动
 * 安装 node 依赖
 
 ```
-npm install // 安装依赖
+npm install
 ```
 
 ##### 本地 node 启动访问 (开发、测试、生产环境启动)
@@ -126,52 +154,71 @@ npm run dev
 npm run build
 ```
 
-* 配置 nginx
-
 ### git 关联并上传
 * git 创建远程分支
 * 本地项目 git 初始化
 
-`git init`
+```
+git init
+```
 
 * 关联远程分支
 
-`git remote add < git 远程地址 >`
+```
+git remote add < git 远程地址 >
+```
 
 * 将本地分支加入项目管理
 
-`git add .`
+```
+git add .
+```
 
 * 提交本地分支到远程分支并添加注释
 
-`git commit -m "注释内容" `
+```
+git commit -m "注释内容" 
+```
 
 * 推送到远程分支
 
-`git push origin <feature>`
+```
+git push origin <feature>
+```
 
+## 服务器手动部署项目
 ### 服务器添加项目
 * 使用 Git 进行 clone 项目
 
-`git clone < 项目git地址 >`
+```
+git clone < 项目git地址 >
+```
 
 ### 服务器启动项目
 * 服务器安装 node 依赖
 
-`node install`
+	```
+	npm install
+	```
 
-* 若依赖安装失败可使用本地运行时的依赖(建议打包后移动)
+	* 若依赖安装失败可使用本地运行时的依赖(建议打包后移动)
 
-`scp /Personal/web-projects/xxx/node_modules.tar  root@182.254.xxx.xxx:/项目地址`
+	```
+	scp /Personal/web-projects/xxx/node_modules.tar  root@182.254.xxx.xxx:/项目地址
+	```
 
 ##### 进行 node 启动
 * 服务器启动
 
-`npm run dev`
+```
+npm run dev
+```
 
 ##### nginx 访问静态包
 
-`npm run build`
+```
+npm run build
+```
 
 ### 访问网站
 * 若能正常打开首页即为部署成功

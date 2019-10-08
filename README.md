@@ -96,7 +96,7 @@
 
 > [jest单元测试]
 
-> [腾讯云平台网站搭建]
+> [腾讯云平台网站搭建](./profiles/tencent-cloud.md)
 
 ## 软件工程 :wrench:
 > [敏捷开发](./profiles/敏捷开发.md)

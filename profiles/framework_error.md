@@ -5,7 +5,7 @@
 * sass模块报错
 	* 重装sass
 		* gem install sass
-		* sass -v查看是否安装成功
+		* sass -v 查看是否安装成功
 		* 权限问题：sudo gem install sass
 	* 重装ruby
 		* 使用homebrew获得ruby：brew install ruby
@@ -56,8 +56,13 @@ swiper1 = new Swiper('.swiper-container', {
 	* 或者直接修改项目文件夹 `.git/config` 修改 `remote url`
 
 ### Git报错
-* 报错内容: `There is no tracking information for the current branch. Please specify which branch you want to merge with.`
-* 原因: 本地仓库未与远程仓库相关联,使用`git branch -vv`指令可以查看仓库的相互关联
+* 报错内容: 
+
+```
+There is no tracking information for the current branch. Please specify which branch you want to merge with.
+```
+
+* 原因: 本地仓库未与远程仓库相关联,使用 `git branch -vv` 指令可以查看仓库的相互关联
 * 解决方案: `git branch --set-upstream-to=origin/远程分支的名字  本地分支的名字`
 
 ## Vue ERROR

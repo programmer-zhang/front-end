@@ -233,7 +233,7 @@ db.collection('activityList').limit(this.data.pageSize).skip(this.data.pageSize 
 	* 所有用户不可读写
 * 云数据库的权限管理是基于用户创建数据时的 `_openId` 来区分写操作的用户，所以在不进行处理的情况，云数据库中的数据都不能由除了创建者和管理员修改的
 * 实现数据库数据可修改的方式---通过云函数创建
-* 解决方案
+* 解决方案(使用云函数添加数据集合)
 	* 云函数部分
 	
 	```
@@ -292,7 +292,57 @@ db.collection('activityList').limit(this.data.pageSize).skip(this.data.pageSize 
 * 通过云函数创建数据集合的作用
 	* 生成的数据库集合不会保留 `_openid` 字段, 因此没有权限问题存在，数据可供其他人操作，可用作报名等业务状态下的处理方式
 
-### 存储静态资源
+### 管理静态资源
+* 获取云存储库静态资源
+
+```
+wx.cloud.getTempFileURL({
+  fileList: ['cloud://prodenv-xxx.7072-prodenv-xxx-xxx/xxx.jpg'],
+  success: res => {
+    self.setData({
+      bgUrl: res.fileList[0].tempFileURL
+    })
+  },
+  fail: err => {
+    wx.showToast({
+      title: '请稍后再试',
+      icon: 'none',
+      mask: true,
+    })
+  }
+})
+```
+
+* 上传本地资源到云存储库
+
+```
+wx.cloud.uploadFile({
+  cloudPath: 'xxx.png',
+  filePath: '', // 本地文件路径
+  success: res => {
+    // get resource ID
+    console.log(res.fileID)
+  },
+  fail: err => {
+    // handle error
+  }
+})
+```
+
+* 下载云存储库资源到本地
+
+```
+wx.cloud.downloadFile({
+  fileID: 'xxx', // 云存储库文件id
+  success: res => {
+    // get temp file path
+    console.log(res.tempFilePath)
+  },
+  fail: err => {
+    // handle error
+  }
+})
+```
 
 ## 部署与发布
 ### 上传小程序体验版

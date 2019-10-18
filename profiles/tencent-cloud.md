@@ -78,7 +78,7 @@
 	![](../images/server-success.png)
 
 * 访问机器外网IP，访问失败请按照腾讯云服务器自检文档进行自检
-	* [自检地址](https://cloud.tencent.com/document/product/213/14633)
+	* [自检文档地址](https://cloud.tencent.com/document/product/213/14633)
 
 ### 安装 Git
 * Git 安装

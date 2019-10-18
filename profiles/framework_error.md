@@ -54,6 +54,11 @@ swiper1 = new Swiper('.swiper-container', {
 	* `git remote rm origin`
 	* `git remote add origin git@github.com:XXX.git`
 	* 或者直接修改项目文件夹 `.git/config` 修改 `remote url`
+### Git git pull 本地文件夹权限问题
+* 本地文件夹权限未分配
+	* `sudo chmod -R 755 profiles`
+* git 权限未分配
+	* `sudo chmod -R 777 .git`
 
 ### Git报错
 * 报错内容: 

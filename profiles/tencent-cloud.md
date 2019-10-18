@@ -191,7 +191,7 @@ git push origin <feature>
 ### 服务器添加项目
 * 使用 Git 进行 clone 项目
 
-```
+```
 git clone < 项目git地址 >
 ```
 

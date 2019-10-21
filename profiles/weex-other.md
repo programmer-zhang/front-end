@@ -25,3 +25,7 @@ weex src/foo.vue
 weex src --entry src/foo.vue
 ```
 你需要在传入的参数指定预览的目录和入口文件。
+
+### weex资源文件
+* weex访问native资源文件
+* native访问weex打包后的资源文件

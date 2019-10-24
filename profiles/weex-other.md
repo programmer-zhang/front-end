@@ -29,3 +29,10 @@ weex src --entry src/foo.vue
 ### weex资源文件
 * weex访问native资源文件
 * native访问weex打包后的资源文件
+
+### weex-no-router
+* 使用weex-navigator
+* 准备使用 Weex 来做新的移动端项目，但是在页面跳转方面有些疑惑。现有以下几种方案：
+	* Android就一个Activity，页面跳转逻辑都通过 vue-router 来实现。
+	* 每个页面都是一个Activity，每个Activity加载各自的 bundle.js 文件，数据通过 storage 模块传输。
+	* 通过navigator模块实现页面跳转。

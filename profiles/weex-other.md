@@ -36,3 +36,6 @@ weex src --entry src/foo.vue
 	* Android 就一个 Activity ，页面跳转逻辑都通过 vue-router 来实现。
 	* 每个页面都是一个 Activity ，每个Activity加载各自的 bundle.js 文件，数据通过 storage 模块传输。
 	* 通过navigator模块实现页面跳转。
+
+### 安卓壳子使用url访问静态资源打开
+* 安卓版本太高可能会导致 http 协议的页面打不开，被禁止，需要降级处理

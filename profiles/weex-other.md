@@ -40,12 +40,12 @@ weex src --entry src/foo.vue
 	* 把一个weex页面URL压入导航堆栈中
 	
 	```
-		push({
-		    url :""        //要压入的 Weex 页面的 URL
-		    animated:""    //"true" 示意为页面压入时需要动画效果，"false" 则不需要，默认值为 "true"。注意，一定要是字符串类型的，千万不能写成布尔类型
-		}, callback(){
-		    //回调
-		})
+	push({
+	    url :""        //要压入的 Weex 页面的 URL
+	    animated:""    //"true" 示意为页面压入时需要动画效果，"false" 则不需要，默认值为 "true"。注意，一定要是字符串类型的，千万不能写成布尔类型
+	}, callback(){
+	    //回调
+	})
 	```
 
 	* 把当前Weex页面弹出导航堆栈中
@@ -60,3 +60,25 @@ weex src --entry src/foo.vue
 
 ### 安卓壳子使用url访问静态资源打开
 * 安卓版本太高可能会导致 http 协议的页面打不开，被禁止，需要降级处理
+
+## weex 语法差异
+### HTML 标签
+* 遵循weex官方文档，部分标签样式在weex真机中不保证能够正常使用
+	* 如 span
+* weex 标签真正解析后会解析成不同的标签
+	* text -> p
+* 结构不支持不规范嵌套
+	* 如：text 嵌套 test
+* 部分详细的约束
+	* `<a>` 不可直接添加文字，需要用 `<text>` 来显示文字
+
+### CSS样式
+* 支持 px 和 wx 长度单位
+* 支持 行内 和 class属性，用id不支持，真机失效
+* 样式不支持继承
+* 样式不支持行内,用 flex 布局解决
+* 标准 CSS 中的空格和回车问题在真机中也会存在
+* 不支持层级 z-index
+* 部分详细约束
+	* `<textarea>` 须设置rows，默认值为2，否则只展示两行
+	* `<textarea>` 属性 `placeholder-color` 设置placeholder颜色

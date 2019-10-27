@@ -36,6 +36,27 @@ weex src --entry src/foo.vue
 	* Android 就一个 Activity ，页面跳转逻辑都通过 vue-router 来实现。
 	* 每个页面都是一个 Activity ，每个Activity加载各自的 bundle.js 文件，数据通过 storage 模块传输。
 	* 通过navigator模块实现页面跳转。
+* 使用 weex-navigator
+	* 把一个weex页面URL压入导航堆栈中
+	
+	```
+		push({
+		    url :""        //要压入的 Weex 页面的 URL
+		    animated:""    //"true" 示意为页面压入时需要动画效果，"false" 则不需要，默认值为 "true"。注意，一定要是字符串类型的，千万不能写成布尔类型
+		}, callback(){
+		    //回调
+		})
+	```
+
+	* 把当前Weex页面弹出导航堆栈中
+
+	```
+	pop({
+	    animated:""    //"true" 示意为页面压入时需要动画效果，"false" 则不需要，默认值为 "true"。注意，一定要是字符串类型的，千万不能写成布尔类型
+	}, callback(){
+	    //回调
+	})
+	```
 
 ### 安卓壳子使用url访问静态资源打开
 * 安卓版本太高可能会导致 http 协议的页面打不开，被禁止，需要降级处理

@@ -89,6 +89,8 @@
 
 > [PM2 使用指南]
 
+> [weex 使用指南]
+
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
 

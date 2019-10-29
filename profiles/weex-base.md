@@ -104,4 +104,4 @@
 
 ##### JavaScript
 * weex 中不支持 Promise 的 finally 方法，支持 then 和 catch
-* v-if 和 v-show
+* v-if 支持 v-show 不支持

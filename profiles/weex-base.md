@@ -132,3 +132,7 @@
 ##### JavaScript
 * weex 中不支持 Promise 的 finally 方法，支持 then 和 catch
 * v-if 支持 v-show 不支持
+* 冒泡机制
+	* weex 中冒泡机制默认不开启，需要手动书写 `bubble = true`
+	* 阻止冒泡 `event.stopPropagation();`
+* 手势操作

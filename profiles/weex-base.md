@@ -31,7 +31,7 @@
 
 ### weex-toolkit和weexpack的区别
 * weex-toolkit 初始化的项目是针对开发单个 Weex 页面而设计的，也就是说这样的项目只包括单个页面开发需要的东西，比如前端页面源文件、webpack 配置、npm 脚本等。项目产生的输出就是一个 JS Bundle 文件，可以自由的进行部署。
-* weex-pack 是初始化一个完整的 App 工程，包括 Android 和 iOS 的整个 App 起步，前端页面只是其中的一部分。这样的项目最终产出是一个 Android App 和一个 iOS App。
+* weexpack 是初始化一个完整的 App 工程，包括 Android 和 iOS 的整个 App 起步，前端页面只是其中的一部分。这样的项目最终产出是一个 Android App 和一个 iOS App。
 
 ## 必要条件
 * 开发环境
@@ -73,6 +73,8 @@
 	* `weex compile <源码目录或文件> <打包文件存放目录或文件>`
 * 压缩编译
 	* `weex compile <源码目录或文件> <打包文件存放目录或文件> -m` 
+* 配置 Nginx 
+* 移动应用客户端访问
 
 ---
 ---
@@ -205,7 +207,7 @@ broadcast.onmessage = function(event) {
 
 ## 数据通信 stream模块
 ### 请求过程
-* weex中发送fetch请求时，会先经过native内置的stream模块，并由stream模块向服务器发送请求。所以在请求期间可能stream模块还没有向服务器发出请求就返回了，此时的status为-1
+* weex中发送fetch请求时，会先经过native内置的stream模块，并由stream模块向服务器发送请求。
 
 ### 请求实例 `fetch(options, callback, progressCallback)` 
 * `@options`, 请求的配置选项，支持以下配置

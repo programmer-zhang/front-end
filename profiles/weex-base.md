@@ -77,7 +77,22 @@
 ---
 ---
 # 开发
+## 运行过程
+* 本地编写 Vue 代码，生成 web 页面
+* weex 形成 JS bundle
+* 在云端，通过网络请求或预下发的方式将 JS bundle 传递到用户的 移动应用客户端
+* 在移动应用客户端里，WeexSDK 会准备好一个 JavaScript 引擎，并且在用户打开一个 Weex 页面时执行相应的 JS bundle
+* 各种命令发送到 native 端进行界面渲染或数据存储、网络通信、调用设备功能、用户交互响应
+
 ## 文件结构
+* |- src  // 源码目录
+* |- node_modules   // 依赖包
+* |- dist		// 存放编译好的 js 文件
+* |- build	// 存放npm build 时的 js 文件，可在 package.json 文件中配置
+* |- package.json	// 项目的配置和依赖库文件
+* |- webpack.config.js    // webpack 打包配置文件
+* |- config.js	// 项目的相关配置文件，你可以在这个文件中配置切换不同的环境
+
 ## 导航方式
 ### VUE-Router
 * 暂不做讲解
@@ -107,6 +122,10 @@
 	```
 
 ## 数据传递 
+### Vue的方式
+* props
+* this.$emit('fun', data)
+
 ### storage
 * 永久保存，在 H5/web 端 实际采用的是 `HTML5 LocalStorage API`
 * 限制： 
@@ -219,12 +238,12 @@ stream.fetch({
 	url: GET_URL,
 	type:'json'
 }, function(req) {
-if(!req.ok){
-	self.getResult = "request failed";
-}else{
-	console.log('get:'+req);
-	self.getResult = JSON.stringify(req.data);
-}
+	if(!req.ok){
+		self.getResult = "request failed";
+	}else{
+		console.log('get:'+req);
+		self.getResult = JSON.stringify(req.data);
+	}
 },function(response){
 	console.log('get in progress:'+response.length);
 	self.getResult = "bytes received:"+response.length;

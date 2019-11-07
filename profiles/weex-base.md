@@ -1,4 +1,4 @@
-<div style="text-align: center; font-size: 30px;">weex基础使用文档</div>
+<span style="display: inline-block;width: 100%; text-align: center; font-size: 30px;">weex基础使用文档</span>
 
 > 浏览[官方文档](https://weex.apache.org/zh/)后阅读此文更佳
 

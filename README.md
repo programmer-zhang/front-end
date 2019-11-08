@@ -6,15 +6,17 @@
 ![github commit](https://ghchart.rshah.org/programmer-zhang)
 
 ## HTML & CSS相关 :european_castle:
-> [HTML_DOM节点绑定事件](./profiles/HTML_tabindex.md)
+> [HTML_DOM 节点绑定事件](./profiles/HTML_tabindex.md)
 
-> [HTML & CSS遇到的Error](./profiles/HTML&CSS_error.md)
+> [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 
-> [永远18岁的css(持续更新)](./profiles/永远18岁的css.md)
+> [永远18岁的 CSS (持续更新)](./profiles/永远18岁的css.md)
 
-> [硬件加速css来提高网站性能(外链资料)](http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
+> [硬件加速 CSS 来提高网站性能(外链资料)](http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
 
-> [css小图形](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTest.vue)
+> [CSS 小图形](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTest.vue)
+
+> [纯 CSS 实现超出隐藏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTestPhone.vue)
 
 > [自用部分代码规范](./profiles/自用代码规范.md)
 
@@ -23,11 +25,11 @@
 
 > [JS数组操作方法小结](./profiles/js数组操作.md)
 
-> [JS针对 cookie 的操作](./profiles/js针对cookie的操作.md)
+> [JS针对 Cookie 的操作](./profiles/js针对cookie的操作.md)
 
 > [JS针对 URL 编码和解码](./profiles/js针对URL编码和解码.md)
 
-> [JS对DOM树的操作](./profiles/js对DOM树的操作.md)
+> [JS对 DOM 树的操作](./profiles/js对DOM树的操作.md)
 
 > [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 

@@ -20,6 +20,7 @@ word-wrap: break-word!important;
 ```
 
 ## 多行文本溢出显示省略号
+#### 方案一
 * 一个不规范的css属性 ：-webkit-line-clamp 
 	* 限制在一个块元素显示的文本的行数，为了实现该效果，需要组合其他webkit属性
 * 相关属性
@@ -35,7 +36,7 @@ word-wrap: break-word!important;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 ```
-#### 另一个跨浏览器解决方案
+#### 方案二
 * 设置相对定位的容器高度，用包含省略号（。。。）的元素模拟实现
 
 ```
@@ -62,13 +63,62 @@ p::after {
 	3. IE6-7不显示content内容，所以要兼容IE6-7可以是在内容中加入一个标签，比如用`<span class="line-clamp">...</span>`去模拟；
 	4. 要支持IE8，需要将::after替换成:after；
 
+#### 方案三
+* 利用float元素进行浮动
+
+```
+// HTML
+<div class="css-test-phone">
+    <div class="css-overflow">
+        <div class="demo">
+            <div class="text">
+                这是一段较长的文字一二三四五六七八九十这是一段较长的文字一二三四五六七八九十
+                这是一段较长的文字一二三四五六七八九十这是一段较长的文字一二三四五六七八九十
+                这是一段较长的文字一二三四五六七八九十这是一段较长的文字一二三四五六七八九十
+                这是一段较长的文字一二三四五六七八九十这是一段较长的文字一二三四五六七八九十
+                这是一段较长的文字一二三四五六七八九十这是一段较长的文字一二三四五六七八九十
+            </div>
+        </div>
+    </div>    
+</div>
+
+// CSS
+.demo {
+    max-height: 80px;
+    line-height: 20px;
+    text-align: left;
+    background-color: #099;
+    overflow: hidden;
+}
+.demo::before{
+    float: left;
+    content:'';
+    width: 20px;
+    height: 80px;
+}
+.demo .text {
+    float: right;
+    width: 100%;
+    margin-left: -20px;
+    word-break: break-all;
+}
+.demo::after{
+    float:right;
+    content:'...';
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left:100%;
+    background-color: red;
+    transform: translate(-100%,-100%);
+}
+```
+
 ## 清除浏览器的默认蓝色选中框
 * `outline: none;`
 
 ## 英文字符串自动折行
 * `word-wrap: break-word;`
-
-## CSS实现横向滚动
 
 ## 改变浏览器网页内容鼠标选中效果
 * 代码实现

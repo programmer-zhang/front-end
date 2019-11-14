@@ -127,6 +127,8 @@
 
 > [微信小程序云开发改造](./profiles/wechat_cloud.md)
 
+> [微信 JS API 支付]
+
 ## 编码实践 :paperclip:
 > [Erro(持续更新)](./profiles/Erro.md)
 

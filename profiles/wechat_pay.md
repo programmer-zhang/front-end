@@ -1,7 +1,10 @@
 > 本期带来 微信 JSAPI 支付 (即微信浏览器内支付或微信公众号支付) 的前端开发
 
 ## 前期工作
-### 微信支付授权开通
+### 微信支付权限开通
+* 微信申请支付授权(图片来源：微信官方)
+<img src="../images/wechat-pay-auth.png" style="width:100%;display: block;">
+
 ### 微信公众平台配置信息
 * 设置支付目录
 * 配置授权支付域名
@@ -14,4 +17,5 @@
 ## Q&A
 ### `response_type` 参数错误
 ### 支付失败传参错误
-* 原因： 微信调起支付 `WeixinJSBridge.invoke` 传参为 JSON 格式
+* 原因：微信调起支付 `WeixinJSBridge.invoke` 传参为 JSON 格式
+* 解决方案：将后端 response 解析后传入

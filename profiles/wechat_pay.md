@@ -12,3 +12,6 @@
 ### 设置前端支付回调
 
 ## Q&A
+### `response_type` 参数错误
+### 支付失败传参错误
+* 原因： 微信调起支付 `WeixinJSBridge.invoke` 传参为 JSON 格式

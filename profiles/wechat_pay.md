@@ -2,15 +2,26 @@
 
 ## 前期工作
 ### 微信支付权限开通
-* 微信申请支付授权(图片来源：微信官方)
+* 微信申请支付授权
+* 附 [官方开通授权文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=3_1)
 <img src="../images/wechat-pay-auth.png" style="width:100%;display: block;">
+<div style="text-align:center;color:#708090;">图-微信支付权限开通(图片来源：微信官方)</div>
 
 ### 微信公众平台配置信息
-* 设置支付目录
+* 设置支付目录 ( 配置路径: 商户平台 --> 产品中心 --> 开发配置 )
+<img src="../images/wechat-pay-conf.png" style="width:100%;display: block;">
+<div style="text-align:center;color:#708090;">图-微信JSAPI支付-支付目录配置(图片来源：微信官方)</div>
+
 * 配置授权支付域名
+	* 配置域名除了要在微信公众平台进行配置外，还需要将微信提供的密钥文件放在配置域名的根目录
+<img src="../images/wechat-pay-host.png" style="width:100%;display: block;">
+<img src="../images/wechat-pay-host2.png" style="width:100%;display: block;">
+<div style="text-align:center;color:#708090;">图-微信网页授权域名设置(图片来源：微信官方)</div>
 
 ## 开发
 ### 前端发起生成订单请求
+
+
 ### 前端调起微信支付
 ### 设置前端支付回调
 

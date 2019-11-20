@@ -62,6 +62,10 @@ invokeWxPay(wxPayData) {
 
 ## Q&A
 ### `response_type` 参数错误
+* 原因： `vue hash` 模式会带有一个 `#` 号，如果回调地址中含有 `#` 而没有做转义，授权时就会报错
+* 解决方案：`redirect_uri` 使用 `encodeURIComponent()` 进行转码
+
+
 ### 支付失败传参错误
 * 原因：微信调起支付 `WeixinJSBridge.invoke` 传参为 JSON 格式
 * 解决方案：将后端 response 解析后传入

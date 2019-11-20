@@ -49,3 +49,54 @@ input[type="number"] {
 	* 不需要鼠标点击的展示元素
 * 注意：
 	* 部分默认可点击的标签，如 `<a>` 标签，添加样式后不可点击，但是使用 `tab` 键还是可以选中点击的，去掉 `<a>` 标签的 `href` 属性可以解决这一问题
+
+### Safari浏览器 、微信浏览器下拉回弹效果
+* 解决方式：
+
+```
+// HTML
+<body class="box">
+    <div class="scroll" style="height:1500px">  
+    </div>
+</body>
+
+// JS
+let overscroll = function(el) {
+    el.addEventListener('touchstart', function() {
+        var top = el.scrollTop, totalScroll = el.scrollHeight, currentScroll = top + el.offsetHeight;
+        if(top === 0) {
+            el.scrollTop = 1;
+        }else if(currentScroll === totalScroll) {
+            el.scrollTop = top - 1;
+        }
+    });
+
+    el.addEventListener('touchmove', function(evt) {
+    if(el.offsetHeight < el.scrollHeight)
+        evt._isScroller = true;
+    });
+}
+overscroll(document.querySelector('.scroll'));
+document.body.addEventListener('touchmove', function(evt) {
+    if(!evt._isScroller) {
+        evt.preventDefault();
+    }
+});
+
+// CSS
+.box{
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+```
+* 还有一串神秘代码
+
+```
+// 监听滑动事件，如果是非滑动组件就禁止滑动
+document.body.addEventListener("touchmove", function(e) {
+	if(e._isScroller) return
+	e.preventDefault()
+}, {
+	passive:false
+})
+```

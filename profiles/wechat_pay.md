@@ -3,6 +3,7 @@
 ## 前期工作
 ### 微信支付权限开通
 * 微信申请支付授权
+* 注意是开通 JSAPI 支付，不是H5支付
 * 附 [官方开通授权文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=3_1)
 <img src="../images/wechat-pay-auth.png" style="width:100%;display: block;">
 <div style="text-align:center;color:#708090;">图-微信支付权限开通(图片来源：微信官方)</div>

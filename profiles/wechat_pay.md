@@ -34,12 +34,12 @@
 
 ### 前端调起微信支付
 * 微信支付传参
-	* `appId` : "wx2421b1c4370ec43b",     //公众号名称，由商户传入     
-	* `timeStamp` : "1395712654",         //时间戳，自1970年以来的秒数     
-	* `nonceStr` : "e61463f8efa94090b1f366cccfbbb444", //随机串     
-	* `package` : "prepay_id=u802345jgfjsdfgsdg888",     // 传递参数，prepay_id即为微信订单id
-	* `signType` : "MD5",         //微信签名方式
-	* `paySign` : "70EA570631E4BB79628FBCA90534C63FF7FADD89" //微信签名 
+	* `appId` : `"wx2421b1c4370ec43b",     //公众号名称，由商户传入`
+	* `timeStamp` : `"1395712654",         //时间戳，自1970年以来的秒数`
+	* `nonceStr` : `"e61463f8efa94090b1f366cccfbbb444", //随机串`
+	* `package` : `"prepay_id=u802345jgfjsdfgsdg888",     // 传递参数，prepay_id即为微信订单id`
+	* `signType` : `"MD5",         //微信签名方式`
+	* `paySign` : `"70EA570631E4BB79628FBCA90534C63FF7FADD89" //微信签名`
 
 * 调起微信支付
 

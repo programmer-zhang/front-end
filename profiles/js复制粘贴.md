@@ -39,6 +39,47 @@ copyRoles() {
 }
 ```
 
+### 升级版原生 JS 实现(适合移动端)
+* 使用原生方法实现复制都是通过选中文本，但是使用传统的 `ele.select()` 在移动端会失效，所以需要在移动端做兼容性处理。
+
+```
+// JS部分
+copyRoles(data) {
+    // return; //兼容问题较大，暂改成浏览器的长按复制
+    if (document.querySelector('#orderId')) {
+        let e = document.getElementById('orderId')
+        document.getElementById("clipBoard").removeChild(e)
+    }
+    let input = document.createElement('input')
+    input.id = 'orderId'
+    input.value = data
+    input.readOnly = "readOnly"
+    document.getElementById("clipBoard").appendChild(input)
+    let eleSelect = document.querySelector('#orderId')
+    this.selectText(eleSelect, 0, item.length)
+    if(document.execCommand('copy')) {
+        document.execCommand('copy')
+        this.$littleHint('复制成功')
+    } else {
+        this.$littleHint('复制失败')
+    }
+    eleSelect.blur()
+},
+selectText(textbox, startIndex, stopIndex) {
+    if (textbox.createTextRange) {
+        const range = textbox.createTextRange()
+        range.collapse(true)
+        range.moveStart('character', startIndex)//起始光标
+        range.moveEnd('character', stopIndex - startIndex)//结束光标
+        range.select()
+    } else {
+        textbox.setSelectionRange(startIndex, stopIndex)
+        textbox.focus()
+    }
+},
+```
+
+
 ### 通过clipboard.js实现(官方api很详细，不做过多介绍)
 
 ## 粘贴

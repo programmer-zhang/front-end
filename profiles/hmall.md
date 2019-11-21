@@ -124,6 +124,10 @@ if (cluster.isMaster) {
 }
 ```
 
+* 调整node内存大小的使用限制
+	* 在 build 或者 运行node环境的时候进行更改
+	* `"build": "node --max_old_space_size=4096 build/build.js"` 
+
 * PM2进程监控策略
 	* `pm2 start app.js --max-memory-restart 1024M`
 

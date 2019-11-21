@@ -47,8 +47,8 @@ Quagga.onDetected(function(data){
     if (data && data.codeResult) {
        console.log(data.codeResult.code);
        return ;
-       }
-    })
+	}
+})
     
 ```
 * 可以通过打印data查看扫码结果

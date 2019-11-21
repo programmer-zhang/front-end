@@ -69,6 +69,6 @@ invokeWxPay(wxPayData) {
 * 解决方案：`redirect_uri` 使用 `encodeURIComponent()` 进行转码
 
 
-### 支付失败传参错误
-* 原因：微信调起支付 `WeixinJSBridge.invoke` 传参为 JSON 格式
-* 解决方案：将后端 response 解析后传入
+### 支付失败缺少参数
+* 原因：若检查过确实参数都齐全，则是传参格式的问题，微信调起支付 `WeixinJSBridge.invoke` 传参为 JSON 格式
+* 解决方案：将后端 `response` 进行解析后传入

@@ -23,18 +23,18 @@
 
 //js部分
 copyRoles() {
-	let data = '';
+	let data = ''
 	if(this.roles && this.roles.length > 0) {
-		let spanSelect = document.querySelector('#clipBoard');
-		spanSelect.select();
+		let spanSelect = document.querySelector('#clipBoard')
+		spanSelect.select() // IOS 和 Safari 浏览器有兼容性问题，解决方式在下方升级版实现
 		if(document.execCommand('copy')) {
-			document.execCommand('copy');
-			console.log(`信息已复制成功`);
+			document.execCommand('copy')
+			console.log(`信息已复制成功`)
 		} else {
-			console.log('复制失败!');
+			console.log('复制失败!')
 		}
 	} else {
-		console.log('复制失败!');
+		console.log('复制失败!')
 	}
 }
 ```
@@ -65,6 +65,7 @@ copyRoles(data) {
     }
     eleSelect.blur()
 },
+// 选中文字
 selectText(textbox, startIndex, stopIndex) {
     if (textbox.createTextRange) {
         const range = textbox.createTextRange()

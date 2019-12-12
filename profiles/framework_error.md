@@ -120,7 +120,7 @@ const instance = $axios.create({
     </FormItem>
 </Form>
 ```
-### IVIEW中Input标签on-change时间失效
+### IVIEW中Input标签on-change事件失效
 
 ```
 // 将on-change改为@on-change，其余写法都不生效

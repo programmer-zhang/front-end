@@ -103,7 +103,7 @@ const instance = $axios.create({
 
 ```
 
-### IVIEW中调用resetFields失效，无法重置
+### Iview中调用resetFields失效，无法重置
 * 需要在form-item中添加与绑定的数据相同的prop
 
 ```
@@ -120,13 +120,47 @@ const instance = $axios.create({
     </FormItem>
 </Form>
 ```
-### IVIEW中Input标签on-change事件失效
+### Iview中Input标签on-change事件失效
 
 ```
 // 将on-change改为@on-change，其余写法都不生效
 <Input placeholder="请输入文章作者" @on-change="changeStatus()"></Input>
 ```
-### IVIEW中双向绑定问题
+### Iview中双向绑定问题
+
+### Iview中修改 table 表头
+* 将代码中重定义的 render 改为 renderHeader 
+
+```
+// HTML
+<Table :columns="columns" :data="data"></Table>
+
+// JS
+columns: [{
+      type: 'selection',
+      width: 60,
+      align: 'center',
+      fixed: 'left'
+    },{
+      title: '测试title',
+      key: 'id',
+      sortable: 'custom'
+    },{
+      title: '自定义表头',
+      key: 'diy',
+      renderHeader: (h, params) => {
+        return h('div', [
+          h('span', '传输状态'),
+          [h('Icon', {
+              props: {
+                type: 'md-help-circle',
+                size: '14',
+              }
+            })
+        ])
+      }
+    }]
+```
 
 ## Nginx ERROR
 ### Nginx报错

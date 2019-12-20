@@ -8,7 +8,7 @@
 | Boolean	| "boolean" |
 | Undefined | "undefined" |
 | Object、Array、RegExp、null、Date、Error | "object" |
-| function | "function" |
+| Function | "function" |
 | Symbol(ES6新增) | "symbol" |
 
 ### instanceof
@@ -35,6 +35,27 @@ var str = new String('dsfsf');
 var boolean = new Boolean(false);
 ```
 * 还需要注意`null`和`undefined`都返回了false，这是因为它们的类型就是自己本身，并不是`Object`创建出来它们，所以返回了false。
+
+* 手动实现一个 `instanceof` 方法
+
+```
+function myInstanceof(left, right) {
+    //基本数据类型直接返回false
+    if(typeof left !== 'object' || left === null) return false;
+    //getProtypeOf是Object对象自带的一个方法，能够拿到参数的原型对象
+    let proto = Object.getPrototypeOf(left);
+    while(true) {
+        //查找到尽头，还没找到
+        if(proto == null) return false;
+        //找到相同的原型对象
+        if(proto == right.prototype) return true;
+        proto = Object.getPrototypeof(proto);
+    }
+}
+
+console.log(myInstanceof("111", String)); //false
+console.log(myInstanceof(new String("111"), String));//true
+```
 
 ### constructor
 * `constructor` 是 `prototype` 对象上的属性，指向构造函数

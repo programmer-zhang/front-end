@@ -8,6 +8,14 @@
 ## HTML & CSS相关 :european_castle:
 > [HTML_DOM 节点绑定事件](./profiles/HTML_tabindex.md)
 
+> [flex 布局]
+
+> [grid 布局]
+
+> [如何画一像素的线]
+
+> [Border-Image]
+
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 
 > [永远18岁的 CSS (持续更新)](./profiles/永远18岁的css.md)
@@ -43,12 +51,21 @@
 
 > [JS解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
 
+> [JS数据类型详解]
+
 > [JS判断数据类型](./profiles/js_judge_type.md)
 
 > [深拷贝和浅拷贝](./profiles/深拷贝和浅拷贝.md)
 
 > [防抖与节流](./profiles/节流和防抖.md)
 
+> [闭包]
+
+> [作用域]
+
+> [函数柯里化]
+
+> [进程和线程]
 
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)
@@ -87,6 +104,16 @@
 > [Vue 中慎用style标签的scoped属性]
 
 > [Vue 组件通信]
+
+> [Vue 源码系列-Vue的生命周期]
+
+> [Vue 源码系列-watch]
+
+> [Vue 源码系列-computed]
+
+> [Vue 源码系列-响应式流程]
+
+> [Vue 源码系列-this.$nextTick]
 
 > [PM2 使用指南]
 

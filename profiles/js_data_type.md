@@ -32,12 +32,12 @@
 let _toString = Object.prototype.toString;
 
 function toRawType (value) {
-    // 获取 从第九个到倒数第二个 字符
+    // 获取 从第九个到倒数第二个字符
     // 比如 [object string]  获取 string
     return _toString.call(value).slice(8, -1)
 }
 
-// 严格的对象类型检查。只返回true,
+// 严格的对象类型检查，只返回true
 // 这里主要用于普通的javascript对象
 
 function isPlainObject (obj) {

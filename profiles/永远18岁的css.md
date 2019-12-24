@@ -153,3 +153,7 @@ body {
     overflow: auto;
 }
 ```
+
+## CSS 绝对定位的基准点
+* 设置了 `top` 或 `left`  相对于border以内，padding以外为基准点
+* 未设置 `top`或 `left` 相对于relative定位的content

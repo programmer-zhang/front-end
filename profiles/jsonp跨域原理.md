@@ -2,7 +2,7 @@
 
 > 平时工作中 webpack-dev-server 和负责 服务器 配置的大佬会帮我们搞定，但是作为有担当、负责任的青年我们不能就这么混过去了
 
-> 接下来就开始展现真正的技术了---跨域问题的产生原因及解决方式详解
+> 接下来就开始展现真正的技术了---跨域问题的产生原因及部分常用的解决方式详解
 
 ## 需要跨域的根本原因--同源策略
 ### 同源策略的 MDN 详细概念
@@ -28,7 +28,7 @@
 * 在进行访问的页面中定义一个相同函数名的函数，因为 `<script>` 标签src引用的js脚本到达浏览器时会执行，而我们有定义了一个同名的函数，所以json格式的数据，就做为参数传递给了我们定义的同名函数了
 
 ### 优缺点
-* script、link、img标签引入外部资源，都是get请求，那么就决定了jsonp跨域传输一定是get请求
+* `script、link、img` 标签引入外部资源，都是get请求，那么就决定了jsonp跨域传输一定是get请求
 
 ### 简单版的JSONP跨域请求
 
@@ -46,7 +46,7 @@
         console.log(res)
       }
     </script>
-    <script src='http://localhost:9871/api/jsonp?msg=helloJsonp&cb=jsonpCb' type='text/javascript'></script>
+    <script src='http://www.xxx.com/api/jsonp?msg=helloJsonp&cb=jsonpCb' type='text/javascript'></script>
   </body>
 </html>
 ```
@@ -96,8 +96,12 @@ request({
 })
 ```
 
-## 二、使用 iframe 进行跨域
+## 二、使用 iframe + form 进行跨域
+### 原理
+* 使用
 
+## 三、CORS
+### 实现方式
 
 ### 其他跨域方法
 * 因为同源策略是针对客户端的，在服务器端没有什么同源策略，是可以随便访问的，所以我们可以通过下面的方法绕过客户端的同源策略的限制：客户端先访问 同源的服务端代码，该同源的服务端代码，使用httpclient等方法，再去访问不同源的 服务端代码，然后将结果返回给客户端，这样就间接实现了跨域

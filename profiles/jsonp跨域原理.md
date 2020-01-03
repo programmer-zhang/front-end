@@ -19,7 +19,7 @@
 ### 不受同源策略影响的部分
 * `<script>` 标签 、css样式表、图片资源文件
  
-## 一、jsonp实现跨域
+## 一、jsonp实现跨域请求
 ### 原理
 * 利用 `<script>` 标签可以链接到不同源的 `js` 脚本，从而达到跨域目
 
@@ -96,12 +96,20 @@ request({
 })
 ```
 
-## 二、使用 iframe + form 进行跨域
-### 原理
-* 使用
+## 二、使用 iframe + form 进行跨域请求
 
-## 三、CORS
+## 三、CORS(跨域资源共享 Cross-origin resource sharing)进行跨域请求
+### 分类
+* 简单请求
+	* 请求方法是以下几种: GET、POST、HEAD
+	* HTTP头信息是以下几种: Accept、Accept-Language、Content-Language、Last-Event-ID、Content-Type ( 只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain )
+* 非简单请求
+	* 除去简单请求之外的请求
+
 ### 实现方式
+* `CORS` 需要浏览器和后端同时支持
+* 浏览器会自动进行 `CORS` 通信，实现 `CORS` 通信的关键是后端。只要后端实现了 `CORS`，就实现了跨域。
+* 需要服务端设置 `Access-Control-Allow-Origin` 就可以开启 `CORS`
 
 ### 其他跨域方法
 * 因为同源策略是针对客户端的，在服务器端没有什么同源策略，是可以随便访问的，所以我们可以通过下面的方法绕过客户端的同源策略的限制：客户端先访问 同源的服务端代码，该同源的服务端代码，使用httpclient等方法，再去访问不同源的 服务端代码，然后将结果返回给客户端，这样就间接实现了跨域

@@ -10,14 +10,17 @@
 	* 使用PreRender.io预渲染页面（PreRender.io通过执行页面上的JavaScript，然后呈现给搜索引擎爬虫）
 	
 # 什么是PerRender预渲染
-	* 基于Node.js 
-	* 兼容所有的JavaScript框架和库
-	* 让你的JavaScript网站支持搜索引擎和社交媒体
-	* 采用PhantomJS渲染JavaScript网页然后呈现为HTML
-	* 通过实现prerender服务层来缓存访问过的页面，提高性能。
-	* 利用JavaScript API脚本化的Headless WebKit
-	* 具有  速度快  和  支持Native  的各种Web标准：DOM处理，CSS选择器，JSON，Canvas和SVG
-* PreRender中间件（用中间件实现应用程序内部逻辑的PreRender库）
+### 特点
+* 基于Node.js 
+* 兼容所有的JavaScript框架和库
+* 让你的JavaScript网站支持搜索引擎和社交媒体
+* 采用PhantomJS渲染JavaScript网页然后呈现为HTML
+* 通过实现prerender服务层来缓存访问过的页面，提高性能。
+* 利用JavaScript API脚本化的Headless WebKit
+* 具有  速度快  和  支持Native  的各种Web标准：DOM处理，CSS选择器，JSON，Canvas和SVG
+
+### PreRender中间件（用中间件实现应用程序内部逻辑的PreRender库）
+* 部分中间件
 	* [NodeJS Express](https://github.com/prerender/prerender-node)
 	* [Ruby on Rails](https://github.com/prerender/prerender_rails)
 	* [Java](https://github.com/greengerong/prerender-java)

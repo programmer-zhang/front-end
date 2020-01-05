@@ -41,7 +41,7 @@
 
 > [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
-> [跨域的解决方式](./profiles/crooss-origin.md)
+> [跨域请求的解决方式](./profiles/crooss-origin.md)
 
 > [JS内存图](./profiles/js内存图.md)
 

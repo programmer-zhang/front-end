@@ -1,7 +1,7 @@
 # 数据类型
 ## 原始数据类型（基本数据类型）
 ### 种类
-* number 、boolean、 string、null、 undefined、symbol(新增)、bigInt(新标准，兼容性很差)
+* number 、boolean、 string、null、 undefined、symbol(ES6新增)、bigInt(新标准，兼容性很差)
 
 ### 特性
 * 保存在 **栈内存** 中的简单数据段
@@ -9,7 +9,7 @@
 * 没有作用域链中的 `_proto_` 属性
 
 ### 检测
-* 使用typeof可以检测基本数据类型
+* 使用 `typeof` 可以检测基本数据类型
 * 但是 `typeof(null) == 'object'`
 	* `null` 得到检测错误是历史遗留问题，在 `JS` 的最初版本中使用的是 32 位系统，为了性能考虑使用低位存储变量的类型信息，`000` 开头代表是对象然而 `null` 表示为全零，所以将它错误的判断为 `object` 。
 
@@ -45,6 +45,8 @@ function isPlainObject (obj) {
 }
 ```
 
+## 数据类型判断的各种方法
+* [数据类型判断的各种方法]()已写在另一篇文章中
 
 ## 0.1 + 0.2 为什么不等于 0.3 ？
 * 原因：

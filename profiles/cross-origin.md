@@ -2,7 +2,7 @@
 
 > 平时工作中 webpack-dev-server 和负责 服务器 配置的大佬会帮我们搞定，但是作为有担当、负责任的青年我们不能就这么混过去了
 
-> 接下来就开始展现真正的技术了---跨域问题的产生原因及部分常用的解决方式详解
+> 接下来就开始展现真正的技术了---跨域问题的产生原因及部分常用的跨域请求解决方式详解
 
 ## 需要跨域的根本原因--同源策略
 ### 同源策略的 MDN 详细概念
@@ -86,10 +86,10 @@ const request = ({url, data}) => {
 }
 // 使用方式
 request({
-  url: 'http://www.xxx.com/api/jsonp',
+  url: 'http://www.xxx.com/api',
   data: {
     // 传参
-    msg: 'helloJsonp'
+    msg: 'xxxxxx'
   }
 }).then(res => {
   console.log(res)
@@ -97,7 +97,48 @@ request({
 ```
 
 ## 二、使用 iframe + form 进行跨域请求
+### 实现方式
 
+```
+const requestPost = ({url, data}) => {
+  // 首先创建一个用来发送数据的iframe.
+  const iframe = document.createElement('iframe')
+  iframe.name = 'postAjax'
+  iframe.style.display = 'none'
+  document.body.appendChild(iframe)
+  const form = document.createElement('form')
+  const node = document.createElement('input')
+  // 注册iframe的load事件处理程序,如果你需要在响应返回时执行一些操作的话.
+  iframe.addEventListener('load', function () {
+    console.log('post success')
+  })
+
+  form.action = url
+  // 在指定的iframe中执行form
+  form.target = iframe.name
+  form.method = 'post'
+  for (let name in data) {
+    node.name = name
+    node.value = data[name].toString()
+    form.appendChild(node.cloneNode())
+  }
+  // 表单元素需要添加到主文档中.
+  form.style.display = 'none'
+  document.body.appendChild(form)
+  form.submit()
+
+  // 表单提交后,就可以删除这个表单,不影响下次的数据发送.
+  document.body.removeChild(form)
+}
+// 使用方式
+requestPost({
+  url: 'http://www.xxx.com/api',
+  data: {
+    msg: 'xxxx'
+  }
+})
+
+```
 ## 三、CORS(跨域资源共享 Cross-origin resource sharing)进行跨域请求
 ### 分类
 * 简单请求
@@ -111,7 +152,16 @@ request({
 * 需要服务端设置 `Access-Control-Allow-Origin` 就可以开启 `CORS`
 
 ### CORS 简单请求
+* 服务端配置好的前提下，简单请求直接请求就可以
 
-### 其他跨域方法
-* 因为同源策略是针对客户端的，在服务器端没有什么同源策略，是可以随便访问的，所以我们可以通过下面的方法绕过客户端的同源策略的限制：客户端先访问 同源的服务端代码，该同源的服务端代码，使用httpclient等方法，再去访问不同源的 服务端代码，然后将结果返回给客户端，这样就间接实现了跨域
-* 在服务端开启cors也可以支持浏览器的跨域访问。cors即：Cross-Origin Resource Sharing 跨域资源共享
+### CORS 非简单请求
+* 非简单请求在请求时会发送两次请求
+	* 第一次是预检测请求，返回的状态码为204
+	* 第二次请求为预检测请求通过后才会发送真实请求
+
+## 四、利用服务器中转
+### 原理
+* 因为同源策略是针对客户端的，在服务器端没有什么同源策略，是可以随便访问的
+
+### 实现方式
+* 客户端先访问 同源的服务端代码，该同源的服务端代码，使用httpclient等方法，再去访问不同源的 服务端代码，然后将结果返回给客户端

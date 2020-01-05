@@ -51,7 +51,7 @@
 
 > [JS解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
 
-> [JS数据类型详解]
+> [JS数据类型](./profiles/js_data_type.md)
 
 > [JS判断数据类型](./profiles/js_judge_type.md)
 
@@ -62,6 +62,8 @@
 > [闭包]
 
 > [作用域]
+
+> [原型链]
 
 > [函数柯里化]
 

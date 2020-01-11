@@ -1,4 +1,9 @@
-上一篇写了点[nginx 的架构](./nginx基础.md)，nginx开发过程中可能架构相关的知识需要的不多，但是了解些nginx架构方便的知识对于我们更深层次地了解nginx配置有很大的帮助
+> 上一篇写了点[nginx 的架构](./nginx基础.md)，nginx开发过程中可能架构相关的知识需要的不多，但是了解些nginx架构方便的知识对于我们更深层次地了解nginx配置有很大的帮助
+
+## 阅读本文您将收获
+* nginx 的安装
+* nginx 的配置解析
+
 ## nginx安装
 * MAC上装有homebrew，使用其下载nginx `brewinstall nginx`
 * nginx下载成功后，有三个目录比较重要

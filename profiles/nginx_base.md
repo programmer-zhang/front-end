@@ -1,4 +1,8 @@
-* [nginx](http://tengine.taobao.org/book/chapter_02.html)
+> [nginx](http://tengine.taobao.org/book/chapter_02.html) 详细文档
+
+## 阅读本文您将收获
+* nginx 的作用
+* nginx 基础信息，包括架构、基础配置、基本概念
 
 ##  nginx的作用
 * webserver

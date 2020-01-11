@@ -1,3 +1,7 @@
+## 阅读本文您将收获
+* nginx location 配置
+* nginx 跨域原理
+
 ## Nginx location配置
 ### Nginx location语法规则
 * `location [=|~|~*|^~] /uri/ { … }`

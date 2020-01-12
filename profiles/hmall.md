@@ -6,13 +6,14 @@
 ## 技术选型
 * 项目语言：HTML、CSS、JavaScript
 * 项目框架：Vue.js
-* 项目搭建脚手架：vue-cli
-* 工程化工具：webpack、Sass、Npm
-* 源码管理：gitlab
+* 项目搭建脚手架：Vue-cli
+* 工程化工具：Webpack、Sass、Npm
+* 源码管理：Gitlab
 * 运行环境：Browser & Node(PM2)
 * 第三方服务：GrowingIO、高德地图
 
 ## 技术方案
+* 前后端分离
 * 非单页面应用，多页面站点，极限开发，直接使用Vue-cli
 * 产品考虑SEO，上VueX和SSR
 * 便于开发，使用sass等工程化工具
@@ -62,7 +63,7 @@
 	* user.js 用户信息相关
 	* filter 业务相关filter
 * Plugins:
-	* bsae.js 基础公共方法库
+	* bsae.js 基础公共方法库(包括精准计算，手机号脱敏，格式化金额等等)
 	* cookie.js 针对cookie操作公共方法
 	* gotoapps.js hyBrid公共方法
 	* h5toapp.js  hyBrid公共方法
@@ -84,7 +85,7 @@
 	* 服务器端渲染将数据大量存储在内存中，导致页面不销毁内存无法释放，内存猛增
 	* 代码书写不规范，导致部分代码出现内存泄漏的情况
 * 尝试解决方案
-	* code review 将部分内存泄漏释放掉	[参考资料](http://www.ayqy.net/blog/js%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/)
+	* code review 后将部分内存泄漏释放掉	[参考资料](http://www.ayqy.net/blog/js%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/)
 	* 开启node多进程	[参考资料](https://blog.csdn.net/u012251421/article/details/76262949)
 	* 开启组件缓存和页面缓存	[参考资料](http://www.ayqy.net/blog/js%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/)
 
@@ -94,11 +95,11 @@
 
 #### 多线程问题
 * 分析原因
-	* 为应对内存溢出问题，增加了多线程和组件缓存以及页面缓存，但是机器的CPU压力和内存压力也同事增大
+	* 为应对内存溢出问题，增加了多线程和组件缓存以及页面缓存，但是机器的CPU压力和内存压力也同时增大
 
 #### 服务器端渲染接口请求报错
 * 分析原因
-	* 服务器端获取不到url上的参数，导致部分接口请求报错，页面阻塞
+	* 服务器端获取传参错误，导致部分接口请求报错，页面阻塞
 
 #### 部分解决方案技术实现
 * 开启多线程

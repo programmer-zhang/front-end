@@ -37,13 +37,21 @@ subType.prototype.constructr = superType()
 ## 继承方式四：extends 实现继承(ES6 方法)
 
 ```
-class Car {
-	constructor(id) {
-		this.id = id
-	}
-	drive() {}
-	stop() {}
-	addOil() {}
+class Zoo {
+      constructor(x, y) {
+		this.x = x;
+		this.y = y;
+      }
 }
-class otherCar extends Car()
+class Dog extends Zoo {
+      constructor(x,y,z) {
+	      // 子类实例的创建基于父类实例,只有super方法才能得到父类实例
+		super(x,y)
+		this.z = z;
+      }
+}
+const dog = new Dog(1,2,3)
+console.log(dog)
+console.log(dog instanceof Dog)  // true
+console.log(dog instanceof Zoo)  // true
 ```

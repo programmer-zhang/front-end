@@ -149,6 +149,8 @@
 
 > [更友好的使用Chorme浏览器](./profiles/Chrome-Devtools.md)
 
+> [前端安全]
+
 ## 微信相关 :envelope:
 > [wechat遇到的Error](./profiles/wechat_error.md)
 

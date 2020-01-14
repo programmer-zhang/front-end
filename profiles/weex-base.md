@@ -107,7 +107,7 @@
 * |- config.js	// 项目的相关配置文件，你可以在这个文件中配置切换不同的环境
 
 ## 导航方式
-### VUE-Router
+### Vue-Router
 * 暂不做讲解
 
 ### weex-navigator
@@ -136,8 +136,8 @@
 
 ## 数据传递 
 ### Vue的方式
-* props
-* this.$emit('fun', data)
+* `props`
+* `this.$emit('fun', data)`
 
 ### storage
 * 永久保存，在 H5/web 端 实际采用的是 `HTML5 LocalStorage API`

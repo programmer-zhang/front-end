@@ -67,6 +67,8 @@
 
 > [原型链]
 
+> [继承]
+
 > [函数柯里化]
 
 > [进程和线程]
@@ -101,9 +103,9 @@
 
 > [Nginx_location](./profiles/nginx_location.md)
 
-> [Vue2.0 this.$set的正确打开方式](./profiles/vue_this.set.md)
+> [Vue this.$set的正确打开方式](./profiles/vue_this.set.md)
 
-> [Vue 好用的富文本编辑器 vue-quill-editor ](./profiles/vue-quill-editor.md)
+> [Vue 好用的富文本编辑器 vue-quill-editor](./profiles/vue-quill-editor.md)
 
 > [Vue 中慎用style标签的scoped属性]
 

@@ -1,9 +1,11 @@
 > 之前一直用 MAC OS 自带的终端进行操作，但总感觉差点事，于是在同事的介绍下，用上了iTerm2，结合 on my zsh 之后发现很强大，正式入坑
 
 ## 安装iTerm2
-* [下载地址](https://www.iterm2.com/index.html)
-* 解压之后便是执行程序文件
-* 或者使用 MAC OS 自带的 Homebrew 进行安装 `$ brew cask install iterm2`
+* 方式一
+	* [下载地址](https://www.iterm2.com/index.html)
+	* 解压之后便是执行程序文件
+* 方式二
+	* 使用 MAC OS 自带的 Homebrew 进行安装 `$ brew cask install iterm2`
 
 ## 配置iTerm2主题(可选)
 * 推荐一个主题，可是入坑的朋友们推荐的 Solarized Dark theme [下载地址](http://ethanschoonover.com/solarized)

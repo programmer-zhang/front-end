@@ -2,17 +2,17 @@
 
 ## 用好Chrome Devtools
 ### console的骚操作
-* congsole.log()、console.error()、console.warn()、console.info(): 常规打印数据信息
-* console.table(): 表格形式打印复杂的数据结构
-* console.group()、console.groupEnd(): 分组打印信息
-* console.assert(): 条件打印
-* console.dir(): 递归打印对象的所有属性
-* console.trace(): 追踪函数的调用轨迹
+* `congsole.log()、console.error()、console.warn()、console.info()` 常规打印数据信息
+* `console.table()` 表格形式打印复杂的数据结构
+* `console.group()、console.groupEnd()` 分组打印信息
+* `console.assert()` 条件打印
+* `console.dir()` 递归打印对象的所有属性
+* `console.trace()` 追踪函数的调用轨迹
 * 带样式打印
 ![带样式打印](../images/console.jpg)
 
 ### 检查无用的css/js
-* more tools=>Coverage
+* `more tools => Coverage`
 ![检查没用的CSS/JS](../images/coverage.jpg)
 
 ### 断点检查
@@ -28,10 +28,10 @@
 * 紫色css CPU占有率
 
 ### 检查内存泄漏
-* Memory=>profiles
+* `Memory => profiles`
 
 ### 查看内存消耗
-* Memory=>profiles=>ALLOCATION TIMELINES
+* `Memory => profiles => ALLOCATION TIMELINES`
 
 ## 浏览器并发请求数量问题
 * 基于端口数量和线程切换开销的考虑,浏览器不可能无限量的并发请求

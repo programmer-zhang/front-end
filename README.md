@@ -201,7 +201,7 @@
 
 > [一个好用的 mac 终端替代方案](./profiles/一个好用的mac终端替代方案.md)
 
-> [MAC 安装 Homebrew 及错误处理]
+> [MAC 安装 Homebrew 及错误处理](./profiles/homebrew.md)
 
 > [Chrome 开发者工具各种骚技巧(外链资料)](https://juejin.im/post/5af53823f265da0b75282b0f?utm_source=gold_browser_extension)
 

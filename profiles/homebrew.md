@@ -40,7 +40,7 @@
 * 终端输入 `git config --global http.postBuffer 524288000` 进行调整curl的postBuffer的默认值
 * 然后正常执行安装过程
 
-### 错误信息 curl 56 LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 54(镜像源访问失败)
+### 错误信息：curl 56 LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 54(镜像源访问失败)
 * 将brew的install文件下载到本地 `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install >> brew_install`
 * 编辑brew_install文件,替换BREW_REPO 和CORE_TAP_REPO两行为如下命令：(存在则替换，不存在就添加) 
 
@@ -52,17 +52,17 @@ CORE_TAP_REPO = "git://mirrors.ustc.edu.cn/homebrew-core.git".freeze
 * 开始安装过程 `/usr/bin/ruby ~/brew_install`
 
 ## Homebrew使用命令
-* brew -v	查询Homebrew版本
-* brew -h	brew帮助
-* brew update	更新Homebrew
-* brew install <pkg_name>	安装任意软件
-* brew uninstall <pkg_name>	卸载任意软件
-* brew search <pkg_name>	查询任意包
-* brew list	列出安装列表
-* brew info <pkg_name>	查看任意包内容信息
-* brew upgrade <pkg_name>	更新任意包
-* brew cleanup <pkg_name>	删除具体旧软件
-* brew cleanup		删除所有旧软件
-* brew outdated		已安装的包是否需要更新
-* brew deps	已安装的包是否需要更新
+* `brew -v` 查询Homebrew版本
+* `brew -h`	brew帮助
+* `brew update`	更新Homebrew
+* `brew install <pkg_name>`	安装任意软件
+* `brew uninstall <pkg_name>`	卸载任意软件
+* `brew search <pkg_name>`	查询任意包
+* `brew list`	列出安装列表
+* `brew info <pkg_name>`	查看任意包内容信息
+* `brew upgrade <pkg_name>`	更新任意包
+* `brew cleanup <pkg_name>`	删除具体旧软件
+* `brew cleanup`		删除所有旧软件
+* `brew outdated`		已安装的包是否需要更新
+* `brew deps`	已安装的包是否需要更新
 * 更多使用命令[请点击]([https://docs.brew.sh/](https://docs.brew.sh/))

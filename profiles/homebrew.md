@@ -18,7 +18,7 @@
 
 ## 卸载
 * 打开电脑终端，讲安装命令最后的install替换成uninstall就可以
-* eg `/usr/bin/ruby -e "$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/](https://raw.githubusercontent.com/Homebrew/)install/master/uninstall)"`
+*  `/usr/bin/ruby -e "$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/](https://raw.githubusercontent.com/Homebrew/)install/master/uninstall)"`
 * 安装过程中提示输入各种指令或密码
 * 最后提示卸载成功
 

@@ -14,12 +14,12 @@
 
 ## 安装与使用
 * 快速入手
-	* 利用vue-cli
-	* vue init nuxt-community/starter-template <project-name>
-	* npm install
-	* npm run dev
+	* 利用 `vue-cli`
+	* `vue init nuxt-community/starter-template <project-name>`
+	* `npm install`
+	* `npm run dev`
 * 徒手搭建
-	* 新建package.json
+	* 新建 `package.json`
 	
 	```
 	{
@@ -29,8 +29,8 @@
 		}
 	}
 	```
-	* npm install --save nuxt
-	* npm run dev
+	* `npm install --save nuxt`
+	* `npm run dev`
 
 ## 流程图与生命周期
  ![流程图](../images/nuxt-schema.png)

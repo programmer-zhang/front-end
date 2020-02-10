@@ -125,6 +125,8 @@
 
 > [weex 基础使用指南](./profiles/weex-base.md)
 
+> [WeHub 实践PC版微信]
+
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
 

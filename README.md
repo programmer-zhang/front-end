@@ -166,9 +166,10 @@
 
 > [微信小程序实现屏幕自动滚动]
 
-> [小程序实现骨架屏]
-
 > [微信 JS API 支付](./profiles/wechat_pay.md)
+
+> [百度小程序实现骨架屏]
+
 
 ## 编码实践 :paperclip:
 > [Erro(持续更新)](./profiles/Erro.md)

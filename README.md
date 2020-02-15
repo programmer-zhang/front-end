@@ -4,9 +4,8 @@
 * 如有喜欢，请尽情用star羞辱我
 * 获取最新文章请关注公众号：全栈道路
 
-![](./images/wechat-mp-logo.png)
-
-![github commit](https://ghchart.rshah.org/programmer-zhang)
+<img src="./images/wechat-mp-logo.png" style="width: 100%">
+<img src="https://ghchart.rshah.org/programmer-zhang" style="width:100%">
 
 ## HTML & CSS相关 :european_castle:
 > [HTML_DOM 节点绑定事件](./profiles/HTML_tabindex.md)

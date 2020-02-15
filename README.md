@@ -2,6 +2,9 @@
 * 本人仍在积极整理中，还请见谅，如有问题，请及时更正，万分感谢 :stuck_out_tongue_closed_eyes:
 * PS:is free :grin: 
 * 如有喜欢，请尽情用star羞辱我
+* 获取最新文章请关注公众号：全栈道路
+
+![](./images/wechat-mp-logo.png)
 
 ![github commit](https://ghchart.rshah.org/programmer-zhang)
 

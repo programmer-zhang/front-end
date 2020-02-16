@@ -114,33 +114,33 @@ function $setShare(options) {
 	        nonceStr: resp.data.data.noncestr,
 	        signature: resp.data.data.signature,
 	        jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage"]
-	    });
+	    })
 
 	    var shareTimeLineData = options || {
 	        title: '分享标题',
 	        desc: '分享摘要',
 	        link: '',
 	        imgUrl:'',
-	    };
+	    }
 
 	    var shareAppData = options || {
 	        title: '分享标题',
 	        desc: '分享摘要',
 	        link: '',
 	        imgUrl:'',
-	    };
+	    }
 	    wx.ready(function() {
 	        wx.onMenuShareAppMessage(shareAppData);
 	        wx.onMenuShareTimeline(shareTimeLineData);
 	    });
 	    wx.error(function(res){
 	        console.log('分享签证失败', res)
-	    });
+	    })
 	},function(err){
 	    if (err) {
 	        alert(err);
 	    }else{
-	        alert('网络错误,请稍后重试!');
+	        alert('网络错误,请稍后重试!')
 	    }
 	});
 }

@@ -50,6 +50,7 @@
 		left: 0px;
 		width: 100%;
 		height: 20px;
+	}
 	```
 	* 自定义radio/checkbox样式
 	
@@ -57,8 +58,8 @@
 	input[type=checkbox]{}
 	input[type=checkbox]:checked{}
 	```
-	* 巧用css伪类，合理使用原生选择器，如：`:focus、@media、input[type=email]:invalid`
-	* 使用全局样式sass、scss
+	* 巧用css伪类，合理使用原生选择器，如：`:focus`、`@media`、`input[type=email]:invalid`
+	* 使用sass、scss等预编译器
 	
 * 优化HTML标签
 	* 文字`<p>``<h1>`减少css代码
@@ -84,7 +85,7 @@
 * 选择器合并
 	* 把有共同的属性内容的一系列选择器组合到一起，能压缩空间和资源开销
 * 0值去单位
-	* 对于为0的值，尽量不要加单位，增加兼容性
+	* 对于值为0的属性，尽量不要加单位，增加兼容性
 
 ### JS优化
 * 减少前端代码耦合

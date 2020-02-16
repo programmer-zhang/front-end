@@ -64,13 +64,16 @@
 * 获取微信授权`code`
 
 ```
+// 务必使用当前的url，否则会鉴权失败
 let redirectUri = encodeURI(window.location.href)
 window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=xxx&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect`
 ```
 * 携带`code`向服务器端获取用户授权
 
 ```
+// 从返回的url上获取code
 let code = getQuery(window.location.href).code
+// 把code返回给后端从而获取授权的信息
 axios.get("/xxx/getWxInfo?code=" + code).then(res => {
 	if (res && res.data && res.data.code == 10000) {
 		this.userInfo = res.data.data

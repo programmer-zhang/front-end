@@ -85,6 +85,8 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 * 高手玩家往往时间运行比较高效，需要知道自己每时每刻都做了什么，普通玩家可能在开发过程中需要知道编译用了多久，`iTem2` 自带时间轴，让你的使用变得准确
 * 点击工具栏中的 `view->showTimestamps` 打开时间轴
 
+	![时间轴](../images/item2-timestamps.png)
+
 ### 高亮显示光标所在行
 * `iTem2` 还提供了所在行高亮功能
 * 点击工具栏中的 `view->showAnnotations` 打开高亮行显示

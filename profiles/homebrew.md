@@ -4,8 +4,8 @@
 * Homebrew如何使用
 
 ## 简介
-* Homebrew简称brew
-* Homebrew是一款Mac OS平台下的软件包管理工具，很方便帮助我们实现安装、卸载、更新、查看、搜索等很多实用的功能。
+* `Homebrew` 简称 `brew`
+* `Homebrew` 是一款 `Mac OS` 平台下的软件包管理工具，很方便帮助我们实现安装、卸载、更新、查看、搜索等很多实用的功能。
 * 简单的一条指令，就可以实现包管理
 
 ## 安装
@@ -13,11 +13,11 @@
 * 打开电脑终端，并在终端中输入刚才复制的脚本命令
 * 安装过程中提示输入各种指令或密码
 * 安装成功后终端进行验证，输入`brew -v`
-* 如果能正常出现brew的版本号，证明安装成功
+* 如果能正常出现 `brew` 的版本号，证明安装成功
 * 如果不能出现，则安装失败
 
 ## 卸载
-* 打开电脑终端，讲安装命令最后的install替换成uninstall就可以
+* 打开电脑终端，讲安装命令最后的 `install` 替换成 `uninstall` 就可以
 *  `/usr/bin/ruby -e "$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/](https://raw.githubusercontent.com/Homebrew/)install/master/uninstall)"`
 * 安装过程中提示输入各种指令或密码
 * 最后提示卸载成功

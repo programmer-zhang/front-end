@@ -12,7 +12,7 @@
 	* 解压之后便是执行程序文件
 * 方式二
 	* 使用 MAC OS 自带的 Homebrew 进行安装 `$ brew cask install iterm2`
-	* 电脑缺少 Homebrew 的同学可点击这里尝试安装
+	* 电脑缺少 Homebrew 的同学可[点击这里尝试安装](https://github.com/programmer-zhang/front-end/blob/master/profiles/homebrew.md)
 
 ## 配置iTerm2主题(可选)
 * 推荐一个主题 Solarized Dark theme [下载地址](http://ethanschoonover.com/solarized)

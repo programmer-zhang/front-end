@@ -1,5 +1,11 @@
 > 之前一直用 MAC OS 自带的终端进行操作，但总感觉差点事，于是在同事的介绍下，用上了iTerm2，结合 on my zsh 之后发现很强大，正式入坑
 
+> 文章建议阅读时间：5分钟
+
+## 阅读本文您将收获：
+* iTerm2 安装
+* iTerm2 使用技巧
+
 ## 安装iTerm2
 * 方式一
 	* [下载地址](https://www.iterm2.com/index.html)
@@ -60,14 +66,14 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 * 很多工程师对自己的开发工具有很高的颜值要求，`iTerm2` 同样给使用者提供了可配置颜色和部分主体，除了上面安装说明中提到的主题网站外，`iTem2` 也给我们提供了很多自选主题。
 * 选择 `Preferences->Profiles->`, 就可以自行配置了，如图 
 
-	![item2配置色彩方案](../images/item2-color.png)
+	![iterm2配置色彩方案](../images/item2-color.png)
 	
 * 配置完重启客户端，呵，有内味了！
 	
 ### 提高文本使用效率
 * 作为终端工具 `iTerm2` 自然提供了搜索功能，用户使用搜索可以使用 `tab 键` 自动按照单词选中后面的语句，类似于终端文件联想功能，然后点击 `Enter 键` 就可以将选中的文字复制到粘贴板上。
 
-	![item2搜索](../images/item2-search.png)
+	![iterm2搜索](../images/item2-search.png)
 	
 ### 终端指令提示
 * 终端指令太多记不清楚怎么办，输入字符，点击 `command + ;`，`iTerm2` 会自动给你展开提示

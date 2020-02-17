@@ -91,3 +91,5 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 * `iTem2` 还提供了所在行高亮功能
 * 点击工具栏中的 `view->showAnnotations` 打开高亮行显示
 	
+### 更多使用技巧
+* 查看更多使用技巧请点击[官方链接](https://www.iterm2.com/documentation.html)

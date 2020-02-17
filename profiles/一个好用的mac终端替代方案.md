@@ -73,7 +73,7 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 * 终端指令太多记不清楚怎么办，输入字符，点击 `command + ;`，`iTerm2` 会自动给你展开提示
 
 ### 调出复制粘贴历史
-* iTerm2提供了复制粘贴历史记录的功能，使用快捷键 `shift + command + H` 就可以在光标处调出复制粘贴历史， so easy!
+* `iTerm2` 提供了复制粘贴历史记录的功能，使用快捷键 `shift + command + H` 就可以在光标处调出复制粘贴历史， so easy!
 
 ### 输入历史
 * 正常的终端都能通过键盘上下键，而 `iTerm2` 能够做到记录你的输入字符
@@ -82,13 +82,13 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 	![输入历史](../images/item2-type-log.png)
 	
 ### 显示命令执行时间轴、
-* 高手玩家往往时间运行比较高效，需要知道自己每时每刻都做了什么，普通玩家可能在开发过程中需要知道编译用了多久，`iTem2` 自带时间轴，让你的使用变得准确
+* 高手玩家往往时间运行比较高效，需要知道自己每时每刻都做了什么，普通玩家可能在开发过程中需要知道编译用了多久，`iTerm2` 自带时间轴，让你的使用变得准确
 * 点击工具栏中的 `view->showTimestamps` 打开时间轴
 
 	![时间轴](../images/item2-timestamps.png)
 
 ### 高亮显示光标所在行
-* `iTem2` 还提供了所在行高亮功能
+* `iTerm2` 还提供了所在行高亮功能
 * 点击工具栏中的 `view->showAnnotations` 打开高亮行显示
 	
 ### 更多使用技巧

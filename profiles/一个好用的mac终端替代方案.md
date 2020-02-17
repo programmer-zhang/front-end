@@ -6,9 +6,10 @@
 	* 解压之后便是执行程序文件
 * 方式二
 	* 使用 MAC OS 自带的 Homebrew 进行安装 `$ brew cask install iterm2`
+	* 电脑缺少 Homebrew 的同学可点击这里尝试安装
 
 ## 配置iTerm2主题(可选)
-* 推荐一个主题，可是入坑的朋友们推荐的 Solarized Dark theme [下载地址](http://ethanschoonover.com/solarized)
+* 推荐一个主题 Solarized Dark theme [下载地址](http://ethanschoonover.com/solarized)
 * 解压文件，打开 ` Preferences -> Profiles -> Colors -> Color Presets -> Import `，选择刚才解压的 ` solarized->iterm2-colors-solarized->Solarized Dark.itermcolors `文件，导入成功，最后选择 Solarized Dark 主题，关掉终端重启就大功告成了
 
 ## 配置 On My Zsh
@@ -45,3 +46,5 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 
 * 效果就是酱紫 
 	![](../images/item2.jpg)
+	
+## 使用手册

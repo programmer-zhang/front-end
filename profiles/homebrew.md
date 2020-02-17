@@ -9,7 +9,17 @@
 * 简单的一条指令，就可以实现包管理
 
 ## 安装
-* 打开浏览器查看 [homebrew官方网站]([https://brew.sh/](https://brew.sh/)) 最新下载脚本安装命令,并复制
+### 安装  `Xcode Command Line Tools` 
+* 在安装 `Homebrew` 之前，需要将 `Xcode Command Line Tools` 安装完成，这样你就可以使用基于 `Xcode Command Line Tools` 编译的 `Homebrew`
+
+### 复制脚本命令
+* 打开浏览器查看 [homebrew官方网站](https://brew.sh/) 最新下载脚本安装命令,并复制
+	
+```
+// 打不开的可以复制以下命令，安装不上的请查看文章后面错误处理
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+### 执行脚本命令
 * 打开电脑终端，并在终端中输入刚才复制的脚本命令
 * 安装过程中提示输入各种指令或密码
 * 安装成功后终端进行验证，输入`brew -v`

@@ -45,6 +45,22 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 	![](../images/item2-conf.png)
 
 * 效果就是酱紫 
+
 	![](../images/item2.jpg)
 	
 ## 使用手册
+### 启动一个远程 server 终端
+* 选择 `Preferences->Profiles` ，新增一个 `profile` ，并设置启动的快捷键和 `ssh` 命令, 如图
+
+	![启动一个远程 server 终端](../images/item2-ssh.png)
+	
+* 完成后就可以用快捷键或者在顶部工具栏 `Profiles` 中直接点击进行连接
+
+### 色彩方案配置(有强迫症的开发者可以配置一下)
+* 很多工程师对自己的开发工具有很高的颜值要求，iTerm2同样给使用者提供了可配置颜色和部分主体，除了上面安装说明中提到的主题网站外，iTem2 也给我们提供了很多自选主题。
+* 选择 `Preferences->Profiles->`, 就可以自行配置了，如图 
+
+	![item2配置色彩方案](../images/item2-color.png)
+	
+### 
+

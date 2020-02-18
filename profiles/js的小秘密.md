@@ -76,7 +76,7 @@ for(var i = 1; i < arr.length; i++) {
 }  
 console.log(arr4);  
 ```
-* sort()去重
+* sort( )去重
 
 ```
 let arrSort = arr.sort();  
@@ -103,7 +103,7 @@ for(let i = 0, len = arr6.length; i < len; i++) {
 console.log(arr6); 
 ```
 
-### 用好 filter，map，every, find和其它 ES6 新增的高阶遍历函数
+### 用好 filter, map, every, find和其它 ES6 新增的高阶遍历函数
 * 将数组中的false值去掉
 
 ```

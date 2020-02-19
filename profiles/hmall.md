@@ -16,13 +16,13 @@
 
 ## 技术方案
 * 前后端分离
-* 非单页面应用，多页面站点，极限开发，直接使用Vue-cli
-* 产品考虑SEO，上VueX和SSR
-* 便于开发，使用sass等工程化工具
+* 非单页面应用，多页面站点，评估时大概30多个页面，极限开发，直接使用 `Vue-cli`
+* 产品考虑SEO，使用 `VueX` 做 `SSR` ( `Vue` 做 `SSR` 后续我会出文章说明实现方式和一些坑，有兴趣的可以点击关注获取最新文章)
+* 便于开发，使用 `sass` 等工程化工具
 * 确定开发规范和代码规范
-* 根据项目需要，封装user.js(针对用户信息存储), base.js(基础公共JS文件), url.js(针对url的操作), http.js(二次封装axios)
-* 根据项目需求，抽象组件(compoments)和插件(widgets)注册到Vue实例
-* 根据项目需要，合理设置Router和Page
+* 根据项目需要，封装 `user.js`(针对用户信息存储), `base.js`(基础公共JS文件), `url.js`(针对url的操作), `http.js`(二次封装`axios`)
+* 根据项目需求，抽象组件(`compoments`)和插件(`widgets`)注册到Vue实例
+* 根据项目需要，合理设置`Router`和`Page`
 * 根据接口及环境需要，设置必要的环境变量和接口地址
 * 根据开发和生产需要，添加必要的依赖
 
@@ -37,48 +37,48 @@
 
 #### 语言&环境
 * 语言：
-	* 采用 Html 控制各个模块的结构；
-	* 采用 Sass 做样式的预处理；
-	* 采用 ECMAScript 6 来开发逻辑和交互，然后通过 Webpack 和 Babel 将高级版本的 JS 编译成当下流行浏览器能够解析的 ECMAScript 5。
+	* 采用 `Html`和 `HTML5` 控制各个模块的结构；
+	* 采用 `Sass` 做样式的预处理；
+	* 采用 `ECMAScript 6` 来开发逻辑和交互，然后通过 `Webpack` 和 `Babel` 将高级版本的 JS 编译成当下流行浏览器能够解析的 `ECMAScript 5`。
 * 环境：
-	* Web 前端的代码主要运行在浏览器端，但是也能在 Node 环境运行，通过 Vue-ssr Node 端插件，同样的前端代码也可以通过服务器端将 Html 渲染出来。
-	* 正式的部署中，Node 的进程管理是通过 PM2（process manager 2），它可以帮你检查进程的健康情况，并提供强大的接口，让你很容易的了解 Node 在服务器中的运行情况。
+	* Web 前端的代码主要运行在浏览器端，但是也能在 `Node` 环境运行，通过 `Vue-ssr` Node 端插件，同样的前端代码也可以通过服务器端将 `Html` 渲染出来。
+	* 正式的部署中，`Node` 的进程管理是通过 `PM2（process manager 2）`，它可以帮你检查进程的健康情况，并提供强大的接口，让你很容易的了解 Node 在服务器中的运行情况。
 
 #### 框架层
 * 框架层主要解决：算法、存储、通讯和 UI 4 大问题。
-	* Vue
-* 核心框架采用 Vue 及其 Vue 系列插件：
-	* Vue-ssr 服务器端渲染模块
-	* Vue-Router 路由模块
-	* Vuex 数据流模块
+	* `Vue`
+* 核心框架采用 `Vue` 及其 `Vue` 系列插件：
+	* `Vue-ssr` 服务器端渲染模块
+	* `Vue-Router` 路由模块
+	* `Vuex` 数据流模块
 * 选择Vue作为核心框架的原因：
-	* Vue 更加轻量级
-	* Vue 入门成本更低
-	* Vue 中文社区比较多，中文文档也翻译的很好
-	* Vue 在 GitHub 中对问题的回复也很及时
-	* Vue 语法更加忠于前端语言
-	* Vue 的解决方案更加齐全
+	* `Vue` 更加轻量级
+	* `Vue` 入门成本更低
+	* `Vue` 中文社区比较多，中文文档也翻译的很好
+	* `Vue` 在 `GitHub` 中对问题的回复也很及时
+	* `Vue` 语法更加忠于前端语言
+	* `Vue` 的解决方案更加齐全
 
 #### 公共业务层
 * 主要解决站点的业务问题，例如：系统配置、获取用户信息、与后端接口的交互等。
-* Config: 公共环境变量相关
-* Buiness:
-	* user.js 用户信息相关
-	* filter 业务相关filter
-* Plugins:
-	* bsae.js 基础公共方法库(包括精准计算，手机号脱敏，格式化金额等等)
-	* cookie.js 针对cookie操作公共方法
-	* gotoapps.js hyBrid公共方法
-	* h5toapp.js  hyBrid公共方法
-	* url.js  针对url操作公共方法
-	* weixinShare.js  分享公共方法
-* Components:  公共组件
+* `Config`: 公共环境变量相关
+* `Buiness`:
+	* `user.js` 用户信息相关
+	* `filter` 业务相关`filter`
+* `Plugins`:
+	* `bsae.js` 基础公共方法库(包括精准计算，手机号脱敏，格式化金额等等)
+	* `cookie.js` 针对cookie操作公共方法
+	* `gotoapps.js` hyBrid公共方法
+	* `h5toapp.js`  hyBrid公共方法
+	* `url.js`  针对url操作公共方法
+	* `weixinShare.js`  分享公共方法
+* `Components`:  公共组件
 	* 筛选组件
 	* 城市选择组件
 	* 商品展示组件
 	* 头部导航
 	* 等等其他组件
-* Widgets: 公共插件
+* `Widgets`: 公共插件
 	* 弹出Toast
 	* 二次封装 Swiper 滑动插件
 	* 滑动加载插件
@@ -87,6 +87,13 @@
 
 #### 应用层
 * 业务页面代码
+	* 首页推荐页
+	* 很多落地页
+	* 商品列表页
+	* 商品详情页
+	* 商品管理页
+	* 消息发布页
+	* 等等其他页面
 
 ## 以Node为服务器版本存在的问题
 

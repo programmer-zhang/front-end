@@ -30,7 +30,8 @@
 	* 框架层
 	* 业务公共层
 	* 应用层
-![](../images/hmall-basic.jpg)
+
+![](../images/hmall-basic.png)
 
 #### 语言&环境
 * 语言：

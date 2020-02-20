@@ -184,6 +184,74 @@ if (cluster.isMaster) {
 }
 ```
 
+#### 使用 LRU-Cache 管理缓存
+* 设置页面缓存
+
+```
+// server.js
+const LRU = require('lru-cache')
+const microCache = LRU({
+    max: 100, // 最大缓存的数目
+    maxAge: 1000 // 过期时间
+})
+const isCacheable = req => {
+    // 判断是否需要页面缓存
+    if (req.url && req.url === '/') {
+        return req.url
+    } else {
+        return false
+    }
+}
+
+app.get('*', (req, res) => {
+    const cacheable = isCacheable(req)
+    res.setHeader('Content-Type', 'text/html')
+    if (cacheable) {
+        const hit = microCache.get(req.url)
+        if (hit) {
+            return res.end(hit)
+        }
+    }
+    const errorHandler = err => {
+        if (err && err.code === 404) {
+            // 未找到页面
+            res.status(404).sendfile('./assets/error/500.html');
+        } else {
+            // 页面渲染错误
+            res.status(500).end('500 - Internal Server Error')
+            console.error(`error during render : ${req.url}`)
+            console.error(err)
+        }
+    }
+    const context =  { url: req.url }
+    renderer.renderToString(context, (err, html) => {
+        if (err) {
+            return errorHandler(err)
+        }
+        
+        if (context.initialState && context.initialState.htmlHead) {
+            res.write( indexHTML.head
+                .replace('<!-- TITLE -->', context.initialState.htmlHead.title)
+                .replace('<!-- METAS -->', context.initialState.htmlHead.metas)
+                .replace('<!-- SCRIPTS -->', context.initialState.htmlHead.scripts)
+                )
+        }
+        res.write(html);
+
+        if (context.initialState) {
+            res.write(
+                `<script>window.__INITIAL_STATE__=${serialize(context.initialState, {
+                    isJSON: true
+                })}</script>`
+            )
+        }
+
+        res.end(indexHTML.tail);
+        microCache.set(req.url, html)/* 设置当前缓存页面的内容*/
+    })
+})
+```
+
 #### 调整node内存大小的使用限制
 * 在 build 或者 运行node环境的时候进行更改
 
@@ -207,13 +275,14 @@ pm2 start app.js --max-memory-restart 1024M
 
 ## Nginx版本架构
 #### 语言&环境
-* 仅仅是环境层面的变化，将以node作为服务器改为开发使用node服务器，生产测试均使用node打包，利用nginx进行转发，打包配置更加简洁，不再累赘无用的SSR代码
+* 仅仅是环境层面的变化，将以`node`作为服务器改为开发使用`node`服务器，生产测试均使用`node`打包，利用`Nginx`进行转发，打包配置更加简洁
 
 #### 框架层
 * 核心框架层仍然采用Vue，只是去除了VueX，Vue-SSR，增加使用了keep-alive进行页面缓存
+* 不再累赘过多的`VueX`进行状态存储与组件通讯
 
 #### 公共业务层
-* 公共业务层不做修改
+* 公共业务层不做修改，仅仅是将代码层级的错误引用和内存消耗修改掉
 
 #### 应用层
 * 应用层不做修改

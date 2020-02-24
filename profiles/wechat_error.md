@@ -37,10 +37,16 @@
 ### 浏览器端模拟微信打开
 
 * UA-Android
+
+```
 Mozilla/5.0 (Linux; U; Android 4.1.2; zh-cn; Chitanda/Akari) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/6.0.0.58_r884092.501 NetType/WIFI
+```
 
 * UA-ios
+
+```
 Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12A365 MicroMessenger/5.4.1 NetType/WIFI
+```
 
 ### 关于微信中的 localStorage 及使用 cookie 的解决方案
 * 微信环境其实是个webview组件而已，并不是真正意义上的什么内置浏览器。
@@ -127,7 +133,7 @@ function getCookie(c_name) {
 }
 ```
 
-### 微信小程序 wx.showModal content 文字换行
+### 微信小程序 `wx.showModal content` 文字换行
 * 本身并没有换行，需要通过换行符进行实现
 * 注：在微信开发者工具中不一定能看到效果，需要在真机中才能看到
 
@@ -147,7 +153,7 @@ wx.showModal({
 })
 ```
 
-### 微信 background-image 不能使用本地图片
+### 微信 `background-image` 不能使用本地图片
 * 不知道微信什么毛病，不允许本地图片使用，必须使用在线链接才可以
 * 解决方案：
 	* 使用 `<img src="../assets/images-url">` 进行展示
@@ -158,7 +164,7 @@ wx.showModal({
 * 微信浏览器内网页内容不能撑起高度，满屏使用百分比会不起作用
 * 解决方案：使用 `100vh` 微信单位进行设置
 
-### 微信号
+### 微信号维护
 
 ```
 一般大家现在都在用微信做生意，微信却限制大家使用第三方软件加粉和日常营销，一个微信号每天最多主动加不能超过30人，所以我们要批量化的申请微信号，又因为微信的算法很强大，他判断你在做营销就会封号，所以有一个养号的概念，既把微信号养成普通人在用的号。这过程中，很多前辈花了很多钱和时间与微信做斗争。每一次微信大规模封号，都导致营销人血本无归。作为达摩院，我们希望同学少走网路，在互联网营销的道路上走的更远，赚的更多。

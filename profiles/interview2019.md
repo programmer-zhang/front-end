@@ -100,7 +100,7 @@
 
 > 以上电话面试的内容就结束了，约定了三天后去百度面试。虽然问题不多，但是经历了近一个小时，想到问了很多关于动态交互和性能优化的题目，猜测部门应该面向用户，而且量级不小，所以后续在复习中专门巩固了相关的内容。
 
-> 事实证明自己没有猜错，入职之后发现业务全是面向用户的老部门，而且日活上亿。
+> 事实证明自己没有猜错，入职之后发现业务全是面向用户，而且日活上亿。
 
 > 这里给大家一点建议，除了针对招聘信息上的招聘要求针对性复习之外，如果能够在面试前和面试官有交流，可以问一下具体是什么业务部门，这样可以提前猜测一下面试会针对哪些方面。
 
@@ -108,7 +108,7 @@
 
 ## 百度一面
 ### 自我介绍以及之前工作流程和模式
-> 这里面试官估计想了解以前的工作状态，是否是一个公认的合理的开发和工作模式，在这方面，从实习到百度，经历告诉我，不同量级不同类型的公司差别很大，同时也能反映出之前的公司技术水平和能力，从而面试官判断对面的人是否能够和自己愉快的进行合作开发。
+> 这里面试官估计想了解以前的工作状态，是否是一个公认的合理的开发和工作模式，从实习到百度，经历告诉我，不同量级不同类型的公司在这方面差别很大，同时也能反映出之前的公司技术水平和能力，从而面试官判断对面的人是否能够和自己愉快的进行合作开发。
 
 > 也可能是我想多了，就是简单问问，减轻点被面试者的压力
 
@@ -126,13 +126,6 @@
 	</main>
 <footer></footer>
 ```
-* 具体标签
-	* 文字`<p>``<h1>`减少css代码
-	* 表单`<form>`
-	* 列表`<ol>``<ul>`
-	* 图片`<img>``<picture>`
-	* 链接`<a>``<button>`
-	* 根据情况使用input type值
 
 ### CSS上有没有什么书写注意点或者可优化的角度
 > 说了这个问题我明白了，这是让我说一说在基础层面的页面优化方向，只不过把大问题分化成细节了
@@ -153,6 +146,7 @@
 ### 使用Float进行布局容易产生什么问题？解决方式呢？
 * 子元素在设置 float 后会脱离文档流，造成父元素高度塌陷
 * 解决方式：
+	* 父元素设置高度
 	* 清除浮动
 
 ```
@@ -167,7 +161,168 @@
 .inner { float:left; width:120px; height:80px; background:#FF3; }
 ```
 
-### map和forEach的区别
+### 简单说几种垂直水平居中的方式
+* 固定宽高
+
+```
+// test.html
+ <div class="outer">
+	<div class="inner">
+		inner-box
+	</div>
+</div>
+
+// test.css
+.outer {
+	width: 500px;
+	height: 300px;
+}
+.inner {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: #fff;
+}
+
+// 1. position absolute + 负margin
+.outer {
+	position: relative;
+}
+.inner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px; // 子元素高度一半
+	margin-left: -50px; // 子元素宽度一半
+}
+
+// 2. position absolute + calc
+.outer {
+	position: relative;
+}
+.inner {
+	position: absolute;
+	top: calc(50% - 50px);
+	left: calc(50% - 50px);
+}
+
+// 3. position absolute + margin auto
+.outer {
+	position: relative;
+}
+.inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+```
+
+* 不固定宽高
+
+```
+// test.html
+ <div class="outer">
+	<div class="inner">
+		inner-box
+	</div>
+</div>
+
+// test.css
+// 1. flex布局
+.outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 2. position absolute + transform
+.container {
+	position: relative;
+}
+.box-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+// 3. css-table
+.outer {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+.inner {
+	display: inline-block;
+}
+
+// 4. grid布局
+.outer {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+}
+.inner {
+	text-align: center;
+}
+```
+
+### 盒子模型
+* `box-sizing: content-box`（W3C盒子模型）：元素的宽高大小表现为内容的大小。
+* `box-sizing: border-box`（IE盒子模型）：元素的宽高表现为内容 + 内边距 + 边框的大小。背景会延伸到边框的外沿。
+
+### 平常开发遇到涉及数组遍历或对象遍历问题都是用什么方式
+> 这里说的可能不是很全，记得之前阅读过一篇全面分析各种循环方式的文章，找到后再为大家总结一遍，敬请关注。
+
+* 对象循环
+	* `for...in` 遍历
+	* `Object.keys(Object)`,创建包含对象属性的数组
+	* `Object.values(Object)`,创建包含对象值的数组
+	* `Object.getOwnPropertyNames(Object)`,返回一个数组，包含对象自身的所有属性（包含不可枚举属性）
+	* `Object.entries(Object)`,创建了一个二维数组，每个内部数组都有两个元素，第一个元素是属性名，第二个属性值
+* 数组循环
+	* 基本的 `for` 
+	* `forEach` 
+	* `map` 
+	* `for...of`
+	* 使用ES6 `filter()`，`some()`, `every()`进行业务查找和筛选
+
+### 追问：map和forEach的共同点和区别
+* 共同点
+	* 都是遍历数组
+	* 都支持三个参数，item（当前每一项），index（索引值），arr（原数组）
+* 区别
+	* map 不会改变原数组，forEach 会改变原数组的值
+
+### 追问：普通for循环和forEach的区别
+> 这里一开始没明白面试官想要问啥，答了forEach更加简洁一些，普通for循环针对大量级数据性能更好，然后面试官直接说在跳出循环上说一下，才明白要问的，这里提醒大家，如果没弄明白想问啥，最好问一下
+
+* for 循环可以通过 break，continue， return 跳出循环
+* forEach 不能使用上述跳出方式，可以采用 `try...catch` 的写法，扔出一个 `Error` 跳出循环
+
+### 追问：刚才说到 for...in 循环对象，有没有碰到什么疑惑或者问题，怎么解决的
+* 遍历的是原型链中的数据，需要使用 `hasOwnProperty` 看是否属于该对象。
+
+### 追问：既然说到原型了，讲讲你理解的原型和原型链吧
+> 从循环的问题追问到原型，我可太南了
+
+#### 简单讲
+* 每一个函数都有一个prototype对象属性，指向另一个对象(原型链上面的)
+* prototype就是调用构造函数所创建的那个实例对象的原型(proto)
+* 实例对象与原型之间的连接，叫做原型链
+
+#### 展开讲
+> 在展开讲的时候，我边画图边给面试官讲的，作为技术人员嘛，充分利用各种形式展现自己的技术理解，大概就是下边这张图
+
+![](../images/proto.png)
+
+* 定义了一个函数后，天生自带 prototype 指向函数的原型对象
+* 函数经过new调用后，返回一个全新的实例对象，实例对象的 `_proto_` 指向构造函数的原型对象
+* 对象的 `hasownproperty()` 来检查自身中是否含有该属性
+
+### 事件机制
 
 ### Vue的data以Function方式返回的原因
 * 避免产生变量共享，不以返回值的情况下，所有组件将共享同一个对象，指向相同的内存地址

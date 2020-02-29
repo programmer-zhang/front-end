@@ -150,8 +150,22 @@
 *  选择器合并
 *  0值去单位，小于1的值去掉0
 
-### Float布局容易产生什么问题？解决方式呢？
+### 使用Float进行布局容易产生什么问题？解决方式呢？
+* 子元素在设置 float 后会脱离文档流，造成父元素高度塌陷
+* 解决方式：
+	* 清除浮动
 
+```
+// test.html
+<div class="outter">
+	<div class="inner"></div>
+	<div style="clear: both;"></div>
+</div>
+
+// test.css
+.outter { width:200px; background:#3FF; border:1px solid #000;}
+.inner { float:left; width:120px; height:80px; background:#FF3; }
+```
 
 ### map和forEach的区别
 

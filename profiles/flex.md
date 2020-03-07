@@ -49,18 +49,42 @@
 
 ### `justify-content` : 主轴上的对齐方式
 * 五个值
-	* `flex-start`(默认)：从主轴开始排列
+	* `flex-start`(默认)：从主轴起点开始排列
 	* `flex-end`：从主轴结尾排列
 	* `center`：居中排列
 	* `space-between`：两端对齐排列，平分中间空间
 	* `space-around`：两端开始排列，平分所有空间
 
 ### `align-items`: 交叉轴上的对齐方式
+* `flex-start`：从交叉轴起点开始对齐
+* `flex-end`：从交叉轴末尾开始对齐
+* `center`：交叉轴居中对齐
+* `baseline`：项目的的第一行文字开始对齐
+* `stretch`(默认)：如果项目未设置高度或设为auto，将占满整个容器的高度
+
 ### `align-content`: 多根轴线的对齐方式(只有一根轴线，该属性不起作用)
+* `flex-start` ：与交叉轴的起点对齐
+* `flex-end`：与交叉轴的结尾对齐
+* `center`：与交叉轴的中点对齐
+* `space-between`：交叉轴两端对齐，并平分中间空间
+* `space-around`：交叉轴两端开始排列，平分所有空间
+* `stretch`(默认)：轴线占满整个交叉轴
+
 ## 子容器属性
 ### `order `: 排列顺序
+* 默认为0，数值越小，排列越靠前
+
 ### `flex-grow`: 放大比例
+* 默认为0，即如果存在剩余空间，也不放大
+
 ### `flex-shrink`: 缩小比例
+* 默认为1，即如果空间不足，该项目将缩小
+
 ### `flex-basis`: 占据的主轴空间
+* 定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小
+
 ### `flex `: `flex-grow`, `flex-shrink` 和 `flex-basis`的简写
+* 默认值为`flex: 0 1 auto;`后两个属性可选
+
 ### `align-self`: 自定义的主轴对齐方式
+* 允许单个项目有与其他项目不一样的对齐方式，可覆盖 `align-items` 属性。默认值为 `auto`，表示继承父元素的 `align-items` 属性，如果没有父元素，则等同于 `stretch`

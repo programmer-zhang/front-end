@@ -32,6 +32,12 @@
 
 ## 父容器属性
 ### `flex-direction` : 决定主轴的方向
+* 四个值：
+	* `row`(默认值)：主轴为水平方向，起点在左端
+	* `row-reverse`：主轴为水平方向，起点在右端
+	* `column`：主轴为垂直方向，起点在上沿
+	* `column-reverse`：主轴为垂直方向，起点在下沿
+
 ### `flex-wrap`: 主轴的换行方式
 ### `flex-flow`: `flex-direction` 和 `flex-wrap 的简写形式
 ### `justify-content` : 主轴上的对齐方式

@@ -39,8 +39,22 @@
 	* `column-reverse`：主轴为垂直方向，起点在下沿
 
 ### `flex-wrap`: 主轴的换行方式
+* 三个值
+	* `nowrap`(默认)：不换行
+	* `wrap`：换行，第一行在上面
+	* `wrap-reverse`：换行，第一行在下面
+
 ### `flex-flow`: `flex-direction` 和 `flex-wrap 的简写形式
+* 默认值：`flex-flow: row nowrap;`
+
 ### `justify-content` : 主轴上的对齐方式
+* 五个值
+	* `flex-start`(默认)：从主轴开始排列
+	* `flex-end`：从主轴结尾排列
+	* `center`：居中排列
+	* `space-between`：两端对齐排列，平分中间空间
+	* `space-around`：两端开始排列，平分所有空间
+
 ### `align-items`: 交叉轴上的对齐方式
 ### `align-content`: 多根轴线的对齐方式(只有一根轴线，该属性不起作用)
 ## 子容器属性

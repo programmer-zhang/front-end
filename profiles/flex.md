@@ -23,7 +23,7 @@
 .box{
   display: flex;
   display: inline-flex; // 行内元素
-  display:-webkit-flex; // Chrome & Safari
+  display: -webkit-flex; // Chrome & Safari
 }
 ```
 

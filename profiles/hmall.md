@@ -296,7 +296,7 @@ pm2 start app.js --max-memory-restart 1024M
 * 仅仅是环境层面的变化，将以`node`作为服务器改为开发使用`node`服务器，生产测试均使用`node`打包，利用`Nginx`进行转发，打包配置更加简洁
 
 #### 框架层
-* 核心框架层仍然采用Vue，只是去除了VueX，Vue-SSR，增加使用了keep-alive进行页面缓存
+* 核心框架层仍然采用Vue，只是去除了冗余的VueX，增加使用了keep-alive进行页面缓存
 * 不再累赘过多的`VueX`进行状态存储与组件通讯
 
 #### 公共业务层

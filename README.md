@@ -157,6 +157,8 @@
 
 > [前端安全]
 
+> [记一次惨痛的Vue-cli + VueX + SSR经历](./profiles/hmall.md)
+
 ## 微信相关 :envelope:
 > [wechat遇到的Error](./profiles/wechat_error.md)
 

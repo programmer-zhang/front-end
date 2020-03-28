@@ -493,18 +493,55 @@ function SubType() {
 }
 let instance1 = new SubType();
 instance1.sexy.push("all");
-console.log(instance1.sexy); //"["man", "woman", "unknow", "all"]"
+console.log(instance1.sexy); // ["man", "woman", "unknow", "all"]
 let instance2 = new SubType();
-console.log(instance2.sexy); //"["man", "woman", "unknow"]" 
+console.log(instance2.sexy); // ["man", "woman", "unknow"]
 ```
 ##### 组合继承
 * 特点：利用原型链继承父类的原型属性和方法，利用构造函数继承实例属性和方法
-* 缺点：调用了两次父类构造函数，生成了两份实例
+* 缺点：调用了两次父类构造函数，生成了俩实例
 
 ```
-
+function SubType(name) {
+    SuperType.call(this, name);
+}
+SubType.prototype = new SuperType();
+var instance3 = new SubType("newCoder");
+console.log(instance3.name) // newcoder
 ```
 ##### 使用 ES6 extends 进行继承
+
+```
+class A {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    getName() {
+        return this.name;
+    }
+}
+
+class B extends A {
+    constructor(name, age) {
+        super(name, age);
+        this.job = "IT";
+    }
+    getJob() {
+        return this.job;
+    }
+    getNameAndJob() {
+        return super.getName() + this.job;
+    }
+}
+
+var b = new B("Tom", 20);
+console.log(b.name); // Tom
+console.log(b.age); // 20
+console.log(b.getName()); // Tom
+console.log(b.getJob()); // IT
+console.log(b.getNameAndJob()); // TomIT
+```
 
 ### 追问：ES6 extends 的原理
 

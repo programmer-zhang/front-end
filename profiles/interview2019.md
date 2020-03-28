@@ -489,7 +489,6 @@ console.log('outer', subFun instanceof SuperType) // true
 
 ```
 function SubType() {
-    //继承SuperType
     SuperType.call(this);
 }
 let instance1 = new SubType();
@@ -499,6 +498,12 @@ let instance2 = new SubType();
 console.log(instance2.sexy); //"["man", "woman", "unknow"]" 
 ```
 ##### 组合继承
+* 特点：利用原型链继承父类的原型属性和方法，利用构造函数继承实例属性和方法
+* 缺点：调用了两次父类构造函数，生成了两份实例
+
+```
+
+```
 ##### 使用 ES6 extends 进行继承
 
 ### 追问：ES6 extends 的原理

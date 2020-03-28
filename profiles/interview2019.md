@@ -442,11 +442,64 @@
 ### 追问：开发过程中碰到过什么棘手的性能方面的问题么
 > 这个问题当时都是回答的之前在开发过程中确实碰到的，感恩自己当时有心做了总结，总结请点击[记一次惨痛的Vue-cli + VueX + SSR经历]()
 
-### 继承的方式
-* 原型继承
-* 构造函数继承
-* 组合继承
-* 使用 ES6 extends 进行继承
+### 继承的方式有哪些
+提供个父类进行继承
+
+```
+function SuperType(name) {
+    this.name = name;
+    this.sexy = ["man", "woman", "unknow"];
+    this.showName = function() {
+        console.log(name);
+    };
+};
+SuperType.prototype.age = 18;
+```
+
+##### 原型继承
+* 利用原型让一个引用类型继承另外一个引用类型的属性和方法
+* 重点：新实例的原型等于父类的实例
+* 特点：
+	* 1.实例可继承的属性有：实例的构造函数的属性，父类构造函数属性，父类原型的属性。（新实例不会继承父类实例的属性！）
+	* 2.基于原型链，既是父类的实例，也是子类的实例
+* 缺点：
+	* 1.无法实现多继承
+	* 2.所有新实例都会共享父类实例的属性
+
+```
+function SubType() {
+    this.name = 'coder';
+}
+SubType.prototype = new SuperType();
+var subFun = new SubType();
+console.log(subFun.age) // 18
+console.log('outer', subFun instanceof SuperType) // true 
+```
+##### 构造函数继承
+* 重点：用call()和apply()将父类构造函数引入子类函数（在子类函数中做了父类函数的自执行（复制））
+* 特点：
+	* 1、只继承了父类构造函数的属性，没有继承父类原型的属性。
+	* 2、解决了原型链继承缺点1、2、3。
+	* 3、可以继承多个构造函数属性（call多个）。
+	* 4、在子实例中可向父实例传参。
+* 缺点：
+	* 1、只能继承父类构造函数的属性。
+	* 2、无法实现构造函数的复用。（每次用每次都要重新调用）
+	* 3、每个新实例都有父类构造函数的副本，臃肿。
+
+```
+function SubType() {
+    //继承SuperType
+    SuperType.call(this);
+}
+let instance1 = new SubType();
+instance1.sexy.push("all");
+console.log(instance1.sexy); //"["man", "woman", "unknow", "all"]"
+let instance2 = new SubType();
+console.log(instance2.sexy); //"["man", "woman", "unknow"]" 
+```
+##### 组合继承
+##### 使用 ES6 extends 进行继承
 
 ### 追问：ES6 extends 的原理
 

@@ -543,9 +543,38 @@ console.log(b.getJob()); // IT
 console.log(b.getNameAndJob()); // TomIT
 ```
 
-### 追问：ES6 extends 的原理
+### 追问：new 的原理
+* 在调用 new 的过程中会发生以下四件事：
+	* 新生成一个对象
+	* 将构造函数的作用域赋值给新对象（即绑定新对象的 this）
+	* 执行构造函数中的代码（即为这个新对象添加属性）
+	* 返回新对象
+* 一个简版的new
 
-### new 的原理
+```
+function _new() {
+	// 创建一个新对象
+    let newObj = {};  
+    // 获取构造函数
+    let Constructor = Array.prototype.shift.call(arguments);
+    // 连接新对象原型，新对象可以访问原型中的属性
+    newObj.__proto__ = Constructor.prototype;
+    // 执行构造函数，即绑定 this，并且为这个新对象添加属性
+    Constructor.apply(newObj, arguments);
+    // 返回该对象
+    return newObj;
+}
+```
+
+### 追问：ES6 extends 的原理
+> 这个问题当时回答的不好，很多关键点没有说出来，面试官也是很友好地帮我答疑解惑
+
+* ES6 中是通过 class 关键字去定义类，经过 bable 编码之后其实还是通过构造函数去实现的，但是为了规范类的使用，ES6中是不允许直接调用 class 创建的类，因为编码之后会产生一个 `_classCallCheck ` 阻止你直接调用，会抛出错误
+* 继承过程其实归根结底也是类似原型继承，过程请看下图
+
+![](../images/extends.png)
+
+首先 `subClass.prototype.__proto__ = superClass.prototype` 保证了 `Child` 的实例可以访问到父类的属性，包括内部属性，以及原型属性。其次，`subClass.__proto__ = superClass`，保证了`Child.height` 也能访问到，也就是静态方法。
 
 ### ES6 和 ES5
 

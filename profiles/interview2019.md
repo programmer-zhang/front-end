@@ -662,8 +662,8 @@ fun();
 
 ```
 var fun2 = {
-    b:"this指向",
-    fn:function() {
+    b: "this指向",
+    fn: function() {
         console.log(this.b);  // this指向
     }
 }

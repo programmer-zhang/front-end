@@ -646,33 +646,73 @@ fun();
 * 进行结果缓存
 * 进行封装工厂函数
 * 实现类的继承
+* 函数柯里化
 
 ### this 的指向问题
 * 记住一点：this最终指向调用它的对象
 	* 通俗解释：JS中存在上下文环境window或者函数，当执行的属于window时，则取的window的上下文环境，如果执行的属于函数，则取函数的上下文，this是堆栈的指针，堆栈里有什么就返回什么
+* 具体分析
+	* fn() 里面的 this 就是 window（非严格模式下）
+	* fn() 是 strict mode，this 就是 undefined
+	* new F() 里面的 this 就是新生成的实例
+	* () => console.log(this) 里面 this 跟外面的 this 的值一模一样
+	* 当然还有事件监听的时候，this是监听元素，setTimeout的函数内this是window(非严格模式下)
 
 ```
-function fun() {
-    var a = "this指向";
-    console.log(this.a); // undefined
-    console.log(this); // Window
-}
-fun();
-// 这里在调用是fun其实是window创建出来的对象，所以指向window
-```
-
-```
-var fun2 = {
-    b: "this指向",
-    fn: function() {
-        console.log(this.b);  // this指向
+var app = {
+  fn1: function () {
+    console.log(this)
+  },
+  fn2: function(){
+    return function() {
+      console.log(this)
     }
+  },
+  fn3: function() {
+    function fn() {
+      console.log(this)
+    }
+    return fn()
+  },
+  fn4: function() {
+    return {
+      fn: function () {
+        console.log(this)
+      }
+    }
+  },
+  fn5: function() {
+    setTimeout(function () {
+      console.log(this)
+    },10) 
+  },
+  fn6: function() {
+    setTimeout( () => {
+      console.log(this)
+    },20) 
+  },
+  fn7: function() {
+    setTimeout(function () {
+      console.log(this)
+    }.bind(this),30) 
+  },
+  fn8: () => {
+    setTimeout( () => {
+      console.log(this)
+    },40) 
+  }
 }
-fun2.fn();
-// 函数创建时确定不了this的指向，在调用时其实是fun2执行，所以fn的this指向fun2
+app.fn1() // app
+app.fn2()() // window
+app.fn3() // window
+app.fn4().fn() // fn
+app.fn5() // window
+app.fn6() // app
+app.fn7() // app
+app.fn8() // window
 ```
 
-* 箭头函数中的this指向取决于它外面第一个不是箭头函数的this
+
 
 ### 前端安全
 * 存储型：将脚本存储在服务器端，客户端执行

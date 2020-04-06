@@ -7,6 +7,8 @@
 
 > 本文只介绍技术相关的题目，至于前期学习和准备以及非技术问题后续我会后续为大家带来，敬请关注更新。
 
+> 由于刚开始写作掘金没多久，大部分文章都在github上，大家可以按需自取，[github文章地址](https://github.com/programmer-zhang/front-end)
+
 ## 百度面试题目
 
 > 百度的面试加上电话面试共进行了六轮(一轮技术电话面试+三轮当场技术面试+两轮招聘行政面试)
@@ -94,9 +96,9 @@
 ### 部分特定情况下的性能优化
 > 性能优化是前端面试中必问的题目，这部分前期写过三篇专门的文章，分成三个方面讲述性能优化问题，可以点击链接查看，这次面试中问到的题目在文章中都有解决方案
 
-* [[前端性能优化]HTML、CSS、JS部分]()
-* [[前端性能优化]页面加载速度优化]()
-* [[前端性能优化]网络传输层优化]()
+* [[前端性能优化]HTML、CSS、JS部分](https://github.com/programmer-zhang/front-end/blob/master/profiles/%5B%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%5DHTML%E3%80%81CSS%E3%80%81JS%E7%AF%87.md)
+* [[前端性能优化]页面加载速度优化](https://github.com/programmer-zhang/front-end/blob/master/profiles/%5B%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%5D%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96.md)
+* [[前端性能优化]网络传输层优化](https://github.com/programmer-zhang/front-end/blob/master/profiles/%5B%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%5D%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82%E4%BC%98%E5%8C%96.md)
 
 > 以上电话面试的内容就结束了，约定了三天后去百度面试。虽然问题不多，但是经历了近一个小时，想到问了很多关于动态交互和性能优化的题目，猜测部门应该面向用户，而且量级不小，所以后续在复习中专门巩固了相关的内容。
 
@@ -132,7 +134,7 @@
 
 > 这里不说很细了，之前专门写过这方面优化的文章，详细内容可以点击下方链接去阅读
 
-> [[前端性能优化]HTML、CSS、JS部分]()
+> [[前端性能优化]HTML、CSS、JS部分](https://github.com/programmer-zhang/front-end/blob/master/profiles/%5B%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%5DHTML%E3%80%81CSS%E3%80%81JS%E7%AF%87.md)
 
 *  能用html/css解决的问题就不要用js
 	*  比如hover显示隐藏
@@ -368,7 +370,7 @@
 > 题目具体已经不记得了，反正记住执行顺序一点一点的输出，面试时最好带个笔记本或者电脑，可以随时记录下，方便回答
 
 ### HTTP请求的三次握手机制
-> 三次握手机制这里不再大篇幅展开讲了，之前写的关于性能优化的文章中有详细的回答，请[点击这里查看]()
+> 三次握手机制这里不再大篇幅展开讲了，之前写的关于性能优化的文章中有详细的回答，请[点击这里查看](https://github.com/programmer-zhang/front-end/blob/master/profiles/%5B%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%5D%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82%E4%BC%98%E5%8C%96.md)
 
 ### 追问：HTTP请求为什么是三次握手，不是两次或者四次
 * 三次握手是确定客户端和服务端接收和发送能力都正常的最优次数
@@ -381,7 +383,7 @@
 * HTTP更简单：http 的连接是无状态的；HTTPS 协议是由 SSL+HTTP 协议构建的可进行加密传输、身份认证的网络协议。
 
 ### 追问：关于缓存方面讲一讲
-> 这个问题之前写过关于缓存策略的文章，不在展开讲，详细内容请点击[缓存问题看这篇，让面试官爱上你]()
+> 这个问题之前写过关于缓存策略的文章，不在展开讲，详细内容请点击[缓存问题看这篇，让面试官爱上你](https://github.com/programmer-zhang/front-end/blob/master/profiles/HTTP_header.md)
 
 * 强缓存(不走服务器)：
 	* `Expires`
@@ -391,10 +393,10 @@
 	* `ETag/If-None-Match`
 
 ### 追问：几种缓存策略的对比简单说一下
-> 这个问题也在关于缓存策略的文章里，详细内容请点击[缓存问题看这篇，让面试官爱上你]()
+> 这个问题也在关于缓存策略的文章里，详细内容请点击[缓存问题看这篇，让面试官爱上你](https://github.com/programmer-zhang/front-end/blob/master/profiles/HTTP_header.md)
 
 ### 前端跨域问题如何产生，有什么方法解决
-> 这里之前写过详细的文章，不展开细讲了，可以点击这里查看[前端跨域看这篇就够了]()
+> 这里之前写过详细的文章，不展开细讲了，可以点击这里查看[前端跨域看这篇就够了](https://github.com/programmer-zhang/front-end/blob/master/profiles/cross-origin.md)
 
 * 产生原因：同源策略
 * 解决方式：
@@ -437,14 +439,14 @@
 
 ## 百度二面
 ### 结合页面加载流程流程详细说下过程中的性能优化
-> 这个问题就比较细节化，可以参考我之前写过的关于性能优化的文章，基本的优化方案里边都有，[前端性能优化]()
+> 这个问题就比较细节化，可以参考我之前写过的关于性能优化的文章，基本的优化方案里边都有，[前端性能优化](https://github.com/programmer-zhang/front-end/blob/master/profiles/%5B%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%5D%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96.md)
 
 > 这个问题回答期间面试官追问了一些具体的小细节问题，这里就不再给出了，文章中基本都包含了，这里就不展开篇幅讲了
 
 > 这种笼统的大方向问题建议条理化回答，可以按照自己习惯的或者固定的方面去展开讲，否则这种大问题东一句西一句的容易让面试不耐烦，越条理越好，我自己当时是按照HTML、CSS、JS、网络通信，页面加载的顺序去说的，过程中面试官一直在记录，估计是看有没有说到他想要的那些点。
 
 ### 追问：开发过程中碰到过什么棘手的性能方面的问题么
-> 这个问题当时都是回答的之前在开发过程中确实碰到的，感恩自己当时有心做了总结，总结请点击[记一次惨痛的Vue-cli + VueX + SSR经历]()
+> 这个问题当时都是回答的之前在开发过程中确实碰到的，感恩自己当时有心做了总结，总结请点击[记一次惨痛的Vue-cli + VueX + SSR经历](https://github.com/programmer-zhang/front-end/blob/master/profiles/hmall.md)
 
 > 这期间穿插着问了一点node，webpack的小知识点
 
@@ -713,6 +715,39 @@ app.fn7() // app
 app.fn8() // window
 ```
 
+### VUE 的生命周期
+* vue 生命周期流程图(图片来自网络，侵联删)
+![](../images/vue-life-cycle.jpeg)
+1. 创建实例，`new Vue()` 的过程中，首先执行 `init()`
+2. `init()` 过程首先是执行 `beforeCreate` ，初始化`data、 props、 watch、computed`,这些执行都是在 `beforeCreate` 阶段和 `create` 阶段，也是创建响应式数据的阶段，这个阶段不要去修改数据
+3. `create` 阶段结束，会去判断实例中有无 `el option` 选项，如果没有会执行 `$mount()`, 如果有，直接执行下一步
+4. 判断 `template`, 若有，会把 `template` 打成一个个 `render function` ,其中的传参h就是`vue.createElement`， 参数为 标签，对象(可以是props或事件)，内容
+5. `render`函数发生在 `beforemounted` 和 `mounted` 之间，所以当 `beforeMount` 时，`$el` 还只是HTML上的节点，`mounted` 时才把渲染的内容挂载到 `DOM` 上，实际就是执行了 `renderfunction`
+6. `beforeMount` 有了 `renderfunction` 才执行，执行完执行 `mount` , `mounted` 执行完，整个生命周期中主动执行的函数就已经完毕，剩下的比如 `beforeUpdata、updata、beforDestory、destory` 需要外部触发
+
+### VUE computed原理
+* 设置 `computed` 的 `getter` ，若执行了 `computed` 的函数，会去读取 `data` 值，就会触发 `data` 的 `getter` ，从而建立`data`的依赖关系
+* 首次`mounted`的值，会执行`vm.computed`对应的`getter`，没有`getter`的是赋值函数
+* 若`computed`的属性值依赖其他属性值，会将`target`暂存在栈中，先进行其他的依赖收集
+
+### VUE watch流程
+1. 创建实例时会去处理`watch`，这点在前面生命周期中已经提到
+2. 遍历数据keys去创建监听
+3. 给监听注册回调(多种处理方式)
+	* `name:{ handle(){} }` 传入为对象去handler字段
+	* `name(){}` 传入为函数直接监听回调
+	* `name: 'getName'` 传入为字符串就去实例上获取回调
+4. 调用`vm.$watch`
+	* 判断是否立即执行回调
+	* 每个`watch`配发`watcher(监听的key，callback，options)`
+5. 监听的数据变化时，通知`watch-watcher`更新，然后使用`updata()`更新数据
+
+### VUE 响应式数据处理流程
+1. `init()`时，利用`object.defineproperty`监听vue实例的响应式数据变化从而实现数据的劫持，其实是利用了数据的`setter`和`getter`
+2. 当`render function`被渲染时，读取实例中与视图相关的响应式数据，从而触发`getter`进行依赖收集
+3. 正常的渲染和更新
+4. 数据变化时，触发`setter`，通知依赖收集中和视图相关的`watcher`，告知重新渲染视图，`watcher`再次通过`updata`渲染视图
+
 ### 特定状态下浏览器的兼容性
 > 这个问题想必前端开发中大家都碰到过很多奇奇怪怪的兼容性问题，我也没有回答地特别细致，说了几个日常开发中碰到过的，面试官结合实际情况问了几个，具体问的已经记不清了，JS的也有，CSS的也有，IE的那些低版本的兼容性问题个人觉得不说也罢，毕竟用户量少的又少。
 
@@ -728,7 +763,7 @@ app.fn8() // window
 > 还有一些技术无关的问题记不住了
 
 ### nginx相关问题
-> 没有问很深入的问题，当做技术点稍微聊了聊，设计到的问题就这些，如果想要了解，请查看我之前整理的这部分文章[Nginx 架构介绍]()、[Nginx 基本配置]()、[Nginx_upstream]()、[Nginx_location]()
+> 没有问很深入的问题，当做技术点稍微聊了聊，设计到的问题就这些，如果想要了解，请查看我之前整理的这部分文章[Nginx 相关](https://github.com/programmer-zhang/front-end#%E6%9E%B6%E6%9E%84%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3-construction)
 
 * nginx 的作用
 * nginx 进程的执行过程
@@ -757,8 +792,6 @@ app.fn8() // window
 > 好未来部分我就不再每个问题都写了，百度问到的我就不写了，只写些新的问题。
 
 > 好未来一面的女士很漂亮哦，只可惜没能成为同事
-
-### H5
 
 ### less & sass
 * CSS的预处理器，扩展了css语言，增加了变量、Mixin、函数等特性，使css更容易维护和扩展
@@ -834,7 +867,20 @@ function isArray(obj) {
 
 ![](../images/vue-set-key.jpeg)
 
-### Vue Router的原理及过程
+### VueX
+* 核心概念
+	* `state` ：存放数据，`mutation`修改数据会动态修改所有的调用此变量的值
+	* `getter`：获取数据
+	* `mutation`：直接修改状态
+	* `action`：`action`类似`mutation`，是个装饰器，包裹`mutation`，使之可以异步，`action`提交的是`mutation`而不是直接修改状态
+	* `moudle(mapAction)`：模块化`VueX`
+* 流程：
+	* 页面 -> `mapAction` -> 提交事件到`action` -> `action`通过`commit`将对应参数同步到`mutation` -> `mutation`会修改`state`中的值 -> 最后欧通过`getter`将数据传递出去 -> `computed`中通过`mapgetter`获取`state`
+* 数据传递
+![](../images/vuex.png)
+
+* 好处
+	* 传统传参方法对于多层级的组件非常繁琐，兄弟组件无能为力，把组件的共享状态通过单例模式抽离出来，行成‘树’
 
 
 ### 模块化
@@ -844,3 +890,34 @@ function isArray(obj) {
 > 笔者之前用过ECharts，问的问题也大多是实操相关的，建议大家面试前有时间自己稍微实操研究一下，起码面试时不会太尴尬
 
 ### 手写一个promise的ajax请求
+
+```
+const getJson = function (url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function () {
+      if (this.readyState === 4) {
+        if (this.status === 200) {
+          resolve(this.responseText, this)
+        } else {
+          const resJson = { code: this.status, response: this.response};
+          reject(resJson);
+        }
+      } 
+    };
+    xhr.send();
+  })
+};
+// 使用
+getJSON('URL').then((res) => {
+	console.log(res);
+}).catch((err)=>{
+	console.log(err);
+})   
+```
+
+## 写在最后
+* 连续的面试让我总结的话就是：基础很重要。 
+* 很多面试题其实并不难，都是基础问题，如何追根溯源才是工程师技术能力的象征，能把基础理解透彻再去拓展技术广度，会更加从容。
+* 祝愿大家都能收获健康的身体，喜欢的工作，愉悦的心情，完美的爱情

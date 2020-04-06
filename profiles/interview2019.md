@@ -761,19 +761,86 @@ app.fn8() // window
 ### H5
 
 ### less & sass
+* CSS的预处理器，扩展了css语言，增加了变量、Mixin、函数等特性，使css更容易维护和扩展
 
 ### marginTop的基准点
+* 如果父元素中有内容的时候，子元素的外边距是相对父元素内容，如果没有内容则一直向上追溯寻找如果都没有找到(案例四中可以看到)，最终以浏览器视口为参考点
 
-### 数组的并集
+### 绝对定位的基准点
+* `position: absolute;` 相对于relative容器的content
+* `position: absolute; top: 0; left: 0;` 相对于border以内，padding的外侧
+
+### 手写题：数组的并集和交集
+* 实现方案
+
+```
+let a = new Set([1, 2, 3]);
+let b = new Set([3, 5, 2]); 
+
+// 并集
+let unionSet = new Set([...a, ...b]);
+//[1,2,3,5]
+
+// 交集
+let intersectionSet = new Set([...a].filter(x => b.has(x)));
+```
 
 ### 深拷贝和浅拷贝
+##### 浅拷贝
+* 浅拷贝: 以赋值的形式拷贝引用对象，仍指向同一个地址，修改时原对象也会受到影响
+	* 赋值表达式 `=`
+	* `Object.assign`
+	* 展开运算符(...)
+
+##### 深拷贝
+* 深拷贝: 完全拷贝一个新对象，修改时原对象不再受到任何影响
+* 性能最快：`JSON.parse(JSON.stringify(obj))`
+	* 具有循环引用的对象时，报错
+	* 当值为函数或undefined时，无法拷贝
+* 递归进行逐一赋值
+
+```
+deepClone(obj) {
+    let result;
+    if (typeof obj == 'object') {
+        result = isArray(obj) ? [] : {}
+        for (let i in obj) {
+            result[i] = isObject(obj[i])||isArray(obj[i])?deepClone(obj[i]):obj[i]
+        }
+    } else {
+        result = obj
+    }
+    return result
+}
+function isObject(obj) {
+    return Object.prototype.toString.call(obj) == "[object Object]"
+}
+function isArray(obj) {
+    return Object.prototype.toString.call(obj) == "[object Array]"
+}
+```
 
 ### Vue父子组件传值
+* 组件间的父子之间的传值: `v-bind` 传入，`props` 接收
+* 组件间的子父之间的传值：`$emit` 触发，`v-bind` 监听
+* 非组件间的组件间的传值：`vuex`、`EventBus`、路由参数、`storage`
 
-### Vue列表的循环定义key的原理
+### Vue列表的循环定义key的作用
+* 为了更高效的渲染虚拟DOM树
+* 在没有定义key的情况下，当我们插入一个元素时，vue的处理方式是这样的：
+	* 逐个按照顺序进行更新，插入点之后的元素都会被重新更新一遍
+* 定义key的情况下，插入元素时，vue的处理方式是：
+	* 按照key当做唯一标识符，仅插入该元素，其他元素不做变动
+
+![](../images/vue-set-key.jpeg)
 
 ### Vue Router的原理及过程
 
-### 地图可视化
+
+### 模块化
+> JS模块化引入是当前比较流行的处理方式，大部分工程师可能会用，但是很多人未必了解他的区别，有兴趣的可以查看我之前写过的相关文章[JS模块化编程资源引入方式](https://github.com/programmer-zhang/front-end/blob/master/profiles/js%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B%E8%B5%84%E6%BA%90%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F.md)
+
+### 数据可视化
+> 笔者之前用过ECharts，问的问题也大多是实操相关的，建议大家面试前有时间自己稍微实操研究一下，起码面试时不会太尴尬
 
 ### 手写一个promise的ajax请求

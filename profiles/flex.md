@@ -48,12 +48,12 @@
 * 默认值：`flex-flow: row nowrap;`
 
 ### `justify-content` : 主轴上的对齐方式
-* 五个值
-	* `flex-start`(默认)：从主轴起点开始排列
-	* `flex-end`：从主轴结尾排列
-	* `center`：居中排列
-	* `space-between`：两端对齐排列，平分中间空间
-	* `space-around`：两端开始排列，平分所有空间
+* `flex-start`(默认)：从主轴起点开始排列
+* `flex-end`：从主轴结尾排列
+* `center`：居中排列
+* `space-between`：两端对齐排列，平分中间空间
+* `space-around`：两端开始排列，平分所有空间
+![](../images/flex/flex-jc.png)
 
 ### `align-items`: 交叉轴上的对齐方式
 * `flex-start`：从交叉轴起点开始对齐
@@ -61,6 +61,7 @@
 * `center`：交叉轴居中对齐
 * `baseline`：项目的的第一行文字开始对齐
 * `stretch`(默认)：如果项目未设置高度或设为auto，将占满整个容器的高度
+![](../images/flex/flex-ai.png)
 
 ### `align-content`: 多根轴线的对齐方式(只有一根轴线，该属性不起作用)
 * `flex-start` ：与交叉轴的起点对齐
@@ -69,6 +70,7 @@
 * `space-between`：交叉轴两端对齐，并平分中间空间
 * `space-around`：交叉轴两端开始排列，平分所有空间
 * `stretch`(默认)：轴线占满整个交叉轴
+![](../images/flex/flex-ac.png)
 
 ## 子容器属性
 ### `order `: 排列顺序

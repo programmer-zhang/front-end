@@ -75,29 +75,40 @@
 ## 子容器属性
 ### `order `: 排列顺序
 * 默认为0，数值越小，排列越靠前
+![](../images/flex/flex-order.png)
 
 > 使用`flex`布局经常会碰到空间被放大导致子容器内部文字或图片被延展或拉伸，除了可以设置`min-width、max-width`这种形式外，还能使用下边属性进行控制
 
 ### `flex-grow`: 放大比例
 * 默认为0，即如果存在剩余空间，也不放大
+![](../images/flex/flex-grow.png)
 
 ### `flex-shrink`: 缩小比例
 * 默认为1，即如果空间不足，该项目将缩小
+![](../images/flex/flex-shrink.png)
 
 ### `flex-basis`: 占据的主轴空间
 * 定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小
+![](../images/flex/flex-basis.png)
 
 ### `flex `: `flex-grow`, `flex-shrink` 和 `flex-basis`的简写
 * 默认值为`flex: 0 1 auto;`后两个属性可选
 
 ### `align-self`: 自定义的主轴对齐方式
 * 允许单个项目有与其他项目不一样的对齐方式，可覆盖 `align-items` 属性。默认值为 `auto`，表示继承父元素的 `align-items` 属性，如果没有父元素，则等同于 `stretch`
+![](../images/flex/flex-as.png)
 
 ## 面试中常问的Flex相关知识
 ### 设置垂直水平居中
 ![](../images/flex/flex-center.png)
 
 ```
+// HTML
+<div class="outer">
+  <div class="inner">内部盒子</div>
+</div>
+
+// CSS
 .outer {
     display: flex;
     justify-content: center;
@@ -114,6 +125,7 @@
   <div class="left">左边盒子</div>
   <div class="right">右边盒子</div>
 </div>
+
 // CSS
 div {
   border-radius: 10px;
@@ -134,6 +146,43 @@ div {
 .right {
   flex: auto;
   margin-left: 10px;
+  background: #1487B4;
+}
+```
+
+### 设置浮动自适应布局
+![](../images/flex/flex-auto-wrap.png)
+
+```
+// HTML
+<div class="panel">
+  <div class="outer">
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+    <div class="inner" style=""></div>
+  </div>
+</div>
+
+// CSS
+.outer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.inner {
+  height: 50px;
+  width: 100px;
+  margin: 10px 0;
+  line-height: 100px;
   background: #1487B4;
 }
 ```

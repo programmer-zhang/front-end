@@ -90,3 +90,48 @@
 
 ### `align-self`: 自定义的主轴对齐方式
 * 允许单个项目有与其他项目不一样的对齐方式，可覆盖 `align-items` 属性。默认值为 `auto`，表示继承父元素的 `align-items` 属性，如果没有父元素，则等同于 `stretch`
+
+## 面试中常问的Flex相关知识
+### 设置垂直水平居中
+![](../images/flex/flex-center.png)
+
+```
+.outer {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+```
+
+### 设置左边栏固定，右边栏自适应布局(或类似布局)
+![](../images/flex/flex-auto.png)
+
+```
+// HTML
+<div class="outer">
+  <div class="left">左边盒子</div>
+  <div class="right">右边盒子</div>
+</div>
+// CSS
+div {
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+.outer {
+  height: 300px;
+  display: flex;
+  padding: 10px;
+  background: #e8e8e8;
+}
+.left {
+  flex: 0 0 100px;
+  background: #000;
+}
+.right {
+  flex: auto;
+  margin-left: 10px;
+  background: #1487B4;
+}
+```

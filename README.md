@@ -12,7 +12,7 @@
 ## HTML & CSS相关 :european_castle:
 > [HTML_DOM 节点绑定事件](./profiles/HTML_tabindex.md)
 
-> [10分钟搞定 flex 布局]
+> [10分钟搞定 flex 布局](./profiles/flex.md)
 
 > [grid 布局]
 

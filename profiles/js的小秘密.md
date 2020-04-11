@@ -148,7 +148,7 @@ handleClick(e) {
 	if(!facePanel.contains(e.target) && this.$refs.editContent.showFace){
 	  this.$refs.editContent.showFace = false
 	}
-},
+}
 ```
 
 ## 合理利用正则表达式解决问题
@@ -290,9 +290,6 @@ if(test.match(/^\s*$/)){
 * `/^(-(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/`　　//负浮点数
 * `/^(-?\\d+)(\\.\\d+)?$/`　　//浮点数
 * `replace(/[^0-9]/ig, "")`		//只保留数字
-
-> 今天先暂且给大家带来这些，没什么可读性，但是在工作中经常会使用到，时间匆忙没有好好完善，后续本文会在我的[Github](https://github.com/programmer-zhang)中继续维护，有兴趣可以持续关注。
-> 感谢观看，下期再见
 
 ### JS扩大checkbox的点击区域
 * 试用场景：在表格中点击 td 也能选中 ，或者在父节点也能点击触发事件

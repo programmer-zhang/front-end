@@ -57,7 +57,7 @@
 
 > [JS解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
 
-> [JS数据类型](./profiles/js_data_type.md)
+> [JS数据类型你真的了解吗](./profiles/js_data_type.md)
 
 > [JS判断数据类型](./profiles/js_judge_type.md)
 

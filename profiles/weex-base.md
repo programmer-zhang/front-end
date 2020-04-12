@@ -3,7 +3,7 @@
 > 浏览[官方文档](https://weex.apache.org/zh/)后阅读此文更佳
 
 # 写在前面
-## 文档内容
+## 阅读本文您将收获
 * 差异化
 	* Weex 和 传统Web 的平台差异
 	* weex-toolkit和weexpack的区别

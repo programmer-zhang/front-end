@@ -22,6 +22,10 @@
 
 > [居中的解决方式]
 
+> [特殊的img标签]
+> 
+> [更好地使用border-image]
+
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 
 > [永远18岁的 CSS (持续更新)](./profiles/永远18岁的css.md)
@@ -121,7 +125,7 @@
 
 > [Vue 源码系列-computed]
 
-> [Vue 源码系列-响应式流程]
+> [Vue 源码系列-响应式数据]
 
 > [Vue 源码系列-this.$nextTick]
 
@@ -200,6 +204,8 @@
 > [Vue 实现自动展开更多组件]
 
 > [Vue 实现打造可编辑的 DIV ]
+
+> [iView 打造多类型表格]
 
 ## 硬件 :computer:
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)

@@ -23,7 +23,7 @@
 > [居中的解决方式]
 
 > [特殊的img标签]
-> 
+
 > [更好地使用border-image]
 
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)

@@ -26,6 +26,7 @@
 
 ## 实现方法
 ### 使用伪类解决
+* 使用 `tansform: scale(.5);` 将高度缩小一半
 
 ```
 .outer {
@@ -39,8 +40,27 @@
 	top: 0;
 	width: 200%;
 	height: 1px;
-	tansform: scale(0.5);
+	tansform: scale(.5);
 	tansform-origin: 0 0;
 	background: #f5f5f5;
 }
 ```
+
+### 使用 meta viewport 解决
+
+```
+//1px像素线条	
+&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"&gt;	
+//0.5像素线条	
+&lt;meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0"&gt;
+```
+
+### 使用 box-shadow 模拟边框
+
+```
+.box-shadow-one-px {	
+  box-shadow: inset 0px -1px 1px -1px #c8c7cc;	
+}
+```
+
+### 使用 border-image

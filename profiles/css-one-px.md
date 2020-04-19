@@ -27,6 +27,8 @@
 ## 实现方法
 ### 使用伪类解决
 * 使用 `tansform: scale(.5);` 将高度缩小一半
+* 优点：所有场景都能满足
+* 缺点：已经使用伪类的元素需要多层嵌套
 
 ```
 .box-one-px {
@@ -47,15 +49,17 @@
 ```
 
 ### 使用 meta viewport 解决
+* viewport 结合rem解决像素比问题
 
 ```
-//1px像素线条	
-&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"&gt;	
-//0.5像素线条	
-&lt;meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=0"&gt;
+// 在devicePixelRatio=2的屏幕下设置meta
+<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+// 在devicePixelRatio=3的屏幕下设置meta
+<meta name="viewport" content="initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no">
 ```
 
 ### 使用 box-shadow 模拟边框
+* 注：效果不理想，颜色也不好配置
 
 ```
 .box-one-px {	
@@ -74,10 +78,10 @@
 ```
 
 ### 使用 背景渐变 linear-gradient
-* 利用linear-gradient利用背景图片渐变，从有色到透明，默认方向从上到下，从0deg到50%的地方颜色是边框颜色，然后下边一半颜色就是透明了。然后设置背景宽度100%，高度是1px，再去掉repeat，所以有颜色的就是0.5px的边框
+* 利用linear-gradient利用背景图片渐变，从有色到透明，默认方向从上到下，从0到50%的地方颜色是边框颜色，然后下边一半颜色就是透明了。然后设置背景宽度100%，高度是1px，再去掉repeat，所以有颜色的就是0.5px的线条
 
 ```
-.bg_border {	
+.box-one-px {	
     background-image: linear-gradient(0deg,black 50%,transparent 50%);
     background-size: 100% 1px;	
     background-repeat: no-repeat;	

@@ -16,7 +16,7 @@
 
 > [grid 布局]
 
-> [如何画一像素的线]
+> [如何画一像素的线](./profiles/css-one-px.md)
 
 > [Border-Image]
 

@@ -29,10 +29,10 @@
 * 使用 `tansform: scale(.5);` 将高度缩小一半
 
 ```
-.outer {
+.box-one-px {
 	position: relative;
 }
-.outer:before {
+.box-one-px:before {
 	display: block;
 	content: '';
 	position: absolute;
@@ -58,9 +58,28 @@
 ### 使用 box-shadow 模拟边框
 
 ```
-.box-shadow-one-px {	
+.box-one-px {	
   box-shadow: inset 0px -1px 1px -1px #c8c7cc;	
 }
 ```
 
 ### 使用 border-image
+* 需要自己制作一个0.5像素的线条作为背景图片
+
+```
+.box-one-px {	
+    border-width: 0 0 1px 0;	
+    border-image: imageUrl 2 0 round;	
+}
+```
+
+### 使用 背景渐变 linear-gradient
+* 利用linear-gradient利用背景图片渐变，从有色到透明，默认方向从上到下，从0deg到50%的地方颜色是边框颜色，然后下边一半颜色就是透明了。然后设置背景宽度100%，高度是1px，再去掉repeat，所以有颜色的就是0.5px的边框
+
+```
+.bg_border {	
+    background-image: linear-gradient(0deg,black 50%,transparent 50%);
+    background-size: 100% 1px;	
+    background-repeat: no-repeat;	
+}
+```

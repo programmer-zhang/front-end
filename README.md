@@ -26,6 +26,8 @@
 
 > [更好地使用border-image]
 
+> [contenteditable的用处]
+
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 
 > [永远18岁的 CSS (持续更新)](./profiles/永远18岁的css.md)

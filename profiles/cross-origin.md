@@ -46,7 +46,7 @@
   <body>
     <script type='text/javascript'>
       // 后端返回直接执行的方法，相当于执行这个方法，
-      // 由于后端把返回的数据放在方法的参数里，所以这里能拿到res。
+      // 由于后端把返回的数据放在方法的参数里，所以这里能拿到res
       window.jsonpCb = function (res) {
         console.log(res)
       }

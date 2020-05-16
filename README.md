@@ -22,7 +22,7 @@
 
 > [居中的解决方式]
 
-> [特殊的img标签]
+> [特殊的img标签](./profiles)
 
 > [更好地使用border-image]
 

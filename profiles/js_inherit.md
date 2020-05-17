@@ -40,6 +40,29 @@ subType.prototype.constructr = superType()
 * Class 作为构造函数的语法糖，同时有 `prototype` 属性和 `_proto_` 属性，因此同时存在两条继承链
 	* 子类 `_proto_`属性，表示构造函数的继承，总是指向父类。（把子类构造函数(Child)的原型(`_proto_`)指向了父类构造函数(Parent)）
 	* 子类 `prototype` 属性的 `_proto_` 属性，表示方法的继承，总是指向父类的 `prototype` 属性
+* Bable对extends语法糖的部分编译结果
+
+```
+function _inherits(subClass, superClass) {
+	// 对 superClass 进行类型判断
+	if (typeof superClass !== "function" && superClass !== null) {
+		throw new TypeError("Super expression must either be null or a function");
+	}
+	// 子类的 prototype 继承父类的 prototype
+	// 也就是说执行后 subClass.prototype._proto_ === superClass.prototype; 这条语句为true
+	subClass.prototype = Object.create(superClass && superClass.prototype, {
+		constructor: { 
+			value: subClass, 
+			writable: true, 
+			configurable: true 
+		}
+	});
+	// 子类是父类构建出的函数对象，需要指定对象的 _proto_
+	if (superClass) _setPrototypeOf(subClass, superClass);
+} 
+```
+
+* 继承实例
 
 ```
 class Zoo {

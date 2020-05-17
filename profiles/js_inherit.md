@@ -35,6 +35,8 @@ subType.prototype.constructr = superType()
 ```
 
 ## 继承方式四：extends 实现继承(ES6 方法)
+* 原理: 本质上也是原型链继承，实现了两步原型链继承
+* 
 
 ```
 class Zoo {

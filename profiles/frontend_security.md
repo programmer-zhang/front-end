@@ -51,3 +51,13 @@
 </body>
 </html>
 ```
+
+此时打开的地址修改为 `index.html#<img src="404.html" onerror="alert(document.cookie)" />`
+
+这里就会发现弹窗内容为我们存取的cookie。
+
+注意：1.这里必须用IE打开这个链接，因为chrome和safari等浏览器，会主动将url里的一下字符串进行encode，保证了一定的安全性。 2.为什么我们这里用img的onerror来注入脚本呢？而不是直接用script标签来执行，我们修改一下访问的地址index.html#<script>alert(document.cookie)</script>，这时会发现，页面并没有执行这段代码，但是这段代码已经注入到了#test标签中了。所以，一般通过img的onerror来注入是最有效的方法
+
+## 存储型
+* 将xss代码发送到了服务器，在前端请求数据时，将xss代码发送给了前端
+

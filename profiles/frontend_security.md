@@ -61,3 +61,23 @@
 ## 存储型
 * 将xss代码发送到了服务器，在前端请求数据时，将xss代码发送给了前端
 
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>存储型</title>
+</head>
+<body>
+	<div id="test"></div>
+	<script>
+		// 先向页面的cookie存储一个name=1的信息
+		document.cookie = "name=1"
+		// 这里假设是请求了后台的接口 response是我们请求回来的数据
+		var response = '<img src="404.html" onerror="alert(document.cookie)"'
+		var $test = document.querySelector('#test');;
+		$test.innerHTML = response
+	</script>
+</body>
+</html>
+```

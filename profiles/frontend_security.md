@@ -81,3 +81,28 @@
 </body>
 </html>
 ```
+
+这里最常见的情况就是一个富文本编辑器下，由用户输入了一串xss代码，存储在了服务器中，我们在展示用户输入内容时，没有做防范处理。
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>富文本</title>
+</head>
+<body>
+	<div id="test"></div>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<button onclick="submit()">提交</button>
+</body>
+</html>
+<script>
+function submit() {
+	var $test = document.querySelector('#test');
+	$test.innerHTML = document.querySelector('textarea').value
+}
+</script>
+```
+
+## 防范手段

@@ -123,7 +123,7 @@ function submit() {
 
 * js的encode： 使用 '\' 对特殊字符进行转义，除数字字母之外，小于127的字符编码使用16进制 '\xHH' 的方式进行编码，大于用unicode（非常严格模式）
 
-用 '\' 对特殊字符进行转义,这个可能比较好理解，因为将一下，比如'，"这些字符转译为',"就可以使得js变为一个字符串，而不是一个可执行的js代码了，那为什么还需要进行16进制转换和unicode转换呢？这样做是为了预防一下隐藏字符，比如换行符可能会对js代码进行换行
+* 用 '\' 对特殊字符进行转义,这个可能比较好理解，因为将一下，比如'，"这些字符转译为',"就可以使得js变为一个字符串，而不是一个可执行的js代码了，那为什么还需要进行16进制转换和unicode转换呢？这样做是为了预防一下隐藏字符，比如换行符可能会对js代码进行换行
 
 ```
 //使用“\”对特殊字符进行转义，除数字字母之外，小于127使用16进制“\xHH”的方式进行编码，大于用unicode（非常严格模式）。
@@ -189,3 +189,36 @@ var JavaScriptEncode = function(str){
     return escaped;
 }
 ```
+
+### 对于富文本的防范：filter
+* 因为富文本是比较特殊的，在富文本中输入标签，我们需要展示出来，所以我们不能用之前的html的encode方法来执行。所以我们就得用一个叫白名单过滤的方式来防范。
+
+* 原理就是：首先列举一下比较合法的标签，称为白名单，这些标签是不会对页面进行攻击的。之后对用户输入的内容进行白名单过滤。
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>富文本</title>
+</head>
+<body>
+	<div id="test"></div>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<button onclick="submit()">提交</button>
+</body>
+</html>
+<!-- xss_filter.js是一个白名单过滤库 -->
+<script src="./xss_filter.js"></script>
+<script>
+function submit() {
+	var $test = document.querySelector('#test');
+	$test.innerHTML = filterXSS(document.querySelector('textarea').value)
+}
+</script>
+```
+
+* 此时用户如果提交 `<img src="null" onerror="alert()">` 就会被过滤成 `<img src="">`
+这样就有效的防范了用户输入的xss代码
+
+* 注意： 当遇到想后台提交数据的情况，我们应该在用户提交的时候就进行过滤和encode呢？还是展示的时候处理呢？ 我们应当考虑到提交代码后会有个多端展示的问题，可能我们web端需要进行这些处理，但是移动端展示的时候就不需要这些处理，所以我们应当在展示的时候进行处理，而不是录入的时候处理

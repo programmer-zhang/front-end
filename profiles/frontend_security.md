@@ -224,5 +224,36 @@ function submit() {
 * 注意： 当遇到想后台提交数据的情况，我们应该在用户提交的时候就进行过滤和encode呢？还是展示的时候处理呢？ 我们应当考虑到提交代码后会有个多端展示的问题，可能我们web端需要进行这些处理，但是移动端展示的时候就不需要这些处理，所以我们应当在展示的时候进行处理，而不是录入的时候处理
 
 
-## CSRF– 跨站伪造请求
+## CSRF  跨站伪造请求
+* CSRF就是利用你所在网站的登录的状态，悄悄提交各种信息， 是一种比xss还要恶劣很多的攻击。因为CSRF可以在我们不知情的情况下，利用我们登陆的账号信息，去模拟我们的行为，去执行一下操作，也就是所谓的钓鱼。比如我们在登陆某个论坛，但这个网站是个钓鱼网站，我们利用邮箱或者qq登陆后，它就可以拿到我们的登陆态，session和cookie信息。然后利用这些信息去模拟一个另外网站的请求，比如转账的请求。
 
+![](../images/frontend-security.jpg)
+
+* 我们点击进入了一个csrf这个页面里，我们以为我们只是在csrf中点击提交了1111这个信息，其实这个网站悄悄的把这些信息提交到了本地的csrf上了，而不是我们当前浏览的csrf.html中
+```
+// CSRF.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>csrf</title>
+</head>
+<body>
+<iframe id="" name="csrf-form"></iframe>
+<form target="csrf-form" method="post" action="http://127.0.0.1:3001/csrf">
+	<input name="name" value="1111">
+	<input type="submit" value="提交">
+</form>
+</body>
+</html>
+```
+* 创建server.js 在命令行中输入node server.js
+这是一个简单的服务，端口为3001，如果我们直接本地登陆localhost:3001会给我们本地注入一个cookie为login=1的登陆态
+此时我们在访问csrf.html，在点击提交按钮的时候，会发现会把这个登陆态也提交上去。这就是一个典型的钓鱼网站。
+
+### 防范措施
+* 提交 method=Post 判断referer
+* HTTP请求中有一个referer的报文头，用来指明当前流量的来源参考页。如果我们用post就可以将页面的referer带入，从而进行判断请求的来源是不是安全的网站。但是referer在本地起的服务中是没有的，直接请求页面也不会有。这就是为什么我们要用Post请求方式。直接请求页面，因为post请求是肯定会带入referer，但get有可能不会带referer。
+
+* 利用Token
+Token简单来说就是由后端生成的一个唯一的登陆态，并传给前端保存在前端，每次前端请求时都会携带着Token，后端会先去解析这个Token，看看是不是后台给我们的，已经是否登陆超时，如果校验通过了，才会同意接口请求

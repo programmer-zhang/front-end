@@ -60,7 +60,9 @@
 
 这里就会发现弹窗内容为我们存取的cookie。
 
-注意：1.这里必须用IE打开这个链接，因为chrome和safari等浏览器，会主动将url里的一下字符串进行encode，保证了一定的安全性。 2.为什么我们这里用img的onerror来注入脚本呢？而不是直接用script标签来执行，我们修改一下访问的地址index.html#<script>alert(document.cookie)</script>，这时会发现，页面并没有执行这段代码，但是这段代码已经注入到了#test标签中了。所以，一般通过img的onerror来注入是最有效的方法
+注意：
+1.这里必须用IE打开这个链接，因为chrome和safari等浏览器，会主动将url里的一下字符串进行encode，保证了一定的安全性
+2.为什么我们这里用img的onerror来注入脚本呢？而不是直接用script标签来执行，我们修改一下访问的地址index.html#<script>alert(document.cookie)</script>，这时会发现，页面并没有执行这段代码，但是这段代码已经注入到了#test标签中了。所以，一般通过img的onerror来注入是最有效的方法
 
 ### 存储型(持久型XSS攻击)
 * 将xss代码发送到了服务器，在前端请求数据时，将xss代码发送给了前端
@@ -112,6 +114,10 @@ function submit() {
 ### DOM Based XSS
 * 通过修改页面的DOM节点行成的XSS，称之为DOM Based XSS
 * 并非按照“数据是否保存在服务器端”进行划分的，从效果上来说也是属于反射型XSS，单独将它化分为一个类型是因为发现它的安全专家提出了这种类型的XSS，出于历史原因，也就把它单独作为一个分类
+
+```
+
+```
 
 ## 防范手段
 ### encode

@@ -1,5 +1,5 @@
 # 前端安全
-> 我们不是要做一个能够解决问题的方案，而是要做一个能够'漂亮地'解决问题的方案------《白帽子讲web安全》
+> 我们不是要做一个能够解决问题的方案，而是要做一个能够 '漂亮地' 解决问题的方案------《白帽子讲web安全》
 
 ## 阅读本文您将收获
 * 前端攻击的各种类型
@@ -56,9 +56,9 @@
 </html>
 ```
 
-此时打开的地址修改为 `index.html#<img src="404.html" onerror="alert(document.cookie)" />`
+* 此时打开的地址修改为 `index.html#<img src="404.html" onerror="alert(document.cookie)" />`
 
-这里就会发现弹窗内容为我们存取的cookie。
+* 这里就会发现弹窗内容为我们存取的cookie
 
 * 注意：
 	1. 这里必须用IE打开这个链接，因为chrome和safari等浏览器，会主动将url里的一下字符串进行encode，保证了一定的安全性

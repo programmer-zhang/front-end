@@ -140,8 +140,8 @@ function submit() {
 * 用 '\' 对特殊字符进行转义, 这个可能比较好理解, 因为将一下，比如'，"这些字符转译为',"就可以使得js变为一个字符串，而不是一个可执行的js代码了，那为什么还需要进行16进制转换和unicode转换呢？这样做是为了预防一下隐藏字符，比如换行符可能会对js代码进行换行
 
 ```
-//使用“\”对特殊字符进行转义，除数字字母之外，小于127使用16进制“\xHH”的方式进行编码，大于用unicode（非常严格模式）。
-var JavaScriptEncode = function(str){  
+// 使用“\”对特殊字符进行转义，除数字字母之外，小于127使用16进制“\xHH”的方式进行编码，大于用unicode(非常严格模式)
+var JavaScriptEncode = function(str){
     var hex=new Array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f');
     function changeTo16Hex(charCode){
         return "\\x" + charCode.charCodeAt(0).toString(16);
@@ -151,8 +151,8 @@ var JavaScriptEncode = function(str){
         var thecharchar = original.charAt(0);
         var thechar = original.charCodeAt(0);
         switch(thecharchar) {
-            case '\n': return "\\n"; break; //newline
-            case '\r': return "\\r"; break; //Carriage return
+            case '\n': return "\\n"; break; // newline
+            case '\r': return "\\r"; break; // Carriage return
             case '\'': return "\\'"; break;
             case '"': return "\\\""; break;
             case '\&': return "\\&"; break;
@@ -168,16 +168,16 @@ var JavaScriptEncode = function(str){
                 break;
         }
         if(!found){
-            if(thechar > 47 && thechar < 58){ //数字
+            if(thechar > 47 && thechar < 58){ // 数字
                 return original;
             }
-            if(thechar > 64 && thechar < 91){ //大写字母
+            if(thechar > 64 && thechar < 91){ // 大写字母
                 return original;
             }
-            if(thechar > 96 && thechar < 123){ //小写字母
+            if(thechar > 96 && thechar < 123){ // 小写字母
                 return original;
             }        
-            if(thechar>127) { //大于127用unicode
+            if(thechar>127) { // 大于127用unicode
                 var c = thechar;
                 var a4 = c%16;
                 c = Math.floor(c/16); 
@@ -197,7 +197,7 @@ var JavaScriptEncode = function(str){
     var preescape = str;
     var escaped = "";
     var i=0;
-    for(i=0; i < preescape.length; i++){
+    for(i=0; i < preescape.length; i++) {
         escaped = escaped + encodeCharx(preescape.charAt(i));
     }
     return escaped;

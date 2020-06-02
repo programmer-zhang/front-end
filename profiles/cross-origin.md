@@ -182,3 +182,21 @@ requestPost({
 	* message: 将要发送到其他 window的数据
 	* targetOrigin: 通过窗口的origin属性来指定哪些窗口能接收到消息事件，其值可以是字符串"*"（表示无限制）或者一个URI
 	* transfer(可选): 是一串和message 同时传递的 Transferable 对象. 这些对象的所有权将被转移给消息的接收方，而发送一方将不再保有所有权
+
+### 分发实例
+* 执行如下代码, 其他window可以监听分发的message
+
+```
+window.addEventListener("message", receiveMessage, false);
+
+function receiveMessage(event) {
+	// For Chrome, the origin property is in the event.originalEvent
+	// object. 
+	// 这里不准确，chrome没有这个属性
+	// var origin = event.origin || event.originalEvent.origin; 
+	var origin = event.origin
+	if (origin !== "http://example.org")
+		return;
+	// ...
+}
+```

@@ -149,7 +149,12 @@ requestPost({
 ### 分类
 * 简单请求
 	* 请求方法是以下几种: GET、POST、HEAD
-	* HTTP头信息是以下几种: Accept、Accept-Language、Content-Language、Last-Event-ID、Content-Type ( 只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain )
+	* HTTP头信息是以下几种: 
+		* Accept
+		* Accept-Language
+		* Content-Language
+		* Last-Event-ID
+		* Content-Type (只限于三个值`application/x-www-form-urlencoded`、`multipart/form-data`、`text/plain`)
 * 非简单请求
 	* 除去简单请求之外的请求
 
@@ -170,18 +175,20 @@ requestPost({
 * 因为同源策略是针对客户端的，在服务器端没有什么同源策略，是可以随便访问的
 
 ### 实现方式
-* 客户端先访问 同源的服务端代码，该同源的服务端代码，使用httpclient等方法，再去访问不同源的 服务端代码，然后将结果返回给客户端
+* 客户端先访问 同源的服务端代码，该同源的服务端代码，使用 `httpclient` 等方法，再去访问不同源的 服务端代码，然后将结果返回给客户端
 
 ## 五、window.postMessage
 ### 原理
-* 从广义上讲，一个窗口可以获得对另一个窗口的引用 `(比如 targetWindow = window.opener)`，然后在窗口上调用 `targetWindow.postMessage()` 方法分发一个  `MessageEvent` 消息。接收消息的窗口可以根据需要自由处理此事件。传递给 `window.postMessage()` 的参数（比如 message ）将通过消息事件对象暴露给接收消息的窗口
+* 从广义上讲，一个窗口可以获得对另一个窗口的引用 `(比如 targetWindow = window.opener)`
+* 然后在窗口上调用 `targetWindow.postMessage()` 方法分发一个  `MessageEvent` 消息
+* 接收消息的窗口可以根据需要自由处理此事件。传递给 `window.postMessage()` 的参数（比如 message ）将通过消息事件对象暴露给接收消息的窗口
 
 ### 语法
 * `otherWindow.postMessage(message, targetOrigin, [transfer]);`
-	* otherWindow: 其他窗口的一个引用，比如iframe的contentWindow属性、执行window.open返回的窗口对象、或者是命名过或数值索引的window.frames
-	* message: 将要发送到其他 window的数据
-	* targetOrigin: 通过窗口的origin属性来指定哪些窗口能接收到消息事件，其值可以是字符串"*"（表示无限制）或者一个URI
-	* transfer(可选): 是一串和message 同时传递的 Transferable 对象. 这些对象的所有权将被转移给消息的接收方，而发送一方将不再保有所有权
+	* `otherWindow`: 其他窗口的一个引用，比如iframe的`contentWindow`属性、执行`window.open`返回的窗口对象、或者是命名过或数值索引的`window.frames`
+	* `message`: 将要发送到其他 `window` 的数据
+	* `targetOrigin`: 通过窗口的 `origin` 属性来指定哪些窗口能接收到消息事件，其值可以是字符串"*"（表示无限制）或者一个URI
+	* `transfer(可选)`: 是一串和 `message` 同时传递的 `Transferable` 对象。这些对象的所有权将被转移给消息的接收方，而发送一方将不再保有所有权
 
 ### 分发实例
 * 执行如下代码, 其他window可以监听分发的message
@@ -202,8 +209,8 @@ function receiveMessage(event) {
 ```
 
 ### 安全&风险
-* 任何窗口可以在任何其他窗口访问此方法，在任何时间，无论文档在窗口中的位置，向其发送消息。 因此，用于接收消息的任何事件监听器必须首先使用origin和source属性来检查消息的发送者的身份
+* 任何窗口可以在任何其他窗口访问此方法，在任何时间，无论文档在窗口中的位置，向其发送消息。 因此，用于接收消息的任何事件监听器必须首先使用 `origin` 和 `source` 属性来检查消息的发送者的身份
 
-* 与任何异步调度的脚本（超时，用户生成的事件）一样，postMessage的调用者不可能检测到侦听由postMessage发送的事件的事件处理程序何时抛出异常
+* 与任何异步调度的脚本（超时，用户生成的事件）一样，`postMessage` 的调用者不可能检测到侦听由 `postMessage`发送的事件的事件处理程序何时抛出异常
 
-* 当发送窗口包含 javascript: 或 data: URL时，origin属性的值是加载URL的脚本的
+* 当发送窗口包含 `javascript:` 或 `data: URL` 时，`origin` 属性的值是加载URL的脚本的

@@ -17,6 +17,18 @@
 
 ## 实践方案
 ### 方案一：官方建议骨架屏使用方案
+* [官方骨架屏文档](https://smartprogram.baidu.com/docs/develop/performance/peformance_gradually_load/)
+* 在工程项目根目录新建 skeleton 文件夹
+
+```
+  skeleton
+  |--- page
+  |    |--- index.tpl  // 骨架屏模板代码文件
+  |    |--- list.tpl  // 骨架屏模板代码文件
+  |--- config.json  // page和骨架屏的映射关系文件
+```
+
+* 使用标准 HTML 与 CSS，编写骨架屏模板文件
 
 ### 方案二： 业务交互使用方案
 

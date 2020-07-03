@@ -147,7 +147,7 @@
 * `git reset --hard`
 
 #### 已提交，未推送，即还未push
-* `git reset --hard origin/master`
+* `git reset --soft HEAD^`
 
 ### 已推送
 * `git reset --hard HEAD^` 然后执行 `git push -f`

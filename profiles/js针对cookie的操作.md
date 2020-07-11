@@ -1,3 +1,7 @@
+## 阅读本文您将收获
+* js 读取cookie操作
+* js 删除cookie操作
+
 ## js读取cookie操作
 * 方法一
 

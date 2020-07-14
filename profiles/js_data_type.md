@@ -1,4 +1,10 @@
 # 数据类型
+
+## 阅读本文您将收获
+* 两种数据类型
+* 数据类型的判断方法
+* 数据类型的隐式转换
+
 ## 原始数据类型（基本数据类型）
 ### 种类
 * number 、boolean、 string、null、 undefined、symbol(ES6新增)、bigInt(新标准，兼容性很差)

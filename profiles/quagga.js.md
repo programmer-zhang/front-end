@@ -1,4 +1,8 @@
-### 欣赏一波官方介绍
+## 阅读本文您将收获
+* Quagga 是什么
+* 怎么在项目中使用 Quagga
+
+## 欣赏一波官方介绍
 * 完全由JavaScript编写
 * 支持实时的本地化
 * 支持各种类型条形码
@@ -7,7 +11,7 @@
 
 > 注： getUserMedia在大多数浏览器中访问需要安全的来源，这意味着http://只能使用localhost。所有其他主机名需要通过提供https协议进行使用
 
-### 安装和使用
+## 安装和使用
 * 官方推荐使用依赖管理工具进行安装
 `npm install quagga`
 * 在项目中引入
@@ -53,7 +57,7 @@ Quagga.onDetected(function(data){
 ```
 * 可以通过打印data查看扫码结果
 
-### 各种回调函数
+## 各种回调函数
 * Quagga.start（）
 	* 初始化库时，该方法启动视频流并开始定位和解码图像。
 * Quagga.stop（）
@@ -71,6 +75,6 @@ Quagga.onDetected(function(data){
 * Quagga.offDetected（handler）
 	* 如果onDetected事件不再相关，则从事件队列中offDetected删除给定handler事件。
 
-### 相关扩展
+## 相关扩展
 * quagga中的条码是通过init()中的解码器进行配置的，官方提供了很多的解码器，常用的解码形式还是`code_128_reader`
 * 官方文档[GitHub地址](https://github.com/serratus/quaggaJS)

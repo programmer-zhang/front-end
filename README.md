@@ -40,6 +40,8 @@
 
 > [自用部分代码规范](./profiles/自用代码规范.md)
 
+> [mix-blend-mode 实现镂空效果]
+
 ## JavaScript相关 :speak_no_evil:
 > [JS的小秘密(持续更新)](./profiles/js的小秘密.md)
 

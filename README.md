@@ -96,6 +96,8 @@
 
 > [WebScoket 实例](./profiles/webscoket_example.md)
 
+> [国家为什么大力发展IPV6(外链资料)](http://ipv6.infosws.cn/20200228/32244.html)
+
 ## 架构框架相关 :construction:
 > [Framework遇到的error](./profiles/framework_error.md)
 

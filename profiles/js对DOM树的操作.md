@@ -46,6 +46,7 @@
 	    element.removeChild(element.firstChild);
 	}
 	```
+
 ### javascript中获取dom元素高度和宽度的方法如下：
 * 网页可见区域宽： document.body.clientWidth
 * 网页可见区域高： document.body.clientHeight

@@ -1,7 +1,6 @@
 ## 阅读本文您将收获
 * 数组操作的基本方法
 
-
 > 啥也别说先附上一张方便大家记忆的图片
 
 ![arrayFunction](../images/arrayFunction.png)

@@ -1,3 +1,6 @@
+## 阅读本文您将收获
+* JS操作DOM树的方法及API
+
 ## js操作DOM树和获取DOM树的高度以及宽度
 ### 获取DOM节点
 * 通过ID获取DOM树 document.getElementById

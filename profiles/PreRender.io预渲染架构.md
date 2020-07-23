@@ -1,4 +1,4 @@
-# PerRender-预渲染架构，提高AngularJS SEO 
+## PerRender-预渲染架构，提高AngularJS SEO 
 * JavaScript框架的优势
 	* 前端后端独立开发
 	* JavaScript框架+RESTFUL的API（或微服务架构）
@@ -9,7 +9,7 @@
 * 解决方案
 	* 使用PreRender.io预渲染页面（PreRender.io通过执行页面上的JavaScript，然后呈现给搜索引擎爬虫）
 	
-# 什么是PerRender预渲染
+## 什么是PerRender预渲染
 ### 特点
 * 基于Node.js 
 * 兼容所有的JavaScript框架和库
@@ -33,7 +33,7 @@
 * [官方网站](https://prerender.io/)
 * [GitHub网址](https://github.com/prerender)
 
-# PreRender预渲染流程
+## PreRender预渲染流程
 
 ![PreRender预渲染流程](../images/preRender-uml.png)
 
@@ -49,7 +49,7 @@
 * PreRender本质上是一个webkit内核的浏览器，在PreRender访问web站点，渲染HTML并返回给爬虫。
 * 注：爬虫在PreRender访问站点，只需将最重要的部分让爬虫看到就好，一些底层的js交互可以不让爬虫取到，现在很多网站核心部分做了处理防止爬虫爬取到。
 
-# PreRender.io 预渲染解决方案
+## PreRender.io 预渲染解决方案
 * 方案一： 应用层
 
 	通过中间件实现对应用程序级别prerender.io逻辑（即Express NodeJS中间件，Ruby on Rails的中间件，ASP.NET MVC中间件，...）
@@ -110,6 +110,6 @@
 
 * 在另一方面，如果我们只重定向爬虫的Http请求到预渲染服务，我们不需要提供最新信息给爬虫，我们可以使用prerender的缓存服务来提高性能，我们可以缓存爬虫访问过的页面12小时-1天
 
-# 写在后面的话
+## 写在后面的话
 * Google现在有现成的PreRender组件，仅需提供一个域名即可。
 * PreRender不仅仅是搭建一个空服务，还要有周边服务，是单独的一个项目，在node的底层

@@ -1,6 +1,9 @@
 按照惯例，先欣赏一波[官方定义](http://www.w3school.com.cn/tags/att_standard_tabindex.asp)
 > Safari不支持！
 
+## 阅读本文您将收获
+* tabIndex的作用
+
 ## 作用
 * 当使用键盘时，tabindex用来定位html元素,即使用tab键时焦点的顺序。
 * tabIndex 有三个值：0，-1，n

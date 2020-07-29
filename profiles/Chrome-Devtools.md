@@ -1,5 +1,7 @@
 > 工欲善其事必先利其器，Chrome浏览器应该算是前端开发人员最常用的工具了，本期带来一些很实用的chrome浏览器调试方法
 
+## 你真的了解Chrome devtool 吗
+
 ## 用好Chrome Devtools
 ### console的骚操作
 * `congsole.log()、console.error()、console.warn()、console.info()` 常规打印数据信息

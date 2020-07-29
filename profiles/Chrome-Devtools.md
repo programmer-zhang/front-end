@@ -1,6 +1,16 @@
 > 工欲善其事必先利其器，Chrome浏览器应该算是前端开发人员最常用的工具了，本期带来一些很实用的chrome浏览器调试方法
 
-## 你真的了解Chrome devtool 吗
+## 你真的认识Chrome devtool 吗
+![](../images/chromeDevtool/devtool.png)
+
+* `Elements` - 页面dom元素
+* `Console` - 控制台
+* `Sources` - 页面静态资源
+* `Network` - 网络
+* `Performance` - 设备加载性能分析
+* `Application` - 应用信息，PWA/Storage/Cache/Frames
+* `Security` - 安全分析
+* `Audits` - 自动化测试工具
 
 ## 用好Chrome Devtools
 ### console的骚操作

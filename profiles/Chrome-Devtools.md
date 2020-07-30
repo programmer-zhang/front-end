@@ -46,6 +46,7 @@
 * `Memory => profiles => ALLOCATION TIMELINES`
 
 ### 移动端真机调试
+* `chrome://inspect/`
 
 ## 浏览器并发请求数量问题
 * 基于端口数量和线程切换开销的考虑,浏览器不可能无限量的并发请求

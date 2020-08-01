@@ -45,7 +45,7 @@
 ### 查看内存消耗
 * `Memory => profiles => ALLOCATION TIMELINES`
 
-### 移动端真机调试
+### 远程调试
 * `chrome://inspect/`
 
 ## 浏览器并发请求数量问题

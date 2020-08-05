@@ -27,6 +27,8 @@
 * `more tools => Coverage`
 ![检查没用的CSS/JS](../images/coverage.jpg)
 
+### debugger
+
 ### 断点检查
 * hover、active
 

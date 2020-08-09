@@ -33,7 +33,7 @@
 * hover、active
 
 ### 模拟断网进行错误处理
-* offline
+* offline、fast 3G
 
 ### 用timeline/performance查看执行时间
 * 格子代表帧率

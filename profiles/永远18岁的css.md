@@ -1,3 +1,74 @@
+## 利用`:valid`和`：invalid`做表单即时校验
+* `html5` 丰富了表单元素，提供了类似`required`,`email`,`tel` 等表单元素属性。同样的，我们可以利用 `:valid` 和 `:invalid` 来做针对`html5`表单属性的校验
+* `:required` 伪类指定具有required 属性的表单元素
+* `:valid` 伪类指定一个通过匹配正确的所要求的表单元素
+* `:invalid` 伪类指定一个不匹配指定要求的表单元素
+
+```
+// HTML
+<div class="container">
+    <div class="row" style="margin-top: 2rem;">
+      <form>
+        <div class="form-group">
+          <label>name</label>
+          <input type="text" required placeholder="请输入名称">
+        </div>
+        <div class="form-group">
+          <label>email</label>
+          <input type="email" required placeholder="请输入邮箱">
+        </div>
+        <div class="form-group">
+          <label>homepage</label>
+          <input type="url" placeholder="请输入博客url">
+        </div>
+        <div class="form-group">
+          <label>Comments</label>
+          <textarea required></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+// CSS
+.valid {
+  border-color: #429032;
+  box-shadow: inset 5px 0 0 #429032;
+}
+
+.invalid {
+  border-color: #D61D1D;
+  box-shadow: inset 5px 0 0 #D61D1D;
+}
+
+.form-group {
+  width: 32rem;
+  padding: 1rem;
+  border: 1px solid transparent;
+  &:hover {
+    border-color: #eee;
+    transition: border .2s;
+  }
+  label {
+    display: block;
+    font-weight: normal;
+  }
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    line-height: 2rem;
+    padding: .5rem .5rem .5rem 1rem;
+    border: 1px solid #ccc;
+    outline: none;
+    &:valid {
+      @extend .valid;
+    }
+    &:invalid {
+      @extend .invalid;
+    } 
+  }
+}
+```
+
 ## oblique字体和italic字体在css样式中的差别
 * 区别
 	* italic: 指的是一种单独的字体风格，对每个字母的结构有一些小改动，来反映外观的变化,不一定每种字体都有这种风格

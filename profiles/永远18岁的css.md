@@ -199,7 +199,7 @@
 }
 ```
 
-* 上面的 CSS 代码，一开始页面中的 #content1 与 #content2 都是隐藏的，当点击列表1触发 href="#content1" 时，页面的 URL 会发生变化：由 www.example.com 变成 www.example.com#content1
+* 上面的 CSS 代码，一开始页面中的 #content1 与 #content2 都是隐藏的，当点击列表1触发 href="#content1" 时，页面的 URL 会发生变化：由 `www.example.com` 变成 `www.example.com#content1`
 * 接下来会触发 #content1:target{ } 这条 CSS 规则，#content1 元素由 display:none 变成 display:block ，点击列表2亦是如此。
 * 如此即达到了 Tab 切换。当然除了 content1 content2 的切换，我们的 li 元素样式也要不断变化，这个时候，就需要我们在 DOM 结构布局的时候多留心，在 #content1:target 触发的时候可以同时去修改 li 的样式。
 

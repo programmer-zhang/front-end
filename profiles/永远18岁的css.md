@@ -158,9 +158,9 @@
 
 ## 纯CSS的导航栏Tab切换方案
 ### 方法一：`:target` 伪类选择器
-* 首先，我们要解决的问题是如何接收点击事件，这里第一种方法我们采用 :target 伪类接收。
+* 首先，我们要解决的问题是如何接收点击事件，这里第一种方法我们采用 `:target` 伪类接收。
 
-> :target 是 CSS3 新增的一个伪类，可用于选取当前活动的目标元素。当然 URL 末尾带有锚名称 #，就可以指向文档内某个具体的元素。这个被链接的元素就是目标元素(target element)。它需要一个 id 去匹配文档中的 target 。
+> `:target` 是 `CSS3` 新增的一个伪类，可用于选取当前活动的目标元素。当然 URL 末尾带有锚名称 `#`，就可以指向文档内某个具体的元素。这个被链接的元素就是目标元素(`target element`)。它需要一个 `id` 去匹配文档中的 `target` 。
 
 * 解释很难理解，看看实际的使用情况，假设我们的 HTML 代码如下：
 
@@ -173,7 +173,7 @@
 <div>列表2内容:abcdefgkijkl</div>
 ```
 
-* 由于要使用 :target，需要 HTML 锚点，以及锚点对应的 HTML 片段。所以上面的结构要变成：
+* 由于要使用 `:target`，需要 HTML 锚点，以及锚点对应的 HTML 片段。所以上面的结构要变成：
 
 ```
 <ul class='nav'>
@@ -184,8 +184,8 @@
 <div id="content2">列表2内容:abcdefgkijkl</div>
 ```
 
-* 这样，上面 <a href="#content1"> 中的锚点 #content1 就对应了列表1 <div id="content1"> 。锚点2与之相同对应列表2。
-* 接下来，我们就可以使用 :target 接受到点击事件，并操作对应的 DOM 了：
+* 这样，上面 `<a href="#content1">` 中的锚点 `#content1` 就对应了列表1 `<div id="content1">` 。锚点2与之相同对应列表2。
+* 接下来，我们就可以使用 `:target` 接受到点击事件，并操作对应的 DOM 了：
 
 ```
 #content1,
@@ -199,9 +199,9 @@
 }
 ```
 
-* 上面的 CSS 代码，一开始页面中的 #content1 与 #content2 都是隐藏的，当点击列表1触发 href="#content1" 时，页面的 URL 会发生变化：由 `www.example.com` 变成 `www.example.com#content1`
-* 接下来会触发 #content1:target{ } 这条 CSS 规则，#content1 元素由 display:none 变成 display:block ，点击列表2亦是如此。
-* 如此即达到了 Tab 切换。当然除了 content1 content2 的切换，我们的 li 元素样式也要不断变化，这个时候，就需要我们在 DOM 结构布局的时候多留心，在 #content1:target 触发的时候可以同时去修改 li 的样式。
+* 上面的 CSS 代码，一开始页面中的 `#content1` 与 `#content2` 都是隐藏的，当点击列表1触发 `href="#content1"` 时，页面的 URL 会发生变化：由 `www.example.com` 变成 `www.example.com#content1`
+* 接下来会触发 `#content1:target{ }` 这条 CSS 规则，`#content1` 元素由 `display:none` 变成 `display:block` ，点击列表2亦是如此。
+* 如此即达到了 Tab 切换。当然除了 content1 content2 的切换，我们的 li 元素样式也要不断变化，这个时候，就需要我们在 DOM 结构布局的时候多留心，在 `#content1:target` 触发的时候可以同时去修改 li 的样式。
 
 * 在上面 HTML 的基础上，再修改一下，变成如下结构：
 
@@ -235,7 +235,7 @@
 }
 ```
 
-* 上面的 CSS 规则中，我们使用 ~ 选择符，在 #content1:target 和 #content2:target 触发的时候分别去控制两个导航 li 元素的样式。
+* 上面的 CSS 规则中，我们使用 `~` 选择符，在 `#content1:target` 和 `#content2:target` 触发的时候分别去控制两个导航 li 元素的样式。
 * 至此两个问题，1. 如何接收点击事件 与 2. 如何操作相关DOM 都已经解决，剩下的是一些小样式的修补工作。
 * [方案参考文章](https://github.com/chokcoco/iCSS/issues/54)
 

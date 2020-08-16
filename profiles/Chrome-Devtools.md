@@ -38,10 +38,12 @@
 * `console.dir()` 递归打印对象的所有属性
 * `console.trace()` 追踪函数的调用轨迹
 * 带样式打印
+
 ![带样式打印](../images/console.jpg)
 
 ### 检查无用的css/js
 * `more tools => Coverage`
+
 ![检查没用的CSS/JS](../images/coverage.jpg)
 
 ### debugger

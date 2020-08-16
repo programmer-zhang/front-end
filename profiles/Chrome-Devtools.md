@@ -3,13 +3,14 @@
 ## 你真的认识Chrome devtool 吗
 ![](../images/chromeDevtool/devtool.png)
 
-* `Elements` - 页面dom元素
-* `Console` - 控制台
-* `Sources` - 页面静态资源
-* `Network` - 网络
-* `Performance` - 设备加载性能分析
-* `Application` - 应用信息，PWA/Storage/Cache/Frames
-* `Security` - 安全分析
+* `Elements` - 页面dom元素面板
+* `Console` - 控制台面板
+* `Sources` - 源代码面板
+* `Network` - 网络面板
+* `Performance` - 设备加载性能分析面板
+* `Memory` - 内存面板
+* `Application` - 应用信息面板，PWA/Storage/Cache/Frames
+* `Security` - 安全分析面板
 * `Audits` - 自动化测试工具
 
 ## 用好Chrome Devtools

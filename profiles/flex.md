@@ -53,6 +53,7 @@
 * `center`：居中排列
 * `space-between`：两端对齐排列，平分中间空间
 * `space-around`：两端开始排列，平分所有空间
+
 ![](../images/flex/flex-jc.png)
 
 ### `align-items`: 交叉轴上的对齐方式
@@ -61,6 +62,7 @@
 * `center`：交叉轴居中对齐
 * `baseline`：项目的的第一行文字开始对齐
 * `stretch`(默认)：如果项目未设置高度或设为auto，将占满整个容器的高度
+
 ![](../images/flex/flex-ai.png)
 
 ### `align-content`: 多根轴线的对齐方式(只有一根轴线，该属性不起作用)
@@ -70,25 +72,30 @@
 * `space-between`：交叉轴两端对齐，并平分中间空间
 * `space-around`：交叉轴两端开始排列，平分所有空间
 * `stretch`(默认)：轴线占满整个交叉轴
+
 ![](../images/flex/flex-ac.png)
 
 ## 子容器属性
 ### `order `: 排列顺序
 * 默认为0，数值越小，排列越靠前
+
 ![](../images/flex/flex-order.png)
 
 > 使用`flex`布局经常会碰到空间被放大导致子容器内部文字或图片被延展或拉伸，除了可以设置`min-width、max-width`这种形式外，还能使用下边属性进行控制
 
 ### `flex-grow`: 放大比例
 * 默认为0，即如果存在剩余空间，也不放大
+
 ![](../images/flex/flex-grow.png)
 
 ### `flex-shrink`: 缩小比例
 * 默认为1，即如果空间不足，该项目将缩小
+
 ![](../images/flex/flex-shrink.png)
 
 ### `flex-basis`: 占据的主轴空间
 * 定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小
+
 ![](../images/flex/flex-basis.png)
 
 ### `flex `: `flex-grow`, `flex-shrink` 和 `flex-basis`的简写
@@ -96,10 +103,12 @@
 
 ### `align-self`: 自定义的主轴对齐方式
 * 允许单个项目有与其他项目不一样的对齐方式，可覆盖 `align-items` 属性。默认值为 `auto`，表示继承父元素的 `align-items` 属性，如果没有父元素，则等同于 `stretch`
+
 ![](../images/flex/flex-as.png)
 
 ## 面试中常问的Flex相关知识
 ### 设置垂直水平居中
+
 ![](../images/flex/flex-center.png)
 
 ```
@@ -117,6 +126,7 @@
 ```
 
 ### 设置左边栏固定，右边栏自适应布局(或类似布局)
+
 ![](../images/flex/flex-auto.png)
 
 ```
@@ -151,6 +161,7 @@ div {
 ```
 
 ### 设置浮动自适应布局
+
 ![](../images/flex/flex-auto-wrap.png)
 
 ```

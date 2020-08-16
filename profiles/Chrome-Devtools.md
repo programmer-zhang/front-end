@@ -30,6 +30,14 @@
 * `Audits` - 自动化测试工具
 
 ## 用好Chrome Devtools
+### 呼出快捷面板: `cmd + shift + p`
+* 在 `Devtools` 打开的情况下，键入 `cmd + shift + p` 将其激活，然后开始在栏中键入要查找的命令或输入 `?` 号以查看所有可用命令
+	* `...`: 打开文件
+	* `:`: 前往文件
+	* `@`：前往标识符(函数，类名等)
+	* `!`: 运行脚本文件
+	* `>`: 打开某菜单功能
+
 ### console的骚操作
 * `congsole.log()、console.error()、console.warn()、console.info()` 常规打印数据信息
 * `console.table()` 表格形式打印复杂的数据结构

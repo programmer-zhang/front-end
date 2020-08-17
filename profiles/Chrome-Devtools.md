@@ -53,6 +53,8 @@
 
 ![chrome截图](../images/chromeDevtool/screenshot.png)
 
+### 性能监视器：`> performance monitor`
+
 ### 检查无用的css/js
 * `more tools => Coverage`
 

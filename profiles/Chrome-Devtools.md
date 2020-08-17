@@ -47,12 +47,16 @@
 * `console.trace()` 追踪函数的调用轨迹
 * 带样式打印
 
-![带样式打印](../images/console.jpg)
+![带样式打印](../images/chromeDevtool/console.jpg)
+
+### 截图：`> screen`
+
+![chrome截图](../images/chromeDevtool/screenshot.png)
 
 ### 检查无用的css/js
 * `more tools => Coverage`
 
-![检查没用的CSS/JS](../images/coverage.jpg)
+![检查没用的CSS/JS](../images/chromeDevtool/coverage.jpg)
 
 ### debugger
 

@@ -127,13 +127,13 @@
 
 > [Vue 组件通信]
 
-> [Vue 源码系列-Vue的生命周期]
+> [Vue 源码系列-Vue的生命周期](./profiles/vue_life.md)
 
-> [Vue 源码系列-watch]
+> [Vue 源码系列-watch](./profiles/vue_watch.md)
 
-> [Vue 源码系列-computed]
+> [Vue 源码系列-computed](./profiles/vue_computed.md)
 
-> [Vue 源码系列-响应式数据]
+> [Vue 源码系列-响应式数据](./profiles/vue_响应式流程.md)
 
 > [Vue 源码系列-this.$nextTick]
 

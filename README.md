@@ -231,7 +231,7 @@
 
 > [一个外国友人的 MotherFucking Website (外链资料)](http://motherfuckingwebsite.com/)
 
-> [一个好用的 mac 终端替代方案](./profiles/一个好用的mac终端替代方案.md)
+> [一个好用的 mac 终端替代方案](./profiles/item2.md)
 
 > [MAC 安装 Homebrew 及错误处理](./profiles/homebrew.md)
 

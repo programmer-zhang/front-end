@@ -38,7 +38,7 @@
 	* `!`: 运行脚本文件
 	* `>`: 打开某菜单功能
 
-### console的骚操作
+### 花式 console
 * `congsole.log()、console.error()、console.warn()、console.info()` 常规打印数据信息
 * `console.table()` 表格形式打印复杂的数据结构
 * `console.group()、console.groupEnd()` 分组打印信息

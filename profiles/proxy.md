@@ -29,9 +29,19 @@
 	* `handler.construct()`: new 操作符的捕捉器
 
 ## `Proxy` 能干什么
-### 直观的私有变量/拦截has...in...操作
+### 一：直观的私有变量/拦截has...in...操作
 
-### 验证属性
+### 二：数据校验
+
+### 三：进行mock数据
+
+### 四：深层取值判断
+
+## Vue 3.0 的 Proxy & Object.defineProperty 
+### 1. Object.defineProperty 无法一次性监听对象所有属性，必须遍历或者递归来实现
+### 2. Object.defineProperty 无法监听新增加的属性，需要监听的话使用this.$set()重新设置添加属性
+### 3. Object.defineProperty 无法响应数组操作，vue中通过遍历和重写Array数组原型方法操作方法实现
+### 4. Proxy 拦截方式更多, Object.defineProperty 只有 get 和 set
 
 ## Decorator
 * ES7 中实现的 Decorator，相当于设计模式中的装饰器模式。如果简单地区分 Proxy 和 Decorator 的使用场景，可以概括为：Proxy 的核心作用是控制外界对被代理者内部的访问，Decorator 的核心作用是增强被装饰者的功能。只要在它们核心的使用场景上做好区别，那么像是访问日志这样的功能，虽然本文使用了 Proxy 实现，但也可以使用 Decorator 实现，开发者可以根据项目的需求、团队的规范、自己的偏好自由选择。

@@ -16,7 +16,7 @@
 	* `handler.has()`: `in` 操作符的捕捉器
 	* `handler.get()`: 属性读取操作的捕捉器
 	* `handler.set()`: 属性设置操作的捕捉器
-	* `handler.apply()`: 函数调用操作的捕捉器
+	* `handler.apply()`: 函数调用操作的捕捉器，拦截函数的调用、call和apply操作
 	* `handler.getPrototypeOf()`: `Object.getPrototypeOf` 方法的捕捉器
 	* `handler.setPrototypeOf()`: `Object.setPrototypeOf` 方法的捕捉器
 	* `handler.isExtensible()`: `Object.isExtensible` 方法的捕捉器

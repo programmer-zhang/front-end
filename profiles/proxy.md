@@ -6,7 +6,8 @@
 > 解释参考MDN，[链接直达](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy)。
 
 ### 名词解释
-* Proxy 对象用于定义基本操作的自定义行为（如属性查找、赋值、枚举、函数调用等）。
+* Proxy 对象用于定义基本操作的自定义行为（如属性查找、赋值、枚举、函数调用等）
+* Proxy用于修改某些操作的默认行为,也可以理解为在目标对象之前架设一层拦截，外部所有的访问都必须先通过这层拦截，因此提供了一种机制，可以对外部的访问进行过滤和修改
 
 ### 语法
 * `const p = new Proxy(target, handler)`
@@ -44,4 +45,4 @@
 ### 4. Proxy 拦截方式更多, Object.defineProperty 只有 get 和 set
 
 ## Decorator
-* ES7 中实现的 Decorator，相当于设计模式中的装饰器模式。如果简单地区分 Proxy 和 Decorator 的使用场景，可以概括为：Proxy 的核心作用是控制外界对被代理者内部的访问，Decorator 的核心作用是增强被装饰者的功能。只要在它们核心的使用场景上做好区别，那么像是访问日志这样的功能，虽然本文使用了 Proxy 实现，但也可以使用 Decorator 实现，开发者可以根据项目的需求、团队的规范、自己的偏好自由选择。
+* ES7 中实现的 Decorator，相当于设计模式中的装饰器模式。如果简单地区分 Proxy 和 Decorator 的使用场景，可以概括为：Proxy 的核心作用是控制外界对被代理者内部的访问，Decorator 的核心作用是增强被装饰者的功能。

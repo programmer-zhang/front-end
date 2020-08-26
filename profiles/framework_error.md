@@ -19,6 +19,17 @@
 	* 如果没有重新安装指定依赖和版本
 `npm install webpack-merge --save-dev`
 
+### `webpack-dev-server --inline --progress --config build/webpack.dev.conf.js` 终端报错
+* 原因：新版的webpack-dev-server 3.1.14 存在问题。
+* 解决方法：package.json 中指定 webpack-dev-server 低版本号
+	* 重装 webpack-dev-server模块
+
+```
+1）npm uninstall webpack-dev-server
+2）npm install webpack-dev-server@2.9.1
+3）npm run dev
+```
+
 ## Swiper EROOR
 ### swiper在Vue项目中引入失败
 * swiper若是本地js引入，需要放在`Vue  static`文件夹中，否则会被Vue打包后识别不到。

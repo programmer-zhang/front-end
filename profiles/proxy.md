@@ -12,12 +12,12 @@
 ### 语法
 * `const p = new Proxy(target, handler)`
 	* `target`: 要使用 Proxy 包装的目标对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）
-	* `handler`: 一个通常以函数作为属性的对象，各属性中的函数分别定义了在执行各种操作时代理 p 的行为
+	* `handler`: 对该代理对象的各种操作行为处理(为空对象的情况下，基本可以理解为是对第一个参数做的一次浅拷贝)
 * 简而言之：`target` 就是你想要代理的对象；而 `handler` 是一个函数对象，其中定义了所有你想替 `target` 代为管理的操作对象，包含了：
-	* `handler.has()`: `in` 操作符的捕捉器
-	* `handler.get()`: 属性读取操作的捕捉器
-	* `handler.set()`: 属性设置操作的捕捉器
-	* `handler.apply()`: 函数调用操作的捕捉器，拦截函数的调用、call和apply操作
+	* *`handler.has()`: `in` 操作符的捕捉器
+	* *`handler.get()`: 属性读取操作的捕捉器
+	* *`handler.set()`: 属性设置操作的捕捉器
+	* *`handler.apply()`: 函数调用操作的捕捉器，拦截函数的调用、call和apply操作
 	* `handler.getPrototypeOf()`: `Object.getPrototypeOf` 方法的捕捉器
 	* `handler.setPrototypeOf()`: `Object.setPrototypeOf` 方法的捕捉器
 	* `handler.isExtensible()`: `Object.isExtensible` 方法的捕捉器
@@ -26,7 +26,6 @@
 	* `handler.defineProperty()`: `Object.defineProperty` 方法的捕捉器
 	* `handler.deleteProperty()`: `delete` 操作符的捕捉器
 	* `handler.ownKeys()`: `Object.getOwnPropertyNames` 方法和 `Object.getOwnPropertySymbols` 方法的捕捉器
-	
 	* `handler.construct()`: new 操作符的捕捉器
 
 ## `Proxy` 能干什么
@@ -34,9 +33,10 @@
 
 ### 二：数据校验
 
-### 三：进行mock数据
+### 三：mock数据
 
 ### 四：深层取值判断
+* php语法深层取值不存在为什么不报错
 
 ## Vue 3.0 的 Proxy & Object.defineProperty 
 ### 1. Object.defineProperty 无法一次性监听对象所有属性，必须遍历或者递归来实现

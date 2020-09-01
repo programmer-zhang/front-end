@@ -30,19 +30,60 @@
 
 ## `Proxy` 能干什么
 ### 一：直观的私有变量/拦截has...in...操作
+![](../images/proxy/privateTar.png)
+
+![](../images/proxy/proxyTar.png)
 
 ### 二：数据校验
+![](../images/proxy/validtar1.png)
+
+![](../images/proxy/validtar2.png)
 
 ### 三：mock数据
 
 ### 四：深层取值判断
-* php语法深层取值不存在为什么不报错
+* **php语法深层取值不存在为什么不报错？**
+
+![](../images/proxy/deepJudge1.png)
+
+![](../images/proxy/deepJudge2.png)
+
+![](../images/proxy/deepJudge3.png)
 
 ## Vue 3.0 的 Proxy & Object.defineProperty 
-### 1. Object.defineProperty 无法一次性监听对象所有属性，必须遍历或者递归来实现
-### 2. Object.defineProperty 无法监听新增加的属性，需要监听的话使用this.$set()重新设置添加属性
-### 3. Object.defineProperty 无法响应数组操作，vue中通过遍历和重写Array数组原型方法操作方法实现
+### Object.defineProperty 
+* **劫持方式**：只能劫持对象的属性，不能直接代理对象
+* **存在的问题**：虽然 `Object.defineProperty` 通过为属性设置 `getter/setter` 能够完成数据的响应式，但是它并不算是实现数据的响应式的完美方案，某些情况下需要对其进行修补或者hack，这也是它的缺陷，主要表现在两个方面：
+	* 无法检测到对象属性的新增或删除
+	* 不能监听数组的变化
+
+![](../images/proxy/proxy1.png)
+
+### 1. Object.defineProperty 无法监听新增加的属性
+* 解决方式：提供方法重新手动Observe，需要监听的话使用 `Vue.set()` 重新设置添加属性的响应式
+
+![](../images/proxy/define1.png)
+
+### 2. Object.defineProperty 无法一次性监听对象所有属性，如对象属性的子属性
+* 解决方式: 通过递归调用来实现子属性响应式
+
+![](../images/proxy/define2.png)
+
+### 3. Object.defineProperty 无法响应数组操作
+* 解决方式：通过遍历和重写Array数组原型方法操作方法实现，但是也只限制在 `push/pop/shift/unshift/splice/sort/reverse` 这七个方法，其他数组方法及数组的使用则无法检测到
+
+![](../images/proxy/define3.png)
+
 ### 4. Proxy 拦截方式更多, Object.defineProperty 只有 get 和 set
 
+### 5. Proxy 新标准性能红利
+* `Proxy` 作为新标准，从长远来看，JS 引擎会继续优化 `Proxy`
+
+
+### 6. Proxy兼容性差
+* `Vue 3.0` 中放弃了对于IE的支持
+* 目前并没有一个完整支持 `Proxy` 所有拦截方法的 `Polyfill` 方案，有一个 `google` 编写的 `proxy-polyfill` 也只支持了 `get/set/apply/construct` 四种拦截
+
 ## Decorator
-* ES7 中实现的 Decorator，相当于设计模式中的装饰器模式。如果简单地区分 Proxy 和 Decorator 的使用场景，可以概括为：Proxy 的核心作用是控制外界对被代理者内部的访问，Decorator 的核心作用是增强被装饰者的功能。
+* ES7 中实现的 `Decorator`，相当于设计模式中的装饰器模式。
+* 如果简单地区分 `Proxy` 和 `Decorator` 的使用场景，可以概括为：`Proxy` 的核心作用是控制外界对被代理者内部的访问，`Decorator` 的核心作用是增强被装饰者的功能。

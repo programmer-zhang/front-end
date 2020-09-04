@@ -84,6 +84,9 @@
 
 ![](../images/proxy/deepJudge3.png)
 
+### 六：日志上报
+* [腾讯利用Proxy进行日志上报功能](https://www.infoq.cn/article/6eKiic82aQu3uqaYvvfV)
+
 ## Vue 3.0 的 Proxy & Object.defineProperty
 ### Proxy
 * **劫持方式**：代理整个对象，只需做一层代理就可以监听同级结构下的所有属性变化，包括新增属性和删除属性

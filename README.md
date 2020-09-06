@@ -87,7 +87,7 @@
 
 > [解决JS绑定事件多次执行的问题]
 
-> [ES6 Proxy 可以干什么?]
+> [ES6 Proxy 的巧用](./profiles/proxy.md)
 
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)

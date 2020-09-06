@@ -1,6 +1,6 @@
 ## 阅读本文您将收获
 * `JavaScript` 中的 `Proxy` 是什么？能干什么？
-* `Vue3.0` 开始为什么 `Proxy` 代替 `Object.defineProperty`
+* `Vue3.0` 开始为什么用 `Proxy` 代替 `Object.defineProperty`
 
 ## `Proxy` 是什么
 > 解释参考MDN，[链接直达](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
@@ -27,7 +27,8 @@
 	* `handler.deleteProperty()`: `delete` 操作符的捕捉器
 	* `handler.ownKeys()`: `Object.getOwnPropertyNames` 方法和 `Object.getOwnPropertySymbols` 方法的捕捉器
 	* `handler.construct()`: new 操作符的捕捉器
-	* **注意**：如果一个属性`不可配置` || `不可写`，则该属性不可被代理，通过 `Proxy` 访问该属性会报错。(实现?)
+* **注意**：如果一个属性`不可配置` || `不可写`，则该属性不可被代理，通过 `Proxy` 访问该属性会报错。
+* **`*`** 标记的trap为本文都要涉及到的
 
 ## `Proxy` 能干什么?
 ### 当你想进行以下操作时proxy模式通常会很有用：
@@ -36,25 +37,31 @@
 * 防止在未经验证/准备的情况下执行重度依赖资源的操作
 
 ### 一：javascript中真正的私有变量/拦截has...in...操作/给出提示信息或是阻止特定操作
-* 针对私有变量，可以使用一个proxy来截获针对某个属性的请求并作出限制或是直接返回 `undefined `
-* 还可以使用 has trap 来掩盖这个属性的存在
+##### 传统方法私有变量可获取可修改
+
 ![](../images/proxy/privateTar.png)
 
-* has 方法拦截的是 `hasProperty` 操作，不是 `hasOwnProperty`,所以 `has...in` 方法不判断一个属性是自身属性还是继承的属性
-* `hasOwnProperty` 不包含原型链上的，只判断实例属性上的
-* `for...in` 访问原型链上所有的
-* `has...in` 可以拦截到，`for...in` 拦截不到？
+##### Proxy 设置私有变量
+* 针对私有变量，可以使用一个proxy来截获针对某个属性的请求并作出限制或是直接返回 `undefined `
+* 还可以使用 `has` trap 来掩盖这个属性的存在
 
 ![](../images/proxy/proxyTar.png)
+
+* `has` 方法拦截的是 `hasProperty` 操作，不是 `hasOwnProperty`,所以 `has...in` 方法不判断一个属性是自身属性还是继承的属性
+* **注意:** `has...in` 可以拦截到，`for...in` 拦截不到
 
 * 阻止其他人删除属性，想让调用方法的人知道该方法已经被废弃，或是想阻止其他人修改属性
 
 ![](../images/proxy/stop.png)
 
-* **注意**: 要是 `Proxy` 起作用，必须针对 `Proxy` 的实例进行操作，而不是针对目标对象进行操作
+* **注意**: 要是 `Proxy` 代理起作用，必须针对 `Proxy` 的实例进行操作，而不是针对目标对象进行操作
 
 ### 二：数据校验(看代码)
+* 利用 Proxy 代理进行简单数据校验
+
 ![](../images/proxy/validtar1.png)
+
+* 校验逻辑直接加在代理处理函数中过于繁重，我们可以把校验模块直接抽离出来，只需要去处理校验的逻辑，代理层面后续不需要改动
 
 ![](../images/proxy/validtar2.png)
 
@@ -64,10 +71,13 @@
 
 ![](../images/proxy/log.png)
 
+* 以上例子就是一个监听函数执行的代理，可以将其进行扩展为打点函数
+
 * 这里面 `Proxy` 的 `trap` 为什么使用 `get` 而不是 `apply` ? [答案](https://exploringjs.com/es6/ch_proxies.html#_intercepting-method-calls)
 
 ### 四：普通函数与构造函数的兼容
-* 构造函数：调用没有使用new关键字来调用的话，Class对象会直接抛出异常
+* 构造函数调用没有使用new关键字来调用的话，Class对象会直接抛出异常
+* 使用 `Proxy` 进行封装让构造函数也能够直接进行函数调用
 
 ![](../images/proxy/compatible.png)
 
@@ -78,9 +88,26 @@
 	2. `xxx.xxx.xxx...`无论 `undefined` 出现在哪里都不能报错
 	3. `Proxy` 的 `get()` 传入的参数必须是对象
 
+* 传统方式深层取值繁琐，利用Proxy可以简化不必要代码
 ![](../images/proxy/deepJudge1.png)
 
+* 但是当 `target[prop]` 是 `undefined` 的时候，`Proxy get()`的入参变成了 `undefined`，但 `Proxy` 第一个入参必须为对象
+* 需要对 obj 为 `undefined` 的时候进行特殊处理，为了能够深层取值，所以使用一个空函数进行设置拦截，利用 `apply` trap 进行处理
+
 ![](../images/proxy/deepJudge2.png)
+
+* 我们理想中的应该是，如果属性为 `undefined` 就返回 `undefined`，但仍要支持访问下级属性，而不是抛出错误
+* 顺着这个思路来的话，很明显当属性为 `undefined` 的时候也需要用 `Proxy` 进行特殊处理
+所以我们需要一个具有下面特性的 `get()` 方法
+
+```
+	getData(undefined)() === undefined; // true
+	getData(undefined).xxx.yyy.zzz(); // undefined
+```
+
+* 这里完全不需要注意 `get(undefined).xxx` 是否为正确的值，因为想获取值必须要执行才能拿到
+* 那么只需要对所有 `undefined` 后面访问的属性都默认为 `undefined` 就好了,所以我们需要一个代理了 `undefined` 后的返回对象
+* 同时为了解决无限循环执行的问题，当第一次检测到出现 `undefined` 的时候，停止执行
 
 ![](../images/proxy/deepJudge3.png)
 
@@ -128,6 +155,6 @@
 * `Vue 3.0` 中放弃了对于IE的支持
 * 目前并没有一个完整支持 `Proxy` 所有拦截方法的 `Polyfill` 方案，有一个 `google` 编写的 `proxy-polyfill` 也只支持了 `get/set/apply/construct` 四种拦截
 
-## Decorator
+## 多说一嘴 Decorator
 * ES7 中实现的 `Decorator`，相当于设计模式中的装饰器模式。
 * 如果简单地区分 `Proxy` 和 `Decorator` 的使用场景，可以概括为：`Proxy` 的核心作用是控制外界对被代理者内部的访问，`Decorator` 的核心作用是增强被装饰者的功能。

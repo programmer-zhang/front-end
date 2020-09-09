@@ -117,3 +117,23 @@ alert(text);
 * 通过这三种方式，我们的解决方案主要有两个方面
 	* 主动提示引导用户将剪贴板中的内容复制到input框，或者textarea中，从而获取值
 	* `window.addEvent("paste",function(e){ });` 通过监听事件，监听用户的粘贴操作，从而拿到想要的数据
+
+## 如何修改用户粘贴板中的内容
+
+```
+<!--在需要控制的DOM节点上添加事件-->
+copyDom.bind({
+    copy: function (event) {
+        var clipboardData = event.originalEvent && event.originalEvent.clipboardData || window.clipboardData;
+        if (!clipboardData) {
+            return;
+        }
+        var copyText = window.getSelection().toString();
+        if (copyText) {
+            event.preventDefault();
+            clipboardData.setData('text/plain', copyText + '修改粘贴板内容');
+        }
+        return false; // 否则不生效
+    }
+});
+```

@@ -152,7 +152,7 @@
 * [ES6 Proxy 性能之我见](https://www.cnblogs.com/zmj97/p/10954968.html)
 
 ### 6. Proxy 兼容性差
-* `Vue 3.0` 中放弃了对于IE的支持
+* `Vue 3.0` 中放弃了对于IE的支持(以为 `Vue 3.0` 中会对不兼容的浏览器进行向下兼容，但是经过查看资料和源码发现尤大压根没做兼容)
 * 目前并没有一个完整支持 `Proxy` 所有拦截方法的 `Polyfill` 方案，有一个 `google` 编写的 `proxy-polyfill` 也只支持了 `get/set/apply/construct` 四种拦截
 
 ## 多说一嘴 Decorator

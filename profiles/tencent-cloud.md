@@ -202,15 +202,15 @@ git clone < 项目git地址 >
 ### 服务器启动项目
 * 服务器安装 node 依赖
 
-	```
-	npm install
-	```
+```
+npm install
+```
 
-	* 若依赖安装失败可使用本地运行时的依赖(建议打包后移动) 或 修改 npm 源为国内源后重新操作
+* 若依赖安装失败可使用本地运行时的依赖(建议打包后移动) 或 修改 npm 源为国内源后重新操作
 
-	```
-	scp /Personal/web-projects/xxx/node_modules.tar  root@182.254.xxx.xxx:/项目地址
-	```
+```
+scp /Personal/web-projects/xxx/node_modules.tar  root@182.254.xxx.xxx:/项目地址
+```
 
 ##### 进行 node 启动
 * 服务器启动

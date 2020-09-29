@@ -89,6 +89,7 @@
 	3. `Proxy` 的 `get()` 传入的参数必须是对象
 
 * 传统方式深层取值繁琐，利用Proxy可以简化不必要代码
+
 ![](../images/proxy/deepJudge1.png)
 
 * 但是当 `target[prop]` 是 `undefined` 的时候，`Proxy get()`的入参变成了 `undefined`，但 `Proxy` 第一个入参必须为对象

@@ -5,7 +5,7 @@
 * 获取最新文章请关注公众号：全栈道路
 
 <div style="width:100%;" align="center">
-	<img src="./images/wechat-mp-l.png" style="width:80%;">
+	<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gjdps5bahnj30p00dwdi3.jpg" style="width:80%;">
 	<img src="https://ghchart.rshah.org/programmer-zhang" style="width:80%">
 </div>
 

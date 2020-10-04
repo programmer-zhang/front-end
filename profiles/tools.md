@@ -1,6 +1,8 @@
 # 提高工程师开发和学习效率的网站&工具
 
-> 本文下所有工具都基于macOS系统
+> 本文下所有工具试用都基于macOS系统
+
+> 本文收录在作者的 github 「前端知识点」中，链接直达[自整理前端小知识点](https://github.com/programmer-zhang/front-end)
 
 * 终端录屏工具 `TermRecord ` 
 	* [教程](https://www.linuxidc.com/Linux/2019-04/157925.htm)

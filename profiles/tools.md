@@ -4,6 +4,11 @@
 
 > 本文收录在作者的 github 「前端知识点」中，链接直达[自整理前端小知识点](https://github.com/programmer-zhang/front-end)
 
+## 高能自学网站
+### 极客学院
+* 链接：[https://wiki.jikexueyuan.com/](https://wiki.jikexueyuan.com/)
+
+## 配合整理型工程师的高效工具
 * 终端录屏工具 `TermRecord ` 
 	* [教程](https://www.linuxidc.com/Linux/2019-04/157925.htm)
 * 终端操作的音视频处理工具 `FFmpeg`

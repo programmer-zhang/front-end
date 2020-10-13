@@ -154,7 +154,7 @@
 
 > [Git 使用指南](./profiles/git.md)
 
-> [jest单元测试]
+> [单元测试(JS篇)]
 
 > [腾讯云平台网站搭建](./profiles/tencent-cloud.md)
 

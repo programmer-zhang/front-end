@@ -11,7 +11,7 @@
 ## 配合整理型工程师的高效工具
 * 图床工具 `iPic`
 	* [使用指南](https://toolinbox.net/iPic/)
-* 代码图片生成器 `carbon`
+* 优美代码图片生成器 `carbon`
 	* [网站地址](https://carbon.now.sh/)
 * 终端录屏工具 `TermRecord ` 
 	* [教程](https://www.linuxidc.com/Linux/2019-04/157925.htm)

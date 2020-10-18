@@ -13,7 +13,9 @@
 	* [使用指南](https://toolinbox.net/iPic/)
 * 优美代码图片生成器 `carbon`
 	* [网站地址](https://carbon.now.sh/)
-* 终端录屏工具 `TermRecord ` 
+* 国内可用的谷歌浏览器插件商店
+	* [extfans](https://www.extfans.com/)
+* 终端录屏工具 `TermRecord`
 	* [教程](https://www.linuxidc.com/Linux/2019-04/157925.htm)
 * 终端操作的音视频处理工具 `FFmpeg`
 	* [基础使用教程](https://www.jianshu.com/p/ddafe46827b7)

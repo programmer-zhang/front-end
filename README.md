@@ -26,7 +26,7 @@
 
 > [更好地使用border-image]
 
-> [contenteditable 的用处]
+> [打造网页版微信一：contenteditable 的用处]
 
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 
@@ -41,6 +41,8 @@
 > [自用部分代码规范](./profiles/自用代码规范.md)
 
 > [mix-blend-mode 实现镂空效果]
+
+> [input 标签你真的会用吗]
 
 ## JavaScript相关 :speak_no_evil:
 > [JS的小秘密(持续更新)](./profiles/js的小秘密.md)

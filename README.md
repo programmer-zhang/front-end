@@ -26,12 +26,6 @@
 
 > [更好地使用border-image]
 
-> [打造网页版微信一：contenteditable 的用处]
-
-> [打造网页版微信二：利用wetool接入微信]
-
-> [打造网页版微信三：利用VueX存储数据]
-
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 
 > [永远18岁的 CSS (持续更新)](./profiles/永远18岁的css.md)
@@ -199,6 +193,12 @@
 > [微信小程序实现屏幕自动滚动]
 
 > [微信 JS API 支付](./profiles/wechat_pay.md)
+
+> [打造网页版微信一：contenteditable 的用处]
+
+> [打造网页版微信二：利用wetool接入微信]
+
+> [打造网页版微信三：利用VueX存储数据]
 
 > [百度小程序实现骨架屏]
 

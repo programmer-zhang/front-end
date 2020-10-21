@@ -5,6 +5,7 @@
 
 ## 阅读本文您将收获
 * tabIndex的作用
+* 如何利用 tabIndex 创造更好的用户体验
 
 ## 作用
 * 当使用键盘时，tabindex用来定位html元素,即使用tab键时焦点的顺序。

@@ -36,6 +36,9 @@ document.querySelector("a").focus();
 * **通俗来说**：就是当用户使用键盘时，tabindex用来定位html元素,即使用tab键时焦点的顺序。
 
 ## tabindex的范围
+### tabindex理论上可以使用在几乎所有元素上
+* tabindex 理论上可以用在几乎所有元素上，不管这个元素默认是当否支持聚焦
+
 ### tabindex 有三个值：0，-N(通常是-1)，N(正值)
 * **tabindex=0**，该元素可以用tab键获取焦点
 	* 且访问的顺序是按照元素在文档中的顺序来focus，即使采用了浮动改变了页面中显示的顺序，依然是按照html文档中的顺序来定位
@@ -46,4 +49,6 @@ document.querySelector("a").focus();
 
 * **tabindex>=1**，该元素可以用tab键获取焦点，而且优先级大于`tabindex=0`
 	* 不过在`tabindex>=1`时，数字越小，越先定位到；
-	* 如果多个元素拥有相同的tabindex，他们的相对顺序按照他们在当前DOM中的先后顺序决定
+	* 如果多个元素拥有相同的 tabindex ，他们的相对顺序按照他们在当前DOM中的先后顺序决定
+
+## tabindex的使用

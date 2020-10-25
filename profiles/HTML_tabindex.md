@@ -12,14 +12,20 @@
 
 ## 前言
 * 在我们日常使用网页的过程中，可以通过键盘控制一些元素的聚焦，从而达到便捷访问的目的
+
 * 在HTML中有6个元素默认支持聚焦：
 	* 带 `href` 属性的 `<a>` 标签
 	* 带 `href` 属性的 `<link>` 标签
 	* `<button></button>` 标签
-	* `<input>` (排除 `type="hidden"` )
+	* `<input />` 标签 (排除带有 `type="hidden"` 属性的)
 	* `<select></select>` 标签
 	* `<textarea></textarea>` 标签
 * 以上的元素默认都可以使用 `Tab` 键，以及 JS `focus()` 方法聚焦
+
+```
+document.querySelector("a").focus();
+```
+
 * 使用 `tab键` 进行聚焦元素时，聚焦的顺序等于元素在代码中的出现先后顺序，当我们进行富交互优化时，就需要用到 `tabindex` 这个属性来帮助我们进行更好用户体验的优化了
 
 ## tabindex的作用

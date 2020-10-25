@@ -55,7 +55,66 @@ document.querySelector("a").focus();
 
 ## tabindex的使用
 #### tabindex 决定聚焦顺序
+* 可聚焦元素中，正整数数值越大，顺序越往后，正整数数值的节点顺序比0值的节点靠前
+* 代码：
+
+```
+// HTML
+<button type="button" tabindex="1">tabindex === 1</button>
+<button type="button" tabindex="999">tabindex === 999</button>
+<button type="button" tabindex="0">tabindex === 0</button>
+```
+
+* 效果：
+
+![](../images/tabindex/tabindex1.gif)
+
+* 可聚焦元素中，相同 `tabindex` 数值的节点，根据 `DOM节点` 先后顺序决定聚焦顺序
+* 代码：
+
+```
+// HTML
+<button type="button" tabindex="0">tabindex === 0</button>
+<button type="button" tabindex="1">tabindex === 1</button>
+<button type="button" tabindex="999">tabindex === 999</button>
+<button type="button" tabindex="0">tabindex === 0</button>
+```
+
+* 效果：
+
+![](../images/tabindex/tabindex2.gif)
 
 #### tabindex 决定是否聚焦
+* 节点的 `tabindex` 设置为 `-1` 时，当前节点使用 `tab键` 不能聚焦
+* 代码：
+
+```
+// HTML
+<button type="button">未设置tabindex</button>
+<button type="button" tabindex="-1">tabindex === -1</button>
+<button type="button" tabindex="0">tabindex === 0</button>
+<button type="button" tabindex="1">tabindex === 1</button>
+```
+
+* 效果：
+
+![](../images/tabindex/tabindex3.gif)
 
 #### tabindex 与JS编程聚焦
+* 通过 `tabindex` 结合JS可以让默认不支持聚焦的节点进行聚焦,`tabindex` 为不超出范围的任何整数值都可以
+* 代码：
+
+```
+// HTML
+<button type="button" @click="clickBtn()">点击让DIV聚焦</button>
+<div id="FocusDiv" ref="FocusDiv" tabindex="-1">这是一个div</div>
+
+// JS
+clickBtn: function() {
+    document.getElementById('FocusDiv').focus();
+}
+```
+
+* 效果：
+
+![](../images/tabindex/tabindex4.gif)

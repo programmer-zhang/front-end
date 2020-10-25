@@ -10,21 +10,17 @@
 </div>
 
 ## HTML & CSS相关 :european_castle:
-> [HTML_DOM 节点绑定事件](./profiles/HTML_tabindex.md)
-
 > [10分钟搞定 flex 布局](./profiles/flex.md)
 
 > [grid 布局]
 
 > [如何画一像素的线](./profiles/css-one-px.md)
 
-> [Border-Image]
-
 > [居中的解决方式]
 
 > [特殊的img标签](./profiles)
 
-> [更好地使用border-image]
+> [更好地使用 border-image]
 
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 
@@ -41,6 +37,8 @@
 > [mix-blend-mode 实现镂空效果]
 
 > [input 标签你真的会用吗]
+
+> [冷门的 HTML tabindex 详解](./profiles/html_tabindex.md)
 
 ## JavaScript相关 :speak_no_evil:
 > [JS的小秘密(持续更新)](./profiles/js的小秘密.md)

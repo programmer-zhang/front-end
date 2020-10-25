@@ -1,7 +1,7 @@
 # tabindex的作用
-> HTML 的 tabindex 属性开发过程中一般不会使用到，最近开发中有个需求用到了，便总结了一下。本篇文章同时收录【前端知识点】中，[链接直达](https://github.com/programmer-zhang/front-end)
+> HTML 的 tabindex 属性开发过程中一般不会使用到，最近开发中有个需求兼顾富交互，便总结了一下。本篇文章同时收录在我的【前端知识点】中，[Github链接直达，欢迎 Star](https://github.com/programmer-zhang/front-end)
 
-> 按照惯例，先欣赏一波[官方定义](http://www.w3school.com.cn/tags/att_standard_tabindex.asp)
+> 按照惯例，放上[官方定义](http://www.w3school.com.cn/tags/att_standard_tabindex.asp)
 
 > Safari不支持！
 
@@ -10,10 +10,21 @@
 * tabindex的使用
 * 如何利用 tabindex 创造更好的用户体验
 
-## tabindex的作用
-* **元素是否能聚焦**：通过键盘这类输入设备，或者通过 `JS focus()` 方法
+## 前言
+* 在我们日常使用网页的过程中，可以通过键盘控制一些元素的聚焦，从而达到便捷访问的目的
+* 在HTML中有6个元素默认支持聚焦：
+	* 带 `href` 属性的 `<a>` 标签
+	* 带 `href` 属性的 `<link>` 标签
+	* `<button></button>` 标签
+	* `<input>` (排除 `type="hidden"` )
+	* `<select></select>` 标签
+	* `<textarea></textarea>` 标签
+* 以上的元素默认都可以使用 `Tab` 键，以及 JS `focus()` 方法聚焦
 
-* **元素什么时候能聚焦**：在用户通过键盘与页面交互时
+## tabindex的作用
+* **①元素是否能聚焦**：通过键盘这类输入设备，或者通过 `JS focus()` 方法
+
+* **②元素什么时候能聚焦**：在用户通过键盘与页面交互时
 
 * **通俗来说**：就是当用户使用键盘时，tabindex用来定位html元素,即使用tab键时焦点的顺序。
 

@@ -13,6 +13,8 @@
 ## 前言
 * 在我们日常使用网页的过程中，可以通过键盘控制一些元素的聚焦，从而达到便捷访问的目的
 
+* `element` 分为 `focusable` 和 `非focusable` ,如果使用了tabindex就可以改变相关的行为
+
 * 在HTML中有6个元素默认支持聚焦：
 	* 带 `href` 属性的 `<a>` 标签
 	* 带 `href` 属性的 `<link>` 标签
@@ -52,3 +54,8 @@ document.querySelector("a").focus();
 	* 如果多个元素拥有相同的 tabindex ，他们的相对顺序按照他们在当前DOM中的先后顺序决定
 
 ## tabindex的使用
+#### tabindex 决定聚焦顺序
+
+#### tabindex 决定是否聚焦
+
+#### tabindex 与JS编程聚焦

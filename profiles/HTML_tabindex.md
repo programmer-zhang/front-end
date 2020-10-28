@@ -1,5 +1,5 @@
 # tabindex的作用
-> HTML 的 tabindex 属性开发过程中一般不会使用到，最近开发中有个需求兼顾富交互，便总结了一下。本篇文章同时收录在我的【前端知识点】中，[Github链接直达，欢迎 Star](https://github.com/programmer-zhang/front-end)
+> HTML 的 tabindex 属性开发过程中一般不会使用到，最近开发中有个需求兼顾富交互，便总结了一下。本篇文章同时收录在我的【前端知识点】中，[Github链接直达](https://github.com/programmer-zhang/front-end)，欢迎 Star
 
 > 按照惯例，放上[官方定义](http://www.w3school.com.cn/tags/att_standard_tabindex.asp)
 

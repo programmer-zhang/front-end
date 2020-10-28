@@ -3,7 +3,7 @@
 
 > 按照惯例，放上[官方定义](http://www.w3school.com.cn/tags/att_standard_tabindex.asp)
 
-> Safari不支持！
+> 兼容性：Safari不支持！
 
 ## 阅读本文您将收获
 * tabindex的作用

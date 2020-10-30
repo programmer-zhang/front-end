@@ -26,3 +26,5 @@
 	* [地址](https://www.mdnice.com/)
 * 网页视频下载
 	* [教程](https://juejin.im/post/5d05af80e51d4577770e7379?utm_source=gold_browser_extension)
+* 老司机都赞不绝口，搜台词就能找到影片的工具网站
+	* [33台词](http://33.agilestudio.cn/)

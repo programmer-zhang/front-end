@@ -38,7 +38,7 @@
 
 > [input 标签你真的会用吗]
 
-> [冷门的 HTML tabindex 详解](./profiles/html_tabindex.md)
+> [冷门的 HTML tabindex 详解](./profiles/HTML_tabindex.md)
 
 ## JavaScript相关 :speak_no_evil:
 > [JS的小秘密(持续更新)](./profiles/js的小秘密.md)

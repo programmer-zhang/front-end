@@ -39,7 +39,7 @@
 * 安装过程中提示输入各种指令或密码
 * 最后提示卸载成功
 
-## Homebrew使用命令
+## z
 * `brew -v` 查询Homebrew版本
 * `brew -h`	brew帮助
 * `brew update`	更新Homebrew
@@ -61,7 +61,7 @@
 
 ### 链接被拒绝或无法连接
 * 检查本机网络是否有代理，若有代理，将代理取消后重新操作
-* 若无网络代理，尝试手动打开[Homebrew官方脚本]([https://raw.githubusercontent.com/Homebrew/install/master/install](https://link.jianshu.com/?t=https://raw.githubusercontent.com/Homebrew/install/master/install))进行安装
+* 若无网络代理，尝试手动打开[Homebrew官方脚本](https://raw.githubusercontent.com/Homebrew/install/master/install)进行安装
 * 若不能正常打开，则是网络问题，请尝试检查网络连接
 * 若能正常打开，将网站中的脚本代码下载到本地，保存为 `brew_install.rb` 文件，文件位置随意，只要你能找到
 * 终端执行 `curl` 命令，若出现 `curl: try 'curl --help' or 'curl --manual' for more information` 则正常执行下一步，若不出现此信息，则是其他问题，请先解决

@@ -28,3 +28,7 @@
 	* [教程](https://juejin.im/post/5d05af80e51d4577770e7379?utm_source=gold_browser_extension)
 * 老司机都赞不绝口，搜台词就能找到影片的工具网站
 	* [33台词](http://33.agilestudio.cn/)
+* JSON to Excel
+	* [http://j2e.kpoda.com/](http://j2e.kpoda.com)
+	* [https://json-csv.com/](https://json-csv.com/)
+	* [全国省市表](http://www.ccb.com/cn/OtherResource/bankroll/html/code_help.html)

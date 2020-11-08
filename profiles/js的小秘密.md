@@ -274,6 +274,34 @@ if(test.match(/^\s*$/)){
 }
 ```
 
+### JS控制Input输入数字和小数点后两位
+
+```
+function clearNoNum(value) {
+    value = value.replace(/[^\d.]/g, "");  //清除“数字”和“.”以外的字符   
+    value = value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的   
+    value = value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+    value = value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3'); //只能输入两个小数   
+    if (value.indexOf(".") < 0 && value != "") { //以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额  
+        value = parseFloat(value);
+    }
+}
+```
+
+### JS校验手机号和座机号的方法
+
+```
+function $isPhoneAvailable(str) {
+    let isMob=/^[1][3,4,5,6,7,8,9][0-9]{9}$/;
+    let isPhone = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
+    if (isPhone.test(str) || isMob.test(str)) {
+        return true;
+    }else {
+        return false;
+    }
+}
+```
+
 ### 常用正则匹配
 * `/^\\d+$/`　　//非负整数（正整数 + 0）
 * `/^[0-9]*[1-9][0-9]*$/`　　//正整数
@@ -291,6 +319,7 @@ if(test.match(/^\s*$/)){
 * `/^(-?\\d+)(\\.\\d+)?$/`　　//浮点数
 * `replace(/[^0-9]/ig, "")`		//只保留数字
 
+## 前端实用技巧&解决方案
 ### JS扩大checkbox的点击区域
 * 试用场景：在表格中点击 td 也能选中 ，或者在父节点也能点击触发事件
 * 做法：为 td 元素添加点击事件，在点击事件里面触发checkbox的点击事件：
@@ -402,34 +431,6 @@ var original=28.453
 var result=original.toFixed(2); //returns 28.45
 // 保留小数点后一位
 var result=original.toFixed(1); //returns 28.5
-```
-
-### JS控制Input输入数字和小数点后两位
-
-```
-function clearNoNum(value) {
-    value = value.replace(/[^\d.]/g, "");  //清除“数字”和“.”以外的字符   
-    value = value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的   
-    value = value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
-    value = value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3'); //只能输入两个小数   
-    if (value.indexOf(".") < 0 && value != "") { //以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额  
-        value = parseFloat(value);
-    }
-}
-```
-
-### JS校验手机号和座机号的方法
-
-```
-function $isPhoneAvailable(str) {
-    let isMob=/^[1][3,4,5,6,7,8,9][0-9]{9}$/;
-    let isPhone = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
-    if (isPhone.test(str) || isMob.test(str)) {
-        return true;
-    }else {
-        return false;
-    }
-}
 ```
 
 ### JS indexOf() 不区分大小写实现

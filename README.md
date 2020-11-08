@@ -16,9 +16,9 @@
 
 > [如何画一像素的线](./profiles/css-one-px.md)
 
-> [居中的解决方式]
+> [重温一遍 ELE居中的多种解决方式]
 
-> [特殊的img标签](./profiles)
+> [特殊的img标签]
 
 > [更好地使用 border-image]
 

@@ -154,7 +154,7 @@
 
 > [单元测试(JS篇)]
 
-> [腾讯云平台网站搭建](./profiles/tencent-cloud.md)
+> [腾讯云平台个人网站搭建](./profiles/tencent-cloud.md)
 
 ## 软件工程 :wrench:
 > [敏捷开发](./profiles/敏捷开发.md)

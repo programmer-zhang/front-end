@@ -53,7 +53,7 @@
 
 > [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
-> [跨域请求的解决方式](./profiles/cross-origin.md)
+> [历史上我们都是怎么解决跨域问题的](./profiles/cross-origin.md)
 
 > [JS内存图](./profiles/js内存图.md)
 

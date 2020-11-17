@@ -18,7 +18,7 @@
 
 > [重温一遍 ELE居中的多种解决方式]
 
-> [特殊的img标签]
+> [特殊的img标签](./profiles/HTML_img.md)
 
 > [更好地使用 border-image]
 

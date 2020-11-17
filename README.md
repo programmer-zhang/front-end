@@ -18,7 +18,7 @@
 
 > [重温一遍 ELE居中的多种解决方式]
 
-> [特殊的img标签](./profiles/HTML_img.md)
+> [面试官问你img标签是什么标签时你怎么回答](./profiles/HTML_img.md)
 
 > [更好地使用 border-image]
 

@@ -3,6 +3,7 @@
 * PS:is free :grin: 
 * 如有喜欢，请尽情用star羞辱我
 * 获取最新文章请关注公众号：全栈道路
+* 如需**字节跳动 & 百度 & 猿辅导**极速内推，请关注公众号获取联系方式，您将享受VIP服务
 
 <div style="width:100%;" align="center">
 	<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gjdps5bahnj30p00dwdi3.jpg" style="width:80%;">
@@ -18,7 +19,7 @@
 
 > [重温一遍 ELE居中的多种解决方式]
 
-> [特殊的img标签]
+> [面试官问你img标签是什么标签时你怎么回答](./profiles/HTML_img.md)
 
 > [更好地使用 border-image]
 
@@ -53,7 +54,7 @@
 
 > [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
-> [跨域请求的解决方式](./profiles/cross-origin.md)
+> [历史上我们都是怎么解决跨域问题的](./profiles/cross-origin.md)
 
 > [JS内存图](./profiles/js内存图.md)
 
@@ -154,7 +155,7 @@
 
 > [单元测试(JS篇)]
 
-> [腾讯云平台网站搭建](./profiles/tencent-cloud.md)
+> [腾讯云平台个人网站搭建](./profiles/tencent-cloud.md)
 
 ## 软件工程 :wrench:
 > [敏捷开发](./profiles/敏捷开发.md)
@@ -231,6 +232,8 @@
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)
 
 ## 其他 :hankey:
+> [攻城狮，你真的会使用搜索引擎么]
+
 > [程序员保佑指南 :pray: ](./profiles/程序员保佑指南.md)
 
 > [嘿嘿嘿](./profiles/嘿嘿嘿.md)

@@ -158,6 +158,10 @@
 * `git checkout -b feature-6793-push`切换分支* `git merge --squash origin/feature-6793`合并为一个分支* `git commit -m '这次上线的需求描述'` commit请求
 * `git push origin master` 推到远程分支master
 
+## commit 太久导致 push 超时
+* `git reset --soft origin/分支名` 撤销之前的 `commit`，当然代码还是会保留
+* 重新 `commit` 进行提交
+
 ## 一张随时可看的指令图片
 
 ![](../images/git-order.jpg)

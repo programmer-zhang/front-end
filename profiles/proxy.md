@@ -1,3 +1,5 @@
+> Vue3.0 开始用 Proxy 代替 Object.defineProperty了，这篇文章结合实例教你如何使用Proxy
+
 ## 阅读本文您将收获
 * `JavaScript` 中的 `Proxy` 是什么？能干什么？
 * `Vue3.0` 开始为什么用 `Proxy` 代替 `Object.defineProperty`

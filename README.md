@@ -31,7 +31,7 @@
 
 > [CSS 小图形](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTest.vue)
 
-> [纯 CSS 实现超出隐藏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTestPhone.vue)
+> [纯 CSS 实现文本超出隐藏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTestPhone.vue)
 
 > [自用部分代码规范](./profiles/自用代码规范.md)
 

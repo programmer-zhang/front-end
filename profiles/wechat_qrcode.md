@@ -5,23 +5,23 @@
 	* 微信客户端检测到用户长按`img`标签
 	* 微信主动进行截屏并识别图片，二维码识别采用的是截屏而不是通过`img`标签
 	* 微信识别成功后执行相关操作
-* Base64
-	* Base64是网络上最常见的用于传输8Bit字节码的编码方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法
-* Blob
-	* HTML5中的Blob对象与MySQL中的BLOB对象有区别，HTML5中的Blob对象除了存放二进制数据外还可以设置这个数据的MINE类型，这相当于对文件的存储，其它很多二进制对象也是从这个对象继承的
+* `Base64`
+	* `Base64`是网络上最常见的用于传输8Bit字节码的编码方式之一，`Base64`就是一种基于64个可打印字符来表示二进制数据的方法
+* `Blob`
+	* `HTML5`中的`Blob`对象与`MySQL`中的`BLOB`对象有区别，`HTML5`中的`Blob`对象除了存放二进制数据外还可以设置这个数据的MINE类型，这相当于对文件的存储，其它很多二进制对象也是从这个对象继承的
 * `canvas.toDataURL([type, encoderOptions])`
 	* `type` : 指定图片类型，默认值 `image/png`
 	* `encoderOptions` : 为 `image/jpeg` 或 `image/webp` 类型的图片设置图片质量，取值0-1，超出则以默认值0.92替代
-	* 作用: 通过canvas进行转化图片
+	* 作用: 通过`canvas`进行转化图片
 
 ## 准备工作
 * 结合微信规范明确需求
 	* 微信img标签通过src属性可实现长按弹出选项(保存至手机，图片为二维码的情况下会出现识别二维码)
 	* 二维码图片若为本地图片或服务器图片(即不需要进行动态生成)只需要正常编写代码即可实现
-	* 微信针对内置浏览器内的页面图片有着自己的一套适应逻辑与规范，canvas的图片和base64编码格式的图片在安卓与ios手机上会出现不同的问题
+	* 微信针对内置浏览器内的页面图片有着自己的一套适应逻辑与规范，`canvas`的图片和`base64`编码格式的图片在安卓与ios手机上会出现不同的问题
 * 确定实现方案
 	* 本例采用第三方js库实现生成二维码
-	* 针对生成的base64编码的图片微信无法长按识别需要在前端进行格式和image对象重新转换
+	* 针对生成的`base64`编码的图片微信无法长按识别需要在前端进行格式和`image`对象重新转换
 	* 生成的图片弹窗展示，避免出现其他元素影响微信识别率
 
 ## 开发环境
@@ -184,4 +184,4 @@ showCanvas() {
 ![wechat-canvas.gif](../images/wechat-canvas.gif)
 
 ## 源码地址
-* [Github地址](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/wechat.vue)
+* [Github源码地址](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/wechat.vue)

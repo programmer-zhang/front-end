@@ -301,21 +301,21 @@ if(!req.ok){
 	* `<web>` 用于在weex页面中嵌入一张网页内容，和HTML中的 `<iframe>` 作用类似。
 
 ### CSS样式
-* 支持 px 和 wx 长度单位
-* 支持 行内 和 class属性，用id不支持，真机失效
+* 支持 `px` 和 `wx` 长度单位
+* 支持 行内样式 和 `class类名` ，不支持设置 `id名` ，真机失效
 * 不支持样式继承
-* 不支持行内样式,用 flex 布局解决
-* 不支持层级 z-index, 层级叠加根据书写顺序展示
-* 不支持 box-shadow
+* 不支持行内样式,用 `flex` 布局解决
+* 不支持层级 `z-index`, 层级叠加根据书写顺序展示
+* 不支持 `box-shadow`
 * 不支持 css 三角形
 * 不支持 样式缩写
 * 部分支持伪类样式
 	* Weex 支持四种伪类：`active`, `focus`, `disabled`, `enabled` 
 	* 所有组件都支持 `active`
-	* 只有 input 组件和 textarea 组件支持 `focus` , `enabled`, `diabled`
+	* 只有 `<input>` 组件和 `<textarea>` 组件支持 `focus` , `enabled`, `diabled`
 * 标准 CSS 中的空格和回车问题在真机中也会存在
 * 部分详细约束
-	* `<textarea>` 须设置rows，默认值为2，否则只展示两行
+	* `<textarea>` 须设置 rows，默认值为2，否则只展示两行
 	* `<textarea>` 属性 `placeholder-color` 设置 placeholder 颜色
 	* `<image>` 必须设置 width 和 height 属性才可以展示
 	* `<image>` width 宽度撑满 750px;
@@ -325,14 +325,13 @@ if(!req.ok){
 	* `position` 的新属性 `stiky`, 用于滚动的header固定
 
 ### JavaScript
-* weex 中不支持 Promise 的 finally 方法，支持 then 和 catch
-* v-if 支持 v-show 不支持
+* weex 中不支持 `Promise` 的 `finally()` 方法，支持 `then()` 和 `catch()`
+* `v-if` 支持 `v-show` 不支持
 * 冒泡机制
 	* weex 中冒泡机制默认不开启，需要手动书写 `bubble = true`
 	* 阻止冒泡 `event.stopPropagation();`
 * 支持手势操作监听
 
----
 ---
 # Todo List
 * 预览项目流程简化

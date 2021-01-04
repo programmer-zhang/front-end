@@ -13,11 +13,11 @@
 ## HTML & CSS相关 :european_castle:
 > [10分钟搞定 flex 布局](./profiles/flex.md)
 
-> [grid 布局]
+> [Grid 布局]
 
 > [如何画一像素的线](./profiles/css-one-px.md)
 
-> [重温一遍 ELE垂直水平居中的多种解决方式]
+> [重温一遍 ELE 垂直水平居中的多种解决方式]
 
 > [面试官问你`<img />`是什么元素时你怎么回答](./profiles/HTML_img.md)
 
@@ -35,9 +35,9 @@
 
 > [自用部分代码规范](./profiles/自用代码规范.md)
 
-> [mix-blend-mode 实现镂空效果]
+> [CSS冷门属性 mix-blend-mode 实现镂空效果]
 
-> [input 标签你真的会用吗]
+> [`<input />` 标签你真的会用吗]
 
 > [冷门的 HTML tabindex 详解](./profiles/HTML_tabindex.md)
 

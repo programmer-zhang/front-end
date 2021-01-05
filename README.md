@@ -170,7 +170,7 @@
 
 > [前端性能优化: 网络传输层优化](./profiles/[前端性能优化]网络传输层优化.md)
 
-> [更友好的使用Chorme浏览器](./profiles/chrome-devtools.md)
+> [更友好的使用Chorme浏览器](./profiles/Chrome-Devtools.md)
 
 > [前端安全]
 

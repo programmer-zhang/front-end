@@ -88,6 +88,8 @@
 
 > [ES6 Proxy 的巧用](./profiles/proxy.md)
 
+> [一文看懂 JS 的浮点数运算]
+
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)
 

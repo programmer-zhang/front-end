@@ -203,3 +203,12 @@ V =  (-1)^S × M × 2^E
 4. 引用类库 
 	* [Math.js](https://mathjs.org/)
 	* [decimal.js](http://mikemcl.github.io/decimal.js/)
+
+## 一个CASE
+* `1118510807421388379`
+* JS 的最大和最小安全整数值
+
+```
+console.log(Number.MAX_SAFE_INTEGER); //9007199254740991 = 2^53 - 1
+console.log(Number.MIN_SAFE_INTEGER); //-9007199254740991 = -2^53 + 1
+```

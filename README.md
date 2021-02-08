@@ -3,7 +3,7 @@
 * PS:is free :grin: 
 * 如有喜欢，请尽情用star羞辱我
 * 获取最新文章请关注公众号：全栈道路
-* 如需**字节跳动 & 百度 & 猿辅导 & 京东**极速内推，请关注公众号获取联系方式，您将享受VIP服务
+* 如需**字节跳动 & 百度 & 猿辅导 & 京东**极速内推，请关注公众号获取联系方式，您将享受VVIP级快速服务
 
 <div style="width:100%;" align="center">
 	<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gjdps5bahnj30p00dwdi3.jpg" style="width:80%;">

@@ -60,7 +60,7 @@
 
 > [JS模块化编程资源引入方式](./profiles/js模块化编程资源引入方式.md)
  
-> [JS判断PC端还是移动端的几种方式(完善中...)](./profiles/js判断设备.md)
+> [JS判断PC端还是移动端的几种方式(完善中)](./profiles/js判断设备.md)
 
 > [JS解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
 

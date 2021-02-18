@@ -240,7 +240,7 @@
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)
 
 ## 其他 :hankey:
-> [攻城狮，你真的会使用搜索引擎么](./profiles/search_tips.md)
+> [攻城狮，你真的会使用搜索引擎么?](./profiles/search_tips.md)
 
 > [程序员保佑指南 :pray: ](./profiles/程序员保佑指南.md)
 

@@ -54,6 +54,8 @@
 
 > [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
+> [JS绑定单击&双击事件]
+
 > [历史上我们都是怎么解决跨域问题的](./profiles/cross-origin.md)
 
 > [JS内存图](./profiles/js内存图.md)

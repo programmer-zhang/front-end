@@ -39,7 +39,7 @@
 * 安装过程中提示输入各种指令或密码
 * 最后提示卸载成功
 
-## z
+## 相关指令
 * `brew -v` 查询Homebrew版本
 * `brew -h`	brew帮助
 * `brew update`	更新Homebrew

@@ -47,6 +47,7 @@
 * 配置source maps，需要配置devtool，它有以下四种不同的配置选项，各具优缺点
 
 <style> table th:first-of-type { width: 200px; } </style>
+
 dev-tool配置 | 结果 
 :-: | :-: 
 source-map | 在一个单独文件中产生一个完整且功能完全的文件。这个文件具有最好的source map,但是它会减慢打包速度

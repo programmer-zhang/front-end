@@ -1,5 +1,5 @@
 # 什么是webpack
-* webpack为模块打包机：
+* `webpack`为模块打包机：
 	分析代码结构，找到JavaScript模块以及一些浏览器不能直接运行的拓展语言（scss、sass、Typescript等），并将其转换和打包为合适的格式供浏览器使用。
 	
 # webpack和Grunt、Gulp的区别
@@ -30,7 +30,7 @@
 		npm install --save-dev webpack
 		
 ### 正式使用webpack前的准备
-1.	在上述练习文件夹中创建一个package.json文件，这是一个标准的npm说明文件，里面蕴含了丰富的信息，包括当前项目的依赖模块，自定义的脚本任务等等。在终端中使用`npm init`命令可以自动创建这个package.json文件
+1.	在上述练习文件夹中创建一个package.json文件，这是一个标准的npm说明文件，里面蕴含了丰富的信息，包括当前项目的依赖模块，自定义的脚本任务等等。在终端中使用`npm init`命令可以自动创建这个 `package.json` 文件
 
 > 输入这个命令后，终端会问你一系列诸如项目名称，项目描述，作者等信息，不过不用担心，如果你不准备在npm中发布你的模块，这些问题的答案都不重要，回车默认即可。
 

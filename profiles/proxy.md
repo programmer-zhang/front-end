@@ -30,7 +30,7 @@
 	* `handler.ownKeys()`: `Object.getOwnPropertyNames` 方法和 `Object.getOwnPropertySymbols` 方法的捕捉器
 	* `handler.construct()`: new 操作符的捕捉器
 * **注意**：如果一个属性`不可配置` || `不可写`，则该属性不可被代理，通过 `Proxy` 访问该属性会报错。
-* **`*`** 标记的trap为本文都要涉及到的
+* **`*`** 标记的 `trap` 为本文代码示例中涉及到的。
 
 ## `Proxy` 能干什么?
 ### 当你想进行以下操作时proxy模式通常会很有用：

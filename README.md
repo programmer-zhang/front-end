@@ -86,6 +86,8 @@
 
 > [进程和线程]
 
+> [手写 bind、call、apply 函数]
+
 > [解决JS绑定事件多次执行的问题]
 
 > [ES6 Proxy 的巧用](./profiles/proxy.md)

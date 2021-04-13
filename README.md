@@ -199,8 +199,6 @@
 
 > [微信小程序云开发改造](./profiles/wechat_cloud.md)
 
-> [微信小程序实现屏幕自动滚动]
-
 > [微信 JS API 支付](./profiles/wechat_pay.md)
 
 > [打造网页版微信一：contenteditable 的用处]

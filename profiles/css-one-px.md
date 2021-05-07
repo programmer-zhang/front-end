@@ -52,9 +52,9 @@
 * viewport 结合rem解决像素比问题
 
 ```
-// 在devicePixelRatio=2的屏幕下设置meta
+// 在devicePixelRatio = 2 的屏幕下设置meta
 <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
-// 在devicePixelRatio=3的屏幕下设置meta
+// 在devicePixelRatio = 3 的屏幕下设置meta
 <meta name="viewport" content="initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no">
 ```
 

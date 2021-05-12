@@ -210,7 +210,6 @@
 > [百度小程序实现骨架屏]
 
 ## 编码实践 :paperclip:
-> [Erro(持续更新)](./profiles/Erro.md)
 
 > [JS 实现飞入购物车]
 

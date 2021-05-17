@@ -98,6 +98,8 @@
 
 > [IEEE 754 的四种舍入方向]
 
+> [手写一个 promise]
+
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)
 
@@ -153,6 +155,10 @@
 > [weex 基础使用指南](./profiles/weex-base.md)
 
 > [WeHub 实践PC版微信]
+
+> [用 electron-vue 实现一个桌面客户端]
+
+> [手把腿地教你做一个 谷歌浏览器 插件]
 
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
@@ -234,10 +240,6 @@
 > [Vue 实现打造可编辑的 DIV ]
 
 > [iView 打造多类型表格]
-
-> [手把腿地教你做一个 谷歌浏览器 插件]
-
-> [手写一个 promise]
 
 ## 硬件 :computer:
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)

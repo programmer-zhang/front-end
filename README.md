@@ -188,7 +188,7 @@
 
 > [记一次惨痛的 Vue-cli + VueX + SSR 经历](./profiles/hmall.md)
 
-## 微信相关 :envelope:
+## 微信开发&小程序开发相关 :envelope:
 > [微信小程序开发遇到的Error](./profiles/wechat_error.md)
 
 > [微信小程序攻略(外链资料)](https://juejin.im/post/5b8fd1416fb9a05cf3710690?utm_source=gold_browser_extension)

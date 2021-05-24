@@ -14,11 +14,11 @@
 * 高效 ：合理安排资源
 * 快速 ：减少等待时间
 * 标准 ：
-	* 首次有效绘制（First Meaningful Paint，简称FMP，当主要内容呈现在页面上）
-	* 英雄渲染时间（Hero Rendering Times，度量用户体验的新指标，当用户最关心的内容渲染完成）
-	* 可交互时间（Time to Interactive，简称TTI，指页面布局已经稳定，关键的页面字体是可见的，并且主进程可用于处理用户输入，基本上用户可以点击UI并与其交互）
-	* 输入响应（Input responsiveness，界面响应用户输入所需的时间）
-	* 感知速度指数（Perceptual Speed Index，简称PSI，测量页面在加载过程中视觉上的变化速度，分数越低越好）
+	* 首次有效绘制（`First Meaningful Paint`，简称FMP，当主要内容呈现在页面上）
+	* 英雄渲染时间（`Hero Rendering Times`，度量用户体验的新指标，当用户最关心的内容渲染完成）
+	* 可交互时间（`Time to Interactive`，简称TTI，指页面布局已经稳定，关键的页面字体是可见的，并且主进程可用于处理用户输入，基本上用户可以点击UI并与其交互）
+	* 输入响应（`Input responsiveness`，界面响应用户输入所需的时间）
+	* 感知速度指数（`Perceptual Speed Index`，简称PSI，测量页面在加载过程中视觉上的变化速度，分数越低越好）
 
 ## 优化方向
 ### HTML/CSS优化

@@ -90,7 +90,7 @@
 
 > [解决JS绑定事件多次执行的问题]
 
-> [ES6 Proxy 的巧用](./profiles/proxy.md)
+> [ES6 Proxy 使用方法&场景](./profiles/proxy.md)
 
 > [一文看懂 JS 中 0.1 + 0.2 !== 0.3](./profiles/js浮点数计算.md)
 

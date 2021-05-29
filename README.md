@@ -105,7 +105,7 @@
 
 > [HTTP-status](./profiles/HTTP_status.md)
 
-> [HTTP-header(缓存相关)](./profiles/HTTP_header.md)
+> [HTTP-缓存机制](./profiles/HTTP_header.md)
 
 > [WebScoket 基础介绍](./profiles/webscoket_base.md)
 

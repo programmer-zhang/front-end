@@ -88,7 +88,7 @@
 
 > [手写 bind、call、apply 函数]
 
-> [解决JS绑定事件多次执行的问题]
+> [解决 JS 绑定事件多次执行](./profiles/js_more_times_bind_events.md)
 
 > [ES6 Proxy 使用方法&场景](./profiles/proxy.md)
 

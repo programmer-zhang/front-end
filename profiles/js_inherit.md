@@ -67,15 +67,15 @@ function _inherits(subClass, superClass) {
 ```
 class Zoo {
       constructor(x, y) {
-		this.x = x;
-		this.y = y;
+			this.x = x;
+			this.y = y;
       }
 }
 class Dog extends Zoo {
       constructor(x,y,z) {
-	      // 子类实例的创建基于父类实例,只有super方法才能得到父类实例
-		super(x,y)
-		this.z = z;
+			// 子类实例的创建基于父类实例,只有super方法才能得到父类实例
+			super(x,y)
+			this.z = z;
       }
 }
 const dog = new Dog(1,2,3)

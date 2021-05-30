@@ -100,7 +100,7 @@
 
 > [手写一个 promise]
 
-> [浏览器本地存储]
+> [浏览器本地存储](./profiles/browser_local_storage.md)
 
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)

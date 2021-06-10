@@ -100,6 +100,8 @@
 
 > [手写一个 promise]
 
+> [JS 中的按位运算]
+
 > [浏览器本地存储](./profiles/browser_local_storage.md)
 
 ## 网络相关 :postbox:

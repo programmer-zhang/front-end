@@ -100,6 +100,8 @@
 
 > [手写一个 promise]
 
+> [使用 promise 手写一个 Ajax 请求]
+
 > [JS 中的按位运算]
 
 > [浏览器本地存储](./profiles/browser_local_storage.md)

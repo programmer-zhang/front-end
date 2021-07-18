@@ -162,6 +162,14 @@
 
 > [WeHub 实践PC版微信]
 
+> [打造网页版微信一：contenteditable 的用处]
+
+> [打造网页版微信二：利用 wetool 接入微信]
+
+> [打造网页版微信三：利用 VueX 存储数据]
+
+> [打造网页版微信四：封装 WebScoket 进行网络传输]
+
 > [用 electron-vue 实现一个桌面客户端]
 
 > [手把腿地教你做一个 谷歌浏览器 插件]
@@ -212,14 +220,6 @@
 > [微信小程序云开发改造](./profiles/wechat_cloud.md)
 
 > [微信 JS API 支付](./profiles/wechat_pay.md)
-
-> [打造网页版微信一：contenteditable 的用处]
-
-> [打造网页版微信二：利用 wetool 接入微信]
-
-> [打造网页版微信三：利用 VueX 存储数据]
-
-> [打造网页版微信四：封装 WebScoket 进行网络传输]
 
 > [百度小程序实现骨架屏]
 

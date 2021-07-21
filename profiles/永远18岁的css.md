@@ -239,7 +239,7 @@
 
 * 上面的 CSS 规则中，我们使用 `~` 选择符，在 `#content1:target` 和 `#content2:target` 触发的时候分别去控制两个导航 li 元素的样式。
 * 至此两个问题，1. 如何接收点击事件 与 2. 如何操作相关DOM 都已经解决，剩下的是一些小样式的修补工作。
-* [方案参考文章](https://github.com/chokcoco/iCSS/issues/54)
+* [方案参考资料](https://github.com/chokcoco/iCSS/issues/54)
 
 ## oblique字体和italic字体在css样式中的差别
 * 区别
@@ -250,7 +250,7 @@
 	* oblique：倾斜的字体
 
 ## 如何让一段文字强制换行(适用于pre等标签)
-#### 第一种方案（适合webkit内核的浏览器或移动端浏览器）
+#### 方案一（适合webkit内核的浏览器或移动端浏览器）
 * HTML
 	* 使用&lt;pre&gt;&lt;/pre&gt;包裹要换行的内容 
 * css

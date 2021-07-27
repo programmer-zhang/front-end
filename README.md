@@ -54,7 +54,7 @@
 
 > [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
-> [JS绑定 双击 事件]
+> [JS绑定【双击】事件]
 
 > [JS模拟点击事件]
 
@@ -144,7 +144,7 @@
 
 > [Vue 好用的富文本编辑器 vue-quill-editor](./profiles/vue-quill-editor.md)
 
-> [Vue 中慎用style标签的scoped属性]
+> [Vue 中慎用 style 标签的 scoped 属性]
 
 > [Vue 组件通信]
 

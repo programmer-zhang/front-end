@@ -3,3 +3,11 @@
 > 下方先放上个人 Github 主页 ，如果和您审美有差距，请直接关闭。若有帮助，请记得三联哦~
 
 ![](../images/githubProfile/github-screenshot.jpeg)
+
+## 开发
+### 创建 Github 仓库
+### 编辑 readme 文件
+### 个性化设计
+##### Github 徽章
+##### Github 统计
+##### Github Icon

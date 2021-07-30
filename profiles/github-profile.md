@@ -7,7 +7,7 @@
 ## 开发
 ### 创建 Github 仓库
 * 在 Github 中创建与个人 ID 同名的仓库
-s
+
 ![](../images/githubProfile/create-resp.png)
 
 * 记得勾选下方「Add a README file」，仓库会自动创建readme文件，我们需要设计的个人主页，就需要在这个文件中进行开发。

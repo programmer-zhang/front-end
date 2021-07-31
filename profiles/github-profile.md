@@ -15,6 +15,8 @@
 
 ![](../images/githubProfile/add-readme.png)
 
+* 创建仓库后你就可以得到一个默认的 `Hi there` 主页信息
+
 ### 编辑 readme 文件
 ### 个性化设计
 ##### Github 徽章

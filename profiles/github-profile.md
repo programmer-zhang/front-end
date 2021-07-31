@@ -18,6 +18,10 @@
 * 创建仓库后你就可以得到一个默认的 `Hi there` 主页信息
 
 ### 编辑 readme 文件
+> 默认的 readme 文件仅仅有一些基础介绍，我相信大多数开发者都是不满足于此
+
+* readme 文件使用 MarkDown 语法进行编写，当然你可以使用 MarkDown 结合 HTML 语言进行编写，这样生成的 readme 文件风格多样
+
 ### 个性化设计
 ##### Github 徽章
 ##### Github 统计

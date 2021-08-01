@@ -26,5 +26,9 @@
 > 我们在很多大佬的 github 个人主页中经常能看到各种个性化的主页徽章或统计，那这些个性化的图表、统计、徽章都是怎么生成的，接下来我就为大家提供一些自己在开发主页过程中用(bai)到(piao)的小组件。
 
 ##### Github 徽章
+![](https://img.shields.io/badge/nodeJS-1.0.1-yellowgreen) ![](https://img.shields.io/badge/VSCode-1.0.1-brightgreen)
+
+* 大佬文章中经常使用到的这种 `badge` (徽章) ，其实都是一个个的SVG图片进行处理的，只需要通过[shields.io](https://shields.io/) 就可以自定义生成自己需要的 `badge`
+
 ##### Github 统计
 ##### Github Icon

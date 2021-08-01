@@ -33,5 +33,35 @@
 
 ![](../images/githubProfile/badge.png)
 
+* 网站还支持自定义复杂 `badge` ,可以实现添加icon等功能，感兴趣就去试一下吧~
+
 ##### Github 统计
+> Github 有很多动态生成的官方统计信息，利用这些统计信息我们可以更清晰地展现个人 Github 中的提交、分类、热门等信息。
+
+* [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats/blob/master/docs/readme_cn.md) 官方中文文档可以让你更快速地设置自己的主页，只需要将图片链接地址写入readme文件中，你就可以设置这些多彩且丰富的信息卡片
+* 我在我的个人主页中用到的三个统计图片分别是
+
+```
+// github - stats
+https://github-readme-stats.vercel.app/api?username=programmer-zhang&theme=dark&show_icons=true
+// most - used-language
+https://github-readme-stats.vercel.app/api/top-langs/?username=programmer-zhang&layout=compact&hide=html&theme=dark
+// total - contribution
+https://github-readme-streak-stats.herokuapp.com/?user=programmer-zhang&theme=highcontrast
+```
+
+![](../images/githubProfile/github-stats.png)
+
 ##### Github Icon
+> 善于利用 `Icon` 可以让我们的 `Github` 主页更加简洁，同时图标是个国际公用的语言，很多工具和框架相比文字描述，使用图标更加一目了然，这里我将提供一些我自己使用的图标，这些图标同样都是 svg 图标，如有需要请自取，点个赞就行~
+
+![](../images/githubProfile/github-icon.png)
+
+* 图中我使用的图标地址都在我的 `Github` 中，请点击这里自取，[programmer-zhang](https://github.com/programmer-zhang/programmer-zhang/tree/main/images)
+
+##### Github Emoji-cheat-sheet
+> 很多情况下，文字并不能完美表达我们的意思，所以加上些 `Emoji` 表情能够更传神地表达意思，这部分为大家带来能够轻松在 `Github` 中使用的 `Emoji` 表情。
+
+![](../images/githubProfile/emoji-chat-sheet.png)
+
+* 全部的 `Emoji-chat-sheet` 图标都在后面这个网址中，[emoji-cheat-sheet](https://www.webfx.com/tools/emoji-cheat-sheet/) 提供了很多 `Emoji` 表情，使用方式也特别的简单粗暴，直接将 `Emoji` 后面的标识复制在 `MarkDown` 文件中即可，提交到远程后，在网页中预览就能看到表情了。

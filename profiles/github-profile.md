@@ -28,7 +28,10 @@
 ##### Github 徽章
 ![](https://img.shields.io/badge/nodeJS-1.0.1-yellowgreen) ![](https://img.shields.io/badge/VSCode-1.0.1-brightgreen)
 
-* 大佬文章中经常使用到的这种 `badge` (徽章) ，其实都是一个个的SVG图片进行处理的，只需要通过[shields.io](https://shields.io/) 就可以自定义生成自己需要的 `badge`
+* 大佬文章中经常使用到的这种 `badge` (徽章) ，其实都是一个个的SVG图片进行处理的，只需要通过[shields.io](https://shields.io/) 就可以自定义生成自己需要的 `badge`。
+* 在网站下方的 `YOUR BBADGE` 中就能自定义 `badge`，填写相关信息之后，点击 `Make Badge` 就能获得 `badge` 的图片地址。
+
+![](../images/githubProfile/badge.png)
 
 ##### Github 统计
 ##### Github Icon

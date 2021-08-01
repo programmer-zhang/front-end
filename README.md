@@ -287,7 +287,7 @@
 
 > [Charles 拦截请求]
 
-> [打造属于自己的 Github 主页]
+> [打造属于自己的 Github 主页](./profiles/github-profile.md)
 
 > [Linux 开发 -- sed使用指南]
 

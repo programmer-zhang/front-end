@@ -3,7 +3,7 @@
 
 > 文章仅介绍改造过程和部分细节改造，如果您没有小程序开发经验建议先查看官方文档
 
-> 本小程序仅针对从原生小程序迁移到云开发小程序进行改造，目前微信小程序自动支持使用脚手架工具生成云开发小程序，官方文档的使用教程很详细，这里不再赘述
+> 本篇文章仅针对从原生小程序迁移到云开发小程序进行改造，目前微信小程序自动支持使用脚手架工具生成云开发小程序，官方文档的使用教程很详细，这里不再赘述
 
 > 由于小程序仅供内部使用，所以不放入口了，如想了解更多详情请评论留言
 
@@ -90,7 +90,8 @@
 ## 云开发改造与开发
 ### 添加云函数
 * 利用模板创建云函数
-<img src="../images/wechat-cloud-addfun.png" style="width:300px;display: block;">
+
+<img src="../images/wechatCloud/wechat-cloud-addfun.png" style="width:300px;display: block;">
 
 * 云函数模板
 
@@ -99,7 +100,7 @@ const cloud = require('wx-server-sdk') // 引入模块
 
 cloud.init()	// 初始化云函数
 
-// event 参数包含小程序端调用传入的 data
+// event 参数包含小程序端调用传入的参数 data
 exports.main = (event, context) => {
   // console.log 的内容可以在云开发云函数调用日志查看
 
@@ -119,10 +120,11 @@ exports.main = (event, context) => {
 * 查看上传与否方式：`云开发 => 云函数 => 云函数列表` 查看有无该云函数
 * 当前版本利用模板创建云函数后会自动上传并部署
 * 未自动上传的可以手动上传
-<img src="../images/wechat-cloud-upload.png" style="width:300px;display:block;">
+
+<img src="../images/wechatCloud/wechat-cloud-upload.png" style="width:300px;display:block;">
 
 ### 本地使用云函数
-* 初次使用云函数，若返回response成功，则调用成功，若控制台报错，则调用失败
+* 初次使用云函数，若返回response成功，则调用成功，若控制台报错，则调用失败。
 
 ```
 // 初始化云函数
@@ -159,6 +161,8 @@ const db = wx.cloud.database({ env: app.globalData.databaseEnv })
 
 * 获取数据
 
+> 获取数据支持单条获取及全部获取
+
 ```
 // 获取数据库并引用单条数据
 const myTodo = db.collection(dbId).doc(docId)
@@ -175,6 +179,8 @@ db.collection(dbId).get({
 
 * 增加数据
 
+> 新增一条新数据
+
 ```
 // 向云数据库中已存在的数据库增加数据集合
 db.collection(dbId).add({
@@ -189,6 +195,8 @@ db.collection(dbId).add({
 ```
 
 * 更新数据
+
+> 更新原有数据
 
 ```
 // 更新云数据库中已存在数据集合
@@ -219,6 +227,8 @@ db.collection(dbId).doc(docId).remove({
 ```
 
 * 分页获取数据
+
+> 根据云函数的官方API，我们可以实现分页获取云数据库数据，减少一次请求数据量
 
 ```
 db.collection('activityList').limit(this.data.pageSize).skip(this.data.pageSize * this.data.pageNum).orderBy('submitTime', 'desc').get({
@@ -298,10 +308,12 @@ db.collection('activityList').limit(this.data.pageSize).skip(this.data.pageSize 
 	```
 	
 * 通过云函数创建数据集合的作用
-	* 生成的数据库集合不会保留 `_openid` 字段, 因此没有权限问题存在，数据可供其他人操作，可用作报名等业务状态下的处理方式
+	* 生成的数据库集合不会保留 `_openid` 字段, 因此没有权限问题存在，数据可供其他人操作，可用作报名等业务状态下的处理方式。
 
 ### 管理静态资源
 * 获取云存储库静态资源
+
+> 适用于CDN资源的管理，将图片等资源放在云存储库中，流量级能满足需要的情况下，这种方式更加利于开发者管理图片、视频等资源，节省小程序包体积。
 
 ```
 wx.cloud.getTempFileURL({
@@ -323,6 +335,10 @@ wx.cloud.getTempFileURL({
 
 * 上传本地资源到云存储库
 
+> 报名或统计类小程序需要提交本地资源到云，这种方式可以满足上传的需要，不需要多余的接口和额外的第三方云存储空间，并且上传后的资源更方便开发者管理。
+
+> 但是使用过程中需要控制上传文件的格式及大小，避免因大文件导致云存储空间不够。
+
 ```
 wx.cloud.uploadFile({
   cloudPath: 'xxx.png',
@@ -339,6 +355,8 @@ wx.cloud.uploadFile({
 
 * 下载云存储库资源到本地
 
+> 使用canvas进行图片拼接时，我们可以通过下载云资源获取到云上的底图或基础图，可减小小程序包体积。
+
 ```
 wx.cloud.downloadFile({
   fileID: 'xxx', // 云存储库文件id
@@ -353,7 +371,7 @@ wx.cloud.downloadFile({
 ```
 
 ## 部署与发布
-### 上传小程序体验版
+### 上传小程序体验版(与原生小程序相同)
 * 在 微信开发者工具 中点击上传
 * 写好提交信息和提交版本，提交版本最好和代码中的版本一致，方便日后管理
 * 直接提交

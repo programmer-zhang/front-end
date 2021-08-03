@@ -15,7 +15,7 @@
 
 > [Grid 布局]
 
-> [如何画一像素的线](./profiles/css-one-px.md)
+> [如何优雅地画一像素的线](./profiles/css-one-px.md)
 
 > [重温一遍 ELE 垂直水平居中的多种解决方式]
 

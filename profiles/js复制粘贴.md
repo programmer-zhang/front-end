@@ -3,7 +3,7 @@
 
 ## 阅读本文您将收获
 * 如何通过原生或第三方的方式实现前端自动复制粘贴
-* 很多网站复制后出现的原作者信息是如何添加上的
+* 如何在复制的信息中自动增加原作者信息
 
 ## 复制
 ### 通过原生js实现
@@ -20,7 +20,7 @@
 //roles为需要复制的data
 //HTML部分
 <button @click="copyRoles">复制</button>
-<input v-if="roles && roles.length>0" 
+<input v-if="roles && roles.length" 
 	id="clipBoard" 
 	v-model="roles" 
 	style="position: absolute; opacity: 0;">
@@ -117,10 +117,13 @@ alert(text);
 	* 从浏览器的编辑菜单中选择 "Paste（粘贴）"
 	* 右击鼠标按钮在上下文菜单中选择 "Paste（粘贴）"
 * 通过这三种方式，我们的解决方案主要有两个方面
-	* 主动提示引导用户将剪贴板中的内容复制到input框，或者textarea中，从而获取值
+	* 主动提示引导用户将剪贴板中的内容复制到input框，或者textarea中，从而获取值。
 	* `window.addEvent("paste",function(e){ });` 通过监听事件，监听用户的粘贴操作，从而拿到想要的数据
 
 ## 如何修改用户粘贴板中的内容
+> 我们在很多的网站中复制信息的时候能够发现，不少网站在复制的信息中自动为我们添加上了原作者的信息，那么下面这种操作是怎么做到的呢，当然也是和上面说到的粘贴板的部分有关。
+
+![](../images/copy&paste.png)
 
 ```
 <!--在需要控制的DOM节点上添加事件-->

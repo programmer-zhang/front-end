@@ -66,7 +66,7 @@
  
 > [JS判断PC端还是移动端的几种方式(完善中)](./profiles/js判断设备.md)
 
-> [JS解决浏览器主动复制粘贴问题](./profiles/js复制粘贴.md)
+> [JS 实现一键复制粘贴](./profiles/js复制粘贴.md)
 
 > [JS数据类型你真的了解吗](./profiles/js_data_type.md)
 

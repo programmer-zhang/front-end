@@ -1,4 +1,5 @@
 > 「复制粘贴」这是我们攻城狮日常开发代码过程中经常使用到的一种神奇技能，但是有没有想过，浏览器可以帮助我们实现复制粘贴的操作，大大增加我们的摸鱼时间。
+
 > 在业务需求中碰到主动协助用户进行复制粘贴的需求，需要通过JS去主动复制数据从而协助用户进行其他操作
 
 ## 阅读本文您将收获
@@ -29,7 +30,7 @@
 //js部分
 copyRoles() {
 	let data = ''
-	if(this.roles && this.roles.length > 0) {
+	if(this.roles && this.roles.length) {
 		let spanSelect = document.querySelector('#clipBoard')
 		spanSelect.select() // IOS 和 Safari 浏览器有兼容性问题，解决方式在下方升级版实现
 		if(document.execCommand('copy')) {
@@ -50,7 +51,6 @@ copyRoles() {
 ```
 // JS部分
 copyRoles(data) {
-    // return; //兼容问题较大，暂改成浏览器的长按复制
     if (document.querySelector('#orderId')) {
         let e = document.getElementById('orderId')
         document.getElementById("clipBoard").removeChild(e)
@@ -86,7 +86,44 @@ selectText(textbox, startIndex, stopIndex) {
 ```
 
 
-### 通过clipboard.js实现(官方api很详细，不做过多介绍)
+### 通过clipboard.js实现
+* 安装方式
+	* 通过 npm依赖包 安装
+
+	`npm install clipboard --save`
+	
+	* 通过 CDN 引入
+
+	`<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>`
+
+* 使用
+	* 复制当前DOM节点的内容，只需为 `data-clipboard-target` 属性设置内容即可。
+
+	```
+	<button class="btn" data-clipboard-text="全栈道路出品，欢迎三连~">
+	    <img src="xxx" alt="点我复制">
+	</button>
+	```
+	
+	* 设置复制的内容，只需为 `data-clipboard-target` 属性绑定相应的节点即可。
+	
+	```
+	<input id="clipTarget" value="全栈道路出品，欢迎三连~">
+
+	<button class="btn" data-clipboard-target="#clipTarget">
+	    <img src="xxx" alt="点我复制">
+	</button>
+	```
+	
+	* `data-clipboard-action` 设置为 **复制** 事件还是 **剪切** 事件
+
+	```
+	<input id="clipTarget" value="全栈道路出品，欢迎三连~">
+
+	<button class="btn" data-clipboard-action="cut" data-clipboard-target="#clipTarget">
+	    <img src="xxx" alt="点我复制">
+	</button>
+	```
 
 ## 粘贴
 * 粘贴现在没有发现什么比较好的方案，不经过用户主动操作去进行粘贴操作，直接用js去操作粘贴板兼容性极差，建议考虑一种合理的方案去实现这个功能。简单来说就是：改需求！

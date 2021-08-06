@@ -24,6 +24,8 @@ document.cookie="username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT; path=
 document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT"; // 删除cookie只需要将过期时间提前即可
 ```
 
+> Cookie 的更多处理方式请看这篇文章， [JS针对 Cookie 的操作](./profiles/js针对cookie的操作.md)
+
 ## localStorage
 * **生命周期:**永久，除非用户清除浏览器中的 `localStorage` 信息，否则永远存在
 * **存储容量:**存放数据大小一般为5M(针对一个域名)

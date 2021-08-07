@@ -1,22 +1,24 @@
 > 本期带来 微信 JSAPI 支付 (即微信浏览器内支付或微信公众号支付) 的前端开发
 
+> 文中支付相关的信息，包括但不限于支付ID，微信签名，公众号ID均已做错误处理。
+
 ## 前期工作
 ### 微信支付权限开通
 * 微信申请支付授权
 * 注意是开通 JSAPI 支付，不是H5支付
 * 附 [官方开通授权文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=3_1)
-<img src="../images/wechat-pay-auth.png" style="width:100%;display: block;">
+<img src="../images/wechatPay/wechat-pay-auth.png" style="width:100%;display: block;">
 <div style="text-align:center;color:#708090;">图-微信支付权限开通(图片来源：微信官方)</div>
 
 ### 微信公众平台配置信息
 * 设置支付目录 ( 配置路径: 商户平台 --> 产品中心 --> 开发配置 )
-<img src="../images/wechat-pay-conf.png" style="width:100%;display: block;">
+<img src="../images/wechatPay/wechat-pay-conf.png" style="width:100%;display: block;">
 <div style="text-align:center;color:#708090;">图-微信JSAPI支付-支付目录配置(图片来源：微信官方)</div>
 
 * 配置授权支付域名
 	* 配置域名除了要在微信公众平台进行配置外，还需要将微信提供的密钥文件放在配置域名的根目录
-<img src="../images/wechat-pay-host.png" style="width:100%;display: block;">
-<img src="../images/wechat-pay-host2.png" style="width:100%;display: block;">
+<img src="../images/wechatPay/wechat-pay-host.png" style="width:100%;display: block;">
+<img src="../images/wechatPay/wechat-pay-host2.png" style="width:100%;display: block;">
 <div style="text-align:center;color:#708090;">图-微信网页授权域名设置(图片来源：微信官方)</div>
 
 ## 开发
@@ -24,7 +26,9 @@
 * 技术流程
 	* 前端微信授权 => 提交订单给后端 => 后端生成订单id => 前端接收订单参数包含订单id等 => 调用微信JDK => 传送相关参数给微信 => 调起微信支付 => 微信支付 callback => 前端结束 => 用户支付成功后端收到微信回调(前端和后端的微信支付成功回调未必同时同步)
 
-* [业务流程时序图](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_4)
+* 业务流程时序图(图片来自微信官方)
+
+![业务流程时序图](../images/wechatPay/wechat-pay-uml.png)
 
 ### 前端微信授权
 * [前端微信授权](./wechat_auth.md)
@@ -35,12 +39,12 @@
 
 ### 前端调起微信支付
 * 微信支付传参
-	* `appId` : `"wx2421b1c4370ec43b",     //公众号名称，由商户传入`
+	* `appId` : `"wx2421b1c4370ec12a",     //公众号名称，由商户传入`
 	* `timeStamp` : `"1395712654",         //时间戳，自1970年以来的秒数`
-	* `nonceStr` : `"e61463f8efa94090b1f366cccfbbb444", //随机串`
-	* `package` : `"prepay_id=u802345jgfjsdfgsdg888",     // 传递参数，prepay_id即为微信订单id`
+	* `nonceStr` : `"e61463f8efa94090b1f366cccfbbb555", //随机串`
+	* `package` : `"prepay_id=u802345jgfjsddgsdg888",     // 传递参数，prepay_id即为微信订单id`
 	* `signType` : `"MD5",         //微信签名方式`
-	* `paySign` : `"70EA570631E4BB79628FBCA90534C63FF7FADD89" //微信签名`
+	* `paySign` : `"70EA570631E4BB79628FBCA99534C63FF7FADD89" //微信签名`
 
 * 调起微信支付
 

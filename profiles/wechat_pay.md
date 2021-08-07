@@ -6,12 +6,14 @@
 ### 微信支付权限开通
 * 微信申请支付授权
 * 注意是开通 JSAPI 支付，不是H5支付
-* 附 [官方开通授权文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=3_1)
+* 附 [官方开通授权文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=3_1)，请正确填写相关信息。
 <img src="../images/wechatPay/wechat-pay-auth.png" style="width:100%;display: block;">
 <div style="text-align:center;color:#708090;">图-微信支付权限开通(图片来源：微信官方)</div>
 
 ### 微信公众平台配置信息
-* 设置支付目录 ( 配置路径: 商户平台 --> 产品中心 --> 开发配置 )
+* 设置支付目录(请正确填写相关信息)
+	* 配置路径: 商户平台 --> 产品中心 --> 开发配置
+
 <img src="../images/wechatPay/wechat-pay-conf.png" style="width:100%;display: block;">
 <div style="text-align:center;color:#708090;">图-微信JSAPI支付-支付目录配置(图片来源：微信官方)</div>
 
@@ -31,7 +33,7 @@
 ![业务流程时序图](../images/wechatPay/wechat-pay-uml.png)
 
 ### 前端微信授权
-* [前端微信授权](./wechat_auth.md)
+* [前端微信授权](./wechat_auth.md)请看这篇文章
 
 ### 前端发起生成订单请求
 * 前端向后端发起 生成订单 请求

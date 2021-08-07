@@ -1,4 +1,8 @@
+# 微信内嵌H5页面授权和分享
+
 > 近期新上线项目，用到了微信授权获取用户信息和分享，掉坑无数次，遂写此篇，为后人指路
+
+> 文章从微信授权获得的信息到如何进行微信授权以及微信分享讲解，部分代码实践仅实现基本功能，如需要自定义开发请在此基础上进行二次开发。
 
 ## 阅读本文您将收获
 * 微信授权获取的信息
@@ -7,6 +11,7 @@
 
 ## 微信授权能获取到什么
 * 微信授权获得的基本信息
+	* 基本信息中包含了用户的展示信息，包括但不限于 昵称，性别，地址，头像等信息。
 
 ```
 {
@@ -47,9 +52,10 @@
 * 目前网上大多分为两种方式去获取微信授权，一种是前端主导的微信授权，一种是server端主导的微信授权，两种方式实现的结果是一样的，具体采用何种方式可以根据自己项目情况去选择
 
 ### 授权方法
-* 客户端中转的授权方式
+* 客户端中转的授权方式(图片来自网络)
 ![授权流程](../images/wechat-auth.jpeg)
 * 完全由服务端主导的授权方式
+	* 由服务端主导的授权方式前端所开发的工作量很小，基本的授权认证都是在服务端完成，这部分不在本篇文章中讲解。
 
 ### 授权流程
 * 客户端中转的授权方式
@@ -62,13 +68,14 @@
 
 ### 客户端中转的授权方式技术实现
 * 获取微信授权`code`
+	* 务必使用当前的url，否则会鉴权失败。
 
 ```
-// 务必使用当前的url，否则会鉴权失败
 let redirectUri = encodeURI(window.location.href)
 window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=xxx&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect`
 ```
 * 携带`code`向服务器端获取用户授权
+	* 微信授权后会将授权 `code` 放在 `url` 的参数中，前端只需要在 `url` 中拿到授权的 `code` 就可以和服务端进行相关信息的验证及用户数据的获取。
 
 ```
 // 从返回的url上获取code
@@ -100,7 +107,7 @@ axios.get("/xxx/getWxInfo?code=" + code).then(res => {
 * 分享成功
 
 ### 微信分享技术实现
-* 微信分享是个频繁调用的方法，实现过程中可以抽象一下
+* 微信分享是个频繁调用的方法，实现过程中可以抽象出来，封装一下
 
 ```
 //调用服务器端接口验证授权信息
@@ -108,7 +115,6 @@ function $setShare(options) {
 	axios.get('/xxx/getWxSignature?url=' + encodeURIComponent(location.href.split('#')[0])).then(function(resp) {
 	    if (!resp || !resp.data || resp.data.code != 10000) { return }
 	    wx.config({
-	        // debug: true,// 开启debug模式
 	        appId: resp.data.data.appid,
 	        timestamp: resp.data.data.timestamp,
 	        nonceStr: resp.data.data.noncestr,
@@ -146,6 +152,8 @@ function $setShare(options) {
 }
 ```
 * 调用分享代码实现
+	* 微信分享的回调并不是分享成功的回调，而是用户点击了分享的回调，微信现有版本不会告知开发者用户是否分享成功
+
 
 ```
 let shareWxData = {
@@ -153,10 +161,7 @@ let shareWxData = {
     desc: '测试微信分享摘要',
     link: window.location.href,
     imgUrl: 'xxxxxxx',
-    success: function(res) {
-    	// 这是微信分享的回调
-    	// 注意这个地方并不是用户分享成功的回调，而是用户点击了分享的回调，微信现有版本不会告知开发者用户是否分享成功
-    }
+    success: function(res) {}
 }
 $setWxShare(shareWxData)
 ```

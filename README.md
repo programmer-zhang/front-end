@@ -68,9 +68,9 @@
 
 > [JS 实现一键复制粘贴](./profiles/js复制粘贴.md)
 
-> [JS数据类型你真的了解吗](./profiles/js_data_type.md)
+> [JS 数据类型你真的了解吗](./profiles/js_data_type.md)
 
-> [JS判断数据类型](./profiles/js_judge_type.md)
+> [JS 判断数据类型](./profiles/js_judge_type.md)
 
 > [深拷贝和浅拷贝](./profiles/深拷贝和浅拷贝.md)
 

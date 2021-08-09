@@ -1,8 +1,12 @@
+# JS 模块化资源引入
+
 > 随着前端技术的逐渐发展，模块化的概念越来越成熟。
 
 > 随着ES6的出现，模块的设计思想变得尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。
 
 ## 阅读本文您将收获
+* 模块化的概念
+* 模块化的演变过程
 * 多种模块化资源引入方案详解
 * 各种模块化引入方案的常见问题解答
 
@@ -10,7 +14,98 @@
 * 模块就是将一个复杂的程序依据一定的规则（规范）封装成几个块（文件），并进行组合在一起，块的内部数据和实现是私有的，只是向外部暴露一些接口（方法）与外部其它模块通信。
 * 一个模块的组成由两部分组成： 数据（内部的属性）、操作数据的行为（内部的函数）
 
-## 模块化的多种常用方式
+## 模块化的早期实现
+### 全局 `Function` 模式
+* 早期的这种全局 `Function` 模式比较接近于为了抽离组件化而组件化，各个模块间容易产生污染。
+
+* ModuleFirst.js
+
+```
+// 内部数据
+let data = '模块1'
+// 操作数据的函数
+function fun() {
+	console.log(`fun() ${data}`);
+}
+function funNext() {
+	console.log(`funNext() ${data}`);
+}
+```
+
+* ModuleSecond.js
+
+```
+let data = '模块2'
+function fun() {
+	console.log(`fun() ${data2}`);
+}
+```
+
+* index.html
+
+```
+<script type="text/javascript" src="ModuleFirst.js"></script>
+<script type="text/javascript" src="ModuleSecond.js"></script>
+<script type="text/javascript">
+	let data = "修改后的数据";
+	fun(); // 冲突
+	funNext();
+</script>
+```
+
+* 全局函数模式是早期的模块化思想之一，这种方式最大的问题在于同时引入的模块会造成数据污染和命名冲突。
+
+### `namespace` 模式
+
+* ModuleFirst.js
+
+```
+let moduleFirst = {
+	data: 'ModuleFirst',
+	fun() {
+		console.log(`fun() ${this.data}`);
+	},
+  	funNext() {
+		console.log(`funNext() ${this.data}`);
+	}
+}
+```
+
+* ModuleSecond.js
+
+```
+let moduleSecond = {
+	data: 'ModuleSecond',
+	fun() {
+		console.log(`fun() ${this.data}`);
+	},
+  	funNext() {
+		console.log(`funNext() ${this.data}`);
+	}
+}
+```
+
+* index.html
+
+```
+<script type="text/javascript" src="ModuleFirst.js"></script>
+<script type="text/javascript" src="ModuleSecond.js"></script>
+<script type="text/javascript">
+	// ModuleFirst.js模块
+  	moduleFirst.fun()
+  	moduleFirst.funNext()
+	// ModuleSecond.js模块
+ 	moduleSecond.fun()
+ 	moduleSecond.funNext()
+  
+  	moduleFirst.data = 'other data' //能直接修改模块内部的数据
+  	moduleFirst.foo()
+</script>
+```
+
+* 这种模式是简单的对象封装，虽然解决了命名冲突和数据污染的问题，但是在引用页面还可以直接针对内部数据进行修改。
+
+## 模块化多种方式
 ### Require
 * require是CommonJS的语法，CommonJS的模块是对象，输入时必须查找对象属性。
 

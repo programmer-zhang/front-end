@@ -42,29 +42,29 @@
 > [冷门的 HTML tabindex 详解](./profiles/HTML_tabindex.md)
 
 ## JavaScript相关 :speak_no_evil:
-> [JS的小秘密(持续更新)](./profiles/js的小秘密.md)
+> [JS 的小秘密(持续更新)](./profiles/js的小秘密.md)
 
-> [JS数组操作方法小结](./profiles/js数组操作.md)
+> [JS 数组操作方法小结](./profiles/js数组操作.md)
 
-> [JS针对 Cookie 的操作](./profiles/js针对cookie的操作.md)
+> [JS 针对 Cookie 的操作](./profiles/js针对cookie的操作.md)
 
-> [JS针对 URL 编码和解码](./profiles/js针对URL编码和解码.md)
+> [JS 针对 URL 编码和解码](./profiles/js针对URL编码和解码.md)
 
-> [JS对 DOM 树的操作](./profiles/js对DOM树的操作.md)
+> [JS 对 DOM 树的操作](./profiles/js对DOM树的操作.md)
 
-> [JS的运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
+> [JS 运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
-> [JS绑定【双击】事件]
+> [JS 绑定【双击】事件]
 
-> [JS模拟点击事件]
+> [JS 模拟点击事件]
 
 > [历史上我们都是怎么解决跨域问题的](./profiles/cross-origin.md)
 
-> [JS内存图](./profiles/js内存图.md)
+> [JS 内存图](./profiles/js内存图.md)
 
 > [JS 模块化编程资源引入](./profiles/js_require-module.md)
  
-> [JS判断PC端还是移动端的几种方式(完善中)](./profiles/js判断设备.md)
+> [JS 判断PC端还是移动端的几种方式(完善中)](./profiles/js判断设备.md)
 
 > [JS 实现一键复制粘贴](./profiles/js复制粘贴.md)
 

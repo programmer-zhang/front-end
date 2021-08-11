@@ -1,5 +1,7 @@
 <span style="display: inline-block;width: 100%; text-align: center; font-size: 30px;"> Weex 基础使用文档</span>
 
+> Weex 基础开发指南为大家带来~ 本篇中的相关知识点都是之前小编在学习 Weex 中一点点纪磊下来的，Weex相关开发文档很少，希望能对大家的开发有所帮助。
+
 > 浏览[官方文档](https://weex.apache.org/zh/)后阅读此文更佳
 
 ## 阅读本文您将收获
@@ -38,9 +40,6 @@
 * 代码管理
 	* Github
 
----
----
-
 ## 快速开始
 ### 安装相关开发环境
 * 安装 node 开发环境
@@ -69,8 +68,6 @@
 * 配置 Nginx 
 * 移动应用客户端访问
 
----
----
 ## 开发
 ### 运行过程
 * 本地编写 Vue 代码，生成 web 页面

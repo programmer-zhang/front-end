@@ -1,12 +1,11 @@
-<span style="display: inline-block;width: 100%; text-align: center; font-size: 30px;">weex基础使用文档</span>
+<span style="display: inline-block;width: 100%; text-align: center; font-size: 30px;">weex 基础使用文档</span>
 
 > 浏览[官方文档](https://weex.apache.org/zh/)后阅读此文更佳
 
-# 写在前面
 ## 阅读本文您将收获
 * 差异化
 	* Weex 和 传统Web 的平台差异
-	* weex-toolkit和weexpack的区别
+	* weex-toolkit 和 weexpack 的区别
 * 必要条件
 * 快速开始
 	* 安装相关开发环境
@@ -21,12 +20,9 @@
 	* 数据传递
 	* 数据通信 stream模块
 	* 语法差异
-* Todo List
 
-# 差异化
-
+## 差异化
 ### Weex 和 传统Web 的平台差异
-
 * weex 是跨平台解决方案，web 仅是作为一个开发环境
 * weex 不存在DOM
 	* 没有 `Element` , `Event` 等对象
@@ -44,7 +40,7 @@
 * weex-toolkit 初始化的项目是针对开发单个 Weex 页面而设计的，也就是说这样的项目只包括单个页面开发需要的东西，比如前端页面源文件、webpack 配置、npm 脚本等。项目产生的输出就是一个 JS Bundle 文件，可以自由的进行部署。
 * weexpack 是初始化一个完整的 App 工程，包括 Android 和 iOS 的整个 App 起步，前端页面只是其中的一部分。这样的项目最终产出是一个 Android App 和一个 iOS App。
 
-# 必要条件
+## 必要条件
 * 开发环境
 	* nodeJS
 	* Android 开发环境
@@ -59,27 +55,27 @@
 ---
 ---
 
-# 快速开始
-## 安装相关开发环境
+## 快速开始
+### 安装相关开发环境
 * 安装 node 开发环境
 * 安装 Android & IOS 开发环境
 
-## 安装 weex-cli
+### 安装 weex-cli
 * `npm install weex-toolkit -g`
 
-## 使用weex-cli创建项目
+### 使用weex-cli创建项目
 * `weex create demo-project`
 * 填写相关配置信息
 
-## 下载项目依赖包
+### 下载项目依赖包
 * 进入项目后 `npm install`
 
-## 预览项目
-### 浏览器端预览
+### 预览项目
+#### 浏览器端预览
 * `npm start`
 * 执行指令后会自动打开浏览器的页面窗口，但是建议使用真机进行预览，部分样式和代码 web 端与 native 端差距较大
 
-### native 端预览
+#### native 端预览
 * 编译成 JS Bundle 文件 
 	* `weex compile <源码目录或文件> <打包文件存放目录或文件>`
 * 压缩编译
@@ -89,15 +85,15 @@
 
 ---
 ---
-# 开发
-## 运行过程
+## 开发
+### 运行过程
 * 本地编写 Vue 代码，生成 web 页面
 * weex 形成 JS bundle
 * 在云端，通过网络请求或预下发的方式将 JS bundle 传递到用户的 移动应用客户端
 * 在移动应用客户端里，WeexSDK 会准备好一个 JavaScript 引擎，并且在用户打开一个 Weex 页面时执行相应的 JS bundle
 * 各种命令发送到 native 端进行界面渲染或数据存储、网络通信、调用设备功能、用户交互响应
 
-## 文件结构
+### 文件结构
 * |- src  // 源码目录
 * |- node_modules   // 依赖包
 * |- dist		// 存放编译好的 js 文件
@@ -106,11 +102,11 @@
 * |- webpack.config.js    // webpack 打包配置文件
 * |- config.js	// 项目的相关配置文件，你可以在这个文件中配置切换不同的环境
 
-## 导航方式
-### Vue-Router
+### 导航方式
+#### Vue-Router
 * 暂不做讲解
 
-### weex-navigator
+#### weex-navigator
 * 借用 IOS/Android  navigator 模块
 * 使用方式
 	* 把一个weex页面URL压入导航堆栈中
@@ -134,12 +130,12 @@
 	})
 	```
 
-## 数据传递 
-### Vue的方式
+### 数据传递 
+#### Vue的方式
 * `props`
 * `this.$emit('fun', data)`
 
-### storage
+#### storage
 * 永久保存，在 H5/web 端 实际采用的是 `HTML5 LocalStorage API`
 * 限制： 
 	* H5/web 端 体积最大为5M
@@ -151,7 +147,7 @@
 	* length(callback)
 	* getAllKeys(callback)
 
-### 地址拼接
+#### 地址拼接
 * 利用 `weex.config.bundleUrl`
 * 使用方式
 
@@ -180,7 +176,7 @@ getUrlParam() {
 }
 ```
 
-### BroadcastChannel
+#### BroadcastChannel
 * 源码定义
 
 ```
@@ -213,14 +209,14 @@ broadcast.onmessage = function(event) {
 }
 ```
 
-### 借用 native 做中转桥
+#### 借用 native 做中转桥
 * vue -> native -> vue
 
-## 数据通信 stream模块
-### 请求过程
+### 数据通信 stream模块
+#### 请求过程
 * weex中发送fetch请求时，会先经过native内置的stream模块，并由stream模块向服务器发送请求。
 
-### 请求实例 `fetch(options, callback, progressCallback)` 
+#### 请求实例 `fetch(options, callback, progressCallback)` 
 * `@options`, 请求的配置选项，支持以下配置
 	* `method`: string, HTTP 请求方法，值为 GET/POST/PUT/DELETE/PATCH/HEAD
 	* `url`: string, 请求的 URL | string
@@ -241,7 +237,7 @@ broadcast.onmessage = function(event) {
 	* `statusText`: string, 状态描述文本
 	* `headers`: object, HTTP 响应头
 
-### 使用示例
+#### 使用示例
 * GET
 	
 ```

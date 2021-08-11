@@ -1,44 +1,30 @@
-<span style="display: inline-block;width: 100%; text-align: center; font-size: 30px;">weex 基础使用文档</span>
+<span style="display: inline-block;width: 100%; text-align: center; font-size: 30px;"> Weex 基础使用文档</span>
 
 > 浏览[官方文档](https://weex.apache.org/zh/)后阅读此文更佳
 
 ## 阅读本文您将收获
-* 差异化
-	* Weex 和 传统Web 的平台差异
-	* weex-toolkit 和 weexpack 的区别
-* 必要条件
-* 快速开始
-	* 安装相关开发环境
-	* 安装 weex-cli
-	* 使用weex-cli创建项目
-	* 下载项目依赖包
-	* 预览项目
-* 开发
-	* 运行过程
-	* 文件结构
-	* 导航方式
-	* 数据传递
-	* 数据通信 stream模块
-	* 语法差异
+* Weex 的差异化
+* 如何使用 Weex 开始开发
+* Weex 的语法差异
 
 ## 差异化
 ### Weex 和 传统Web 的平台差异
-* weex 是跨平台解决方案，web 仅是作为一个开发环境
-* weex 不存在DOM
+* Weex 是跨平台解决方案，web 仅是作为一个开发环境
+* Weex 不存在 `DOM`
 	* 没有 `Element` , `Event` 等对象
 	* 只有 有限的事件类型 和 `native` 端常用事件类型，如 `Longpress`, `Appear`等
-* weex 不存在BOM
+* Weex 不存在BOM
 	* 没有 `document` , `window` 等对象
 	* 提供自身对象获取设备部分数据 `WXEnvironment`
-* weex的运行环境以原生应用为主，在Android和iOS环境中渲染出来的是原生的组件，而不是DOM元素。
-* weex 提供了原生设备调用 API
+* Weex 的运行环境以原生应用为主，在 `Android` 和 `iOS` 环境中渲染出来的是原生的组件，而不是 `DOM`元素。
+* Weex 提供了原生设备调用 API
 	* [《clipboard 剪切板》](https://weex.apache.org/zh/docs/modules/clipboard.html?spm=a2c7j.-zh-guide-platform-difference.0.0.1fb6400eP0TKTY)
 	* [《navigator 导航控制》](https://weex.apache.org/zh/docs/modules/navigator.html?spm=a2c7j.-zh-guide-platform-difference.0.0.1fb6400eP0TKTY)
 	* [《storage 本地存储 》](https://weex.apache.org/zh/docs/modules/storage.html?spm=a2c7j.-zh-guide-platform-difference.0.0.1fb6400eP0TKTY)
 
-### weex-toolkit和weexpack的区别
-* weex-toolkit 初始化的项目是针对开发单个 Weex 页面而设计的，也就是说这样的项目只包括单个页面开发需要的东西，比如前端页面源文件、webpack 配置、npm 脚本等。项目产生的输出就是一个 JS Bundle 文件，可以自由的进行部署。
-* weexpack 是初始化一个完整的 App 工程，包括 Android 和 iOS 的整个 App 起步，前端页面只是其中的一部分。这样的项目最终产出是一个 Android App 和一个 iOS App。
+### weex-toolkit 和 weexpack 的区别
+* `weex-toolkit` 初始化的项目是针对开发单个 `Weex` 页面而设计的，也就是说这样的项目只包括单个页面开发需要的东西，比如前端页面源文件、`webpack` 配置、`npm` 脚本等。项目产生的输出就是一个 `JS Bundle` 文件，可以自由的进行部署。
+* `weexpack` 是初始化一个完整的 App 工程，包括 `Android` 和 `iOS` 的整个 `App` 起步，前端页面只是其中的一部分。这样的项目最终产出是一个 `Android App` 和一个 `iOS App`。
 
 ## 必要条件
 * 开发环境
@@ -88,10 +74,10 @@
 ## 开发
 ### 运行过程
 * 本地编写 Vue 代码，生成 web 页面
-* weex 形成 JS bundle
-* 在云端，通过网络请求或预下发的方式将 JS bundle 传递到用户的 移动应用客户端
-* 在移动应用客户端里，WeexSDK 会准备好一个 JavaScript 引擎，并且在用户打开一个 Weex 页面时执行相应的 JS bundle
-* 各种命令发送到 native 端进行界面渲染或数据存储、网络通信、调用设备功能、用户交互响应
+* Weex 形成 `JS bundle`
+* 在云端，通过网络请求或预下发的方式将 `JS bundle` 传递到用户的 移动应用客户端
+* 在移动应用客户端里，`WeexSDK` 会准备好一个 `JavaScript` 引擎，并且在用户打开一个 Weex 页面时执行相应的 `JS bundle`
+* 各种命令发送到 `native` 端进行界面渲染或数据存储、网络通信、调用设备功能、用户交互响应
 
 ### 文件结构
 * |- src  // 源码目录
@@ -104,10 +90,10 @@
 
 ### 导航方式
 #### Vue-Router
-* 暂不做讲解
+* 与 Vue 同
 
 #### weex-navigator
-* 借用 IOS/Android  navigator 模块
+* 借用 `IOS/Android  navigator` 模块
 * 使用方式
 	* 把一个weex页面URL压入导航堆栈中
 	

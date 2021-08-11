@@ -111,7 +111,7 @@
 ## 网络相关 :postbox:
 > [异步通信](./profiles/异步通信.md)
 
-> [HTTP-status](./profiles/HTTP_status.md)
+> [HTTP-状态码](./profiles/HTTP_status.md)
 
 > [HTTP-缓存机制](./profiles/HTTP_header.md)
 

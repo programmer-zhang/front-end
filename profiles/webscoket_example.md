@@ -6,11 +6,11 @@
 
 ## 创建思路
 ### 工厂函数抽离
-* 将 WebScoket 进行封装，以进行实例化
+* 将 WebScoket 进行封装，以进行实例化，方便使用
 
 ### 同Vue实例下需要创建多个 WebScoket 
 * 利用 ES6 class 创建
-* path 可自定义传入
+* path 可自定义传入，解决多个 scoket 连接同时创建与存在
 
 ### WebScoket 回调单独处理
 * WebScoket handler 通过创建实例后挂载
@@ -23,7 +23,7 @@
 * 实例封装 readystate 状态，便于获取
 
 ### 断线重连
-* 断线重连单独在使用示例时进行处理
+* 断线重连单独在使用示例时进行处理，便于解决业务需要
 
 ## 代码部分
 ### WebScoket部分

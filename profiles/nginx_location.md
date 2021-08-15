@@ -1,4 +1,5 @@
 # Nginx location 路由转发规则
+> 本期带来 Nginx 系列的最后一篇，讲解 Nginx location 如何进行路由转发，如何通过配置 location 实现自己想要的路由转发效果。
 
 ## 阅读本文您将收获
 * nginx location 配置

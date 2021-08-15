@@ -132,7 +132,7 @@
 
 > [SSR 服务器端渲染](./profiles/SSR服务器端渲染.md)
 
-> [Nginx 架构介绍](./profiles/nginx_base.md)
+> [Nginx 基础架构介绍](./profiles/nginx_base.md)
 
 > [Nginx 基本配置](./profiles/nginx_conf.md)
 

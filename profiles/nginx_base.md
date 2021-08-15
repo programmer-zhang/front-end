@@ -4,7 +4,7 @@
 *  Nginx  的作用
 *  Nginx  基础信息，包括架构、基础配置、基本概念
 
-##   Nginx 的作用
+## Nginx 的作用
 * webserver
 * 反向代理服务器
 * 负载均衡

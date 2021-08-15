@@ -20,7 +20,7 @@
 * 一个请求只能在一个 worker 进程中处理
 * 一个 worker 进程不能处理其他进程的请求
 * worker 进程数可以设置，一般设置为与机器cpu核数相同
-* `nginx -s reload`nginx从容重启：首先 master 进程在接到信号后，会先重新加载配置文件，然后再启动新的 worker 进程，并向所有老的 worker 进程发送信号，告诉他们可以光荣退休了。新的 worker 在启动后，就开始接收新的请求，而老的 worker 在收到来自 master 的信号后，就不再接收新的请求，并且在当前进程中的所有未处理完的请求处理完成后，再退出。
+* `nginx -s reload` nginx从容重启：首先 master 进程在接到信号后，会先重新加载配置文件，然后再启动新的 worker 进程，并向所有老的 worker 进程发送信号，告诉他们可以光荣退休了。新的 worker 在启动后，就开始接收新的请求，而老的 worker 在收到来自 master 的信号后，就不再接收新的请求，并且在当前进程中的所有未处理完的请求处理完成后，再退出。
 
 ### Nginx 进程模型
 * 每个 worker 进程 fork master 进程(在 master 进程完成建立好 listen 的 socket 之后)

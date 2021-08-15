@@ -1,3 +1,5 @@
+# Nginx location 路由转发规则
+
 ## 阅读本文您将收获
 * nginx location 配置
 * nginx 跨域原理

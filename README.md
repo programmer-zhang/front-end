@@ -132,13 +132,13 @@
 
 > [SSR 服务器端渲染](./profiles/SSR服务器端渲染.md)
 
-> [Nginx 基础架构介绍](./profiles/nginx_base.md)
+> [Nginx_基础架构介绍](./profiles/nginx_base.md)
 
-> [Nginx 基本配置](./profiles/nginx_conf.md)
+> [Nginx_基本配置](./profiles/nginx_conf.md)
 
-> [Nginx_upstream](./profiles/nginx_upstream模块.md)
+> [Nginx_配置 upstream 实现负载均衡](./profiles/nginx_upstream模块.md)
 
-> [Nginx_location](./profiles/nginx_location.md)
+> [Nginx_location 路由转发规则](./profiles/nginx_location.md)
 
 > [Vue this.$set的正确打开方式](./profiles/vue_this.set.md)
 

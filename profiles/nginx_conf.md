@@ -1,4 +1,6 @@
-> 上一篇写了点[Nginx 的基础架构](./nginx_base.md)，Nginx 开发过程中可能架构相关的知识需要的不多，但是了解些 Nginx 基础架构方面的知识对于我们更深层次地了解 Nginx 配置有很大的帮助
+> 上一篇写了点[Nginx 的基础架构](./nginx_base.md)，Nginx 开发过程中可能架构相关的知识需要的不多，但是了解些 Nginx 基础架构方面的知识对于我们更深层次地了解 Nginx 配置有很大的帮助。
+
+> 本篇为大家带来 Nginx 基本配置篇，让大家了解基本的 Nginx 配置。
 
 ## 阅读本文您将收获
 * Nginx 的安装
@@ -6,15 +8,16 @@
 
 ##  Nginx 安装
 * MAC 上装有 `homebrew`，使用其下载  Nginx  `brew install nginx`
-* Nginx 下载成功后，有三个目录比较重要
+* Nginx 下载成功后，有两个目录比较重要
 	* `/usr/local/etc/nginx` Nginx 的默认安装目录
 
 	![nginx安装目录](../images/nginx-dir.jpg)
 
-	* ` /usr/local/etc/nginx`
 	* `/usr/local/var/www` Nginx 的服务器文件存放位置
 
 ##  Nginx 相关操作
+> 介绍一些基本的常用的使用 Nginx 的终端语法。
+
 * 进入`/usr/local/etc/nginx`
 * 执行`sudo nginx -c nginx.conf`， Nginx 启用默认配置启动
 * `sudo nginx -s reload` 优雅重启 Nginx 

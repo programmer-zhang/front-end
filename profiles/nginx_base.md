@@ -1,4 +1,4 @@
-> [nginx](http://tengine.taobao.org/book/chapter_02.html) 详细文档
+> Nginx 是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，目前国内好很多公司都在使用，本篇带来Nginx 基础介绍，后期还会有更为详细的介绍，敬请关注。
 
 ## 阅读本文您将收获
 *  Nginx  的作用
@@ -13,7 +13,7 @@
 * 多进程模式 
 * 支持手动关闭后台模式，让 Nginx 在前台运行，通过配置取消 master 进程，使 Nginx 以单进程方式运行
 *  Nginx 启动后，会有一个 master 进程和多个 worker 进程
-* master进行主要用来管理worker进程
+* master 进行主要用来管理 worker 进程
 	* 包含：接收来自外界的信号，向各 worker 进程发送信号，监控 worker 进程的运行状态，当 worker 进程退出后(异常情况下)，会自动重新启动新的 worker 进程
 * 网络事件放在 worker 进程中
 * 多个 worker 进程对等，同等竞争来自客户端的请求，各进程互相之间是独立的

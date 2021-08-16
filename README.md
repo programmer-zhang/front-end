@@ -136,7 +136,7 @@
 
 > [Nginx_基本配置](./profiles/nginx_conf.md)
 
-> [Nginx_配置 upstream 实现负载均衡](./profiles/nginx_upstream模块.md)
+> [Nginx_配置 upstream 实现负载均衡](./profiles/nginx_upstream.md)
 
 > [Nginx_location 路由转发规则](./profiles/nginx_location.md)
 

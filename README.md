@@ -164,17 +164,17 @@
 
 > [WeHub 实践PC版微信]
 
-> [打造网页版微信一：contenteditable 的用处]
+> [打造网页版微信(一): contenteditable 的用处]
 
-> [打造网页版微信二：利用 wetool 接入微信]
+> [打造网页版微信(二): 利用 wetool 接入微信]
 
-> [打造网页版微信三：利用 VueX 存储数据]
+> [打造网页版微信(三): 利用 VueX 存储数据]
 
-> [打造网页版微信四：封装 WebScoket 进行网络传输]
+> [打造网页版微信(四): 封装 WebScoket 进行网络传输]
 
 > [用 electron-vue 实现一个桌面客户端]
 
-> [手把腿地教你做一个 谷歌浏览器 插件]
+> [谷歌浏览器 插件制作指南]
 
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
@@ -196,13 +196,13 @@
  
 > [第三方前端性能监控(外链资料)](https://docs.sentry.io/quickstart/)
 
-> [前端性能优化: HTML、CSS、JS篇](./profiles/[前端性能优化]HTML、CSS、JS篇.md)
+> [前端性能优化(一): HTML、CSS、JS篇](./profiles/[前端性能优化]HTML、CSS、JS篇.md)
 
-> [前端性能优化: 页面加载速度优化](./profiles/[前端性能优化]页面加载速度优化.md)
+> [前端性能优化(二): 页面加载速度优化](./profiles/[前端性能优化]页面加载速度优化.md)
 
-> [前端性能优化: 网络传输层优化](./profiles/[前端性能优化]网络传输层优化.md)
+> [前端性能优化(三): 网络传输层优化](./profiles/[前端性能优化]网络传输层优化.md)
 
-> [更友好的使用Chorme浏览器](./profiles/Chrome-Devtools.md)
+> [更友好的使用 Chorme 浏览器](./profiles/Chrome-Devtools.md)
 
 > [前端安全]
 

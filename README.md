@@ -25,7 +25,7 @@
 
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 
-> [永远18岁的 CSS (持续更新)](./profiles/永远18岁的css.md)
+> [一些 CSS 解决交互问题使用技巧(持续更新)](./profiles/永远18岁的css.md)
 
 > [硬件加速 CSS 来提高网站性能(外链资料)](http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
 

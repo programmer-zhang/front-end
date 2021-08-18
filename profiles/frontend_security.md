@@ -121,18 +121,21 @@ function submit() {
 * 通过修改页面的DOM节点行成的XSS，称之为 `DOM Based XSS`
 * 并非按照“数据是否保存在服务器端”进行划分的，从效果上来说也是属于反射型XSS，单独将它化分为一个类型是因为发现它的安全专家提出了这种类型的XSS，出于历史原因，也就把它单独作为一个分类。
 * 这种类型的攻击是从 JS 中输出数据到 HTML 页面
+	* 例如我们在下面这个例子中输入 `' onclick=alert(/xss/) //` , 页面就能将 `<a>标签` 中注入攻击代码，点击链接后就会执行。
+	* 或者下面这种情况 `' ><img src=# onerror=alert(/xss2/) />< '` ，通过将 `<a>标签` 闭合，注入 `<img>标签`自动执行 onerror 事件，从而达到注入攻击的目的。
 
 ```
 <script>
 function inner(){
 	var str=document.getElementById('InputEle').value;
-	document.getElementById("LinkEle").innerHTML="<a href='"+str+"'>testlink</a>";
+	document.getElementById("LinkEle").innerHTML="<a href='"+str+"'>注入后的链接</a>";
 }
 </script>
 <div>
 	<input type="test" id='InputEle' value=""/>
-	<a href="" id='LinkEle'>test</a> <br/>
 	<input type="button" id="XssEle" value="write" onclick='inner()'/>
+	<br/>
+	<a href="" id='LinkEle'>注入后的链接</a> 
 </div>
 ```
 

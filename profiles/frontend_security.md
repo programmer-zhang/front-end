@@ -127,88 +127,88 @@ function submit() {
 
 ## 防范手段
 ### encode
-* encode也分为html的 encode 和 js 的 encode
+* `encode` 也分为 `html 的 encode` 和 `js 的 encode`
 
-* html的encode: 就是将一些有特殊意义的字符串进行替换，比如: 
+* **`html的encode`**: 就是将一些有特殊意义的字符串进行替换，比如: 
 
-```
-& => &amp;
-" => &quot;
-' => &#39;
-< => &lt;
-> => &gt;
-```
+	```
+	& => &amp;
+	" => &quot;
+	' => &#39;
+	< => &lt;
+	> => &gt;
+	```
 
-* 通过这些字符的替换，之前我们输入的 `<img src="null" onerror="alert()">` 就被encode 成了`&lt;img src=&quot;null&quot; onerror=&quot;alert()&quot;&gt;`
+	* 通过这些字符的替换，之前我们输入的 `<img src="null" onerror="alert()">` 就被encode 成了`&lt;img src=&quot;null&quot; onerror=&quot;alert()&quot;&gt;`
 
-* js的encode: 使用 '\' 对特殊字符进行转义，除数字字母之外，小于127的字符编码使用16进制 '\xHH' 的方式进行编码，大于用 unicode（非常严格模式）
+* **`js的encode`**: 使用 '\' 对特殊字符进行转义，除数字字母之外，小于127的字符编码使用16进制 '\xHH' 的方式进行编码，大于用 unicode（非常严格模式）
 
-* 用 '\' 对特殊字符进行转义, 就可以使得js变为一个字符串, 而不是一个可执行的js代码了, 那为什么还需要进行16进制转换和unicode转换呢? 这样做是为了预防一下隐藏字符, 比如换行符可能会对js代码进行换行
+	* 用 '\' 对特殊字符进行转义, 就可以使得js变为一个字符串, 而不是一个可执行的js代码了, 那为什么还需要进行16进制转换和unicode转换呢? 这样做是为了预防一下隐藏字符, 比如换行符可能会对js代码进行换行
 
-```
-// 使用“\”对特殊字符进行转义，除数字字母之外，小于127使用16进制“\xHH”的方式进行编码，大于用unicode(非常严格模式)
-var JavaScriptEncode = function(str){
-    var hex=new Array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f');
-    function changeTo16Hex(charCode){
-        return "\\x" + charCode.charCodeAt(0).toString(16);
-    }
-    function encodeCharx(original) {
-        var found = true;
-        var thecharchar = original.charAt(0);
-        var thechar = original.charCodeAt(0);
-        switch(thecharchar) {
-            case '\n': return "\\n"; break; // newline
-            case '\r': return "\\r"; break; // Carriage return
-            case '\'': return "\\'"; break;
-            case '"': return "\\\""; break;
-            case '\&': return "\\&"; break;
-            case '\\': return "\\\\"; break;
-            case '\t': return "\\t"; break;
-            case '\b': return "\\b"; break;
-            case '\f': return "\\f"; break;
-            case '/': return "\\x2F"; break;
-            case '<': return "\\x3C"; break;
-            case '>': return "\\x3E"; break;
-            default:
-                found=false;
-                break;
-        }
-        if(!found){
-            if(thechar > 47 && thechar < 58){ // 数字
-                return original;
-            }
-            if(thechar > 64 && thechar < 91){ // 大写字母
-                return original;
-            }
-            if(thechar > 96 && thechar < 123){ // 小写字母
-                return original;
-            }        
-            if(thechar>127) { // 大于127用unicode
-                var c = thechar;
-                var a4 = c%16;
-                c = Math.floor(c/16); 
-                var a3 = c%16;
-                c = Math.floor(c/16);
-                var a2 = c%16;
-                c = Math.floor(c/16);
-                var a1 = c%16;
-                return "\\u"+hex[a1]+hex[a2]+hex[a3]+hex[a4]+"";        
-            }
-            else {
-                return changeTo16Hex(original);
-            }
-        }
-    }     
-
-    var preescape = str;
-    var escaped = "";
-    var i=0;
-    for(i=0; i < preescape.length; i++) {
-        escaped = escaped + encodeCharx(preescape.charAt(i));
-    }
-    return escaped;
-}
-```
+	```
+	// 使用“\”对特殊字符进行转义，除数字字母之外，小于127使用16进制“\xHH”的方式进行编码，大于用unicode(非常严格模式)
+	var JavaScriptEncode = function(str){
+	    var hex=new Array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f');
+	    function changeTo16Hex(charCode){
+	        return "\\x" + charCode.charCodeAt(0).toString(16);
+	    }
+	    function encodeCharx(original) {
+	        var found = true;
+	        var thecharchar = original.charAt(0);
+	        var thechar = original.charCodeAt(0);
+	        switch(thecharchar) {
+	            case '\n': return "\\n"; break; // newline
+	            case '\r': return "\\r"; break; // Carriage return
+	            case '\'': return "\\'"; break;
+	            case '"': return "\\\""; break;
+	            case '\&': return "\\&"; break;
+	            case '\\': return "\\\\"; break;
+	            case '\t': return "\\t"; break;
+	            case '\b': return "\\b"; break;
+	            case '\f': return "\\f"; break;
+	            case '/': return "\\x2F"; break;
+	            case '<': return "\\x3C"; break;
+	            case '>': return "\\x3E"; break;
+	            default:
+	                found=false;
+	                break;
+	        }
+	        if(!found){
+	            if(thechar > 47 && thechar < 58){ // 数字
+	                return original;
+	            }
+	            if(thechar > 64 && thechar < 91){ // 大写字母
+	                return original;
+	            }
+	            if(thechar > 96 && thechar < 123){ // 小写字母
+	                return original;
+	            }        
+	            if(thechar>127) { // 大于127用unicode
+	                var c = thechar;
+	                var a4 = c%16;
+	                c = Math.floor(c/16); 
+	                var a3 = c%16;
+	                c = Math.floor(c/16);
+	                var a2 = c%16;
+	                c = Math.floor(c/16);
+	                var a1 = c%16;
+	                return "\\u"+hex[a1]+hex[a2]+hex[a3]+hex[a4]+"";        
+	            }
+	            else {
+	                return changeTo16Hex(original);
+	            }
+	        }
+	    }     
+	
+	    var preescape = str;
+	    var escaped = "";
+	    var i=0;
+	    for(i=0; i < preescape.length; i++) {
+	        escaped = escaped + encodeCharx(preescape.charAt(i));
+	    }
+	    return escaped;
+	}
+	```
 
 ### 对于富文本的防范：filter
 * 富文本比较特殊，在富文本中输入标签，我们需要展示出来，所以不能用 html 的 encode 方法来进行防范。所以采用 `白名单过滤` 的方式来防范。
@@ -274,8 +274,8 @@ function submit() {
 此时我们在访问csrf.html，在点击提交按钮的时候，会发现会把这个登陆态也提交上去。这就是一个典型的钓鱼网站。
 
 ## 防范措施
-### 提交 method=Post 判断referer
-* HTTP请求中有一个 referer 的报文头，用来指明当前流量的来源参考页。如果我们用post就可以将页面的referer带入，从而进行判断请求的来源是不是安全的网站。但是referer在本地起的服务中是没有的，直接请求页面也不会有。这就是为什么我们要用Post请求方式。直接请求页面，因为post请求是肯定会带入referer，但get有可能不会带referer
+### 提交 `method=post` 判断referer
+* HTTP请求中有一个 `referer` 的报文头，用来指明当前流量的来源参考页。如果我们用post就可以将页面的referer带入，从而进行判断请求的来源是不是安全的网站。但是referer在本地起的服务中是没有的，直接请求页面也不会有。这就是为什么我们要用Post请求方式。直接请求页面，因为post请求是肯定会带入referer，但get有可能不会带referer
 
 ### 利用Token
-* Token简单来说就是由后端生成的一个唯一的登陆态，并传给前端保存在前端，每次前端请求时都会携带着Token，后端会先去解析这个Token，看看是不是后台给我们的，是否登陆超时，校验通过了，才会同意接口请求
+* Token 简单来说就是由后端生成的一个唯一的登陆态，并传给前端保存在前端，每次前端请求时都会携带着 Token ，后端会先去解析这个 Token ，看看是不是后台给我们的，是否登陆超时，校验通过了，才会同意接口请求。

@@ -93,9 +93,9 @@
 
 ## 浏览器并发请求数量问题
 * 基于端口数量和线程切换开销的考虑,浏览器不可能无限量的并发请求
-* 并非越大越好，基于良知和默契的考虑，保护浏览器和服务器更好的性能
-* 迅雷、暴风影音等可以修改电脑的最大连接数
-* 用户可以重写浏览器的默认值(IE)
+* 浏览器并发请求数量问题并非越大越好，各大浏览器厂商基于良知和默契的考虑，为保护浏览器和服务器更好的性能，制定了自家的并发请求数量标准。
+* 当然并发请求数量不是不可更改的，迅雷、暴风影音等可以修改电脑的最大连接数，从而达到下载或请求的最高效率。
+* 部分浏览器还可以重写浏览器的默认值，比如 IE浏览器
 * 目前浏览器的最大同域并发请求数量
 	
 Browser|Max
@@ -104,4 +104,5 @@ IE8,9| 6
 Firefox|6
 Chrome|6
 
-* [已有解决方案](https://www.zhihu.com/question/20474326/answer/15696641)：domain hash, cookie free, css sprites, js/css combine, max expires time, loading images on demand
+* 针对最大并发请求数量的问题，现在[已有解决方案](https://www.zhihu.com/question/20474326/answer/15696641)，大致分为以下几类，这里不作特别讲解，有想了解的同学可以自行点击链接查看。
+	* 解决方式分类: domain hash, cookie free, css sprites, js/css combine, max expires time, loading images on demand

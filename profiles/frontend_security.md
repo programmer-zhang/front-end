@@ -64,10 +64,10 @@
 index.html#<img src="404.html" onerror="alert(document.cookie)" />
 ```
 
-* 这里就会发现弹窗内容为我们存取的cookie
+* 这里就会发现弹窗内容为我们存取的 `cookie`
 
 * **注意**
-	1. 必须用IE浏览器打开这个链接，因为chrome和safari等浏览器，会主动将url里的一下字符串进行encode，保证了一定的安全性
+	1. 必须用IE浏览器打开这个链接，因为 chrome 和 safari 等浏览器，会主动将url里的一下字符串进行encode，保证了一定的安全性。
 	2. 为什么我们这里用 img标签 的 onerror 来注入脚本呢？而不是直接用 script 标签来执行，我们修改一下访问的地址 `index.html#<script>alert(document.cookie)</script>`，这时会发现，页面并没有执行这段代码，但是这段代码已经注入到了 `#test` 节点标签中了。所以，一般通过img的onerror来注入是最有效的方法
 
 ### 存储型(持久型XSS攻击)
@@ -155,7 +155,7 @@ function inner(){
 
 	* 通过这些字符的替换，之前我们输入的 `<img src="null" onerror="alert()">` 就被encode 成了`&lt;img src=&quot;null&quot; onerror=&quot;alert()&quot;&gt;`
 
-* **`js的encode`**: 使用 '\' 对特殊字符进行转义，除数字字母之外，小于127的字符编码使用16进制 '\xHH' 的方式进行编码，大于用 unicode（非常严格模式）
+* **`js的encode`**: 使用 '\' 对特殊字符进行转义，除数字字母之外，小于127的字符编码使用16进制 `\xHH` 的方式进行编码，大于用 unicode（非常严格模式）
 
 	* 用 '\' 对特殊字符进行转义, 就可以使得js变为一个字符串, 而不是一个可执行的js代码了, 那为什么还需要进行16进制转换和unicode转换呢? 这样做是为了预防一下隐藏字符, 比如换行符可能会对js代码进行换行
 

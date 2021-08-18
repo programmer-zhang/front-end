@@ -132,13 +132,13 @@
 
 > [SSR 服务器端渲染](./profiles/SSR服务器端渲染.md)
 
-> [Nginx_基础架构介绍](./profiles/nginx_base.md)
+> [Nginx系列(一): Nginx_基础架构介绍](./profiles/nginx_base.md)
 
-> [Nginx_基本配置](./profiles/nginx_conf.md)
+> [Nginx系列(二): Nginx_基本配置](./profiles/nginx_conf.md)
 
-> [Nginx_配置 upstream 实现负载均衡](./profiles/nginx_upstream.md)
+> [Nginx系列(三): Nginx_配置 upstream 实现负载均衡](./profiles/nginx_upstream.md)
 
-> [Nginx_location 路由转发规则](./profiles/nginx_location.md)
+> [Nginx系列(四): Nginx_location 路由转发规则](./profiles/nginx_location.md)
 
 > [Vue this.$set的正确打开方式](./profiles/vue_this.set.md)
 
@@ -204,7 +204,7 @@
 
 > [更友好的使用 Chorme 浏览器](./profiles/Chrome-Devtools.md)
 
-> [前端安全]
+> [前端安全](./profiles/frontend_security.md)
 
 > [前端反爬虫]
 

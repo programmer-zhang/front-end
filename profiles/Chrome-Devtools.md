@@ -43,8 +43,13 @@
 	* `!`: 运行脚本文件
 	* `>`: 打开某菜单功能
 
+![快速开始](../images/chromeDevtool/quick-start.png)
+
 ### 花式 console
 * `congsole.log()、console.error()、console.warn()、console.info()` 常规打印数据信息
+
+![带样式打印](../images/chromeDevtool/console-1.png)
+
 * `console.table()` 表格形式打印复杂的数据结构
 * `console.group()、console.groupEnd()` 分组打印信息
 * `console.assert()` 条件打印
@@ -54,14 +59,17 @@
 
 ![带样式打印](../images/chromeDevtool/console.jpg)
 
-### 截图：`> screen`
+### 自带屏幕截图：`> screen`
+* 包含 区域截图，整屏截图，节点截图，屏幕捕获功能
 
 ![chrome截图](../images/chromeDevtool/screenshot.png)
 
 ### 性能监视器：`> performance monitor`
 
+![性能监视](../images/chromeDevtool/performance-monitor.png)
+
 ### 检查无用的css/js
-* `more tools => Coverage`
+* 工具栏 `more tools => Coverage`
 
 ![检查没用的CSS/JS](../images/chromeDevtool/coverage.jpg)
 

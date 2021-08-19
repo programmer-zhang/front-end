@@ -1,11 +1,14 @@
-> 工欲善其事必先利其器，Chrome浏览器应该算是前端开发人员最常用的工具了，本期带来一些很实用的chrome浏览器调试方法
+# Chrome 开发者工具高端使用技巧
+> 工欲善其事必先利其器，Chrome 浏览器应该算是前端开发人员最常用的工具了，本期带来一些很实用的Chrome浏览器调试方法，这些调试方式可以从性能，逻辑，布局，交互等等方面帮助和提高开发效率。
 
-## 如何打开Chrome Devtool
-* 在Chrome菜单中选择 更多工具 > 开发者工具
-* 在页面元素上右键点击，选择 “检查”
-* 使用 快捷键 Ctrl+Shift+I (Windows) 或 Cmd+Opt+I (Mac)
+## 如何打开 Chrome Devtool
+* 在 Chrome 菜单中选择 更多工具 > 开发者工具
+* 在页面元素上右键点击，选择 '检查'
+* 使用 快捷键 `Ctrl+Shift+I (Windows)` 或 `Cmd+Opt+I (Mac)`
 
-## 你真的认识Chrome devtool 吗
+## 你真的了解 Chrome devtool 的工具栏吗
+> Chrome devtool 包含有很丰富的功能，工具栏上的功能分别为以下几类
+
 ![](../images/chromeDevtool/devtool.png)
 
 * 设备模式

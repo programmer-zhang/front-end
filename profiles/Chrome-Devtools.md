@@ -69,7 +69,8 @@
 ![性能监视](../images/chromeDevtool/performance-monitor.png)
 
 ### 检查无用的css/js
-* 工具栏 `more tools => Coverage`
+* 这个功能帮助你检查页面上 CSS/JS 没有用到的比例，没有用到的用红色表示，用到的用绿色表示。
+* 打开方式: 工具栏  `more tools => Coverage` 标签，然后点击记录按钮，刷新页面，页面加载完成之后单击停止，就会显示页面的代码占比。
 
 ![检查没用的CSS/JS](../images/chromeDevtool/coverage.jpg)
 

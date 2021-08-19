@@ -80,26 +80,28 @@
 * hover、active
 
 ### 模拟断网进行错误处理
-* offline、fast 3G
+* 模拟不同网络速度下页面的展示情况
 
-### 用timeline/performance查看执行时间
-* 格子代表帧率
-* 黄色js CPU占有率
-* 红色 失帧比较厉害
-* 紫色css CPU占有率
+![network](../images/chromeDevtool/network.png)
 
 ### 检查内存泄漏
-* `Memory => profiles`
+* 只要存在一个引用就不会进行GC回收，有些DOM节点没有 append 到 DOM ，但是存在引用指向它，它就是一个分离的DOM的结点。这个时候就发生了 DOM 内存泄漏。这个时候拍一张内存堆的快照，Chrome 会帮我们把这些分离 DOM 结点用黄色标注出来。
+* 打开方式: `Memory => profiles`
+
+![内存泄漏](../images/chromeDevtool/profiles.png)
 
 ### 查看内存消耗
-* `Memory => profiles => ALLOCATION TIMELINES`
+* 查看某个操作内存消耗情况，可以使用 Record Allocation 功能进行记录。
+* 打开方式: `Memory => profiles => ALLOCATION TIMELINES`, 点击开始记录后，操作完成单击停止，就会出现使用情况分析。
+
+![allocation-timeline](../images/chromeDevtool/allocation-timeline.png)
 
 ### 远程调试
 * `chrome://inspect/`
 
-### Scroll Into View 滚动至DOM位置
+### Scroll Into View 滚动至 DOM 位置
 
-### DOM断点测试
+### DOM 断点测试
 
 ### 研究重绘
 

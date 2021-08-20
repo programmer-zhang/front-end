@@ -76,13 +76,15 @@
 
 ### 伪类伪元素调试
 
-![](../images/chromeDevtool/pseudo-class.png)
+![pseudo-class](../images/chromeDevtool/pseudo-class.png)
 
 ### 查看 DOM 节点绑定事件
 
-![](../images/chromeDevtool/define-fun.png)
+![define-fun](../images/chromeDevtool/define-fun.png)
 
-### debugger
+### 善用 network 过滤器
+
+![network-filter](../images/chromeDevtool/network-filter.gif)
 
 ### 模拟断网进行错误处理
 * 模拟不同网络速度下页面的展示情况
@@ -103,11 +105,15 @@
 
 ### Scroll Into View 滚动至 DOM 位置
 
+![scroll-into-view](../images/chromeDevtool/scroll-into-view.gif)
+
 ### DOM 断点测试
 
-### 研究重绘
+![dom-break-on](../images/chromeDevtool/dom-break-on.png)
 
-### 垃圾回收
+### 重新发送 XHR 请求
+
+![repeat-xhr](../images/chromeDevtool/repeat-xhr.png)
 
 ## 浏览器并发请求数量问题
 * 基于端口数量和线程切换开销的考虑,浏览器不可能无限量的并发请求

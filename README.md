@@ -202,7 +202,7 @@
 
 > [前端性能优化(三): 网络传输层优化](./profiles/[前端性能优化]网络传输层优化.md)
 
-> [更友好的使用 Chorme 浏览器](./profiles/Chrome-Devtools.md)
+> [Chorme Devtool 的各种骚技巧](./profiles/Chrome-Devtools.md)
 
 > [前端安全](./profiles/frontend_security.md)
 

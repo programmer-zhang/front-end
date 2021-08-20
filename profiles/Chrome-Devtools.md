@@ -8,7 +8,7 @@
 * 在页面元素上右键点击，选择 '检查'
 * 使用 快捷键 `Ctrl+Shift+I (Windows)` 或 `Cmd+Opt+I (Mac)`
 
-## 你真的了解 Chrome devtool 的工具栏吗
+## 你真的了解 Chrome Devtool 的工具栏吗
 > Chrome devtool 包含有很丰富的功能，工具栏上的功能分别为以下几类
 
 ![](../images/chromeDevtool/devtool.png)

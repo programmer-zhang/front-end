@@ -45,20 +45,6 @@
 
 ![快速开始](../images/chromeDevtool/quick-start.png)
 
-### 花式 console
-* `congsole.log()、console.error()、console.warn()、console.info()` 常规打印数据信息
-
-![带样式打印](../images/chromeDevtool/console-1.png)
-
-* `console.table()` 表格形式打印复杂的数据结构
-* `console.group()、console.groupEnd()` 分组打印信息
-* `console.assert()` 条件打印
-* `console.dir()` 递归打印对象的所有属性
-* `console.trace()` 追踪函数的调用轨迹
-* 带样式打印
-
-![带样式打印](../images/chromeDevtool/console.jpg)
-
 ### 自带屏幕截图：`> screen`
 * 包含 区域截图，整屏截图，节点截图，屏幕捕获功能
 
@@ -74,10 +60,29 @@
 
 ![检查没用的CSS/JS](../images/chromeDevtool/coverage.jpg)
 
-### debugger
+### 花式 console
+* `congsole.log()、console.error()、console.warn()、console.info()` 常规打印数据信息
 
-### 断点检查
-* hover、active
+![带样式打印](../images/chromeDevtool/console-1.png)
+
+* `console.table()` 表格形式打印复杂的数据结构
+* `console.group()、console.groupEnd()` 分组打印信息
+* `console.assert()` 条件打印
+* `console.dir()` 递归打印对象的所有属性
+* `console.trace()` 追踪函数的调用轨迹
+* 带样式打印
+
+![带样式打印](../images/chromeDevtool/console.jpg)
+
+### 伪类伪元素调试
+
+![](../images/chromeDevtool/pseudo-class.png)
+
+### 查看 DOM 节点绑定事件
+
+![](../images/chromeDevtool/define-fun.png)
+
+### debugger
 
 ### 模拟断网进行错误处理
 * 模拟不同网络速度下页面的展示情况
@@ -95,9 +100,6 @@
 * 打开方式: `Memory => profiles => ALLOCATION TIMELINES`, 点击开始记录后，操作完成单击停止，就会出现使用情况分析。
 
 ![allocation-timeline](../images/chromeDevtool/allocation-timeline.png)
-
-### 远程调试
-* `chrome://inspect/`
 
 ### Scroll Into View 滚动至 DOM 位置
 

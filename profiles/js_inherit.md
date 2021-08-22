@@ -36,10 +36,10 @@ subType.prototype.constructr = superType()
 
 ## 继承方式四：extends 实现继承(ES6 方法)
 * 原理: 本质上也是原型链继承，实现了两步原型链继承
-* 大多数浏览器的 ES5 实现之中，每一个对象都有 `_proto_` 属性，指向对应的构造函数的 `prototype`属性
-* Class 作为构造函数的语法糖，同时有 `prototype` 属性和 `_proto_` 属性，因此同时存在两条继承链
-	* 子类 `_proto_`属性，表示构造函数的继承，总是指向父类。（把子类构造函数(Child)的原型(`_proto_`)指向了父类构造函数(Parent)）
-	* 子类 `prototype` 属性的 `_proto_` 属性，表示方法的继承，总是指向父类的 `prototype` 属性
+* 大多数浏览器的 ES5 实现之中，每一个对象都有 `_proto_` 属性，指向对应的构造函数的 `prototype`属性。
+* Class 作为构造函数的语法糖，同时有 `prototype` 属性和 `_proto_` 属性，因此同时存在两条继承链。
+	* 子类 `_proto_`属性，表示构造函数的继承，总是指向父类。(把子类构造函数(Child)的原型(`_proto_`)指向了父类构造函数(Parent))。
+	* 子类 `prototype` 属性的 `_proto_` 属性，表示方法的继承，总是指向父类的 `prototype` 属性。
 * Bable对extends语法糖的部分编译结果
 
 ```

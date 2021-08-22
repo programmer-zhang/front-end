@@ -82,7 +82,7 @@
 
 > [原型链]
 
-> [继承](./profiles/js_inherit.md)
+> [JS 继承方式](./profiles/js_inherit.md)
 
 > [函数柯里化]
 

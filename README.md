@@ -17,7 +17,7 @@
 
 > [如何优雅地画一像素的线](./profiles/css-one-px.md)
 
-> [DOM元素 居中的多种实现方式]
+> [DOM元素 居中的多种实现方式](./profiles/dom-center.md)
 
 > [面试官问你`<img />`是什么元素时你怎么回答](./profiles/HTML_img.md)
 

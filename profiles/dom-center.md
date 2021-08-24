@@ -75,3 +75,54 @@
 	right: 0;
 }
 ```
+
+## 垂直居中
+### 单行文本
+* 单行文本的垂直居中只需要将文本节点的 `高度 === 行高` 即可
+
+```
+.text-line {
+	height: single_line_height;
+	line-height: single_line_height;
+}
+```
+
+### 行内块级元素
+* 使用display: inline-block; vertical-align: middle; 和一个伪元素让内容块处于容器中央。
+
+```
+.parent::after{
+	content:'';
+	height:100%;
+	display:inline-block;
+	vertical-align:middle;
+}
+.son{
+	display:inline-block;
+	vertical-align:middle;
+}
+```
+
+### table 布局
+* 这种方式虽然可以解决问题，但是鉴于 `table` 布局较少使用而且对SEO不友好，不建议使用这种方式。
+
+```
+.parent {
+	display: table;
+}
+.son {
+	display: table-cell;
+	vertical-align: middle;
+}
+```
+
+### Flex 布局
+* 这是大家在开发过程中最常用的方式之一，也是最快速实现居中的方式，针对高度固定与不固定的 DOM 元素均可以使用这种方式，目前 flex 布局的兼容性也很好，成为大家解决居中问题的首选方式。
+* 但是这种方式也会存在一定的问题，如果在开发中引入一些未使用 Flex 布局的组件，就会对页面的排版造成影响，需要进行样式覆盖，所以大家在开发的过程中也可以根据自身需要选择合适的方式。
+
+```
+.parent {
+	display: flex;
+	align-items: center;
+}
+```

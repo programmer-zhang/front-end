@@ -52,9 +52,22 @@ let clickTimer = null;
 
 ```
 function singleClick() {
+	// 先清除上次执行的Timer
+	clearTimeout(clickTimer);
+	// 利用Timer的时间间隔进行单击延时
 	clickTimer = setTimeout(function() {
 		...do something
 		console.log("鼠标单击");
 	}, 300);
+}
+```
+
+* 然后处理【双击】事件
+
+```
+function doubleClick() {
+	// 因为会先执行【单击】事件，所以先将执行的 Timer 清除掉
+	clearTimeout(clickTimer);
+	...do something
 }
 ```

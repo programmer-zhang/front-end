@@ -54,7 +54,7 @@
 
 > [JS 运行机制(外链资料)](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
-> [JS 同节点绑定【双击】【单击】事件]
+> [JS 同节点同时绑定【双击】【单击】事件](./profiles/js_double-click.md)
 
 > [JS 模拟点击事件]
 

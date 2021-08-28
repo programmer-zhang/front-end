@@ -115,6 +115,48 @@
 
 ![repeat-xhr](../images/chromeDevtool/repeat-xhr.png)
 
+### 使用 Source Order Viewer 进行更好的可访问性检查
+
+> 在源顺序查看器显示了元素的顺序在源文件中的定义。使用此功能可以帮助改善使用辅助技术的人的体验。这种顺序类似于 tabindex  对页面元素顺序的影响。
+
+![source-order-viewer](../images/chromeDevtool/source-order-viewer.gif)
+
+### 使用 CSS 字体编辑器轻松控制排版
+
+![font-editor](../images/chromeDevtool/font-editor.gif)
+
+### 使用 CSS Grid 和 Flexbox 编辑器更好地调试
+
+![css-grid-flexbox-editor](../images/chromeDevtool/css-grid-flexbox-editor.gif)
+
+### 使用 CSS 概览面板重构和改进您的样式表
+
+![css-overview-improved](../images/chromeDevtool/css-overview-improved.gif)
+
+### 创建您自己的键盘快捷键并提高工作效率
+
+![shortcut-editor](../images/chromeDevtool/shortcut-editor.gif)
+
+### 检查和调试 CSS 网格
+
+![css-grid-inspecting](../images/chromeDevtool/css-grid-inspecting.gif)
+
+### 快速更改 CSS 和 HTML 代码中的数值
+
+![quick-change-numeric-values](../images/chromeDevtool/quick-change-numeric-values.gif)
+
+### 使用 CSS 概览面板查看 CSS 信息
+
+![css-overview](../images/chromeDevtool/css-overview.gif)
+
+### 复制并提取页面上元素的所有 CSS
+
+![extract-element-styles](../images/chromeDevtool/extract-element-styles.gif)
+
+### 生成 JavaScript 表达式以获取 DOM 节点
+
+![copy-js-path](../images/chromeDevtool/copy-js-path.gif)
+
 ## 浏览器并发请求数量问题
 * 基于端口数量和线程切换开销的考虑,浏览器不可能无限量的并发请求
 * 浏览器并发请求数量问题并非越大越好，各大浏览器厂商基于良知和默契的考虑，为保护浏览器和服务器更好的性能，制定了自家的并发请求数量标准。

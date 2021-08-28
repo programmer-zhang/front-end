@@ -96,7 +96,7 @@
 
 > [一文看懂 JS 中 0.1 + 0.2 !== 0.3](./profiles/js浮点数计算.md)
 
-> [十进制与二进制的相互转换]
+> [十进制 与 二进制 的相互转换]
 
 > [IEEE 754 的四种舍入方向]
 
@@ -202,7 +202,7 @@
 
 > [前端性能优化(三): 网络传输层优化](./profiles/[前端性能优化]网络传输层优化.md)
 
-> [Chorme Devtool 的各种骚技巧](./profiles/Chrome-Devtools.md)
+> [Chorme 开发者工具 的各种骚技巧](./profiles/Chrome-Devtools.md)
 
 > [前端安全](./profiles/frontend_security.md)
 

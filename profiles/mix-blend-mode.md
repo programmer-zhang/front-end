@@ -1,4 +1,4 @@
-# 使用 `mix-blend-mode` 制作文字镂空效果
+# CSS冷门属性 `mix-blend-mode` 制作文字镂空效果
 
 ## 阅读本文您将收获
 * `mix-blend-mode` 属性介绍

@@ -35,7 +35,7 @@
 
 > [自用部分代码规范](./profiles/自用代码规范.md)
 
-> [CSS冷门属性 `mix-blend-mode` 实现镂空效果]
+> [CSS冷门属性 `mix-blend-mode` 制作文字镂空效果]
 
 > [`<input />` 标签 `type` 属性的各种用法]
 

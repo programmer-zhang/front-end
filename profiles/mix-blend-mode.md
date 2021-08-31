@@ -9,3 +9,21 @@
 * 如果你觉得文字描述难以理解，没有问题，请继续看下面的代码实践，通过实际效果来了解 `mix-blend-mode` 的各种属性值。
 
 ## `mix-blend-mode` 属性值
+### `normal/initial/inherit/unset` 
+* 这几个属性值对设置元素的样式无特殊影响，分别是 正常、默认、继承、还原，所以这四种样式效果不再解释及展示效果。
+
+### `multiply` 正片叠底
+### `screen` 滤色
+### `overlay` 叠加
+### `darken` 变暗
+### `lighten` 变亮
+### `color-dodge` 颜色减淡
+### `color-burn` 颜色加深
+### `hard-light` 强光
+### `soft-light` 柔光
+### `difference` 差值
+### `exclusion` 排除
+### `hue` 色相
+### `saturation` 饱和度
+### `color` 颜色
+### `luminosity` 亮度

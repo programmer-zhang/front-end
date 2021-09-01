@@ -1,4 +1,5 @@
 # CSS冷门属性 `mix-blend-mode` 制作文字镂空效果
+> 本篇文章为大家带来如何制作文字镂空效果，仅仅使用CSS样式进行处理，借助 `mix-blend-mode` 属性，将文字的颜色反转，从而实现视觉上镂空
 
 ## 阅读本文您将收获
 * `mix-blend-mode` 属性介绍
@@ -51,9 +52,29 @@
 * `hard-light` 的效果是强光，表现为图像亮的地方更亮，暗的地方更暗。多用在图像表现处理上。
 * `soft-light` 的效果是柔光，表现效果和 `hard-light` 有类似之处，只是表现没有那么强烈。
 
-### `difference` 差值
-### `exclusion` 排除
-### `hue` 色相
-### `saturation` 饱和度
-### `color` 颜色
-### `luminosity` 亮度
+### `difference` 差值 & `exclusion` 排除
+* 两种效果相差不大，可以实现反色的效果，只不过 `exclusion` 的对比度要低一些。
+
+![exclusion.gif](../images/mixBlendMode/exclusion.gif)
+
+### `hue` 色相 & `saturation` 饱和度 & `color` 颜色 & `luminosity` 亮度
+* 这四种属性值都是颜色系混合模式，在web开发中不常用。
+
+## 实现字体镂空效果
+![](../images/mixBlendMode/top.png)
+
+* 经过了上面的属性和属性值的介绍，我们可以通过 `screen` 滤色 属性值将设置元素颜色变淡，从而实现设置元素的颜色反转。
+* 代码如下
+
+```
+.parent {
+	background-image: url("xxx");
+	.child {
+		font-weight: 900;
+		font-size: 50px;
+		color: #000;
+		background-color: #fff;
+		mix-blend-mode: screen;
+	}
+}
+```

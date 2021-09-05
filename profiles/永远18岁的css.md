@@ -1,5 +1,5 @@
-## 利用`:valid`和`：invalid`做表单即时校验
-* `html5` 丰富了表单元素，提供了类似`required`,`email`,`tel` 等表单元素属性。同样的，我们可以利用 `:valid` 和 `:invalid` 来做针对`html5`表单属性的校验
+## 利用 `:valid` 和 `：invalid` 做表单即时校验
+* `html5` 丰富了表单元素，提供了类似 `required`, `email` , `tel` 等表单元素属性。同样的，我们可以利用 `:valid` 和 `:invalid` 来做针对 `html5` 表单属性的校验
 * `:required` 伪类指定具有required 属性的表单元素
 * `:valid` 伪类指定一个通过匹配正确的所要求的表单元素
 * `:invalid` 伪类指定一个不匹配指定要求的表单元素
@@ -70,7 +70,7 @@
 ```
 
 ## 用`:target`实现折叠面板
-* 利用`:target`可以实现以前只能使用JavaScript实现的显示隐藏或者collapse折叠面板
+* 利用`:target`可以实现以前只能使用JavaScript实现的显示隐藏或者 collapse 折叠面板
 
 ```
 // HTML

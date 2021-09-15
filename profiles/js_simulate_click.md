@@ -20,3 +20,5 @@ document.getElementById('SimulateADom').click();
 
 ### 执行效果
 ![base-click](../images/jsSimulateClick/base-click-dom.gif)
+
+## 高阶方案: 注册事件进行模拟点击

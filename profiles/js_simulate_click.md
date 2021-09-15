@@ -8,14 +8,15 @@
 
 ## 直接执行点击事件(click)
 ### 方案解析
-* 通过直接选中需要执行DOM节点，直接执行绑定在节点上的click事件来模拟人为点击
+* 通过直接选中需要执行DOM节点，直接执行绑定在节点上的click事件来模拟人为点击。
+* 这种方式针对DOM节点直接绑定事件以及 `<a>` 标签绑定 `href` 属性进行跳转都是支持的。
 
 * 这种执行方式比较常见，也是脚本自动执行页面事件中常用的一种方式，当我们需要处理的页面事件简单，并且事件绑定简单的话我们可以使用这种方式，能够方便快捷地实现我们需要的效果，而且和真人点击没有区别。
 
-
 ```
-document.getElementById('SimulateClickDom').click()
+document.getElementById('SimulateClickDom').click();
+document.getElementById('SimulateADom').click();
 ```
 
 ### 执行效果
-![base-click](../images/jsSimulateClick/base-click.gif)
+![base-click](../images/jsSimulateClick/base-click-dom.gif)

@@ -1,3 +1,4 @@
+# 一些 CSS 解决交互问题使用技巧
 ## 利用 `:valid` 和 `：invalid` 做表单即时校验
 * `html5` 丰富了表单元素，提供了类似 `required`, `email` , `tel` 等表单元素属性。同样的，我们可以利用 `:valid` 和 `:invalid` 来做针对 `html5` 表单属性的校验
 * `:required` 伪类指定具有required 属性的表单元素

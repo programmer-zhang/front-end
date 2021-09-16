@@ -1,3 +1,4 @@
+# JS 判断数据类型
 ### typeof
 * typeof 返回值对应表
 

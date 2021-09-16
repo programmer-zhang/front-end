@@ -1,3 +1,4 @@
+# ES6 Proxy 使用方法&场景
 > Vue3.0 开始用 Proxy 代替 Object.defineProperty了，这篇文章结合实例教你如何使用Proxy
 
 ## 阅读本文您将收获

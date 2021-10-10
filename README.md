@@ -29,7 +29,7 @@
 
 > [硬件加速 CSS 来提高网站性能(外链资料)](http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
 
-> [CSS 小图形](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTest.vue)
+> [纯 CSS 实现一些小图形](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTest.vue)
 
 > [纯 CSS 实现文本超出隐藏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTestPhone.vue)
 

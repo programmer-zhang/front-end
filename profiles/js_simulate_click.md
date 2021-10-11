@@ -22,3 +22,4 @@ document.getElementById('SimulateADom').click();
 ![base-click](../images/jsSimulateClick/base-click-dom.gif)
 
 ## 高阶方案: 注册事件进行模拟点击
+> 此方案适合直接使用 `click()` 无效的情况下, 事件的适用场景较广泛。

@@ -30,3 +30,6 @@
 * 检查所需环境是否满足需要，MacOS下PHP等环境是系统集成其中的，不需要单独下载。
 	* PHP 环境验证方式 `php -m|less`
 	* MySQL 安装与校验
+	* Apache 校验 `apachectl -v`
+* 启动 Apache 服务 `sudo apachectl start`
+	* 启动校验，浏览器网址: `http://localhost`, 显示 `it works` 即为启动成功

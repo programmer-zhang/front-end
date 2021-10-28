@@ -2,7 +2,7 @@
 * 安装homebrew,
 	* 验证方式 `brew --version`
 * MacOS 集成了PHP环境，所以不需要安装
-	* 验证方式 `php =m|less`
+	* 验证方式 `php -m|less`
 * 安装 Composer
 	* 指令:(四条指令，分开执行) 
 	
@@ -24,5 +24,9 @@
 
 ---另写一篇---
 
+* [官方安装文档](https://cn.wordpress.org/support/category/installation/)
+
 * 本地 [手动下载wordpress](https://cn.wordpress.org/download/#download-install)
 * 检查所需环境是否满足需要，MacOS下PHP等环境是系统集成其中的，不需要单独下载。
+	* PHP 环境验证方式 `php -m|less`
+	* MySQL 安装与校验

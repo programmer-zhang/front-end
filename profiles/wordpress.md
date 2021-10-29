@@ -22,10 +22,30 @@
 	```
 
 
----另写一篇---
+---
+## 另写一篇
+* https://blog.csdn.net/u012910985/article/details/48131801
+* https://www.jianshu.com/p/063ec385b823
+* xampp搭建： https://www.jianshu.com/p/f4862dfbfbc4
+
+---
+### 我的错误
+### Mac os下 Apache 正常启动 localhost 无法访问服务器
+* 一个查看apachectl 访问localhost失败查看原因的指令 `sudo /usr/sbin/httpd -k start` 或者 `sudo apachectl -k restart`，看到原因之后去查原因
+	* 报错信息： `No code signing authority for module at /usr/libexec/apache3/libphp7.so specified in LoadModule directive. Proceeding with loading process, but this will be an error condition in a future version of macOS.
+httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load libexec/apache3/libphp7.so into server: dlopen(/usr/libexec/apache3/libphp7.so, 10): image not found`
+	* 原因： 查了下应该是MAC自带的php版本与apache版本不符合，需要重新安装个php
+
+### 一些操作
+* /etc/apache2  目录下查看Apache版本 `httpd -version`
+* 查找php*.so安装位置 `php -i` => 搜索 `extension_dir`
+	* 我的是 `extension_dir => /usr/lib/php/extensions/no-debug-non-zts-20180731 => /usr/lib/php/extensions/no-debug-non-zts-20180731`
+	* 然后去上边这个路径下找libphp7.so文件
+* 查看本机Apache启动php情况 https://blog.csdn.net/wtdask/article/details/83510757
 
 * [官方安装文档](https://cn.wordpress.org/support/category/installation/)
 
+### 安装过程
 * 本地 [手动下载wordpress](https://cn.wordpress.org/download/#download-install)
 * 检查所需环境是否满足需要，MacOS下PHP等环境是系统集成其中的，不需要单独下载。
 	* PHP 环境验证方式 `php -m|less`
@@ -33,3 +53,9 @@
 	* Apache 校验 `apachectl -v`
 * 启动 Apache 服务 `sudo apachectl start`
 	* 启动校验，浏览器网址: `http://localhost`, 显示 `it works` 即为启动成功
+* 启动 PHP 环境
+	* 修改 Apache 配置文件 文件位置: `/etc/apache2/httpd.conf`
+	* 查找 `LoadModule php5_module libexec/apache2/libphp5.so` (php版本不同文件名字不同)，将注释去掉。
+	* 重启apachectl `sudo apachectl restart`
+* 
+

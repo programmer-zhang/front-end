@@ -1,49 +1,4 @@
 # MacOS环境 本地安装 WordPress
-* 安装homebrew,
-	* 验证方式 `brew --version`
-* MacOS 集成了PHP环境，所以不需要安装
-	* 验证方式 `php -m|less`
-* 安装 Composer
-	* 指令:(四条指令，分开执行) 
-	
-	```
-	php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
-	php composer-setup.php
-	php -r "unlink('composer-setup.php');"
-	mv composer.phar /usr/local/bin/composer
-	```
-	* 验证方式 
-	![](../images/wordPress/download-composer.png)
-	* 安装完成后，我们要为 Composer 来配置国内镜像（受不可抗力因素影响，官方镜像下载速度缓慢）。
-	* Composer 支持项目加速和全局加速，我们这里没有 Composer 项目，所以选择全局加速。在命令行中执行如下命令：
-
-	```
-	composer config -g repo.packagist composer https://packagist.phpcomposer.com
-	```
-
-
----
-## 另写一篇
-* https://blog.csdn.net/u012910985/article/details/48131801
-* https://www.jianshu.com/p/063ec385b823
-* xampp搭建： https://www.jianshu.com/p/f4862dfbfbc4
-
----
-### 我的错误
-### Mac os下 Apache 正常启动 localhost 无法访问服务器
-* 一个查看apachectl 访问localhost失败查看原因的指令 `sudo /usr/sbin/httpd -k start` 或者 `sudo apachectl -k restart`，看到原因之后去查原因
-	* 报错信息： `No code signing authority for module at /usr/libexec/apache3/libphp7.so specified in LoadModule directive. Proceeding with loading process, but this will be an error condition in a future version of macOS.
-httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load libexec/apache3/libphp7.so into server: dlopen(/usr/libexec/apache3/libphp7.so, 10): image not found`
-	* 原因： 查了下应该是MAC自带的php版本与apache版本不符合，需要重新安装个php
-
-### 一些操作
-* /etc/apache2  目录下查看Apache版本 `httpd -version`
-* 查找php*.so安装位置 `php -i` => 搜索 `extension_dir`
-	* 我的是 `extension_dir => /usr/lib/php/extensions/no-debug-non-zts-20180731 => /usr/lib/php/extensions/no-debug-non-zts-20180731`
-	* 然后去上边这个路径下找libphp7.so文件
-* 查看本机Apache启动php情况 https://blog.csdn.net/wtdask/article/details/83510757
-
-* [官方安装文档](https://cn.wordpress.org/support/category/installation/)
 
 ### 安装过程
 * 本地 [手动下载wordpress](https://cn.wordpress.org/download/#download-install)
@@ -59,6 +14,9 @@ httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load 
 	* 查找 `LoadModule php5_module libexec/apache2/libphp5.so` (php版本不同文件名字不同)，将注释去掉。
 	* 重启apachectl `sudo apachectl restart`
 * 移动wordpress路径，即可打开wordpress配置页面
+
+# 在这里开始看，上面都是其他方式安装的，新版本MacOS会有问题，上面就不用看了！！！
+---
 
 ## MAMP 安装 wordPress 
 ### 涉及软件 & 扩展
@@ -80,26 +38,69 @@ httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load 
 
 ### 3.启动 MAMP 并配置 phpMyAdmin
 * 选择 web server 为 `Apache`，并启动服务。
-![](../images/wordpress/mamp-start.png)
+
+![](../images/wordPress/mamp-start.png)
 
 * 查看配置并确定端口号
 	* MAMP 工具栏选择设置 => 查看 Ports 选项确定各服务端口号，可以使用 `MAMP default` 的端口号，即如图所示:
-	![](../images/wordpress/mamp-ports.png)
+
+![](../images/wordPress/mamp-ports.png)
  
 * 启动服务，使用 Apache 的端口号打开配置页面， `MAMP default` 的端口号下地址为: `http://localhost:8888/MAMP/` 
 
 > 注: 正常启动成功后浏览器会自动打开配置页面
 
 * 如果安装和启动正常，你将看到下面的页面
-![](../images/wordpress/mamp-index.png)
+
+![](../images/wordPress/mamp-index.png)
 
 * 选择页面下方的 `MySQL` ,正常情况下首行会显示需要下载 `phpMyAdmin` 扩展，点击  `phpMyAdmin`,会跳转到 数据库 管理。
-![](../images/wordpress/mamp-mysql.png)
 
-* 
+![](../images/wordPress/mamp-mysql.png)
 
-* 将文件根目录更改为 wordpress 文件夹
-* 打开MAMP主页添加php拓展
-	* `localhost:8888/MAMP` => MySQL => `You can administer your MySQL databases with phpMyAdmin.`
-* 创建自己的数据库并链接，完成 wordpress 配置
+* 创建 WordPress 配置要用的数据库，这里名称不要用中文，后面的排序规则和其他数据库保持一致就好。
 
+![](../images/wordPress/mamp-phpmyadmin.png)
+
+* 创建完成之后我们就可以进行 `WordPress` 的相关配置和操作了。
+
+### 4.配置根目录
+* 确定 MAMP 的 server 根目录，正常应该是 `Applications/MAMP/htdocs`，如何查看如下图所示(我本机这里已经改了所以和默认的有所不同):
+
+![](../images/wordPress/mamp-server.png)
+
+* 将第二步我们解压的 wordpress 文件夹移动到这个根目录下，如下图这样:
+
+![](../images/wordPress/mamp-htdocs.png)
+
+* 然后修改 MAMP 的 server 根目录，选择server根目录下的 `choose`, 选择我们移动过去的wordpress 文件夹保存即可(就像我上上张图片那样)。
+* 打开浏览器 `localhost:8888`,如果能看到 `WordPress` 的配置页面就算是配置成功了。
+
+### 5.配置 WordPress
+* 在 WordPress 的配置页面地址要配置 数据库 信息，数据库名称和用户名密码(默认都是root)对应上即可。
+
+![](../images/wordPress/wordpress-config.png)
+
+* 提交后，没问题的话 WordPress 会自动跳转到填写网站信息的页面，填写相关信息提交后，会自动跳转到仪表盘页面，这样就算完成了，可以自己通过仪表盘添加页面元素，修改主题，增加博文等等操作了。
+
+## 一些页面地址
+* MAMP 配置页面地址: `http://localhost:8888/MAMP`
+* phpMyAdmin 数据库配置地址: `http://localhost:8888/phpMyAdmin5/index.php`
+* WordPress 仪表盘地址: `http://localhost:8888/wp-admin/index.php`
+* WordPress 博客页面地址: `http://localhost:8888`
+
+## 我的错误
+### Mac os下 Apache 正常启动 localhost 无法访问服务器
+* 一个查看apachectl 访问localhost失败查看原因的指令 `sudo /usr/sbin/httpd -k start` 或者 `sudo apachectl -k restart`，看到原因之后去查原因
+	* 报错信息： `No code signing authority for module at /usr/libexec/apache3/libphp7.so specified in LoadModule directive. Proceeding with loading process, but this will be an error condition in a future version of macOS.
+httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load libexec/apache3/libphp7.so into server: dlopen(/usr/libexec/apache3/libphp7.so, 10): image not found`
+	* 原因： 查了下应该是MAC自带的php版本与apache版本不符合，需要重新安装个php
+
+## 一些操作
+* /etc/apache2  目录下查看Apache版本 `httpd -version`
+* 查找php*.so安装位置 `php -i` => 搜索 `extension_dir`
+	* 我的是 `extension_dir => /usr/lib/php/extensions/no-debug-non-zts-20180731 => /usr/lib/php/extensions/no-debug-non-zts-20180731`
+	* 然后去上边这个路径下找libphp7.so文件
+* 查看本机Apache启动php情况 https://blog.csdn.net/wtdask/article/details/83510757
+
+* [官方安装文档](https://cn.wordpress.org/support/category/installation/)

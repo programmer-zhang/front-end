@@ -61,8 +61,44 @@ httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load 
 * 移动wordpress路径，即可打开wordpress配置页面
 
 ## MAMP 安装 wordPress 
-* 下载安装 MAMP 傻瓜式安装
-* 启动服务，使用默认端口号，将文件根目录更改为 wordpress 文件夹
+### 涉及软件 & 扩展
+* MAMP
+* wordPress 代码包
+
+### 1.MAMP 下载安装
+* 下载地址: [https://www.mamp.info/en/downloads/](https://www.mamp.info/en/downloads/)
+* 选择合适的版本进行下载，MAMP 区分MacOS(intel 芯片版本) 和 MacOS(M1芯片版本)
+	* 查看 MacOS 版本: 电脑左上角 小苹果图标 => 关于本机 => 概览中处理器信息
+
+> 注: MAMP 分为基础版本和PRO版本，基础版本够用了，不用花钱买PRO版本
+
+* 下载完成后正常安装就好，傻瓜式安装，一直继续就好，安装成功后启动台的图标为一个灰色的大象
+
+### 2.WordPress 下载解压
+* 下载地址: [https://wordpress.org/](https://wordpress.org/)
+* 顶部栏 `GetWordPress`点击 => 下滑有个 下载按钮，下载下来并解压，解压成功后应该是一个有很多 .php 文件的文件夹。
+
+### 3.启动 MAMP 并配置 phpMyAdmin
+* 选择 web server 为 `Apache`，并启动服务。
+![](../images/wordpress/mamp-start.png)
+
+* 查看配置并确定端口号
+	* MAMP 工具栏选择设置 => 查看 Ports 选项确定各服务端口号，可以使用 `MAMP default` 的端口号，即如图所示:
+	![](../images/wordpress/mamp-ports.png)
+ 
+* 启动服务，使用 Apache 的端口号打开配置页面， `MAMP default` 的端口号下地址为: `http://localhost:8888/MAMP/` 
+
+> 注: 正常启动成功后浏览器会自动打开配置页面
+
+* 如果安装和启动正常，你将看到下面的页面
+![](../images/wordpress/mamp-index.png)
+
+* 选择页面下方的 `MySQL` ,正常情况下首行会显示需要下载 `phpMyAdmin` 扩展，点击  `phpMyAdmin`,会跳转到 数据库 管理。
+![](../images/wordpress/mamp-mysql.png)
+
+* 
+
+* 将文件根目录更改为 wordpress 文件夹
 * 打开MAMP主页添加php拓展
 	* `localhost:8888/MAMP` => MySQL => `You can administer your MySQL databases with phpMyAdmin.`
 * 创建自己的数据库并链接，完成 wordpress 配置

@@ -53,9 +53,17 @@ httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load 
 	* Apache 校验 `apachectl -v`
 * 启动 Apache 服务 `sudo apachectl start`
 	* 启动校验，浏览器网址: `http://localhost`, 显示 `it works` 即为启动成功
+	* Apache webserver服务默认根目录 `Library/WebServer/Document`
 * 启动 PHP 环境
 	* 修改 Apache 配置文件 文件位置: `/etc/apache2/httpd.conf`
 	* 查找 `LoadModule php5_module libexec/apache2/libphp5.so` (php版本不同文件名字不同)，将注释去掉。
 	* 重启apachectl `sudo apachectl restart`
-* 
+* 移动wordpress路径，即可打开wordpress配置页面
+
+## MAMP 安装 wordPress 
+* 下载安装 MAMP 傻瓜式安装
+* 启动服务，使用默认端口号，将文件根目录更改为 wordpress 文件夹
+* 打开MAMP主页添加php拓展
+	* `localhost:8888/MAMP` => MySQL => `You can administer your MySQL databases with phpMyAdmin.`
+* 创建自己的数据库并链接，完成 wordpress 配置
 

@@ -15,6 +15,8 @@
 	* PHP 环境验证方式 `php -m|less`
 	* MySQL 安装与校验
 	* Apache 校验 `apachectl -v`
+
+### 启动相关软件服务
 * 启动 Apache 服务 `sudo apachectl start`
 	* 启动校验，浏览器网址: `http://localhost`, 显示 `it works` 即为启动成功
 	* Apache webserver服务默认根目录 `Library/WebServer/Document`
@@ -22,7 +24,8 @@
 	* 修改 Apache 配置文件 文件位置: `/etc/apache2/httpd.conf`
 	* 查找 `LoadModule php5_module libexec/apache2/libphp5.so` (php版本不同文件名字不同)，将注释去掉。
 	* 重启apachectl `sudo apachectl restart`
-* 移动wordpress路径，即可打开wordpress配置页面
+* 移动 WordPress 至 Apache 默认根目录，按照目录路径即可打开 WordPress 配置页面
+	* 也可以更改 Apache 默认根目录为 WordPress 位置，重启 Apache 也可
 
 # 在这里开始看，上面都是其他方式安装的，新版本MacOS会有问题，上面就不用看了！！！
 ---

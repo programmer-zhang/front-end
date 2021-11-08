@@ -10,25 +10,22 @@
 * 本地 [手动下载wordpress](https://cn.wordpress.org/download/#download-install)
 	* 下载成功后解压，文件夹内便是 WordPress 的页面文件包(记住包的地址, 当然也可以随意放，后期再更改地址即可)。
 
-### 检查软件环境
+### 1.检查软件环境
 * 检查所需环境是否满足需要，MacOS下 PHP 等环境是系统集成其中的，不需要单独下载。
 	* PHP 环境验证方式 `php -m|less`
 	* MySQL 安装与校验
 	* Apache 校验 `apachectl -v`
 
-### 启动相关软件服务
+### 2.启动相关软件服务
 * 启动 Apache 服务 `sudo apachectl start`
 	* 启动校验，浏览器网址: `http://localhost`, 显示 `it works` 即为启动成功
 	* Apache webserver服务默认根目录 `Library/WebServer/Document`
 * 启动 PHP 环境
 	* 修改 Apache 配置文件 文件位置: `/etc/apache2/httpd.conf`
 	* 查找 `LoadModule php5_module libexec/apache2/libphp5.so` (php版本不同文件名字不同)，将注释去掉。
-	* 重启apachectl `sudo apachectl restart`
+	* 重启 apachectl `sudo apachectl restart`
 * 移动 WordPress 至 Apache 默认根目录，按照目录路径即可打开 WordPress 配置页面
 	* 也可以更改 Apache 默认根目录为 WordPress 位置，重启 Apache 也可
-
-# 在这里开始看，上面都是其他方式安装的，新版本MacOS会有问题，上面就不用看了！！！
----
 
 ## 方式二: 使用 MAMP 集成环境 安装
 ### 涉及软件 & 扩展

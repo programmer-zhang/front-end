@@ -3,6 +3,9 @@
 
 > 本文介绍两种搭建 WordPress 网站的方式，一种是通过分步安装 Apache、MySQL、PHP环境进行搭建，灵活性高；一种是通过 MAMP 集成式快速搭建。
 
+> 注: 本文安装硬件环境均为 MacOS
+
+## 方式一: 分步安装 Apache、MySQL、PHP环境进行搭建
 ### 安装过程
 * 本地 [手动下载wordpress](https://cn.wordpress.org/download/#download-install)
 * 检查所需环境是否满足需要，MacOS下PHP等环境是系统集成其中的，不需要单独下载。

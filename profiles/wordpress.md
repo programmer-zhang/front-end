@@ -1,4 +1,7 @@
-# MacOS环境 本地安装 WordPress
+# MacOS环境 搭建 WordPress 个人博客网站
+> WordPress 是使用PHP语言开发的博客平台，支持使用 PHP 和 MySQL 快速搭建自己的博客网站，在全球拥有众多用户，支持图形化设计自己的网站，当然也支持使用HTML、CSS对自己网站进行二次开发。
+
+> 本文介绍两种搭建 WordPress 网站的方式，一种是通过分步安装 Apache、MySQL、PHP环境进行搭建，灵活性高；一种是通过 MAMP 集成式快速搭建。
 
 ### 安装过程
 * 本地 [手动下载wordpress](https://cn.wordpress.org/download/#download-install)

@@ -6,9 +6,12 @@
 > 注: 本文安装硬件环境均为 MacOS
 
 ## 方式一: 分步安装 Apache、MySQL、PHP环境进行搭建
-### 安装过程
+### 手动下载 WordPress 页面文件包
 * 本地 [手动下载wordpress](https://cn.wordpress.org/download/#download-install)
-* 检查所需环境是否满足需要，MacOS下PHP等环境是系统集成其中的，不需要单独下载。
+	* 下载成功后解压，文件夹内便是 WordPress 的页面文件包(记住包的地址, 当然也可以随意放，后期再更改地址即可)。
+
+### 检查软件环境
+* 检查所需环境是否满足需要，MacOS下 PHP 等环境是系统集成其中的，不需要单独下载。
 	* PHP 环境验证方式 `php -m|less`
 	* MySQL 安装与校验
 	* Apache 校验 `apachectl -v`
@@ -24,7 +27,7 @@
 # 在这里开始看，上面都是其他方式安装的，新版本MacOS会有问题，上面就不用看了！！！
 ---
 
-## MAMP 安装 wordPress 
+## 方式二: 使用 MAMP 集成环境 安装
 ### 涉及软件 & 扩展
 * MAMP
 * wordPress 代码包

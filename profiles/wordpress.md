@@ -29,7 +29,7 @@
 
 ## 方式二: 使用 MAMP 集成环境 安装
 ### 涉及软件 & 扩展
-* MAMP
+* MAMP(MacOS Apache MySQL PHP 集成软件)
 * wordPress 代码包
 
 ### 1.MAMP 下载安装

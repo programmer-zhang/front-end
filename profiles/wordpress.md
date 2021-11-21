@@ -82,7 +82,7 @@
 
 ![](../images/wordPress/mamp-htdocs.png)
 
-* 然后修改 MAMP 的 server 根目录，选择server根目录下的 `choose`, 选择我们移动过去的wordpress 文件夹保存即可(就像我上上张图片那样)。
+* 然后修改 MAMP 的 server 根目录，选择 server 根目录下的 `choose`, 选择我们移动过去的 wordpress 文件夹保存即可(就像我上上张图片那样)。
 * 打开浏览器 `localhost:8888`,如果能看到 `WordPress` 的配置页面就算是配置成功了。
 
 ### 5.配置 WordPress
@@ -100,10 +100,10 @@
 
 ## 我的错误
 ### Mac os下 Apache 正常启动 localhost 无法访问服务器
-* 一个查看apachectl 访问localhost失败查看原因的指令 `sudo /usr/sbin/httpd -k start` 或者 `sudo apachectl -k restart`，看到原因之后去查原因
-	* 报错信息： `No code signing authority for module at /usr/libexec/apache3/libphp7.so specified in LoadModule directive. Proceeding with loading process, but this will be an error condition in a future version of macOS.
+* 查看apachectl 访问 localhost 失败查看原因的指令 `sudo /usr/sbin/httpd -k start` 或者 `sudo apachectl -k restart`，看到原因之后去查原因。
+	* 我的报错信息： `No code signing authority for module at /usr/libexec/apache3/libphp7.so specified in LoadModule directive. Proceeding with loading process, but this will be an error condition in a future version of macOS.
 httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load libexec/apache3/libphp7.so into server: dlopen(/usr/libexec/apache3/libphp7.so, 10): image not found`
-	* 原因： 查了下应该是MAC自带的php版本与apache版本不符合，需要重新安装个php
+	* 原因： 查了下应该是MAC自带的php版本与 apache 版本不符合，主要是 libphpX.so 文件在MacOS 自带的 PHP 环境中不存在，需要重新安装个php
 
 ## 一些操作
 * /etc/apache2  目录下查看Apache版本 `httpd -version`

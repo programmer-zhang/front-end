@@ -106,8 +106,8 @@ httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load 
 	* 原因： 查了下应该是MAC自带的php版本与 apache 版本不符合，主要是 libphpX.so 文件在MacOS 自带的 PHP 环境中不存在，需要重新安装个php
 
 ## 一些操作
-* /etc/apache2  目录下查看Apache版本 `httpd -version`
-* 查找php*.so安装位置 `php -i` => 搜索 `extension_dir`
+* 前往 `/etc/apache2` 目录下查看Apache版本 `httpd -version`
+* 查找 php*.so 安装位置 `php -i` => 搜索 `extension_dir`
 	* 我的是 `extension_dir => /usr/lib/php/extensions/no-debug-non-zts-20180731 => /usr/lib/php/extensions/no-debug-non-zts-20180731`
 	* 然后去上边这个路径下找libphp7.so文件
 * 查看本机Apache启动php情况 https://blog.csdn.net/wtdask/article/details/83510757

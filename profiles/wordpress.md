@@ -108,8 +108,9 @@ httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load 
 ## 一些操作
 * 前往 `/etc/apache2` 目录下查看Apache版本 `httpd -version`
 * 查找 php*.so 安装位置 `php -i` => 搜索 `extension_dir`
-	* 经查看，本机的 `extension_dir => /usr/lib/php/extensions/no-debug-non-zts-20180731 => /usr/lib/php/extensions/no-debug-non-zts-20180731`
+	* 经查看，本机的安装位置为 `extension_dir => /usr/lib/php/extensions/no-debug-non-zts-20180731 => /usr/lib/php/extensions/no-debug-non-zts-20180731`
 	* 然后去上述查到的这个路径下找 `libphpx.so`文件
-* 查看本机Apache启动php情况 https://blog.csdn.net/wtdask/article/details/83510757
+* 查看本机Apache启动php情况 
+	* https://blog.csdn.net/wtdask/article/details/83510757
 
 * [官方安装文档](https://cn.wordpress.org/support/category/installation/)

@@ -8,7 +8,7 @@
 ## 方式一: 分步安装 Apache、MySQL、PHP环境进行搭建
 ### 手动下载 WordPress 页面文件包
 * 本地 [手动下载wordpress](https://cn.wordpress.org/download/#download-install)
-	* 下载成功后解压，文件夹内便是 WordPress 的页面文件包(记住包的地址, 当然也可以随意放，后期再更改地址即可)。
+	* 下载成功后解压，文件夹内便是 `WordPress` 的页面文件包(记住文件包的存放地址,以备后期需要)。
 
 ### 1.检查软件环境
 * 检查所需环境是否满足需要，MacOS下 PHP 等环境是系统集成其中的，不需要单独下载。

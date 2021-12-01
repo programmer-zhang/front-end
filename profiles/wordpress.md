@@ -30,11 +30,11 @@
 ## 方式二: 使用 MAMP 集成环境 安装
 ### 涉及软件 & 扩展
 * MAMP(MacOS Apache MySQL PHP 集成软件)
-* wordPress 代码包
+* WordPress 代码包
 
 ### 1.MAMP 下载安装
 * 下载地址: [https://www.mamp.info/en/downloads/](https://www.mamp.info/en/downloads/)
-* 选择合适的版本进行下载，MAMP 区分MacOS(intel 芯片版本) 和 MacOS(M1芯片版本)
+* 选择合适的版本进行下载，MAMP 区分 MacOS(intel 芯片版本) 和 MacOS(M1芯片版本)
 	* 查看 MacOS 版本: 电脑左上角 小苹果图标 => 关于本机 => 概览中处理器信息
 
 > 注: MAMP 分为基础版本和PRO版本，基础版本够用了，不用花钱买PRO版本

@@ -78,7 +78,7 @@
 
 ![](../images/wordPress/mamp-server.png)
 
-* 将第二步我们解压的 wordpress 文件夹移动到这个根目录下，如下图这样:
+* 将第二步我们解压的 WordPress 文件夹移动到这个根目录下，如下图这样:
 
 ![](../images/wordPress/mamp-htdocs.png)
 

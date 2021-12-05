@@ -82,7 +82,7 @@
 
 ![](../images/wordPress/mamp-htdocs.png)
 
-* 然后修改 MAMP 的 server 根目录，选择 server 根目录下的 `choose`, 选择我们移动过去的 wordpress 文件夹保存即可(就像我上上张图片那样)。
+* 然后修改 MAMP 的 server 根目录，选择 server 根目录下的 `choose`, 选择我们移动过去的 WordPress 文件夹保存即可(就像我上上张图片那样)。
 * 打开浏览器 `localhost:8888`,如果能看到 `WordPress` 的配置页面就算是配置成功了。
 
 ### 5.配置 WordPress

@@ -105,7 +105,7 @@
 httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load libexec/apache3/libphp7.so into server: dlopen(/usr/libexec/apache3/libphp7.so, 10): image not found`
 	* 原因： 查了下应该是MAC自带的php版本与 apache 版本不符合，主要是 libphpX.so 文件在MacOS 自带的 PHP 环境中不存在，需要重新安装个php
 
-## 一些操作
+## 配置过程中可能用到的一些操作
 * 前往 `/etc/apache2` 目录下查看Apache版本 `httpd -version`
 * 查找 php*.so 安装位置 `php -i` => 搜索 `extension_dir`
 	* 经查看，本机的安装位置为 `extension_dir => /usr/lib/php/extensions/no-debug-non-zts-20180731 => /usr/lib/php/extensions/no-debug-non-zts-20180731`
@@ -118,5 +118,3 @@ httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load 
 	```
 	* 在文件中增加代码 `<?php phpinfo(); ?>`
 	* 重启 Apache 后打卡 `http://localhost/info.php` 就能看到当前环境中 PHP 的相关信息
-	
-* [官方安装文档](https://cn.wordpress.org/support/category/installation/)

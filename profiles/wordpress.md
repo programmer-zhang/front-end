@@ -111,6 +111,12 @@ httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load 
 	* 经查看，本机的安装位置为 `extension_dir => /usr/lib/php/extensions/no-debug-non-zts-20180731 => /usr/lib/php/extensions/no-debug-non-zts-20180731`
 	* 然后去上述查到的这个路径下找 `libphpx.so`文件
 * 查看本机Apache启动php情况 
-	* https://blog.csdn.net/wtdask/article/details/83510757
+	* 在 Apache 根目录中根据 `index.html.en` 创建 `info.php` 文件
 
+	```
+	sudo cp /Library/WebServer/Documents/index.html.en /Library/WebServer/Documents/info.php
+	```
+	* 在文件中增加代码 `<?php phpinfo(); ?>`
+	* 重启 Apache 后打卡 `http://localhost/info.php` 就能看到当前环境中 PHP 的相关信息
+	
 * [官方安装文档](https://cn.wordpress.org/support/category/installation/)

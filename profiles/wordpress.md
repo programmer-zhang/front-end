@@ -103,7 +103,7 @@
 * 查看apachectl 访问 localhost 失败查看原因的指令 `sudo /usr/sbin/httpd -k start` 或者 `sudo apachectl -k restart`，看到原因之后去查原因。
 	* 我的报错信息： `No code signing authority for module at /usr/libexec/apache3/libphp7.so specified in LoadModule directive. Proceeding with loading process, but this will be an error condition in a future version of macOS.
 httpd: Syntax error on line 187 of /private/etc/apache2/httpd.conf: Cannot load libexec/apache3/libphp7.so into server: dlopen(/usr/libexec/apache3/libphp7.so, 10): image not found`
-	* 原因： 查了下应该是MAC自带的php版本与 apache 版本不符合，主要是 libphpX.so 文件在MacOS 自带的 PHP 环境中不存在，需要重新安装个php
+	* 原因： 查了下是 MAC 自带的 php 版本与 Apache 版本不符合，主要是 `libphpX.so` 文件在 MacOS 自带的 PHP 环境中不存在，需要重新安装个php。
 
 ## 配置过程中可能用到的一些操作
 * 前往 `/etc/apache2` 目录下查看Apache版本 `httpd -version`

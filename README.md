@@ -176,6 +176,10 @@
 
 > [谷歌浏览器 插件制作指南]
 
+> [区块链基础(一): 小白如何理解区块链](./profiles/blockchain_base.md)
+
+> [区块链基础(二): 区块链技术架构](./profiles/blockchain_framework.md)
+
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
 

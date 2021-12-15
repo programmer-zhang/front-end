@@ -1,5 +1,6 @@
 # 区块链的技术架构
 ## 区块链的六层结构
+![](../images/blockChain/blockchain-structure.png)
 
 ### 数据层
 * 主要实现数据的存储，账户和交易的实现与安全

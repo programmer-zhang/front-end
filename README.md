@@ -180,6 +180,8 @@
 
 > [区块链基础(二): 区块链技术架构](./profiles/blockchain_framework.md)
 
+> [区块链基础(三): DeFi 是什么](./profiles/blockchain_defi.md)
+
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
 

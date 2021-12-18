@@ -171,6 +171,10 @@ console.info(module1._count); //undefined
 ### 宽放大模式
 ### 输入全局变量方式
 
+## 模块化规范
+### CommonJS
+### AMD 规范
+
 ## 模块化多种方式
 ### Require
 * require是CommonJS的语法，CommonJS的模块是对象，输入时必须查找对象属性。

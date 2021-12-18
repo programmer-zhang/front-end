@@ -87,12 +87,12 @@ function fun() {
 
 * 全局函数模式是早期的模块化思想之一，这种方式最大的问题在于同时引入的模块会造成数据污染和命名冲突。
 
-### `namespace` 模式
+### `namespace` 模式/对象写法
 
 * ModuleFirst.js
 
 ```
-let moduleFirst = {
+let moduleFirst = new Object({
 	data: 'ModuleFirst',
 	fun() {
 		console.log(`fun() ${this.data}`);
@@ -100,13 +100,13 @@ let moduleFirst = {
   	funNext() {
 		console.log(`funNext() ${this.data}`);
 	}
-}
+})
 ```
 
 * ModuleSecond.js
 
 ```
-let moduleSecond = {
+let moduleSecond = new Object({
 	data: 'ModuleSecond',
 	fun() {
 		console.log(`fun() ${this.data}`);
@@ -114,7 +114,7 @@ let moduleSecond = {
   	funNext() {
 		console.log(`funNext() ${this.data}`);
 	}
-}
+})
 ```
 
 * index.html
@@ -136,6 +136,40 @@ let moduleSecond = {
 ```
 
 * 这种模式是简单的对象封装，虽然解决了命名冲突和数据污染的问题，但是在引用页面还可以直接针对内部数据进行修改。
+
+### 立即执行函数写法
+
+* module.js
+
+```
+var module1 = (function(){
+	var _count = 0;
+	var m1 = function(){
+		//...
+	};
+	var m2 = function(){
+		//...
+	};
+	return {
+		m1 : m1,
+		m2 : m2
+	};
+})();
+```
+
+* index.html
+
+```
+console.info(module1._count); //undefined
+```
+
+* 这种方式不太常用，虽然可以达到不暴露私有成员的目的，但是外部代码无法读取模块内部变量
+
+> 下面几种方式是对上面方式的加工，但是不常用，虽然能够解决一些问题，但是都存在着使用上的缺点，以下几种方式有兴趣可以自行了解下
+
+### 放大模式
+### 宽放大模式
+### 输入全局变量方式
 
 ## 模块化多种方式
 ### Require

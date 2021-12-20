@@ -187,7 +187,7 @@ reuire([module], callback)
 ```
 
 ## 模块化的多种实践方式
-### Require
+### CommonJS require()
 * `require()` 是 `CommonJS` 的语法，`CommonJS` 的模块是对象，输入时必须查找对象属性。
 
 ```
@@ -201,12 +201,6 @@ let exists = _fs.exists;
 let readfile = _fs.readfile;
 ```
 * 整体加载fs模块（即加载fs所有方法），生成一个对象"_fs"，然后再从这个对象上读取三个方法，这叫“运行时加载”，因为只有运行时才能得到这个对象，不能在编译时做到静态化。
-* ES6模块不是对象，而是通过export命令显示指定输出代码，再通过import输入。
-
-```
-import { stat, exists, readFile } from 'fs';
-```
-* 从fs加载“stat, exists, readFile” 三个方法，其他方法不加载。
 
 ### Export
 * 模块是独立的文件，该文件内部的所有的变量外部都无法获取。如果希望获取某个变量，必须通过export输出。

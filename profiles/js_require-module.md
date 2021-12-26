@@ -58,11 +58,17 @@
 ### 最初没有模块化的概念
 * JavaScript 当初被设计出来仅是作为一种网络脚本语言使用，没有模块化的概念
 
-### 冲突和依赖管理问题需要解决，自执行函数的模式已不够用
+### 变量冲突和依赖管理问题需要解决，自执行函数的模式已不够用
+* Ajax 出现后，前端拥有向后端异步请求数据的能力后，前端逻辑越来越复杂，代码越来越庞大
+* 变量污染和变量冲突问题可以用JavaScript作用域的特性来解决，但是依赖关系问题没有很好的解决
+* JavaScript 加载依靠浏览器加载能力，默认是阻塞式加载
 
 ### 社区涌现第三方模块化规范
+* node.js 中使用Common.js 规范，同时出现 npm 生态，以及一大批前端构建工具 grunt、webpack、fis
+* 社区中出现 AMD、CMD规范，以及require.js等前端模块加载器
 
 ### ES6 模块化规范
+* ES6 的出现，JavaScript 语言终于有了原生模块体系
 
 ## 模块化的早期实现
 ### 全局 `Function` 模式
@@ -196,16 +202,25 @@ console.info(module1._count); //undefined
 * 对node来说，模块存放在本地硬盘，同步加载等待时间就是硬盘的读取时间，这个时间非常短。
 * 但是对于浏览器环境编程，存在一个问题，`require()` 的返回是同步的, 意味着有多个依赖的话需要一个一个依次下载，堵塞js脚本的执行。
 
+
+
 ### AMD 规范
 * 异步方式加载模块，模块的加载不影响后续语句的执行
 * 依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行
 
 ```
-reuire([module], callback)
+require([module], callback)
 ```
 
-## 模块化的多种实践方式
-### CommonJS require()
+## 模块化规范的多种实践方式
+### CommonJS module.exports/exports 导出 require() 引入
+#### 规范要求
+* 一个模块就是一个文件
+* 每个模块内有两个变量可以使用 `require` 和 `module`
+* 通过 `require` 加载模块
+* 通过 `module.exports` 或者 `exports` 导出模块
+
+#### 使用方式
 * `require()` 是 `CommonJS` 的语法，`CommonJS` 的模块是对象，输入时必须查找对象属性。
 
 ```
@@ -220,7 +235,8 @@ let readfile = _fs.readfile;
 ```
 * 整体加载fs模块（即加载fs所有方法），生成一个对象"_fs"，然后再从这个对象上读取三个方法，这叫“运行时加载”，因为只有运行时才能得到这个对象，不能在编译时做到静态化。
 
-### Export
+### ES6 export/export default 导出 import 引入
+#### export 导出
 * 模块是独立的文件，该文件内部的所有的变量外部都无法获取。如果希望获取某个变量，必须通过export输出。
 
 ```
@@ -298,60 +314,8 @@ function foo() {
 foo()
 ```
 
-### Import
-* export定义了模块的对外接口后，其他JS文件就可以通过import来加载这个模块。
-
-```
-// main.js
-import {firstName, lastName, year} from './profile';
-
-function setName(element) {
-  element.textContent = firstName + ' ' + lastName;
-}
-```
-* import命令接受一对大括号，里面指定要从其他模块导入的变量名，必须与被导入模块（profile.js）对外接口的名称相同。
-* 如果想重新给导入的变量一个名字，可以用as关键字
-
-```
-import { lastName as surname } from './profile';
-```
-* `import` 时 `from` 可以指定需要导入模块的路径名，可以是绝对路径，也可以是相对路径， `.js` 路径可以省略，如果只有模块名，不带有路径，需要有配置文件指定。
-* 注意，`import` 命令具有提升效果，会提升到整个模块的头部，首先执行。（是在编译阶段执行的）
-* 因为 `import` 是静态执行的，不能使用表达式和变量，即在运行时才能拿到结果的语法结构（eg. if...else...）
-
-### module
-* 除了指定加载某个输出值，还可以用（*）指定一个对象，所有的变量都会加载在这个对象上。
-
-```
-// circle.js。输出两个函数
-export function area(radius) {
-  return Math.PI * radius * radius;
-}
-export function circumference(radius) {
-  return 2 * Math.PI * radius;
-}
-
-// main.js 加载在个模块
-import { area, circumference } from './circle';
-console.log('圆面积：' + area(4));
-console.log('圆周长：' + circumference(14));
-
-//上面写法是逐一指定要加载的方法，整体加载的写法如下。
-import * as circle from './circle';
-console.log('圆面积：' + circle.area(4));
-console.log('圆周长：' + circle.circumference(14));
-```
-* 模块整体加载所在的那个对象（上例是circle），应该是可以静态分析的，所以不允许运行时改变。
-
-```
-import * as circle from './circle';
-
-// 下面两行都是不允许的
-circle.foo = 'hello';
-circle.area = function () {};
-```
-### export default
-* 之前的例子中，使用import导入时，都需要知道模块中所要加载的变量名或函数名，用户可能不想阅读源码，只想直接使用接口，就可以用export default命令，为模块指定输出。
+### export default 导出
+* 之前的例子中，在导入时，都需要知道模块中所要加载的变量名或函数名，用户可能不想阅读源码，只想直接使用接口，就可以用export default命令，为模块指定输出。
 
 ```
 // export-default.js
@@ -384,6 +348,60 @@ import {crc32} from 'crc32'; // 输入
 * 可以看出，使用export default时，import语句不用使用大括号。
 * import和export命令只能在模块的顶层，不能在代码块之中。否则会语法报错。
 * 这样的设计，可以提高编译器效率，但是没有办法实现运行时加载。
+
+#### import 引入
+* export/export default 定义了模块的对外接口后，其他JS文件就可以通过import来加载这个模块。
+
+```
+// main.js
+import {firstName, lastName, year} from './profile';
+
+function setName(element) {
+  element.textContent = firstName + ' ' + lastName;
+}
+```
+* import命令接受一对大括号，里面指定要从其他模块导入的变量名，必须与被导入模块（profile.js）对外接口的名称相同。
+* 如果想重新给导入的变量一个名字，可以用as关键字
+
+```
+import { lastName as surname } from './profile';
+```
+* `import` 时 `from` 可以指定需要导入模块的路径名，可以是绝对路径，也可以是相对路径， `.js` 路径可以省略，如果只有模块名，不带有路径，需要有配置文件指定。
+* 注意，`import` 命令具有提升效果，会提升到整个模块的头部，首先执行。（是在编译阶段执行的）
+* 因为 `import` 是静态执行的，不能使用表达式和变量，即在运行时才能拿到结果的语法结构（eg. if...else...）
+
+* 除了指定加载某个输出值，还可以用（*）指定一个对象，所有的变量都会加载在这个对象上。
+
+```
+// circle.js。输出两个函数
+export function area(radius) {
+  return Math.PI * radius * radius;
+}
+export function circumference(radius) {
+  return 2 * Math.PI * radius;
+}
+
+// main.js 加载在个模块
+import { area, circumference } from './circle';
+console.log('圆面积：' + area(4));
+console.log('圆周长：' + circumference(14));
+
+//上面写法是逐一指定要加载的方法，整体加载的写法如下。
+import * as circle from './circle';
+console.log('圆面积：' + circle.area(4));
+console.log('圆周长：' + circle.circumference(14));
+```
+* 模块整体加载所在的那个对象（上例是circle），应该是可以静态分析的，所以不允许运行时改变。
+
+```
+import * as circle from './circle';
+
+// 下面两行都是不允许的
+circle.foo = 'hello';
+circle.area = function () {};
+```
+
+#### import() 引入
 * 因为require是运行时加载，所以import命令没有办法代替require的动态加载功能。所以引入了import()函数。完成动态加载。
 
 ```
@@ -391,20 +409,6 @@ import(specifier)
 ```
 * specifier用来指定所要加载的模块的位置。import能接受什么参数，import()可以接受同样的参数。
 * import()返回一个Promise对象。
-
-```
-const main = document.querySelector('main');
-
-import(`./section-modules/${someVariable}.js`)
-  .then(module => {
-	    module.loadPageInto(main);
-  })
-  .catch(err => {
-	    main.textContent = err.message;
-  });
-```
-
-### import()
 * 按需加载
 	* import模块在事件监听函数中，只有用户点击了按钮，才会加载这个模块。
 

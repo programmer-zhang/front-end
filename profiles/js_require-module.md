@@ -257,7 +257,7 @@ moduleOuter.moduleInnerFun()
 
 #### 规范要求
 * 两个API `define` 和 `require`
-* 两个API都能够进行依赖模块声明和接受，区别在于 `define` 能够自定义模块而 `require` 仅作为执行模块加载
+* 两个API都能够进行依赖模块声明和接受，区别在于 `define` 能够自定义模块(模块开发者关注)而 `require` 仅作为执行模块加载(模块使用者关注)
 
 ```
 define(id?, dependencies?, factory);

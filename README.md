@@ -62,7 +62,7 @@
 
 > [JS 内存图](./profiles/js内存图.md)
 
-> [JS 模块化编程资源引入](./profiles/js_require-module.md)
+> [JS 模块化编程](./profiles/js_require-module.md)
  
 > [JS 判断PC端还是移动端的几种方式(完善中)](./profiles/js判断设备.md)
 

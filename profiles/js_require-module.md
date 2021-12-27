@@ -37,6 +37,15 @@
 * 一个模块的组成由两部分组成： 数据（内部的属性）、操作数据的行为（内部的函数）
 * 开发场景中，一个模块就是实现特定功能的文件，也可以理解为两种情况，外部的模块(引入的外部package，可能由多个JS文件组成，会通过暴露入口供我们调用)、内部的模块(工程项目中编码的最小单元，即单个的JS文件)
 
+## 模块化的好处
+### 可维护性
+* 模块独立，良好的模块依赖越少越好，这样可以独立进行更新或改进
+
+### 命名空间
+* 模块化封装变量，可以避免污染全局环境。
+
+### 重用代码
+
 ## 模块化的理论基础
 ### 面向对象
 * 继承
@@ -73,7 +82,7 @@
 
 ## 模块化的早期实现
 ### 全局 `Function` 模式
-* 早期的这种全局 `Function` 模式比较接近于为了抽离组件化而组件化，各个模块间容易产生污染。
+* 早期的这种全局 `Function` 模式比较接近于为了抽离组件化而组件化，各个模块间容易产生污染。同时需要手动管理依赖顺序，维护成本较高。
 
 * ModuleFirst.js
 
@@ -206,7 +215,7 @@ console.info(module1._count); //undefined
 
 ## 现代模块化规范的多种实践方式
 ### CommonJS module.exports/exports 导出 require() 引入
-> 对node来说，模块存放在本地硬盘，同步加载等待时间就是硬盘的读取时间，这个时间非常短。
+> CommonJS 是以在浏览器环境之外构建JS生态系统为目标而产生的项目，对node来说，模块存放在本地硬盘，同步加载等待时间就是硬盘的读取时间，这个时间非常短。
 
 > 但是对于浏览器环境编程，存在一个问题，`require()` 的返回是同步的, 意味着有多个依赖的话需要一个一个依次下载，堵塞js脚本的执行。
 
@@ -220,16 +229,19 @@ console.info(module1._count); //undefined
 * `require()` 是 `CommonJS` 的语法，`CommonJS` 的模块是对象，输入时必须查找对象属性。
 
 ```
-// CommonJS模块
-let { stat, exists, readFile } = require('fs');
+//定义模块 module.js
+function moduleInnerFun(){}
 
-// 等同于
-let _fs = require('fs');
-let stat = _fs.stat;
-let exists = _fs.exists;
-let readfile = _fs.readfile;
+//模块输出
+module.exports = {
+	moduleInner
+}
+//加载模块 math.js
+var moduleOuter = require('module')
+//调用模块提供的方法
+moduleOuter.moduleInnerFun()
 ```
-* 整体加载fs模块（即加载fs所有方法），生成一个对象"_fs"，然后再从这个对象上读取三个方法，这叫“运行时加载”，因为只有运行时才能得到这个对象，不能在编译时做到静态化。
+* 整体加载 `module` 模块（即加载fs所有方法），生成一个对象 `moduleOuter`，然后再从这个对象上读取三个方法，这叫“运行时加载”，因为只有运行时才能得到这个对象，不能在编译时做到静态化。
 
 #### 核心实践逻辑
 * 解析模块路径

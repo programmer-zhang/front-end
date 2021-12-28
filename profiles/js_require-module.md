@@ -532,6 +532,8 @@ if (condition) {
 
 ![](../images/jsRequireModules/requireProcess.png)
 
+![](../images/jsRequireModules/requirePath.png)
+
 * 如果是核心模块，就直接返回模块
 * 如果是目录模块，则会依次查找 `package.json` 中指定的 `main` 模块，或 `index.js` 以及 `index.node`文件
 * 如果是带有路径的地址，则拼接出一个绝对路径，然后先读取缓存 `require.cache`, 再读取文件，如果没有后缀，则自动加后缀后一一识别

@@ -534,6 +534,7 @@ if (condition) {
 
 ![](../images/jsRequireModules/requireProcess.png)
 
+* 自定义模块
 ![](../images/jsRequireModules/requirePath.png)
 
 * 如果是核心模块，就直接返回模块

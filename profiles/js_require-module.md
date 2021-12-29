@@ -331,6 +331,7 @@ export var firstName = 'Michael';
 export var lastName = 'Jackson';
 export var year = 1958;
 ```
+
 * 或者用更好的方式：用大括号指定要输出的一组变量。
 
 ```
@@ -341,6 +342,7 @@ var year = 1958;
 
 export {firstName, lastName, year};
 ```
+
 * 除了输出变量，还可以输出函数或者类（class）。
 
 ```
@@ -348,6 +350,7 @@ export function multiply(x, y) {
   return x * y;
 };
 ```
+
 * 还可以批量输出，同样是要包含在大括号里，也可以用as重命名。
 
 ```
@@ -360,6 +363,7 @@ export {
   v2 as streamLatestVersion
 };
 ```
+
 * export 命令规定的是对外接口，必须与模块内部变量建立一一对应的关系。
 
 ```
@@ -377,6 +381,7 @@ export 1;
 var m = 1;
 export m;
 ```
+
 * 报错的写法原因是：没有提供对外的接口，第一种直接输出1，第二种虽然有变量m，但还是直接输出1，导致无法解构。
 * 同样的，function和class的输出，也必须遵守这样的写法。
 
@@ -390,6 +395,7 @@ export function f() {};
 function f() {}
 export {f};
 ```
+
 * export语句输出的接口，都是和其对应的值是动态绑定的关系，即通过该接口取到的都是模块内部实时的值。
 * export模块可以位于模块中的任何位置，但是必须是在模块顶层，如果在其他作用域内，会报错。
 
@@ -409,6 +415,7 @@ export default function () {
   console.log('foo');
 }
 ```
+
 * 其他模块加载该模块时，import命令可以为该匿名函数指定任意名字。
 
 ```
@@ -417,6 +424,7 @@ import customName from './export-default';
 customName(); // 'foo'
 export default也可以用于非匿名函数前。
 ```
+
 * 下面比较一下默认输出和正常输出。
 
 ```
@@ -431,6 +439,7 @@ export function crc32() { // 输出
 };
 import {crc32} from 'crc32'; // 输入
 ```
+
 * 可以看出，使用export default时，import语句不用使用大括号。
 * import和export命令只能在模块的顶层，不能在代码块之中。否则会语法报错。
 * 这样的设计，可以提高编译器效率，但是没有办法实现运行时加载。
@@ -446,12 +455,14 @@ function setName(element) {
   element.textContent = firstName + ' ' + lastName;
 }
 ```
+
 * import命令接受一对大括号，里面指定要从其他模块导入的变量名，必须与被导入模块（profile.js）对外接口的名称相同。
 * 如果想重新给导入的变量一个名字，可以用as关键字
 
 ```
 import { lastName as surname } from './profile';
 ```
+
 * `import` 时 `from` 可以指定需要导入模块的路径名，可以是绝对路径，也可以是相对路径， `.js` 路径可以省略，如果只有模块名，不带有路径，需要有配置文件指定。
 * 注意，`import` 命令具有提升效果，会提升到整个模块的头部，首先执行。（是在编译阶段执行的）
 * 因为 `import` 是静态执行的，不能使用表达式和变量，即在运行时才能拿到结果的语法结构（eg. if...else...）
@@ -574,7 +585,174 @@ function wrapper(script) {
 * CommonJS 模块同步加载并执行模块文件，在执行阶段分析模块依赖，采用深度优先遍历进行分析
 * 撅个栗子
 
-### module 导出模块
+```
+// a.js
+const getModuleB = require('./b') 
+console.log('我是 a 文件') 
+exports.excuteA = function(){ 
+	const message = getModuleB()
+	console.log(message) 
+} 
+// b.js
+const excuteA = require('./a') 
+const  moduleB = { 
+	name: 'is module b'
+} 
+console.log('我是 b 文件') 
+module.exports = function(){ 
+	return moduleB 
+} 
+// main.js
+const a = require('./a') 
+const b = require('./b') 
+console.log('node 入口文件') 
+```
+
+* 执行结果
+
+```
+我是 b 文件
+我是 a 文件
+node 入口文件
+```
+
+#### require 加载原理
+> 先明确两个概念: module 和 Module ，前者在 node 中每个js文件都是一个module，module 上保存了 exports 等信息，还有一个loaded 表示该模块是否被加载，后者是用来缓存每一个模块加载信息的
+
+```
+// id 为路径标识符 
+function require(id) { 
+	/* 查找  Module 上有没有已经加载的 js  对象*/ 
+	const  cachedModule = Module._cache[id] 
+	    
+	/* 如果已经加载了那么直接取走缓存的 exports 对象  */ 
+	if(cachedModule){ 
+		return cachedModule.exports 
+	} 
+	  
+	/* 创建当前模块的 module  */ 
+	const module = { exports: {} ,loaded: false , ...} 
+	 
+	/* 将 module 缓存到  Module 的缓存属性中，路径标识符作为 id */   
+	Module._cache[id] = module 
+	/* 加载文件 */ 
+	runInThisContext(wrapper('module.exports = "123"'))(module.exports, require, module, __filename, __dirname) 
+	/* 加载完成 *// 
+	module.loaded = true  
+	/* 返回值 */ 
+	return module.exports 
+} 
+```
+
+* require 会接收一个参数——文件标识符，然后分析定位文件，分析过程我们上述已经讲到了，加下来会从 Module 上查找有没有缓存，如果有缓存，那么直接返回缓存的内容。
+* 如果没有缓存，会创建一个 module 对象，缓存到 Module 上，然后执行文件，加载完文件，将 loaded 属性设置为 true ，然后返回 module.exports 对象。借此完成模块加载流程。
+* 模块导出就是 return 这个变量的其实跟 a = b 赋值一样， 基本类型导出的是值， 引用类型导出的是引用地址。
+* exports 和 module.exports 持有相同引用，因为最后导出的是 module.exports， 所以对 exports 进行赋值会导致 exports 操作的不再是 module.exports 的引用。
+
+#### require 避免重复加载
+* 正式因为缓存的存在，所以再次引用时，会直接读取缓存中的module，无需再次执行模块
+* 上述的例子中在 `b.js` 中增加执行 `a.js` 中的方法 `excuteA` 会是什么结果?
+* 改造一下例子中的 `b.js`
+
+```
+// b.js
+const excuteA = require('./a')
+const  moduleB = {
+    name: 'is module b'
+}
+console.log('我是 b 文件')
+console.log('执行 a 模块导出', excuteA)
+setTimeout(()=>{
+    console.log('异步打印 a 模块' , excuteA)
+},0)
+module.exports = function(){
+    return moduleB
+}
+// 执行结果
+我是 b 文件
+执行 a 模块导出 {}
+我是 a 文件
+node 入口文件
+异步打印 a 模块 { excuteA: [Function] }
+```
+> 那如何在执行b文件时获取到excuteA呢
+
+#### require 动态加载
+```
+// a.js
+console.log('我是 a 文件')
+exports.excuteA = function(){
+    const getModuleB = require('./b')
+    const message = getModuleB()
+    console.log(message)
+}
+// b.js
+const excuteA = require('./a')
+const  moduleB = {
+    name: 'is module b'
+}
+console.log('我是 b 文件')
+console.log('执行 a 模块导出', excuteA)
+module.exports = function(){
+    return moduleB
+}
+// main.js
+const a = require('./a')
+console.log('node 入口文件')
+a.excuteA()
+// 执行结果
+我是 a 文件
+node 入口文件
+我是 b 文件
+执行 a 模块导出 { excuteA: [Function] }
+{ name: 'is module b' }
+```
+
+### exports 和 module.exports 导出模块
+* 提出一个问题，日常开发过程中我们会使用 `module.export = { a: xxx }` 的方式导出，但是 `export = { a: xxx }` 就不可以
+* 上面讲述 CommonJS 原理的时候说过 exports ， module 和 require 都是作为形参的形式传入到 js 模块中，如果使用 `export = { a: xxx }` 这种语法相当于重新赋值一份形参，不会再引用原来的形参
+* 官方解释: 如果为 `exports` 赋予了新值，则它将不再绑定到 `module.exports`
+* `module.exports` 本质上就是 `exports` , 持有相同的引用，最后导出的是 `module.exports` ，所以两者同时存在会造成覆盖的情况发生。
+
+> 问: 为什么有了 `exports` ，还需要 `module.exports` 呢?
+
+## ES6 Module 加载模块
+* 引入和导出都是静态的，import 会自动提升到代码的顶层，所以 `import`、`export` 不能放在块级作用域和条件语句中
+	* 好处就是可以在编译过程中确定导入和导出的关系，更方便地查找依赖
+* ES6的模块提前加载并执行模块文件，模块在预处理阶段分析模块一来，在执行阶段执行模块，同样采用深度优先遍历，执行顺序是 子->父
+* 举个例子
+
+```
+// main.js
+console.log('main.js开始执行')
+import excuteA from './a'
+import excuteB from './b'
+console.log('main.js执行完毕')
+// a.js
+import excuteB from './b'
+console.log('a模块加载')
+export default  function excuteA (){
+    console.log('hello,world')
+}
+// b.js
+console.log('b模块加载')
+export default function excuteB(){
+    console.log('hello,hello,world')
+}
+```
 
 
-## 模块的循环引用
+## CommonJS & ES6 Module 总结
+### CommonJS
+* CommonJS 模块由 JS 运行时实现。
+* CommonJs 是单个值导出，本质上导出的就是 exports 属性。
+* CommonJS 是可以动态加载的，对每一个加载都存在缓存，可以有效的解决循环引用问题。
+* CommonJS 模块同步加载并执行模块文件。
+
+### ES6 Module
+* ES6 Module 静态的，不能放在块级作用域内，代码发生在编译时。
+* ES6 Module 的值是动态绑定的，可以通过导出方法修改，可以直接访问修改结果。
+* ES6 Module 可以导出多个属性和方法，可以单个导入导出，混合导入导出。
+* ES6 模块提前加载并执行模块文件，
+* ES6 Module 导入模块在严格模式下。
+* ES6 Module 的特性可以很容易实现 Tree Shaking 和 Code Splitting。

@@ -520,7 +520,7 @@ if (condition) {
 }
 ```
 
-## CommonJS 加载模块与 ES6 加载模块过程
+## CommonJS 加载模块与原理
 > `CommonJS` 的模块在第一次加载后被缓存，这意味着每次调用 `require()` 都会返回完全相同的对象(如果解析为相同的文件)
 
 > 如果 `require.cache` 没有被修改，则多次调用 `require()` 不会导致模块代码被多次执行，这个特性可以解决一些循环引用时的问题。
@@ -529,7 +529,32 @@ if (condition) {
 
 > 如果想要多次执行，则导出函数，调用函数即可。
 
-### require 解析路径加载模块
+### CommonJS 实现原理
+* 每个模块文件存在 `module`、`exports`、`require` 三个变量，三个变量是通过传参而非定义的方式传入
+	* module 记录当前模块信息
+	* require 引入模块的方法
+	* exports 当前模块导出的属性
+* 在编译过程中，CommonJS 对代码块进行了首尾包装，形参传入
+
+```
+(function(exports, require, module, __filename, __dirname) {
+	// 模块的代码实际上在这里
+});
+```
+
+* 包装函数本质的样子,其中模块的部分被处理成了字符串
+
+```
+function wrapper(script) {
+	return '(function (exports, require, module, __filename, __dirname) {
+		// 模块代码
+	})'
+}
+```
+
+* 在模块加载时，会通过 runInThisContext 执行 ，传入参数，最终我们的node文件就这么执行了
+
+### require 文件加载流程
 * require 帮助我们匹配路径进行寻找，所以我们的路径可以写的很简洁，主需要给出相对路径和文件名即可，后缀都可以省略。
 
 ![](../images/jsRequireModules/requireProcess.png)
@@ -544,13 +569,10 @@ if (condition) {
 	* .json 解析为JSON对象
 	* .node 解析为二进制插件模块
 * 首次加载后的模块会缓存在 `require.cache` 中，所以多次使用 `require` 加载文件，得到的对象是同一个
-* 在执行代码的时候，会将模块包装一下，以便于作用域在模块范围之内
 
-```
-(function(exports, require, module, __filename, __dirname) {
-	// 模块的代码实际上在这里
-});
-```
+### require 模块引入与处理
+* CommonJS 模块同步加载并执行模块文件，在执行阶段分析模块依赖，采用深度优先遍历进行分析
+* 撅个栗子
 
 ### module 导出模块
 

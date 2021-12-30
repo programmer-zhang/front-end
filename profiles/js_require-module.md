@@ -268,7 +268,7 @@ define(id?, dependencies?, factory);
 * `dependencies`
 	* 定义模块所依赖模块的数组，执行结果按照依赖数组中的位置顺序以参数形式传入
 * `factory`
-	* 模块初始化要执行的函数或对象，如果为函数，纸杯执行一次，并且该函数按照依赖声明顺序，接收依赖作为参数；如果为对象，此对象应为模块的输出值
+	* 模块初始化要执行的函数或对象，如果为函数，只被执行一次，并且该函数按照依赖声明顺序，接收依赖作为参数；如果为对象，此对象应为模块的输出值
 
 #### 使用方式
 
@@ -297,10 +297,10 @@ define(function() {
 * 利用浏览器的加载能力，异步加载模块
 * 监听每个脚本的load事件
 * 依赖的所有脚本加载完成之后，执行回调
-* 毁掉中拿到的依赖模块靠 `define` 注入
+* 回调中拿到的依赖模块靠 `define` 注入
 
 ### CMD 规范
-> CMD 规范没有提供前置的依赖数组，而是接受 factory 函数，与 AMD 规范相比，AMD 推崇依赖前置和通过返回值对外输出，而 CMD 规范推崇依赖就近，并且通过 module.exports 赋值的方式对外输出。
+> CMD 规范没有提供前置的依赖数组，而是接受 `factory` 函数，与 AMD 规范相比，AMD 推崇依赖前置和通过返回值对外输出，而 CMD 规范推崇依赖就近，并且通过 `module.exports` 赋值的方式对外输出。
 
 #### 规范要求
 * require: 一个方法标识符，调用它可以动态的获取一个依赖模块的输出
@@ -406,12 +406,12 @@ foo()
 ```
 
 ### export default 导出
-* 之前的例子中，在导入时，都需要知道模块中所要加载的变量名或函数名，用户可能不想阅读源码，只想直接使用接口，就可以用export default命令，为模块指定输出。
+* 之前的例子中，在导入时，都需要知道模块中所要加载的变量名或函数名，用户可能不想阅读源码，只想直接使用接口，就可以用 `export default` 命令，为模块指定输出。
 
 ```
 // export-default.js
 export default function () {
-  console.log('foo');
+	console.log('foo');
 }
 ```
 
@@ -439,12 +439,12 @@ export function crc32() { // 输出
 import {crc32} from 'crc32'; // 输入
 ```
 
-* 可以看出，使用export default时，import语句不用使用大括号。
-* import和export命令只能在模块的顶层，不能在代码块之中。否则会语法报错。
+* 可以看出，使用 `export default` 时，`import` 语句不用使用大括号。
+* `import` 和 `export` 命令只能在模块的顶层，不能在代码块之中。否则会语法报错。
 * 这样的设计，可以提高编译器效率，但是没有办法实现运行时加载。
 
 #### import 引入
-* export/export default 定义了模块的对外接口后，其他JS文件就可以通过import来加载这个模块。
+* `export/export default` 定义了模块的对外接口后，其他JS文件就可以通过 `import` 来加载这个模块。
 
 ```
 // main.js
@@ -455,7 +455,7 @@ function setName(element) {
 }
 ```
 
-* import命令接受一对大括号，里面指定要从其他模块导入的变量名，必须与被导入模块（profile.js）对外接口的名称相同。
+* import命令接受一对大括号，里面指定要从其他模块导入的变量名，必须与被导入模块对外接口的名称相同。
 * 如果想重新给导入的变量一个名字，可以用as关键字
 
 ```
@@ -487,7 +487,7 @@ import * as circle from './circle';
 console.log('圆面积：' + circle.area(4));
 console.log('圆周长：' + circle.circumference(14));
 ```
-* 模块整体加载所在的那个对象（上例是circle），应该是可以静态分析的，所以不允许运行时改变。
+* 模块整体加载所在的那个对象（上例是circle），不允许运行时改变。
 
 ```
 import * as circle from './circle';
@@ -498,13 +498,13 @@ circle.area = function () {};
 ```
 
 #### import() 引入
-* 因为require是运行时加载，所以import命令没有办法代替require的动态加载功能。所以引入了import()函数。完成动态加载。
+* 因为 `require` 是运行时加载，所以 `import` 命令没有办法代替 `require` 的动态加载功能。所以引入了 `import()` 函数。完成动态加载。
 
 ```
 import(specifier)
 ```
-* specifier用来指定所要加载的模块的位置。import能接受什么参数，import()可以接受同样的参数。
-* import()返回一个Promise对象。
+* `specifier` 用来指定所要加载的模块的位置。`import` 能接受什么参数，`import()` 可以接受同样的参数。
+* `import()` 返回一个 `Promise` 对象。
 * 按需加载
 	* import模块在事件监听函数中，只有用户点击了按钮，才会加载这个模块。
 
@@ -562,7 +562,7 @@ function wrapper(script) {
 }
 ```
 
-* 在模块加载时，会通过 runInThisContext 执行 ，传入参数，最终我们的node文件就这么执行了
+* 在模块加载时，会通过 `runInThisContext` 执行 ，传入参数，最终我们的node文件就这么执行了
 
 ### require 文件加载流程
 * require 帮助我们匹配路径进行寻找，所以我们的路径可以写的很简洁，主需要给出相对路径和文件名即可，后缀都可以省略。

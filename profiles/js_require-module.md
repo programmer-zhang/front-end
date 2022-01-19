@@ -455,7 +455,7 @@ function setName(element) {
 }
 ```
 
-* import命令接受一对大括号，里面指定要从其他模块导入的变量名，必须与被导入模块对外接口的名称相同。
+* `import` 命令接受一对大括号，里面指定要从其他模块导入的变量名，必须与被导入模块对外接口的名称相同。
 * 如果想重新给导入的变量一个名字，可以用as关键字
 
 ```
@@ -487,7 +487,7 @@ import * as circle from './circle';
 console.log('圆面积：' + circle.area(4));
 console.log('圆周长：' + circle.circumference(14));
 ```
-* 模块整体加载所在的那个对象（上例是circle），不允许运行时改变。
+* 模块整体加载所在的那个对象（上例是  `circle` ），不允许运行时改变。
 
 ```
 import * as circle from './circle';
@@ -520,7 +520,7 @@ button.addEventListener('click', event => {
 });
 ```
 * 条件加载
-	* import()可以放在if...else语句中，实现条件加载。
+	* `import()` 可以放在 `if...else` 语句中，实现条件加载。
 
 ```
 if (condition) {
@@ -541,10 +541,10 @@ if (condition) {
 
 ### CommonJS 实现原理
 * 每个模块文件存在 `module`、`exports`、`require` 三个变量，三个变量是通过传参而非定义的方式传入
-	* module 记录当前模块信息
-	* require 引入模块的方法
-	* exports 当前模块导出的属性
-* 在编译过程中，CommonJS 对代码块进行了首尾包装，形参传入
+	* `module` 记录当前模块信息
+	* `require` 引入模块的方法
+	* `exports` 当前模块导出的属性
+* 在编译过程中，`CommonJS` 对代码块进行了首尾包装，形参传入
 
 ```
 (function(exports, require, module, __filename, __dirname) {
@@ -565,7 +565,7 @@ function wrapper(script) {
 * 在模块加载时，会通过 `runInThisContext` 执行 ，传入参数，最终我们的node文件就这么执行了
 
 ### require 文件加载流程
-* require 帮助我们匹配路径进行寻找，所以我们的路径可以写的很简洁，主需要给出相对路径和文件名即可，后缀都可以省略。
+* `require` 帮助我们匹配路径进行寻找，所以我们的路径可以写的很简洁，主需要给出相对路径和文件名即可，后缀都可以省略。
 
 ![](../images/jsRequireModules/requireProcess.png)
 
@@ -643,13 +643,13 @@ function require(id) {
 } 
 ```
 
-* require 会接收一个参数——文件标识符，然后分析定位文件，分析过程我们上述已经讲到了，加下来会从 Module 上查找有没有缓存，如果有缓存，那么直接返回缓存的内容。
-* 如果没有缓存，会创建一个 module 对象，缓存到 Module 上，然后执行文件，加载完文件，将 loaded 属性设置为 true ，然后返回 module.exports 对象。借此完成模块加载流程。
-* 模块导出就是 return 这个变量的其实跟 a = b 赋值一样， 基本类型导出的是值， 引用类型导出的是引用地址。
-* exports 和 module.exports 持有相同引用，因为最后导出的是 module.exports， 所以对 exports 进行赋值会导致 exports 操作的不再是 module.exports 的引用。
+* `require` 会接收一个参数——文件标识符，然后分析定位文件，分析过程我们上述已经讲到了，加下来会从 `Module` 上查找有没有缓存，如果有缓存，那么直接返回缓存的内容。
+* 如果没有缓存，会创建一个 `module` 对象，缓存到 `Module` 上，然后执行文件，加载完文件，将 loaded 属性设置为 true ，然后返回 `module.exports` 对象。借此完成模块加载流程。
+* 模块导出就是 `return` 这个变量的其实跟 `a = b` 赋值一样， 基本类型导出的是值， 引用类型导出的是引用地址。
+* `exports` 和 `module.exports` 持有相同引用，因为最后导出的是 `module.exports`， 所以对 `exports` 进行赋值会导致 `exports` 操作的不再是 `module.exports` 的引用。
 
 #### require 避免重复加载
-* 正式因为缓存的存在，所以再次引用时，会直接读取缓存中的module，无需再次执行模块
+* 正式因为缓存的存在，所以再次引用时，会直接读取缓存中的 `module`，无需再次执行模块
 * 上述的例子中在 `b.js` 中增加执行 `a.js` 中的方法 `excuteA` 会是什么结果?
 * 改造一下例子中的 `b.js`
 
@@ -674,7 +674,7 @@ module.exports = function(){
 node 入口文件
 异步打印 a 模块 { excuteA: [Function] }
 ```
-> 那如何在执行b文件时获取到excuteA呢
+> 那如何在执行b文件时获取到 `excuteA` 呢
 
 #### require 动态加载
 ```

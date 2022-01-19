@@ -295,7 +295,7 @@ define(function() {
 #### 核心实现逻辑
 * 动态创建 `script` 脚本插入HTML
 * 利用浏览器的加载能力，异步加载模块
-* 监听每个脚本的load事件
+* 监听每个脚本的 `load` 事件
 * 依赖的所有脚本加载完成之后，执行回调
 * 回调中拿到的依赖模块靠 `define` 注入
 
@@ -303,9 +303,9 @@ define(function() {
 > CMD 规范没有提供前置的依赖数组，而是接受 `factory` 函数，与 AMD 规范相比，AMD 推崇依赖前置和通过返回值对外输出，而 CMD 规范推崇依赖就近，并且通过 `module.exports` 赋值的方式对外输出。
 
 #### 规范要求
-* require: 一个方法标识符，调用它可以动态的获取一个依赖模块的输出
-* exports: 一个对象，用于对其他模块提供输出接口，例如:exports.name = "xxx"
-* module: 一个对象，存储了当前模块相关的一些属性和方法，其中module.exports属性等同于上面的exports
+* `require`: 一个方法标识符，调用它可以动态的获取一个依赖模块的输出
+* `exports`: 一个对象，用于对其他模块提供输出接口，例如: `exports.name = "xxx"`
+* `module`: 一个对象，存储了当前模块相关的一些属性和方法，其中 `module.exports` 属性等同于上面的 `exports`
 
 #### 使用方式
 
@@ -322,7 +322,7 @@ define(function (requie, exports, module) {
 
 ### ES6 export/export default 导出 import 引入
 #### export 导出
-* 模块是独立的文件，该文件内部的所有的变量外部都无法获取。如果希望获取某个变量，必须通过export输出。
+* 模块是独立的文件，该文件内部的所有的变量外部都无法获取。如果希望获取某个变量，必须通过`export` 输出。
 
 ```
 // profile.js
@@ -382,7 +382,7 @@ export m;
 ```
 
 * 报错的写法原因是：没有提供对外的接口，第一种直接输出1，第二种虽然有变量m，但还是直接输出1，导致无法解构。
-* 同样的，function和class的输出，也必须遵守这样的写法。
+* 同样的，`function` 和 `class` 的输出，也必须遵守这样的写法。
 
 ```
 // 报错

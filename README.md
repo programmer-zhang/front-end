@@ -300,6 +300,6 @@
 
 > [MAC VSCode 使用指南]
 
-> [Python 环境安装]
+> [Python MAC 环境安装]
 
 > [Python 基础学习]

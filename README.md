@@ -296,6 +296,8 @@
 
 > [打造属于自己的 Github 主页](./profiles/github-profile.md)
 
+> [MacOS使用 WordPress 快速建站](./profiles/wordpress.md)
+
 > [Linux 开发 -- sed使用指南]
 
 > [MAC VSCode 使用指南]

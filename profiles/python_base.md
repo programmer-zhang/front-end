@@ -94,3 +94,45 @@
 * `list(x)` 转换为列表
 * `set(x)` 转换为集合
 * `dict(x)` 创建一个字典
+
+## Python 推导式
+* 可以通过遍历的方式从一个数据序列构建另一个新的数据序列的结构体
+
+> 很好理解，下面举几个例子
+### 列表推导式
+
+```
+# 计算30以内可以被3整除的整数
+>>> names = ['Bob','Tom','alice','Jerry','Wendy','Smith']
+>>> new_names = [name.upper()for name in names if len(name)>3]
+>>> print(new_names)
+['ALICE', 'JERRY', 'WENDY', 'SMITH']
+```
+
+### 字典推导式
+
+```
+listdemo = ['Google','Runoob', 'Taobao']
+# 将列表中各字符串值为键，各字符串的长度为值，组成键值对
+>>> newdict = {key:len(key) for key in listdemo}
+>>> newdict
+{'Google': 6, 'Runoob': 6, 'Taobao': 6}
+```
+
+### 集合推导式
+
+```
+# 计算数字的平方数
+>>> setnew = {i**2 for i in (1,2,3)}
+>>> setnew
+{1, 4, 9}
+
+# 判断不是abc的字母并输出
+>>> a = {x for x in 'abracadabra' if x not in 'abc'}
+>>> a
+{'d', 'r'}
+>>> type(a)
+<class 'set'>
+```
+
+### 元组推导式

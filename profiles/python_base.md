@@ -134,5 +134,3 @@ listdemo = ['Google','Runoob', 'Taobao']
 >>> type(a)
 <class 'set'>
 ```
-
-### 元组推导式

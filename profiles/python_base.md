@@ -76,6 +76,20 @@ print('%s 是冠军!' % ('泰山'))
 ### List 列表类型
 * 列表类型也支持使用 `list[start:end:length]` 进行数据处理
 
+##### 常用内置函数
+* `list.append(obj)`
+	* 列表末尾添加新对象
+* `list.count(obj)`
+	* 统计某个元素在列表中出现的次数
+* `list.insert(index, obj)` 
+	* 将对象插入列表
+* `list.remove(obj)`
+	* 移出列表中某个值的第一个匹配项
+* `list.reverse()`
+	* 列表反向
+* `list.sort()`
+	* 对列表进行排序
+
 ### Tuple 元组类型
 * 不可变数据类型
 * 写在小括号 `()` 中，元素之间使用逗号隔开

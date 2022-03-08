@@ -6,9 +6,9 @@
 * 交互式语言
 
 ### 发展历程
-* Python 由其他语言发展而来(C、C++、Unix shell 和其他的脚本语言等)
-* Python 2.x和Python 3.x 语法同事存在，但两者有较大语法差别
-* Python 2.7 是Python 2.x 最后一个版本
+* `Python` 由其他语言发展而来(C、C++、Unix shell 和其他的脚本语言等)
+* `Python 2.x` 和 `Python 3.x` 语法同事存在，但两者有较大语法差别
+* `Python 2.7` 是 `Python 2.x` 最后一个版本
 
 ### 语法特点
 * 关键词较少，结构简单，**易于学习**
@@ -33,9 +33,9 @@
 
 ### Number 数字类型
 ##### 数据类型判断
-* type()
+* `type()`
 	* 仅判断当前数据的数据类型
-* isinstance()
+* `isinstance()`
 	* 判断当前数据的父类数据类型
 
 ##### 数值计算
@@ -47,7 +47,7 @@
 * 在混合计算时，Python会把整型转换成浮点数进行计算
 
 ##### 删除 Number 类型 对象
-* del numberName
+* `del numberName`
 
 ### String 字符串类型
 * 字符串使用单引号 `'` 或双引号 `"` 标识，使用反斜杠 `\` 转义特殊字符

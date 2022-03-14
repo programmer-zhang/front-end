@@ -206,3 +206,59 @@ for x in it:
 ```
 
 ## Python 生成器
+* 生成器是一个返回迭代器的函数，只能用于迭代操作
+* 在调用生成器运行的过程中，每次遇到 `yield` 时函数会暂停并保存当前所有的运行信息，返回 `yield` 的值, 并在下一次执行 `next()` 方法时从当前位置继续运行。
+
+## Python 函数
+### Python 函数定义规则
+* 以 `def` 关键词开头，后接函数标识符名称和圆括号 ()
+* 函数内容以冒号 `:` 起始，并且缩进
+
+```
+def printHello(first, last):
+	print(a, end=" ")
+	
+printHello()
+```
+
+### Python 函数传参
+> 与JavaScript类似
+
+* 必需参数
+	* 必须以正确的顺序传入函数，调用时的数量必须和声明时的一样
+	* 必需参数不传入会出现语法错误
+* 关键字参数
+	* 关键字参数的传入顺序不影响函数执行
+* 默认参数
+* 不定长参数
+	* 以元组形式传入，使用`*`
+
+	```
+	def printinfo( arg1, *vartuple ):
+		"打印任何传入的参数"
+		print ("输出: ")
+		print (arg1)
+		print (vartuple)
+	 
+	# 调用printinfo 函数
+	printinfo( 70, 60, 50 )
+	>> 输出: 
+		70
+		(60, 50)
+	```
+
+	* 以字典形式导入，使用`**`
+
+	```
+	def printinfo( arg1, **vardict ):
+		"打印任何传入的参数"
+		print ("输出: ")
+		print (arg1)
+		print (vardict)
+	 
+	# 调用printinfo 函数
+	printinfo(1, a=2,b=3)
+	>> 输出: 
+		1
+		{'a': 2, 'b': 3}
+	```

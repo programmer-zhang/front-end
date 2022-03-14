@@ -178,3 +178,8 @@ listdemo = ['Google','Runoob', 'Taobao']
 >>> type(a)
 <class 'set'>
 ```
+
+## Python 迭代器
+* 访问集合元素的一种方式
+* 只能往前迭代，不能后退
+* 两个基本方法 `iter()` 和 `next()`

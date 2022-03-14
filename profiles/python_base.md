@@ -183,3 +183,26 @@ listdemo = ['Google','Runoob', 'Taobao']
 * 访问集合元素的一种方式
 * 只能往前迭代，不能后退
 * 两个基本方法 `iter()` 和 `next()`
+
+```
+>>> list=[1,2,3,4]
+>>> it = iter(list)    # 创建迭代器对象
+>>> print (next(it))   # 输出迭代器的下一个元素
+1
+>>> print (next(it))
+2
+>>>
+```
+
+* 迭代器对象也可以使用常规for进行遍历
+
+```
+#!/usr/bin/python3
+ 
+list=[1,2,3,4]
+it = iter(list)    # 创建迭代器对象
+for x in it:
+    print (x, end=" ")
+```
+
+## Python 生成器

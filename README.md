@@ -176,14 +176,6 @@
 
 > [谷歌浏览器插件制作]
 
-> [区块链基础(一): 小白如何理解区块链](./profiles/blockchain_base.md)
-
-> [区块链基础(二): 区块链技术架构](./profiles/blockchain_framework.md)
-
-> [区块链基础(三): DeFi 是什么](./profiles/blockchain_DeFi.md)
-
-> [区块链基础(四): WEB3.0 是什么]
-
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
 
@@ -307,3 +299,11 @@
 > [Python MAC 环境安装]
 
 > [Python 基础学习]
+
+> [区块链基础(一): 小白如何理解区块链](./profiles/blockchain_base.md)
+
+> [区块链基础(二): 区块链技术架构](./profiles/blockchain_framework.md)
+
+> [区块链基础(三): DeFi 是什么](./profiles/blockchain_DeFi.md)
+
+> [区块链基础(四): WEB3.0 是什么]

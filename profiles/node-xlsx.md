@@ -32,6 +32,7 @@ const workSheetsFromFile = xlsx.parse(`${__dirname}/myFile.xlsx`);
 ```
 
 ### 构建
+* 支持对象数据导入 xlsx 文件
 
 ```
 const data = [
@@ -43,4 +44,13 @@ const data = [
 let buffer = xlsx.build([{name: 'mySheetName', data: data}]); // 生成 buffer
 ```
 
+* 支持导出多 sheet 表格文件
+* 使用 `buffer` 构建失败的可以使用 `node` 的 `fs` 模块进行重新导出xlsx文件
+
+```
+let buffer = xlsx.build([{name: 'mySheetName', data: data}]); 
+fs.writeFile('./export-excel.xlsx', buffer, function (err) {});
+```
+
 ## 开发
+### 

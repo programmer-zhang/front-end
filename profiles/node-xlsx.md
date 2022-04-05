@@ -45,7 +45,7 @@ let buffer = xlsx.build([{name: 'mySheetName', data: data}]); // 生成 buffer
 ```
 
 * 支持导出多 sheet 表格文件
-* 使用 `buffer` 构建失败的可以使用 `node` 的 `fs` 模块进行重新导出xlsx文件
+* 使用 `node-xlsx` 直接构建结果为 `buffer` 文件, 可以使用 `node` 的 `fs` 模块进行重新导出xlsx文件
 
 ```
 let buffer = xlsx.build([{name: 'mySheetName', data: data}]); 
@@ -58,6 +58,9 @@ fs.writeFile('./export-excel.xlsx', buffer, function (err) {});
 
 ```
 // package.json
+"scripts": {
+	"build": "node index.js"
+},
 "dependencies": {
 	"node-xlsx": "^0.21.0"
 }
@@ -138,3 +141,63 @@ let sheetData = findNodeExcleSourceData({excelSheets, sheetName = 'info'});
 ```
 
 ### 导出Excel文件
+
+```
+exportExcel(excelData = {name: 'sheet1', data: excelData}, 'test-excel');
+
+/**
+ * 输出Excel表格
+ *
+ * @param {Object} excelData 表信息
+ * @param {string} fileName 生成的文件名,默认node-excel-export
+ */
+
+function exportExcel(excelData, fileName = 'node-excel-export') {
+    let excelBuf = xlsx.build([excelData]);
+    fs.writeFileSync(`${__dirname}/dist/${fileName}-${Date.now()}.xlsx`, excelBuf);
+}
+```
+
+### 执行
+* npm 执行: `npm run build`
+* 脚本执行: `node index.js`
+
+## 示例
+### 使用 node-xlsx 将JSON文件导出为 Excel 表格文件
+
+```
+// test.json
+{"dataArray":[{"name":"xxx","value":"123","id":"xxx"},{"name":"xxx","value":"234","id":"xxx"},{"name":"xxx","value":"345","id":"xxx"}]}
+
+// index.js
+/**
+ * @file test-json.js
+ * @description 读取json输出excel
+ * @author programmer-zhang
+ */
+const xlsx = require('node-xlsx');
+let fs = require('fs');
+
+let jsonFilePath = './json-files/test.json';
+let jsonData = JSON.parse(fs.readFileSync(jsonFilePath));
+
+let excelData = [];
+// 处理JSON数据
+jsonData.dataArray && jsonData.dataArray.length && jsonData.dataArray.forEach(item => {
+	excelData.push([item.name, item.value, item.id]);
+});
+
+exportExcel(excelData = {name: 'sheet1', data: excelData}, 'test-excel');
+
+/**
+ * 输出Excel表格
+ *
+ * @param {Object} excelData 表信息
+ * @param {string} fileName 生成的文件名,默认node-excel-export
+ */
+
+function exportExcel(excelData, fileName = 'node-excel-export') {
+    let excelBuf = xlsx.build([excelData]);
+    fs.writeFileSync(`${__dirname}/dist/${fileName}-${Date.now()}.xlsx`, excelBuf);
+}
+```

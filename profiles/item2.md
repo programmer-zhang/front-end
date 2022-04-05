@@ -1,3 +1,5 @@
+# 一个好用的 Mac 终端替代方案
+
 > 之前一直用 MAC OS 自带的终端进行操作，但总感觉差点事，于是在同事的介绍下，用上了iTerm2，结合 on my zsh 之后发现很强大，正式入坑。
 
 > 文章建议阅读时间：5分钟(建议阅读配合实践)
@@ -88,7 +90,7 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 
 ![输入历史](../images/item2/item2-type-log.png)
 	
-### 显示命令执行时间轴、
+### 显示命令执行时间轴
 * 高手玩家往往时间运行比较高效，需要知道自己每时每刻都做了什么，普通玩家可能在开发过程中需要知道编译用了多久，`iTerm2` 自带时间轴，让你的使用变得准确
 * 点击工具栏中的 `view->showTimestamps` 打开时间轴
 

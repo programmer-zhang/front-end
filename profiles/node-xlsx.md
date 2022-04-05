@@ -53,4 +53,88 @@ fs.writeFile('./export-excel.xlsx', buffer, function (err) {});
 ```
 
 ## 开发
-### 
+### 引入依赖
+* 方式一: node项目引入
+
+```
+// package.json
+"dependencies": {
+	"node-xlsx": "^0.21.0"
+}
+// index.js
+const xlsx = require('node-xlsx');
+let fs = require('fs'); // node 文件模块，读取文件
+let path = require('path'); // 解析文件目录
+```
+
+### 根据路径读取表格
+> 涉及多文件读取和单文件读取
+
+* 单文件读取
+
+```
+const excelSheets = xlsx.parse(`${__dirname}/excel.xlsx`);
+```
+
+* 多文件读取
+
+```
+// 文件类型正则
+const reg = /^(?!~).*\.(xls|xlsx|csv)$/;
+let filePath = path.resolve(__dirname + '/excel-dir');
+// 读取文件中的所有Excle文件
+fs.readdir(filePath, (err, files) => {
+	// 确保只读取可以识别的表格文件
+	files = files.filter(item => reg.test(item));
+	files.forEach(item => {
+		let fileName = item;
+		// 读取单个文件内容
+		const excelSheets = xlsx.parse(__dirname + '/excel-dir' + fileName);
+	);
+});
+```
+
+* 查找对应sheet表
+> 适用于多sheet表格文件读取，单sheet表格文件仅有一组数据，无须此种方式查找
+
+```
+/**
+ * node-xlsx 版本找到目标表格
+ *
+ * @param {string} excelSheets excel解析出来的JSON数据
+ * @param {number} sheetOrderNum sheet表序列号,从0开始,默认-1
+ * @param {string} sheetName sheet表名称
+ * @description sheetOrderNum sheetName 有一个就行,sheetOrderNum优先
+ * @returns {number} 当前sheet结果数据
+ */
+
+let findNodeExcleSourceData = ({excelSheets, sheetOrderNum = -1, sheetName}) => {
+    let workSheet = []; // 需要处理的数据表
+
+    if (sheetOrderNum >= 0) {
+        // 按照sheet表索引进行查找
+        workSheet = excelSheets[+sheetOrderNum].data; // 指定sheet表
+    }
+    else if (sheetName) {
+        // 按照sheet表表头名进行查找
+        let tmpExlJson = excelSheets.filter(item => {
+            return item.name === sheetName
+        });
+        tmpExlJson.length && (workSheet = tmpExlJson[0].data);
+    }
+    
+    if (!workSheet || (workSheet && !workSheet.length)) {
+        console.log('warning: 未找到符合条件的sheet表');
+        return [];
+    }
+
+    return workSheet;
+}
+
+// 读取excel表中第一个sheet数据
+let sheetData = findNodeExcleSourceData({excelSheets, sheetOrderNum = 0});
+// 读取excel表中sheet名为info数据
+let sheetData = findNodeExcleSourceData({excelSheets, sheetName = 'info'});
+```
+
+### 导出Excel文件

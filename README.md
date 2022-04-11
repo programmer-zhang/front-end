@@ -176,6 +176,10 @@
 
 > [谷歌浏览器插件制作]
 
+> [前端使用 node 实现 读写 Excel文件](./profiles/node-xlsx.md)
+
+> [前端使用 node 批量下载网络图片]
+
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
 
@@ -209,8 +213,6 @@
 > [前端反爬虫]
 
 > [记一次惨痛的 Vue-cli + VueX + SSR 经历](./profiles/hmall.md)
-
-> [前端使用 node 实现 读写 Excel文件](./profiles/node-xlsx.md)
 
 ## 微信开发&小程序开发相关 :envelope:
 > [微信小程序开发遇到的Error](./profiles/wechat_error.md)

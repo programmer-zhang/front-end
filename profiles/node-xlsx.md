@@ -54,7 +54,7 @@ fs.writeFile('./export-excel.xlsx', buffer, function (err) {});
 
 ## 开发
 ### 引入依赖
-* 方式一: node项目引入
+* 方式一: `node` 项目引入
 
 ```
 // package.json
@@ -98,6 +98,7 @@ fs.readdir(filePath, (err, files) => {
 ```
 
 * 查找对应sheet表
+
 > 适用于多sheet表格文件读取，单sheet表格文件仅有一组数据，无须此种方式查找
 
 ```

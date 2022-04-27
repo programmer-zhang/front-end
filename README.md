@@ -37,7 +37,7 @@
 
 > [CSS冷门属性 `mix-blend-mode` 制作文字镂空效果](./profiles/mix-blend-mode.md)
 
-> [`<input />` 标签 `type` 属性的各种用法]
+> [详解 `<input />` 标签 `type` 属性]
 
 > [冷门的 HTML tabindex 详解](./profiles/HTML_tabindex.md)
 

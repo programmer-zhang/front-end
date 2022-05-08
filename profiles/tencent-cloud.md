@@ -104,6 +104,13 @@ git --version
 ```
 sudo yum install nginx
 ```
+
+* 查看 Nginx 配置文件位置
+
+```
+nginx -t
+```
+
 * 修改 Nginx 配置
 
 ```

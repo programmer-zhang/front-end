@@ -140,6 +140,8 @@
 
 > [Nginx系列(四): Nginx_location 路由转发规则](./profiles/nginx_location.md)
 
+> [网站免费配置HTTPS]
+
 > [Vue this.$set的正确打开方式](./profiles/vue_this.set.md)
 
 > [Vue 好用的富文本编辑器 vue-quill-editor](./profiles/vue-quill-editor.md)

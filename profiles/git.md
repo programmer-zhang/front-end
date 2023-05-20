@@ -162,6 +162,28 @@
 * `git reset --soft origin/分支名` 撤销之前的 `commit`，当然代码还是会保留
 * 重新 `commit` 进行提交
 
+## `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! `
+* github远程操作时提示警告
+
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+SHA256:uNiXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxx.
+Please contact your system administrator.
+Add correct host key in /Users/xxx/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /Users/xxx/.ssh/known_hosts:4
+Host key for github.com has changed and you have requested strict checking.
+Host key verification failed.
+fatal: Could not read from remote repository.
+```
+
+* 发生此问题原因在于github发布了新的RSA SSH host key，也就是更新了新的公钥。
+
 ## 一张随时可看的指令图片
 
 ![](../images/git-order.jpg)

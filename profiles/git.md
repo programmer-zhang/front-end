@@ -196,6 +196,17 @@ fatal: Could not read from remote repository.
 	/Users/xxx/.ssh/known_hosts updated.
 	Original contents retained as /Users/xxx/.ssh/known_hosts.old
 	```
+	* 然后随便使用个可以链接到 `remote` 的命令即可，就会提示将新key添加到本地
+
+	```
+	The authenticity of host 'github.com (20.205.243.100)' can't be established.
+	ED25519 key fingerprint is SHA256:+DiY3uNiXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxx.
+	This key is not known by any other names
+	Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+	Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+	```
+	
+	* 填入yes即可正常推送及更新密码了。
 
 ## 一张随时可看的指令图片
 

@@ -182,7 +182,20 @@ Host key verification failed.
 fatal: Could not read from remote repository.
 ```
 
-* 发生此问题原因在于github发布了新的RSA SSH host key，也就是更新了新的公钥。
+* 发生此问题原因在于github发布了新的RSA SSH host key，也就是更新了新的公钥，详细请见官方文档[github官方文档](https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/)
+* 解决方案：
+	* blog中给出的解决方法很简单，把 `known_hosts` 里的过期key删掉就行了：
+
+	```
+	ssh-keygen -R github.com
+	```
+	* 有如下信息证明清楚旧key成功
+
+	```
+	# Host github.com found: line 4
+	/Users/xxx/.ssh/known_hosts updated.
+	Original contents retained as /Users/xxx/.ssh/known_hosts.old
+	```
 
 ## 一张随时可看的指令图片
 

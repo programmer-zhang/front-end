@@ -166,7 +166,7 @@
 
 > [WeHub 实践PC版微信]
 
-> [打造网页版微信(一): contenteditable 的用处]
+> [打造网页版微信(一): 属性 contenteditable 的用处]
 
 > [打造网页版微信(二): 利用 wetool 接入微信]
 

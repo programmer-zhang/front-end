@@ -137,7 +137,7 @@ let findNodeExcleSourceData = ({excelSheets, sheetOrderNum = -1, sheetName}) => 
 
 // 读取excel表中第一个sheet数据
 let sheetData = findNodeExcleSourceData({excelSheets, sheetOrderNum = 0});
-// 读取excel表中sheet名为info数据
+// 读取excel表中sheet名为info的数据
 let sheetData = findNodeExcleSourceData({excelSheets, sheetName = 'info'});
 ```
 
@@ -155,6 +155,7 @@ exportExcel(excelData = {name: 'sheet1', data: excelData}, 'test-excel');
 
 function exportExcel(excelData, fileName = 'node-excel-export') {
     let excelBuf = xlsx.build([excelData]);
+    // 文件写入位置在当前执行文件夹下，当然也可自行修改目录
     fs.writeFileSync(`${__dirname}/dist/${fileName}-${Date.now()}.xlsx`, excelBuf);
 }
 ```

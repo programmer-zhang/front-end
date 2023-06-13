@@ -161,7 +161,7 @@ function exportExcel(excelData, fileName = 'node-excel-export') {
 ```
 
 ### 执行
-* npm 执行: `npm run build`
+* 打包构建执行: `npm run build`
 * 脚本执行: `node index.js`
 
 ## 示例

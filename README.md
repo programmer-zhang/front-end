@@ -178,9 +178,7 @@
 
 > [谷歌浏览器插件制作]
 
-> [前端使用 node 实现 读取 Excel文件](./profiles/node-xlsx.md)
-
-> [前端使用 node 实现 写入 Excel文件]
+> [前端使用 node 实现 读写 Excel文件](./profiles/node-xlsx.md)
 
 > [前端使用 node 批量下载网络图片]
 

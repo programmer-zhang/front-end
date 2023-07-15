@@ -14,11 +14,16 @@
 ## 配置 HTTPS
 ### Nginx SSL模块安装
 * 在配置SSL证书前，要确保机器上的Nginx已经安装了SSL模块，一般情况下自己安装的Nginx都是不存在SSL模块的。
-* 检查Nginx是否安装
+* 检查Nginx是否安装SSL模块
+	* 在Nginx的安装目录下查看版本号，默认安装路径为 `/usr/local/nginx`，Nginx可执行文件在`/usr/local/nginx/sbin` 下，使用指令检查SSL模块是否存在：
 
-```
-nginx -v
-```
+	```
+	nginx -v
+	```
+
+	* 如果输出的Nginx配置种出现 `configure arguments: --with-http_ssl_module`， 则表示机器上的Nginx已完装SSL模块
+
+* 安装Nginx SSL模块
 
 ### 配置SSL证书
 

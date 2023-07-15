@@ -13,6 +13,12 @@
 
 ## 配置 HTTPS
 ### Nginx SSL模块安装
+* 在配置SSL证书前，要确保机器上的Nginx已经安装了SSL模块，一般情况下自己安装的Nginx都是不存在SSL模块的。
+* 检查Nginx是否安装
+
+```
+nginx -v
+```
 
 ### 配置SSL证书
 

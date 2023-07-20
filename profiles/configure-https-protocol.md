@@ -25,6 +25,10 @@
 
 * 安装Nginx SSL模块
 
+```
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
+```
+
 ### 配置SSL证书
 
 ### nginx.conf 配置

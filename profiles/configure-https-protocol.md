@@ -29,6 +29,30 @@
 ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
 ```
 
+* 编译
+	
+
+	```
+	make
+	```
+	
+	* 编译成功后，目录下会多出一个 objs 文件夹，文件夹内会有以 'nginx' 命名的文件。
+	* 使用新出现的 nginx 替换之前 `sbin` 目录下的 nginx，同时停掉 nginx 服务。
+	* 注意：这里需要备份下之前的文件
+
+	```
+	./nginx -s stop #停止nginx服务
+	
+	cp /root/nginx/onjs/nginx /usr/local/nginx/sbin
+	```
+	
+* 确认 Nginx SSL 模块安装成功
+	
+	```
+	./nginx -V
+	``` 
+	
+
 ### 配置SSL证书
 
 ### nginx.conf 配置

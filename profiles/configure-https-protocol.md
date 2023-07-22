@@ -43,7 +43,9 @@
 	```
 	./nginx -s stop #停止nginx服务
 	
-	cp /root/nginx/onjs/nginx /usr/local/nginx/sbin
+	cp /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.bak #备份原有nginx配置文件
+	
+	cp /root/nginx/objs/nginx /usr/local/nginx/sbin #替换原有nginx配置文件
 	```
 	
 * 确认 Nginx SSL 模块安装成功
@@ -56,7 +58,47 @@
 	
 
 ### 配置SSL证书
+* 解压缩下载好的证书，包括pem和key文件
+* 将证书上传到服务器，不要忘记上传地址。
 
 ### nginx.conf 配置
+* 打开 nginx 配置文件
+	* `vi /usr/local/nginx/conf/nginx.conf`
+* 修改 443 端口权限
+	* 要使用https服务需要监听443端口，nginx.conf 已经预留出server，只需要修改权限即可。
+	
+	```
+	# 监听443端口
+	server {
+        	listen 443;
+        	server_name example.com;
+        	ssl on;
+        	ssl_certificate /usr/local/nginx/key/server.pem;
+        	ssl_certificate_key /usr/local/nginx/key/server.key;
+        	ssl_session_timeout  5m; #session超时时间(可删除)
+        	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;     #指定SSL服务器端支持的协议版本(可删除)
+        	ssl_ciphers  HIGH:!aNULL:!MD5; # (可删除)
+        	#ssl_ciphers  ALL：!ADH：!EXPORT56：RC4+RSA：+HIGH：+MEDIUM：+LOW：+SSLv2：+EXP;    #指定加密算法(可删除)
+       	 ssl_prefer_server_ciphers   on;    #在使用SSLv3和TLS协议时指定服务器的加密算法要优先于客户端的加密算法(可删除)
+	}
+	```
+
+* 监听80端口
+	* 80端口是默认端口，监听80端口重定向到 https 端口上
+
+	```
+	server {
+        	listen 80;
+        	server_name example.com;
+        	rewrite ^(.*) https://$server_name$1 permanent;
+	}
+	```
 
 ### 重启Nginx
+* 重启成功就大功告成了
+
+```
+./nginx -s reload
+./nginx -s stop
+./nginx 
+```

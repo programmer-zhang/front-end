@@ -6,7 +6,7 @@
 * 如需**字节跳动 & 百度 & 京东**极速内推，请关注公众号获取内推方式，您将享受VVIP级快速服务
 
 <div style="width:100%;" align="center">
-	<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gjdps5bahnj30p00dwdi3.jpg" style="width:80%;">
+	<img src="./images/wechat-mp-l.png" style="width:80%;">
 	<img src="https://ghchart.rshah.org/programmer-zhang" style="width:80%">
 </div>
 

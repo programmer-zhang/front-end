@@ -82,7 +82,7 @@ const excelSheets = xlsx.parse(`${__dirname}/excel.xlsx`);
 * 多文件读取
 
 ```
-// 文件类型正则
+// 文件类型正则，避免所有文件都去进行读取
 const reg = /^(?!~).*\.(xls|xlsx|csv)$/;
 let filePath = path.resolve(__dirname + '/excel-dir');
 // 读取文件中的所有Excle文件

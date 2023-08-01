@@ -4,9 +4,24 @@
 * 前端使用 Node 模块进行自动化图片下载
 * 前端使用 Node 模块进行批量图片下载
 
+## 准备工作
+* 只需要先拿到单个图片或一堆图片的下载链接
+* 如果是有规律的图片链接，那么恭喜你，很简单就可以实现全部图片的下载
+* 文中涉及的图片批量下载例子为 NFT Azuki 的图片集
+
+```
+imgList = [
+	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/1.png',
+	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/2.png',
+	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/3.png',
+	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/4.png',
+	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/5.png'
+	]
+```
+
 ## 引入模块
 
-> Node 中有很多下载图片的解决方案，可以引入 npm 包来解决问题
+> Node 中有很多下载图片的解决方案，可以引入 npm 包来解决问题，如果图片链接简单且数量不大，只需要使用 `request` 依赖包就可以。
 
 ## 确定图片地址源
 

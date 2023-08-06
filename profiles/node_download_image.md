@@ -34,22 +34,39 @@ imgList = [
 * 创建文件写入流
 
 ```
+let writeStream = fs.createWriteStream(dest);
 ```
 
 * 发送请求并进行存储写入
 
 ```
+let readStream = request(src);
+readStream.pipe(writeStream);
 ```
 
-* 配置相关监听
+
 
 ## 异步下载图片
 
 ## 监听下载状态
 > 下载过程中受制于网络环境或对方反扒措施，部分图片可能会出现下载失败的情况，这个时候监听下载状态就显得尤为重要。
 
-* 利用回调进行文件下载过程监听
-* 根据错误情况进行重新下载
+> 整个过程利用node文件写入流的回调函数进行完成，根据错误情况输出错误信息从而进行后续的重新下载。
+
+* 配置相关监听
+
+```
+readStream.on('end', () => {
+    console.log('文件下载成功:' + imgIndex);
+});
+readStream.on('error', () => {
+    console.log('错误信息:' + imgIndex);
+});
+writeStream.on('finish', () => {
+    // console.log('文件写入成功:' + imgIndex);
+    writeStream.end();
+});
+```
 
 ## 检查下载情况
 * 图片资源的下载情况检查我习惯用图片体积大小进行判断，依然利用node进行体积大小的判断，从而筛选出未成功下载的图片，然后批量进行重新下载。

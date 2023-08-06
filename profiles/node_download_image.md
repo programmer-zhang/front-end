@@ -54,4 +54,29 @@ imgList = [
 ## 检查下载情况
 * 图片资源的下载情况检查我习惯用图片体积大小进行判断，依然利用node进行体积大小的判断，从而筛选出未成功下载的图片，然后批量进行重新下载。
 
+```
+/**
+ * 查找有问题的图片
+ *
+ * @param {string} dirName 文件夹名称
+ */
+let findErrImg = (dirName = '/dist/azuki-images/') => {
+    let filePath = path.resolve(__dirname + dirName);
+    fs.readdir(filePath, (err, files) => {
+        files.forEach(item => {
+            fs.stat(__dirname + dirName + item, (err, data) => {
+                if (err) {
+                    console.log('出错啦:', item);
+                }
+                else {
+                    if (data.size < minSize) {
+                        console.log(item); // 输出文件大小不符正常文件的文件名
+                    }
+                }
+            });
+        });
+    });
+};
+```
+
 ## 最后附完整代码

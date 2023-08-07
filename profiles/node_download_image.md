@@ -44,10 +44,6 @@ let readStream = request(src);
 readStream.pipe(writeStream);
 ```
 
-
-
-## 异步下载图片
-
 ## 监听下载状态
 > 下载过程中受制于网络环境或对方反扒措施，部分图片可能会出现下载失败的情况，这个时候监听下载状态就显得尤为重要。
 

@@ -180,7 +180,7 @@
 
 > [前端使用 node 实现 读写 Excel文件](./profiles/node-xlsx.md)
 
-> [前端使用 node 批量下载网络图片]
+> [前端使用 node 批量下载网络图片](./profiles/node_download_image.md)
 
 ## 持续构建 :articulated_lorry:
 > [Webpack](./profiles/webpack.md)

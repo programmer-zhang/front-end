@@ -11,11 +11,11 @@
 
 ```
 imgList = [
-	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/1.png',
-	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/2.png',
-	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/3.png',
-	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/4.png',
-	'https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/5.png'
+	'https://ikzttp.mypinata.cloud/ipfs/xxx/1.png',
+	'https://ikzttp.mypinata.cloud/ipfs/xxx/2.png',
+	'https://ikzttp.mypinata.cloud/ipfs/xxx/3.png',
+	'https://ikzttp.mypinata.cloud/ipfs/xxx/4.png',
+	'https://ikzttp.mypinata.cloud/ipfs/xxx/5.png'
 	]
 ```
 
@@ -93,3 +93,75 @@ let findErrImg = (dirName = '/dist/azuki-images/') => {
 ```
 
 ## 最后附完整代码
+
+```
+/**
+ * @file download-images.js
+ * @author programmer-zhang
+ */
+
+let imgsPath = [];
+
+let fs = require('fs');
+let request = require('request');
+let path = require('path');
+const axios = require('axios');
+const api = require('api');
+let minSize = 277624; 
+
+/**
+ * 查找有问题的图片
+ *
+ * @param {string} dirName 文件夹名称
+ */
+let findErrImg = (dirName = '/dist/azuki-images/') => {
+    let filePath = path.resolve(__dirname + dirName);
+    fs.readdir(filePath, (err, files) => {
+        files.forEach(item => {
+            fs.stat(__dirname + dirName + item, (err, data) => {
+                if (err) {
+                    console.log('出错啦:', item);
+                }
+                else {
+                    if (data.size < minSize) {
+                        console.log(item);
+                    }
+                }
+            });
+        });
+    });
+};
+
+/**
+ * 批量下载图片
+ *
+ * @param {string} src 图片地址
+ * @param {string} dest 存储位置
+ * @param {number} imgIndex 图片index
+ */
+let downloadPic = (src, dest, imgIndex) => {
+    let writeStream = fs.createWriteStream(dest);
+    let readStream = request(src);
+    readStream.pipe(writeStream);
+    readStream.on('end', () => {
+        console.log('文件下载成功:' + imgIndex);
+    });
+    readStream.on('error', () => {
+        console.log('错误信息:' + imgIndex);
+    });
+    writeStream.on('finish', () => {
+        // console.log('文件写入成功:' + imgIndex);
+        writeStream.end();
+    });
+};
+
+let startDownload = () => {
+    for (let i = 9000, len = 10000; i < len; i++) {
+        let imgPath = 'https://ikzttp.mypinata.cloud/ipfs/xxxxxxx/' + i + '.png';
+        downloadPic(imgPath, './dist/azuki-images/' + i + '.png', i);
+    }
+};
+
+startDownload();
+
+```

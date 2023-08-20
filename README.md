@@ -11,7 +11,7 @@
 </div>
 
 ## HTML & CSS相关 :european_castle:
-> [10分钟搞定 flex 布局](./profiles/flex.md)
+> [10分钟搞定 Flex 布局](./profiles/flex.md)
 
 > [Grid 布局]
 
@@ -214,7 +214,7 @@
 
 > [前端反爬虫]
 
-> [记一次惨痛的 Vue-cli + VueX + SSR 经历](./profiles/hmall.md)
+> [记一次惨痛的 Vue-cli + VueX + SSR 经历](./profiles/vue_project-summary.md)
 
 ## 微信开发&小程序开发相关 :envelope:
 > [微信小程序开发遇到的Error](./profiles/wechat_error.md)

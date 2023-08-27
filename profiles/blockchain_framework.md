@@ -1,4 +1,4 @@
-# 区块链的技术架构
+# 区块链基础(二): 区块链技术架构
 ## 区块链的六层结构
 ![](../images/blockChain/blockchain-structure.png)
 

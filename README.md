@@ -11,13 +11,13 @@
 </div>
 
 ## HTML & CSS相关 :european_castle:
-> [10分钟搞定 Flex 布局](./profiles/flex.md)
+> [10分钟搞定 Flex 布局](./profiles/HTML_flex.md)
 
 > [Grid 布局]
 
-> [如何优雅地画一像素的线](./profiles/css-one-px.md)
+> [如何优雅地画一像素的线](./profiles/HTML_css-one-px.md)
 
-> [DOM元素 居中的多种实现方式](./profiles/dom-center.md)
+> [DOM元素 居中的多种实现方式](./profiles/HTML_dom-center.md)
 
 > [面试官问你`<img />`是什么元素时你怎么回答](./profiles/HTML_img.md)
 
@@ -25,7 +25,7 @@
 
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 
-> [一些 CSS 解决交互问题使用技巧(持续更新)](./profiles/永远18岁的css.md)
+> [一些 CSS 解决交互问题使用技巧(持续更新)](./profiles/HTML_永远18岁的css.md)
 
 > [硬件加速 CSS 来提高网站性能(外链资料)](http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
 
@@ -33,11 +33,11 @@
 
 > [纯 CSS 实现文本超出隐藏](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/cssTestPhone.vue)
 
-> [自用部分代码规范](./profiles/自用代码规范.md)
+> [自用部分代码规范](./profiles/HTML_自用代码规范.md)
 
-> [CSS冷门属性 `mix-blend-mode` 制作文字镂空效果](./profiles/mix-blend-mode.md)
+> [CSS冷门属性 `mix-blend-mode` 制作文字镂空效果](./profiles/HTML_mix-blend-mode.md)
 
-> [详解 `<input>` 标签 `type` 属性](./profiles/html_input.md)
+> [详解 `<input>` 标签 `type` 属性](./profiles/HTML_input.md)
 
 > [冷门的 HTML tabindex 详解](./profiles/HTML_tabindex.md)
 
@@ -108,7 +108,7 @@
 
 > [浏览器本地存储](./profiles/browser_local_storage.md)
 
-## 网络相关 :postbox:
+## 网络相关 Network :postbox:
 > [异步通信](./profiles/异步通信.md)
 
 > [HTTP-状态码](./profiles/HTTP_status.md)
@@ -121,7 +121,7 @@
 
 > [国家为什么大力发展IPV6(外链资料)](http://ipv6.infosws.cn/20200228/32244.html)
 
-## 架构框架相关 :construction:
+## 架构框架相关 Architecture&Framework :construction:
 > [Framework遇到的error](./profiles/framework_error.md)
 
 > [NUXT 小试牛刀](./profiles/NUXT小试牛刀.md)
@@ -182,7 +182,7 @@
 
 > [前端使用 node 批量下载网络图片](./profiles/node_download_image.md)
 
-## 持续构建 :articulated_lorry:
+## 持续构建 Build Processing :articulated_lorry:
 > [Webpack](./profiles/webpack.md)
 
 > [Webpack 打包构建流程]
@@ -195,7 +195,7 @@
 
 > [腾讯云平台个人网站搭建](./profiles/tencent-cloud.md)
 
-## 软件工程 :wrench:
+## 软件工程 Software Engineering :wrench:
 > [敏捷开发](./profiles/敏捷开发.md)
  
 > [前端自动化构建](./profiles/前端自动化构建.md)
@@ -216,7 +216,7 @@
 
 > [记一次惨痛的 Vue-cli + VueX + SSR 经历](./profiles/vue_project-summary.md)
 
-## 微信开发&小程序开发相关 :envelope:
+## 微信开发&小程序开发相关 WeChat&Mini Apps :envelope:
 > [微信小程序开发遇到的Error](./profiles/wechat_error.md)
 
 > [微信小程序攻略(外链资料)](https://juejin.im/post/5b8fd1416fb9a05cf3710690?utm_source=gold_browser_extension)
@@ -235,7 +235,7 @@
 
 > [小程序工程化(二) -- 小程序支持less]
 
-## 编码实践 :paperclip:
+## 编码实践 Coding Demo :paperclip:
 > [JS 实现飞入购物车]
 
 > [JS 实现千分符]
@@ -262,10 +262,10 @@
 
 > [leetCode做题记录]
 
-## 硬件 :computer:
+## 硬件 Hardware :computer:
 > [计算机硬件相关(持续更新)](./profiles/计算机硬件相关.md)
 
-## 其他 :hankey:
+## 其他 Just Fun :hankey:
 > [攻城狮，你真的会使用搜索引擎么?](./profiles/search_tips.md)
 
 > [程序员保佑指南 :pray: ](./profiles/程序员保佑指南.md)

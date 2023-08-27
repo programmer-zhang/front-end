@@ -310,7 +310,7 @@
 
 > [区块链基础(三): DeFi 是什么](./profiles/blockchain_DeFi.md)
 
-> [区块链基础(四): WEB 3.0 是什么]
+> [区块链基础(四): WEB 3.0 是什么](./profiles/blockchain_web3.md)
 
 > [智能合约学习(一): Solidity的第一行代码]
 

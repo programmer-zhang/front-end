@@ -24,7 +24,7 @@ JavaScript是一种广泛用于网页开发的脚本语言，其强大的功能�
 
 以下是一些闭包在前端开发中常见应用的示例：
 
-1. **数据封装：**
+* **数据封装：**
 
 ```javascript
 function createCounter() {
@@ -45,7 +45,7 @@ counter(); // 输出: 2
 
 在这个例子中，`createCounter`函数返回了一个内部函数`increment`，而这个内部函数可以访问外部函数`createCounter`的`count`变量。每次调用`counter`函数，都会增加并输出计数值。
 
-2. **事件处理：**
+* **事件处理：**
 
 ```javascript
 function createButton() {
@@ -65,7 +65,7 @@ document.body.appendChild(button);
 
 在这个例子中，`createButton`函数创建了一个按钮元素，并为按钮添加了一个点击事件处理函数。即使事件处理函数在将来被触发，它仍然可以访问`button`元素，因为它被定义在了闭包中。
 
-3. **模块化开发：**
+* **模块化开发：**
 
 ```javascript
 function createCalculator() {

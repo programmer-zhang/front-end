@@ -217,3 +217,40 @@ setTimeout(function delayedReload() {
 * 1、clickHandler函数是闭包，因为它能访问外部的countCLicks。
 * 2、immediate函数不是闭包，因为它没有访问到外部的任何一个变量。
 * 3、delayedReload函数是闭包，因为它访问到全局变量location，也就是最顶层的函数域。
+
+### 题目 7: 以下代码打印出来的是什么？
+
+```
+(function immediateA(a) {
+  return (function immediateB(b) {
+    console.log(a); // 打印出什么
+  })(1);
+})(0);
+```
+
+**答案:**
+
+打印出 0
+
+* 因为immediateA函数的参数是0，因此传输给a为0。然后immediateB又是在immediateA的函数里，而且它是一个闭包的，所以immediateB里的a能访问到外面immediateA的a，所以打印出 0
+
+### 题目 8：以下代码打印出来的是什么？
+
+```
+let count = 0;
+(function immediate() {
+  if (count === 0) {
+    let count = 1;
+    console.log(count); // What is logged?
+  }
+  console.log(count); // What is logged?
+})();
+```
+
+**答案:**
+
+
+打印出 1 和 0
+
+* 因为一开头声明了count = 0，然后在immediaye函数是一个闭包，因为它的count能访问到一开头声明的那个count，所以此时count是0，然后在条件块上，因为满足count===0的条件，所以进入条件块里，然后因为let具有块级作用域，所以用let声明count时，此时的count为1，所以第一个console.log(count）打印出1
+* 第二个console.log(count)因为是在immediate函数里，而count是会访问到外部的count，也就是一开头声明的那个count，所以为0

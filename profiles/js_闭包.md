@@ -253,4 +253,68 @@ let count = 0;
 打印出 1 和 0
 
 * 因为一开头声明了count = 0，然后在immediaye函数是一个闭包，因为它的count能访问到一开头声明的那个count，所以此时count是0，然后在条件块上，因为满足count===0的条件，所以进入条件块里，然后因为let具有块级作用域，所以用let声明count时，此时的count为1，所以第一个console.log(count）打印出1
-* 第二个console.log(count)因为是在immediate函数里，而count是会访问到外部的count，也就是一开头声明的那个count，所以为0
+* 第二个console.log(count)因为是在immediate函数里，而count是会访问到外部的count，也就是一开头声明的那个count，所以为0。
+
+### 题目 9：以下代码打印出来的是什么？
+
+```
+for (var i = 0; i < 3; i++) {
+  setTimeout(function log() {
+    console.log(i); // What is logged?
+  }, 1000);
+}
+```
+
+**答案:**
+
+
+打印出 3,3,3
+
+* 该代码块执行有两个阶段：
+	* 阶段一：
+	* 1、for循环有3次，每次循环时都会创建一个新的log函数，而log函数里的setTimeout()是在1000ms后开始执行的。
+	* 2、循环完成后，i就变成3，而setTimeout还没开始执行的。
+	* 阶段二：
+	* 第二个就是发生在1000ms后：
+	* 1、setTimeou()就开始执行的，因为是闭包的，所以里面的i能访问到外部的i，而外部的i此时就是3，所以打印出3，之后的setTimeou也是如此的。
+
+### 题目 10：以下代码打印出来的是什么？
+
+```
+function createIncrement() {
+  let count = 0;
+  function increment() { 
+    count++;
+  }
+
+  let message = `Count is ${count}`;
+  function log() {
+    console.log(message);
+  }
+  
+  return [increment, log];
+}
+
+const [increment, log] = createIncrement();
+increment(); 
+increment(); 
+increment(); 
+log(); // What is logged?
+```
+
+**答案:**
+
+
+打印出 Count is 0
+
+* increment被调用3次，每次count都+1，3次后就成为3。
+message变量是在createIncrement函数内，它的初始化是“count is 0"。然而，即使count增加1，message始终保持“count is 0"
+log函数是一个闭包，它能访问到外部的message，所以打印出“count is 0"
+
+
+
+
+
+
+
+

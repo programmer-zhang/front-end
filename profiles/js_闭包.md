@@ -225,7 +225,7 @@ setTimeout(function delayedReload() {
 
 打印出 0
 
-* 因为immediateA函数的参数是0，因此传输给a为0。然后immediateB又是在immediateA的函数里，而且它是一个闭包的，所以immediateB里的a能访问到外面immediateA的a，所以打印出 0
+* 因为 `immediateA` 函数的参数是0，因此传输给 `a` 为 0。然后 `immediateB` 又是在`immediateA` 的函数里，而且它是一个闭包的，所以 `immediateB` 里的 `a` 能访问到外面`immediateA` 的 `a` ，所以打印出 0
 
 ### 题目 8：以下代码打印出来的是什么？
 
@@ -245,10 +245,10 @@ let count = 0;
 
 打印出 1 和 0
 
-* 因为一开头声明了count = 0，然后在immediaye函数是一个闭包，因为它的count能访问到一开头声明的那个count，所以此时count是0，然后在条件块上，因为满足count===0的条件，所以进入条件块里，然后因为let具有块级作用域，所以用let声明count时，此时的count为1，所以第一个console.log(count）打印出1
-* 第二个console.log(count)因为是在immediate函数里，而count是会访问到外部的count，也就是一开头声明的那个count，所以为0。
+* 因为一开头声明了 `count = 0`，然后在 `immediaye` 函数是一个闭包，因为它的 `count` 能访问到一开头声明的那个 `count`，所以此时 `count` 是0，然后在条件块上，因为满足 `count===0` 的条件，所以进入条件块里，然后因为 `let` 具有块级作用域，所以用 `let` 声明`count` 时，此时的 `count` 为1，所以第一个 `console.log` 打印出 1
+* 第二个 `console.log`因为是在 `immediate` 函数里，而 `count` 是会访问到外部的 `count` ，也就是一开头声明的那个 `count`，所以为 0
 
-### 题目 9：以下代码打印出来的是什么？
+### 题目 9：经典面试题-以下代码打印出来的是什么？
 
 ```
 for (var i = 0; i < 3; i++) {
@@ -265,11 +265,11 @@ for (var i = 0; i < 3; i++) {
 
 * 该代码块执行有两个阶段：
 	* 阶段一：
-	* 1、for循环有3次，每次循环时都会创建一个新的log函数，而log函数里的setTimeout()是在1000ms后开始执行的。
-	* 2、循环完成后，i就变成3，而setTimeout还没开始执行的。
+	* 1、`for` 循环有3次，每次循环时都会创建一个新的 `log` 函数，而 `log` 函数里的`setTimeout()` 是在1000ms后开始执行的。
+	* 2、循环完成后，`i`就变成3，而 `setTimeout` 还没开始执行的。
 	* 阶段二：
-	* 第二个就是发生在1000ms后：
-	* 1、setTimeou()就开始执行的，因为是闭包的，所以里面的i能访问到外部的i，而外部的i此时就是3，所以打印出3，之后的setTimeou也是如此的。
+	* 第二个就是发生在 `1000ms` 后：
+	* 1、`setTimeou()` 就开始执行的，因为是闭包的，所以里面的 `i` 能访问到外部的 `i`，而外部的 `i` 此时就是3，所以打印出3，之后的 `setTimeou` 也是如此的。
 
 ### 题目 10：以下代码打印出来的是什么？
 
@@ -300,9 +300,9 @@ log(); // What is logged?
 
 打印出 Count is 0
 
-* increment被调用3次，每次count都+1，3次后就成为3。
-message变量是在createIncrement函数内，它的初始化是“count is 0"。然而，即使count增加1，message始终保持“count is 0"
-log函数是一个闭包，它能访问到外部的message，所以打印出“count is 0"
+* `increment` 被调用3次，每次 `count` 都+1，3次后就成为3。
+* `message` 变量是在 `createIncrement` 函数内，它的初始化是 `"count is 0"`。然而，即使 `count` 增加1，`message`始终保持`"count is 0"`
+* `log` 函数是一个闭包，它能访问到外部的 `message`，所以打印出 `"count is 0"`
 
 ### 题目 11：恢复封装
 
@@ -328,9 +328,9 @@ stack.items; // => [10]
 stack.items = [10, 100, 1000]; // 破坏封装
 ```
 
-这stack运行看起来正常的，但有一个小小的问题，items属性被暴露了，所以任何人能直接修改这个属性。
-这确实会破坏stack的封装，按理来说应该只有push和pop方法被公开的，而items就不应该被公开的。
-利用闭包的概念来重构上面的createStack函数，实现items不能被初createStack函数之外访问。
+* 这 `stack` 运行看起来正常的，但有一个小小的问题，`items` 属性被暴露了，所以任何人能直接修改这个属性。
+* 这确实会破坏 `stack` 的封装，按理来说应该只有 `push()` 和 `pop()` 方法被公开的，而 `items`就不应该被公开的。
+* 利用闭包的概念来重构上面的 `createStack` 函数，实现 `items` 不能被初 `createStack` 函数之外访问。
 
 ```
 function createStack() {
@@ -369,7 +369,7 @@ stack.items; // => undefined
 
 ### 题目 11：智能相乘？
 
-在multiply函数内，写下两个数相乘。
+在 `multiply` 函数内，写下两个数相乘。
 
 ```
 function multiply(num1, num2) {
@@ -377,8 +377,8 @@ function multiply(num1, num2) {
 }
 ```
 
-如果multiply有两个参数，则返回两个参数相乘的结果
-如果multiply只有一个参数，比如说const anotherFunc = multiply(num1)，则返回anotherFunc函数，然后anotherFunc函数又赋值给一个参数num2，则返回num1 * num2的结果
+* 如果 `multiply` 有两个参数，则返回两个参数相乘的结果
+* 如果 `multiply` 只有一个参数，比如说 `const anotherFunc = multiply(num1)` ，则返回`anotherFunc`函数，然后 `anotherFunc` 函数又赋值给一个参数 `num2`，则返回 `num1 * num2` 的结果
 
 ```
 multiply(4, 5); // => 20

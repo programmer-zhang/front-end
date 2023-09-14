@@ -80,7 +80,7 @@
 
 > [作用域](./profiles/js_作用域.md)
 
-> [原型链]
+> [原型链](./profiles/js_原型链.md)
 
 > [JS 继承方式](./profiles/js_inherit.md)
 

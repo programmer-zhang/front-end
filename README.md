@@ -304,6 +304,8 @@
 
 > [Python 基础学习]
 
+> [区块链基础(零): 区块链发展史(持续更新)](./profiles/blockchain_time-axis.md)
+
 > [区块链基础(一): 小白如何理解区块链](./profiles/blockchain_base.md)
 
 > [区块链基础(二): 区块链技术架构](./profiles/blockchain_framework.md)

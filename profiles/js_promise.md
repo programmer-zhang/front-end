@@ -4,7 +4,10 @@
 
 > 本篇文章使用 ChatGPT 进行辅助编写
 
-
+## 阅读本文您将收获
+* 什么是 `Promise`
+* 创建一个简单的 `Promise`
+* 使用手写的 `Promise`
 
 ## 什么是 Promise？
 
@@ -14,7 +17,7 @@ Promise 是一种表示异步操作的对象，它可以有三种状态：等待
 
 以下是一个手写的 Promise 的示例，它模拟了一个异步操作，延迟一段时间后解决（resolve）并返回一个成功消息。
 
-```javascript
+```
 class MyPromise {
   constructor(executor) {
     this.status = 'pending';

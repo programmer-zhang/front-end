@@ -100,7 +100,7 @@
 
 > [IEEE 754 的四种舍入方向]
 
-> [手写一个 promise]
+> [手写一个 promise](./profiles/js_promise.md)
 
 > [使用 promise 手写一个 Ajax 请求]
 

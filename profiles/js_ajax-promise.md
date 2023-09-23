@@ -2,10 +2,13 @@
 
 > 本篇文章使用ChatGPT辅助编写
 
-
 ## 阅读本人您将收获
+* 手写 `Ajax` 请求
+* 使用 `Promise` 手写 `Ajax` 请求
 
-下面是一个使用 Promise 手写的简单 AJAX 请求的示例，并对代码进行详细分解说明：
+## 使用 `Promise` 手写 `Ajax` 请求
+
+* 下面是一个使用 Promise 手写的简单 AJAX 请求的示例
 
 ```javascript
 // 步骤 1: 创建一个函数，该函数返回一个 Promise 对象
@@ -67,5 +70,3 @@ makeAjaxRequest("https://jsonplaceholder.typicode.com/posts/1", "GET")
 7. 在 `xhr.onerror` 回调函数中，调用 `reject` 并传递错误信息 "网络错误"。
 
 8. 使用 `makeAjaxRequest` 函数发起 AJAX 请求，并通过 `.then()` 处理成功响应和 `.catch()` 处理错误。如果请求成功，将输出响应数据，否则将输出错误信息。
-
-这个示例演示了如何使用 Promise 来管理异步 AJAX 请求，使代码更加清晰和可维护。

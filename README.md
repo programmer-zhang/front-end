@@ -102,7 +102,7 @@
 
 > [手写一个 promise](./profiles/js_promise.md)
 
-> [使用 promise 手写一个 Ajax 请求]
+> [使用 promise 手写一个 Ajax 请求](./profiles/js_ajax-promise.md)
 
 > [JS 中的按位运算]
 

@@ -164,7 +164,7 @@
 
 > [Weex 基础使用指南](./profiles/weex-base.md)
 
-> [WeHub 实践 PC 版微信]
+> [WeHub 打造网页版微信]
 
 > [打造网页版微信(一): 属性 contenteditable 的用处]
 

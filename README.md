@@ -148,7 +148,7 @@
 
 > [Vue 中慎用 style 标签的 scoped 属性]
 
-> [Vue 组件通信]
+> [Vue 组件间的通信]
 
 > [Vue 源码系列-Vue的生命周期](./profiles/vue_life.md)
 

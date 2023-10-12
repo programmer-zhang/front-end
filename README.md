@@ -21,7 +21,7 @@
 
 > [面试官问你`<img />`是什么元素时你怎么回答](./profiles/HTML_img.md)
 
-> [更好地使用 border-image]
+> [更好地使用 border-image]()
 
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 

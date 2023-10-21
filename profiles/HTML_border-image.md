@@ -16,11 +16,11 @@
 border-image: source slice width outset repeat;
 ```
 
-- `source`: 指定用于边框的图像源。
-- `slice`: 定义从图像中切割边框的方式。
-- `width`: 设置边框的宽度。
-- `outset`: 设置边框的外边距。
-- `repeat`: 控制边框图像的重复方式。
+- `source`: 指定用于边框的图像源
+- `slice`: 定义从图像中切割边框的方式
+- `width`: 设置边框的宽度
+- `outset`: 设置边框的外边距
+- `repeat`: 控制边框图像的重复方式
 
 ## 图像源 (`source`)
 

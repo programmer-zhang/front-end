@@ -25,10 +25,9 @@ border-image: source slice width outset repeat;
 ## 图像源 (`source`)
 
 * `source` 参数可以是以下之一：
-
-- 图像文件的 URL。
-- `none`：表示不使用图像，只使用颜色。
-- `current-color`：表示使用当前元素的文本颜色作为边框颜色。
+	* 图像文件的 URL。
+	* `none`：表示不使用图像，只使用颜色。
+	* `current-color`：表示使用当前元素的文本颜色作为边框颜色。
 
 ```
 border-image: url(border.png) 30 30 round;
@@ -85,5 +84,3 @@ border-image: url(border.png) 30 30 30 30 round;
 ```
 
 以上代码将为类名为 `.custom-border` 的元素创建一个自定义边框。
-
-通过合理使用 `border-image` 属性，你可以为你的网页元素添加独特的边框效果，使其更加吸引人。

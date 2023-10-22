@@ -3,7 +3,7 @@
 * PS:is free :grin: 
 * 如有喜欢，请尽情用 `star` 羞辱我
 * 获取最新文章请关注公众号：全栈道路
-* 如需**字节跳动 & 百度 & 京东**极速内推，请关注公众号获取内推方式，您将享受VVIP级快速服务
+* 如需**字节跳动 & 百度 & 京东 & 腾讯 & 美团**极速内推，请关注公众号获取内推方式，您将享受VVIP级快速服务
 
 <div style="width:100%;" align="center">
 	<img src="./images/wechat-mp-l.png" style="width:80%;">
@@ -21,7 +21,7 @@
 
 > [面试官问你`<img />`是什么元素时你怎么回答](./profiles/HTML_img.md)
 
-> [更好地使用 border-image]
+> [更好地使用 border-image](./profiles/HTML_border-image.md)
 
 > [HTML & CSS 遇到的 Error](./profiles/HTML&CSS_error.md)
 

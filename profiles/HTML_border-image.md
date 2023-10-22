@@ -61,10 +61,10 @@ border-image: url(border.png) 30 30 30 30 outset;
 
 * `repeat` 参数控制边框图像的重复方式。它有以下几个选项：
 
-- `stretch`: 默认值，拉伸图像以填充边框。
-- `repeat`: 重复图像以填充边框。
-- `round`: 拉伸或缩小图像以填充边框。
-- `space`: 在图像之间添加间隙以填充边框。
+	* `stretch`: 默认值，拉伸图像以填充边框。
+	* `repeat`: 重复图像以填充边框。
+	* `round`: 拉伸或缩小图像以填充边框。
+	* `space`: 在图像之间添加间隙以填充边框。
 
 ```css
 border-image: url(border.png) 30 30 30 30 round;

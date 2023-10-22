@@ -11,7 +11,7 @@
 </div>
 
 ## HTML & CSS相关 :european_castle:
-> [10分钟搞定 Flex 布局](./profiles/HTML_flex.md)
+> [10分钟搞定 Flex 布局](profiles/HTML_flex.md)
 
 > [Grid 布局](./profiles/HTML_grid.md)
 

@@ -19,7 +19,7 @@
 
 * **生命周期:** 在 `cookie` 设置的过期时间之前一直有效，即使窗口或者浏览器关闭
 * **存储容量:** 存放数据大小为4K, 有存储个数限制（各浏览器不同），一般不超过20个
-* **使用注意:** 与服务器端通信，每次都会携带在HTTP头中，cookie存储数据过多会带来性能问题。同时cookie以纯文本的形式在客户端和服务端中传递，存在被截获后篡改的风险。另外在 `HttpOnly: false` 的情况下，cookie信息能直接通过JS脚本来读取
+* **使用注意:** 与服务器端通信，每https://github.com/programmer-zhang/front-end/tree/master/profiles/次都会携带在HTTP头中，cookie存储数据过多会带来性能问题。同时cookie以纯文本的形式在客户端和服务端中传递，存在被截获后篡改的风险。另外在 `HttpOnly: false` 的情况下，cookie信息能直接通过JS脚本来读取
 * **使用方式:**
 
 ```
@@ -27,7 +27,7 @@ document.cookie="username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT; path=
 document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT"; // 删除cookie只需要将过期时间提前即可
 ```
 
-> Cookie 的更多处理方式请看这篇文章， [JS针对 Cookie 的操作](../profiles/js针对cookie的操作.md)
+> Cookie 的更多处理方式请看这篇文章， [JS针对 Cookie 的操作](https://github.com/programmer-zhang/front-end/tree/master/profiles/js针对cookie的操作.md)
 
 ## localStorage
 * **生命周期:** 永久，除非用户清除浏览器中的 `localStorage` 信息，否则永远存在

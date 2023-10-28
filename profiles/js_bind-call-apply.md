@@ -6,11 +6,42 @@
 
 ## 阅读本文您将收获
 * `bind`, `call`, 和 `apply` 三种函数的作用
+* `bind`, `call`, 和 `apply` 三种函数的使用场景
 * `bind`, `call`, 和 `apply` 三种函数的手撸方式
 
 ## 1.  `bind` 函数
 
+### 作用
 * `bind` 方法用于创建一个新的函数，该函数在调用时具有指定的上下文，同时也可以传递参数。以下是一个手写 `bind` 函数的示例：
+
+### 使用场景
+* **绑定回调函数**：事件处理函数的绑定，确保函数在事件触发时具有正确的上下文。
+
+```javascript
+// 示例：绑定事件处理函数
+const button = document.getElementById('myButton');
+const obj = {
+  message: 'Button clicked!',
+  handleClick: function () {
+    console.log(this.message);
+  }
+};
+button.addEventListener('click', obj.handleClick.bind(obj));
+```
+
+* **创建偏函数**： 使用 bind 来预定义部分函数参数，以创建特定用途的函数。
+
+```javascript
+// 示例：创建具有预定义参数的回调函数
+function greet(greeting, name) {
+  console.log(`${greeting}, ${name}`);
+}
+
+const greetHello = greet.bind(null, 'Hello');
+greetHello('Alice'); // 输出：Hello, Alice
+```
+
+### 手写一个 `bind` 函数
 
 ```javascript
 Function.prototype.myBind = function (context, ...args) {
@@ -37,7 +68,35 @@ greetPerson();
 
 ## 2.  `call` 函数
 
-* `call` 方法用于立即调用一个函数，并指定函数的上下文以及参数。以下是一个手写 `call` 函数的示例：
+### 作用
+* `call` 方法用于立即调用一个函数，并指定函数的上下文以及参数。
+
+### 使用场景
+* **继承与超类调用**： 在对象的构造函数中，可以使用 call 来调用超类构造函数，实现继承。
+
+```javascript
+function Animal(name) {
+  this.name = name;
+}
+
+function Dog(name, breed) {
+  Animal.call(this, name);
+  this.breed = breed;
+}
+```
+
+* **数组操作**： 在操作数组时，可以使用 call 来将类数组对象（如 arguments）转换为真正的数组。
+
+```javascript
+function sum() {
+  const argsArray = Array.prototype.slice.call(arguments);
+  return argsArray.reduce((acc, val) => acc + val, 0);
+}
+
+console.log(sum(1, 2, 3)); // 输出：6
+```
+
+### 手写一个 `call` 函数
 
 ```javascript
 Function.prototype.myCall = function (context, ...args) {

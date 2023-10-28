@@ -5,14 +5,21 @@
 > 本篇文章使用 ChatGPT 辅助编写
 
 ## 阅读本文您将收获
-* `bind`, `call`, 和 `apply` 三种函数的作用
+* `bind`, `call`, 和 `apply` 三种函数的作用与使用
 * `bind`, `call`, 和 `apply` 三种函数的使用场景
 * `bind`, `call`, 和 `apply` 三种函数的手撸方式
 
 ## 1.  `bind` 函数
 
 ### 作用
-* `bind` 方法用于创建一个新的函数，该函数在调用时具有指定的上下文，同时也可以传递参数。以下是一个手写 `bind` 函数的示例：
+* `bind` 方法用于创建一个新的函数，该函数在调用时具有指定的上下文，同时也可以传递参数。
+* 传参:
+	* 第一个参数（必选）： 指定函数执行时的上下文，即 this 的值。
+	* 后续参数（可选）： 可以是任意数量的参数，这些参数将被预先传递给函数。
+	
+	```
+	const boundFunction = originalFunction.bind(thisArg, arg1, arg2, ...);
+	```
 
 ### 使用场景
 * **绑定回调函数**：事件处理函数的绑定，确保函数在事件触发时具有正确的上下文。
@@ -68,8 +75,15 @@ greetPerson();
 
 ## 2.  `call` 函数
 
-### 作用
+### 作用与使用
 * `call` 方法用于立即调用一个函数，并指定函数的上下文以及参数。
+* 传参：
+	* 第一个参数（必选）： 指定函数执行时的上下文，即 this 的值。
+	* 后续参数（可选）： 可以是任意数量的参数，这些参数将立即传递给函数。
+
+	```
+	function.call(thisArg, arg1, arg2, ...);
+	```
 
 ### 使用场景
 * **继承与超类调用**： 在对象的构造函数中，可以使用 call 来调用超类构造函数，实现继承。
@@ -119,7 +133,47 @@ introduce.myCall(person, 30);
 
 ## 3.  `apply` 函数
 
-* `apply` 方法用于立即调用一个函数，但与 `call` 不同，它接受参数的形式为数组。以下是一个手写 `apply` 函数的示例：
+### 作用与使用
+* `apply` 方法用于立即调用一个函数，但与 `call` 不同，它接受参数的形式为数组。
+* 传参：
+	* 第一个参数（必选）： 指定函数执行时的上下文，即 this 的值。
+	* 第二个参数（必选）： 一个数组或类数组对象，包含要传递给函数的参数。
+
+	```
+	function.apply(thisArg, [arg1, arg2, ...]);
+	```
+
+### 使用场景
+
+* **传递参数数组**： 当你需要将参数数组传递给函数时，apply 非常有用，尤其在变长参数的情况下。
+
+```javascript
+function average() {
+  const argsArray = Array.from(arguments);
+  const sum = argsArray.reduce((acc, val) => acc + val, 0);
+  return sum / argsArray.length;
+}
+
+const numbers = [2, 4, 6, 8];
+const avg = average.apply(null, numbers);
+console.log(avg); // 输出：5
+```
+
+* **调用函数动态变更上下文**： 使用 apply 可以将函数的执行上下文（this）动态设置为不同的对象。
+
+```javascript
+const person1 = { name: 'Alice' };
+const person2 = { name: 'Bob' };
+
+function introduce() {
+  console.log(`My name is ${this.name}`);
+}
+
+introduce.apply(person1); // 输出：My name is Alice
+introduce.apply(person2); // 输出：My name is Bob
+```
+
+### 手写一个 `apply` 函数
 
 ```javascript
 Function.prototype.myApply = function (context, args) {

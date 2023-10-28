@@ -88,7 +88,7 @@
 
 > [进程和线程](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_进程和线程.md)
 
-> [手写 bind、call、apply 函数]
+> [手写 bind、call、apply 函数](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_bind-call-apply.md)
 
 > [解决 JS 绑定事件多次执行](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_more_times_bind_events.md)
 

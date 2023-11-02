@@ -105,3 +105,85 @@ const reduceFunction = data => data.reduce((acc, val) => acc + val, 0);
 const process = processData(undefined, filterFunction, mapFunction, reduceFunction);
 console.log(process([5, 10, 15, 20])); // 输出 70
 ```
+
+### 表单验证
+
+* 柯里化可以用于创建可定制的表单验证函数，使其更容易管理多个输入字段的验证规则。例如：
+
+```javascript
+function validateForm(rules) {
+  return function(formData) {
+    const errors = {};
+    for (const field in rules) {
+      if (rules.hasOwnProperty(field)) {
+        const rule = rules[field];
+        if (!rule(formData[field])) {
+          errors[field] = `Validation failed for ${field}`;
+        }
+      }
+    }
+    return errors;
+  };
+}
+
+const rules = {
+  username: value => value.length >= 5,
+  email: value => /[^@]+@[^.]+\..+/.test(value),
+  password: value => value.length >= 8,
+};
+
+const validate = validateForm(rules);
+const formData = {
+  username: "john_doe",
+  email: "john@example.com",
+  password: "secretpass",
+};
+
+const errors = validate(formData);
+console.log(errors); // 输出 {}
+```
+
+### 事件处理
+
+* 柯里化还可以用于更灵活地处理事件，允许您逐步配置事件监听器。例如：
+
+```javascript
+function addEventListener(element) {
+  return function(eventType) {
+    return function(callback) {
+      element.addEventListener(eventType, callback);
+    };
+  };
+}
+
+const button = document.getElementById("myButton");
+const clickHandler = addEventListener(button)("click");
+
+clickHandler(function() {
+  alert("Button clicked!");
+});
+```
+
+### 国际化
+
+* 柯里化可用于创建国际化函数，根据不同的语言和地区动态加载翻译。例如：
+
+```javascript
+function createTranslator(language) {
+  const translations = {
+    en: { hello: "Hello", goodbye: "Goodbye" },
+    fr: { hello: "Bonjour", goodbye: "Au revoir" },
+  };
+
+  return function(key) {
+    return translations[language][key] || key;
+  };
+}
+
+const translateToEnglish = createTranslator("en");
+const translateToFrench = createTranslator("fr");
+
+console.log(translateToEnglish("hello")); // 输出 "Hello"
+console.log(translateToFrench("goodbye")); // 输出 "Au revoir"
+```
+

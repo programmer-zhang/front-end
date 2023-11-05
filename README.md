@@ -84,7 +84,7 @@
 
 > [JS 继承方式](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_inherit.md)
 
-> [函数柯里化]
+> [函数柯里化](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_currying.md)
 
 > [进程和线程](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_进程和线程.md)
 

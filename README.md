@@ -124,9 +124,9 @@
 ## 架构框架相关 Architecture&Framework :construction:
 > [Framework遇到的error](https://github.com/programmer-zhang/front-end/tree/master/profiles/framework_error.md)
 
-> [NUXT 小试牛刀](https://github.com/programmer-zhang/front-end/tree/master/profiles/NUXT小试牛刀.md)
+> [NUXT 小试牛刀](https://github.com/programmer-zhang/front-end/tree/master/profiles/nuxt_start.md)
 
-> [NUXT 使用指南]
+> [NUXT 使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/nuxt_instructions.md)
 
 > [PreRender.io 预渲染架构](https://github.com/programmer-zhang/front-end/tree/master/profiles/PreRender.io预渲染架构.md)
 

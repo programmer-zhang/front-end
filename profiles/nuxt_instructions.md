@@ -2,10 +2,10 @@
 
 ## 阅读本文您将收获
 * NUXT.js的主要特点及优势
-* 创建 NUXT.js 项目 
-* NUXT 项目相关配置
+* 创建 NUXT.js 项目
+* NUXT.js 项目相关配置
 
-## 0. NUXT 主要特点及优势
+## NUXT 主要特点及优势
 
 1. **服务端渲染 (SSR):** `NUXT.js` 提供了服务端渲染的能力，这意味着你可以在服务器上预渲染页面，从而提高首屏加载性能，优化搜索引擎爬取等。
 
@@ -21,7 +21,7 @@
 
 7. **静态站点生成 (SSG):** 除了服务端渲染，`NUXT.js` 也支持静态站点生成。这意味着你可以预先生成静态 `HTML` 文件，这对于一些不需要实时数据的场景非常有用。
 
-## 1. 项目引入
+## 项目引入
 
 ```bash
 npx create-nuxt-app my-nuxt-app
@@ -33,7 +33,7 @@ npx create-nuxt-app my-nuxt-app
 cd my-nuxt-app
 ```
 
-## 2. 代码编写
+## 代码编写
 
 * `NUXT.js` 使用 `Vue.js` 组件来构建页面。在 `pages` 目录下创建 `Vue` 文件，`NUXT.js` 会根据这些文件自动生成路由配置。
 
@@ -64,11 +64,11 @@ h1 {
 </style>
 ```
 
-## 3. 自动路由配置
+## 自动路由配置
 
 * NUXT.js 会根据 `pages` 目录下的 Vue 文件自动生成路由配置，无需手动配置路由。这简化了路由的管理。
 
-## 4. 插件配置
+## 插件配置
 
 NUXT.js 允许你配置插件，可以是第三方库或你自己编写的插件。在 `nuxt.config.js` 文件中配置插件：
 
@@ -81,9 +81,11 @@ export default {
 };
 ```
 
-## 5. 静态站点生成 (SSG)
+## 静态站点生成 (Static Site Generation，SSG)
 
-如果你需要生成静态站点，可以在 `nuxt.config.js` 中配置：
+### 1. 配置 NUXT.js 为静态站点生成模式
+
+在 `nuxt.config.js` 文件中，设置 `target` 为 `'static'`，这告诉 NUXT.js 以静态站点生成的模式运行：
 
 ```javascript
 // nuxt.config.js
@@ -92,15 +94,72 @@ export default {
 };
 ```
 
-然后，运行以下命令生成静态文件：
+### 2. 动态路由生成
+
+如果你的应用中有动态路由，你需要使用 `generate` 配置项来生成对应的静态页面。例如，如果你有一个动态路由 `/posts/:id`，可以在 `nuxt.config.js` 中配置：
+
+```javascript
+// nuxt.config.js
+export default {
+  target: 'static',
+  generate: {
+    routes: [
+      '/posts/1',
+      '/posts/2',
+      // 添加其他动态路由
+    ],
+  },
+};
+```
+
+或者，你可以编写一个异步函数来动态生成路由：
+
+```javascript
+// nuxt.config.js
+export default {
+  target: 'static',
+  generate: {
+    routes: async () => {
+      // 从 API 或其他数据源获取动态路由数据
+      const response = await fetch('https://api.example.com/posts');
+      const posts = await response.json();
+
+      // 生成动态路由数组
+      return posts.map((post) => `/posts/${post.id}`);
+    },
+  },
+};
+```
+
+### 3. 自定义生成的静态文件路径
+
+你还可以通过配置 `generate` 选项中的 `dir` 来定义生成的静态文件存放路径，默认为 `dist`：
+
+```javascript
+// nuxt.config.js
+export default {
+  target: 'static',
+  generate: {
+    dir: 'my-static-site', // 存放静态文件的目录
+  },
+};
+```
+
+### 4. 预渲染
+
+如果你想要在构建时预渲染所有页面，而不是在运行时动态生成，可以使用 `@nuxtjs/prismic` 等预渲染插件。这将生成所有页面的静态 HTML 文件。
+
+### 5. 构建并生成静态站点
+
+一旦你完成了配置，运行以下命令以构建并生成静态站点：
 
 ```bash
 npm run generate
 ```
 
-生成的文件将存储在 `dist` 目录下，你可以将这些文件部署到任何支持静态文件的托管服务上。
+生成的静态文件将存储在指定的 `dir` 目录中，你可以将这些文件上传到任何支持静态文件的托管服务上，如 `Netlify`、`Vercel` 或 `GitHub Pages`。
 
-## 6. 运行项目
+## 运行项目
 
 最后，通过以下命令启动你的 NUXT.js 项目：
 
@@ -108,4 +167,4 @@ npm run generate
 npm run dev
 ```
 
-访问 http://localhost:3000 即可查看你的应用程序
+访问 http://localhost:3000 即可查看你的应用程序。

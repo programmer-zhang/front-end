@@ -70,14 +70,85 @@ h1 {
 
 ## 插件配置
 
-NUXT.js 允许你配置插件，可以是第三方库或你自己编写的插件。在 `nuxt.config.js` 文件中配置插件：
+> 在 NUXT.js 中，插件是一种扩展应用功能的方式，可以是第三方库、工具，也可以是你自己编写的模块。插件通常用于在应用程序初始化或运行时执行一些任务，例如添加全局样式、配置第三方库，或者在每个页面加载前执行某些逻辑。
+
+### 1. 创建插件
+
+首先，你需要在 `plugins` 目录下创建你的插件文件。插件可以是 `JavaScript` 或 `TypeScript` 文件。例如，创建一个简单的插件 `my-plugin.js`：
+
+```javascript
+// plugins/my-plugin.js
+
+// 在这里添加你的插件逻辑
+console.log('My plugin is running!');
+
+export default ({ app }, inject) => {
+  // 添加插件到 Vue 实例
+  app.myPluginMethod = () => {
+    console.log('My plugin method is called!');
+  };
+
+  // 或者通过 inject 注入到组件中
+  inject('myPlugin', () => {
+    console.log('Injected method from my plugin!');
+  });
+};
+```
+
+### 2. 配置插件
+
+在 `nuxt.config.js` 文件中配置插件。使用 `plugins` 数组来指定要加载的插件：
 
 ```javascript
 // nuxt.config.js
 export default {
+  // ...
+
   plugins: [
-    '~/plugins/my-plugin.js', // 你的插件路径
+    '~/plugins/my-plugin.js',
+    // 添加其他插件
   ],
+
+  // ...
+};
+```
+
+### 3. 插件的执行时机
+
+`NUXT.js` 插件在应用程序初始化和每个页面加载前执行。插件中的导出函数接收一个包含应用程序实例和注入函数的对象。你可以在这里执行一些初始化任务，配置全局行为，或者将方法注入到 `Vue` 组件中。
+
+```javascript
+// plugins/my-plugin.js
+
+export default ({ app }, inject) => {
+  // 在应用程序初始化时执行
+  console.log('Plugin initialized!');
+
+  // 添加插件到 Vue 实例
+  app.myPluginMethod = () => {
+    console.log('My plugin method is called!');
+  };
+
+  // 或者通过 inject 注入到组件中
+  inject('myPlugin', () => {
+    console.log('Injected method from my plugin!');
+  });
+};
+```
+
+### 4. 使用插件
+
+在任何 `Vue` 组件中，你都可以通过 `this.$myPlugin` 或 `this.$myPluginMethod` 来访问插件中注入的方法。这对于在组件中共享逻辑或工具非常有用。
+
+```javascript
+// 一个 Vue 组件
+
+export default {
+  mounted() {
+    // 使用插件中的方法
+    this.$myPlugin();
+    this.$myPluginMethod();
+  },
 };
 ```
 

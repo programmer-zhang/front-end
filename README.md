@@ -314,7 +314,9 @@
 
 > [区块链基础(四): WEB 3.0 是什么](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_web3.md)
 
-> [区块链基础(五): 如何进行链上交易追踪]
+> [区块链基础(五): 冷钱包和热钱包]
+
+> [区块链基础(六): 如何进行链上交易追踪]
 
 > [区块链安全]
 

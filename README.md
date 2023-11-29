@@ -15,6 +15,8 @@
 
 > [Grid 布局](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTML_grid.md)
 
+> [自适应布局]
+
 > [如何优雅地画一像素的线](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTML_css-one-px.md)
 
 > [DOM元素 居中的多种实现方式](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTML_dom-center.md)
@@ -40,8 +42,6 @@
 > [详解 `<input>` 标签 `type` 属性](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTML_input.md)
 
 > [冷门的 HTML tabindex 详解](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTML_tabindex.md)
-
-> [自适应布局]
 
 ## JavaScript相关 :speak_no_evil:
 > [JS 的小秘密(持续更新)](https://github.com/programmer-zhang/front-end/tree/master/profiles/js的小秘密.md)

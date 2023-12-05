@@ -128,7 +128,7 @@
 > [国家为什么大力发展IPV6(外链资料)](http://ipv6.infosws.cn/20200228/32244.html)
 
 ## 架构框架相关 Architecture&Framework :construction:
-> [Framework遇到的error](https://github.com/programmer-zhang/front-end/tree/master/profiles/framework_error.md)
+> [Framework 遇到的 error](https://github.com/programmer-zhang/front-end/tree/master/profiles/framework_error.md)
 
 > [NUXT 小试牛刀](https://github.com/programmer-zhang/front-end/tree/master/profiles/nuxt_start.md)
 

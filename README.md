@@ -341,3 +341,5 @@
 > [WEB3.0 学习 (二): 连接钱包]
 
 > [WEB3.0 学习 (三): 钱包操作]
+
+> [一些区块链行业有用的网站](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_websites.md)

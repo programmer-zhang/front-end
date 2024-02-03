@@ -322,7 +322,7 @@
 
 > [区块链基础(五): 冷钱包和热钱包](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_wallet.md)
 
-> [区块链基础(六): 如何进行链上交易追踪]
+> [区块链基础(六): 如何进行链上交易追踪](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_trace-onchain.md)
 
 > [区块链安全(一): USDT假充值手法]
 
@@ -341,3 +341,5 @@
 > [WEB3.0 学习 (二): 连接钱包]
 
 > [WEB3.0 学习 (三): 钱包操作]
+
+> [一些区块链行业有用的网站](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_websites.md)

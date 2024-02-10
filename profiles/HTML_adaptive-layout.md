@@ -36,3 +36,36 @@
 ```
 
 ##### 媒体查询布局
+
+> 媒体查询布局是通过CSS中的媒体查询（Media Queries）来实现的。
+
+> 媒体查询允许我们针对不同的设备或者设备特性来应用不同的样式。
+
+> 通过媒体查询，我们可以根据屏幕的宽度、高度、分辨率等特性来动态地调整网页的布局和样式，从而实现响应式设计，使网页在不同设备上都能良好地显示和适应。
+
+```
+/* 基础样式 */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 10px;
+    float: left;
+}
+
+  /* 媒体查询 */
+@media screen and (max-width: 600px) {
+    .box {
+        width: 50px;
+        height: 50px;
+    }
+}
+```
+
+##### `rem` 响应式布局

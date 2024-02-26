@@ -89,4 +89,4 @@ html {
 
 ##### `flex` 弹性布局
 
-* `flex` 弹性布局已在其他篇文章中进行详解，![请看这里]()
+* `flex` 弹性布局已在其他篇文章中进行详解，[请看这里](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTML_flex.md)

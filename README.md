@@ -15,7 +15,7 @@
 
 > [Grid 布局](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTML_grid.md)
 
-> [自适应布局]
+> [自适应布局](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTML_adaptive-layout.md)
 
 > [如何优雅地画一像素的线](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTML_css-one-px.md)
 

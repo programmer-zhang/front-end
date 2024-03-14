@@ -13,47 +13,48 @@
 
 ```
 {
-  "name": "rep-tool",
-  "version": "0.0.1",
-  "manifest_version": 2,
+	"name": "rep-tool",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	
+	// 简单描述
+	"description": "a chrome browser extension tool",
+	"icons": {
+		"16": "./logo.jpeg",
+		"48": "./logo.jpeg",
+		"128": "./logo.jpeg"
+	},
+	// 选择默认语言
+	"default_locale": "en",
+	
+	// 浏览器图标部分
+	// browser_action表示程序图标会出现在扩展程序槽，若要出现在地址栏内，则写成page_action
+	"browser_action": {
+	    "default_title": "小助手",
+	    "default_icon": "logo.jpeg",
+	    "default_popup": "popup.html"
+	},
 
-  // 简单描述
-  "description": "a chrome browser extension tool",
-  "icons": {
-        "16": "./logo.jpeg",
-        "48": "./logo.jpeg",
-        "128": "./logo.jpeg"
-    },
-  // 选择默认语言
-  "default_locale": "en",
-
-  // 浏览器图标部分
-  // browser_action表示程序图标会出现在扩展程序槽，若要出现在地址栏内，则写成page_action
-  "browser_action": {
-    "default_title": "小助手",
-    "default_icon": "logo.jpeg",
-    "default_popup": "popup.html"
-  },
-
-  // 引入一个脚本
-  "content_scripts": [
-    {
-      "js": ["script/test.js"],
-      // 脚本执行状态
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      // 开始运行状态【文档加载开始】
-      "run_at": "document_start"
-    }
-  ],
-  // 应用权限配置
-  // cookie 权限，系统通知权限等
-  "permissions": [
-    "http://*/*",
-    "https://*/*"
-  ]
+	// 引入一个脚本
+	"content_scripts": [
+		{
+			"js": [
+				"script/test.js"
+			],
+			// 脚本执行状态
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			],
+			// 开始运行状态【文档加载开始】
+			"run_at": "document_start"
+		}
+	],
+	// 应用权限配置:cookie 权限，系统通知权限等
+	"permissions": [
+		"http://*/*",
+		"https://*/*"
+	  ]
 }
 
 ```

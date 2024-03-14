@@ -37,26 +37,33 @@
 	    "default_icon": "logo.jpeg",
 	    "default_popup": "popup.html"
 	},
+	
+	// 后台常驻文件
+	"background": {
+		"service-worker": "service-worker.js"
+	},
 
 	// 引入一个脚本
 	"content_scripts": [
 		{
-			"js": [
-				"script/test.js"
-			],
-			// 脚本执行状态
-			"matches": [
-				"http://*/*",
-				"https://*/*"
-			],
-			// 开始运行状态【文档加载开始】
-			"run_at": "document_start"
+			"matches": ["<all_urls>"],
+			"js": ["qrcode.min.js", "jquery.min.js"]
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"matches": ["<all_urls>"],
+			"resources": ["qrcode.min.js", "jquery.min.js"]
 		}
 	],
 	// 应用权限配置:cookie 权限，系统通知权限等
 	"permissions": [
-		"http://*/*",
-		"https://*/*"
+		"contextMenus",
+		"tabs",
+		"storage",
+		"cookies",
+		"notifications",
+		"alarms"
 	  ]
 }
 

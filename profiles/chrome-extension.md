@@ -1,5 +1,9 @@
 # 谷歌浏览器扩展程序制作指南
 
+> 出于对隐私保护、安全性、性能的加强，谷歌随着 `Chrome 88` 的升级，将推行 `Manifest V3` 扩展程序规范。
+
+> 本文也将基于 `Manifest V3` 规范进行扩展程序制作。
+
 > 本文使用 `ChatGPT` 辅助编写
 
 ## 目录结构
@@ -15,7 +19,7 @@
 {
 	"name": "rep-tool",
 	"version": "0.0.1",
-	"manifest_version": 2,
+	"manifest_version": 3,
 	
 	// 简单描述
 	"description": "a chrome browser extension tool",

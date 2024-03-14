@@ -7,7 +7,7 @@
 > 本文使用 `ChatGPT` 辅助编写
 
 ## 目录结构
-* 以下为 chrome 官方文档给出的参考目录结构
+* 以下为 `Chrome` 官方文档给出的参考目录结构
 * 可以通过多种方式构建项目目录，唯一的前提条件是将 `manifest.json` 文件放在根目录中
 
 ![](../images/chromeExtension/catalog.png)
@@ -32,8 +32,7 @@
 	"default_locale": "en",
 	
 	// 浏览器图标部分
-	// browser_action表示程序图标会出现在扩展程序槽，若要出现在地址栏内，则写成page_action
-	"browser_action": {
+	"action": {
 	    "default_title": "小助手",
 	    "default_icon": "logo.jpeg",
 	    "default_popup": "popup.html"

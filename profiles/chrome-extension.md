@@ -10,7 +10,7 @@
 * 以下为 `Chrome` 官方文档给出的参考目录结构
 * 可以通过多种方式构建项目目录，唯一的前提条件是将 `manifest.json` 文件放在根目录中
 
-![](../images/chromeExtension/catalog.png)
+
 
 ## Manifest 配置
 * `manifest.json` 文件的配置详情如下:

@@ -34,13 +34,13 @@
 	// 浏览器图标部分
 	"action": {
 	    "default_title": "小助手",
-	    "default_icon": "logo.jpeg",
-	    "default_popup": "popup.html"
+	    "default_icon": "./logo.jpeg",
+	    "default_popup": "./popup.html"
 	},
 	
 	// 后台常驻文件
 	"background": {
-		"service-worker": "service-worker.js"
+		"service_worker": "service-worker.js"
 	},
 
 	// 引入一个脚本

@@ -20,9 +20,9 @@
 	"name": "rep-tool",
 	"version": "0.0.1",
 	"manifest_version": 3,
-	
 	// 简单描述
 	"description": "a chrome browser extension tool",
+	// 插件图标
 	"icons": {
 		"16": "./logo.jpeg",
 		"48": "./logo.jpeg",

@@ -103,3 +103,15 @@ https://blog.csdn.net/m0_37729058/article/details/89186257
 `host_permissions` 权限配置
 
 ### 发送数据后接收不到正确数据
+
+* 原因一: `JSON` 数据需要 `return`
+
+```
+fetch(request.url + request.body).then(response => {
+        return response.json();
+}).then(json => {
+        sendResponse({ success: true, json });
+}).catch(err => {
+        sendResponse({ success: false, error: 'Failed to send the request' });
+})
+```

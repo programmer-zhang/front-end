@@ -84,3 +84,22 @@
 
 
 ## 运行插件
+
+## 错误排查
+### `onMessage` 监听器消息端口自动关闭
+>  错误信息：`Unchecked runtime.lastError: The message port closed before a response was received.`
+
+* 可能错误原因一： `chrome.runtime.onMessage` 监听器在异步操作完成之前关闭了消息端口，导致无法发送响应。
+
+* 解决方案一: 保持消息端口打开，使用return true 提前返回或者二次监听的方法
+https://gitcode.csdn.net/65e95d911a836825ed790a29.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTE3NDg1MSwiZXhwIjoxNzExMzc3NjQ5LCJpYXQiOjE3MTA3NzI4NDksInVzZXJuYW1lIjoidHVmZWlfemhhbmcifQ.TlQuK0xO3uZzlcLs313sgEpqQI_id7CngV4CWIqc5WQ
+
+早期的issue: https://github.com/mozilla/webextension-polyfill/issues/130
+
+* 可能错误原因二：`chrome.runtime.sendMessage` 未正确使用回调
+https://blog.csdn.net/m0_37729058/article/details/89186257
+
+* 可能错误原因三：跨域权限
+`host_permissions` 权限配置
+
+### 发送数据后接收不到正确数据

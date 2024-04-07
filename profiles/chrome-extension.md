@@ -134,9 +134,10 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 });
 ```
 
-* 解决方案参考[这里](https://gitcode.csdn.net/65e95d911a836825ed790a29.html)
+* 上述解决方案参考[这里](https://gitcode.csdn.net/65e95d911a836825ed790a29.html)
 
 * **可能错误原因二:** `chrome.runtime.sendMessage` 未正确使用回调函数 `sendResponse`
+
 * **解决方案:**增加  `sendResponse` 回调
 
 ```
@@ -146,7 +147,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 ```
 
 * **可能错误原因三:** 跨域权限
+
 * **解决方案:** `host_permissions` 权限配置
+
 * 在 `manifest.json` 文件中对需要跨域请求的域名进行配置
 
 ```

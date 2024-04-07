@@ -50,6 +50,10 @@
 			"js": ["qrcode.min.js", "jquery.min.js"]
 		}
 	],
+	// 跨域请求
+	"host_permissions": [
+        	"*://api.xxxxxx.com/*"
+	],
 	"web_accessible_resources": [
 		{
 			"matches": ["<all_urls>"],
@@ -100,6 +104,16 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
     return true; // 防止消息端口关闭
 });
+
+async function sendChromeRequest(request, sendResponse) {
+    fetch(request.url + request.body).then(response => {
+        return response.json();
+    }).then(jsonData => {
+        sendResponse({ success: true, jsonData });
+    }).catch(err => {
+        sendResponse({ success: false, error: 'Failed to send the request' });
+    })
+}
 ```
 
 * 早期已经有国外的开发者发现此问题并提出了解决方案，传送门 [https://github.com/mozilla/webextension-polyfill/issues/130](https://github.com/mozilla/webextension-polyfill/issues/130)
@@ -123,15 +137,27 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 * 解决方案参考[这里](https://gitcode.csdn.net/65e95d911a836825ed790a29.html)
 
 * **可能错误原因二:** `chrome.runtime.sendMessage` 未正确使用回调函数 `sendResponse`
-* **解决方案:**
-https://blog.csdn.net/m0_37729058/article/details/89186257
+* **解决方案:**增加  `sendResponse` 回调
+
+```
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+     sendResponse({ success: true }); // 必须处理sendResponse回调函数
+});
+```
 
 * **可能错误原因三:** 跨域权限
-`host_permissions` 权限配置
+* **解决方案:** `host_permissions` 权限配置
+* 在 `manifest.json` 文件中对需要跨域请求的域名进行配置
+
+```
+"host_permissions": [
+	"*://api.xxxxxx.com/*"
+],
+```
 
 ### 使用 `fetch` 发送数据后接收不到 `response`
 
-* 原因一: `response` 数据需要`JSON` 格式化数据后 `return`
+* **原因一:** `response` 数据需要`JSON` 格式化数据后 `return`
 
 ```
 fetch(request.url + request.body).then(response => {

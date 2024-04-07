@@ -91,7 +91,7 @@
 
 * 可能错误原因一： `chrome.runtime.onMessage` 监听器在异步操作完成之前关闭了消息端口，导致无法发送响应。
 
-* 解决方案一: 保持消息端口打开，使用return true 提前返回或者二次监听的方法
+* 解决方案一: 保持消息端口打开，使用 return true 提前返回或者二次监听的方法
 https://gitcode.csdn.net/65e95d911a836825ed790a29.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTE3NDg1MSwiZXhwIjoxNzExMzc3NjQ5LCJpYXQiOjE3MTA3NzI4NDksInVzZXJuYW1lIjoidHVmZWlfemhhbmcifQ.TlQuK0xO3uZzlcLs313sgEpqQI_id7CngV4CWIqc5WQ
 
 早期的issue: https://github.com/mozilla/webextension-polyfill/issues/130
@@ -102,15 +102,15 @@ https://blog.csdn.net/m0_37729058/article/details/89186257
 * 可能错误原因三：跨域权限
 `host_permissions` 权限配置
 
-### 发送数据后接收不到正确数据
+### 使用 `fetch` 发送数据后接收不到 `response`
 
-* 原因一: `JSON` 数据需要 `return`
+* 原因一: `response` 数据需要`JSON` 格式化数据后 `return`
 
 ```
 fetch(request.url + request.body).then(response => {
-        return response.json();
+        return response.json(); // 必不可少
 }).then(json => {
-        sendResponse({ success: true, json });
+        sendResponse({ success: true, json }); // 真实处理数据
 }).catch(err => {
         sendResponse({ success: false, error: 'Failed to send the request' });
 })

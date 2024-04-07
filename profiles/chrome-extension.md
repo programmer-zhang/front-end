@@ -89,17 +89,44 @@
 ### `onMessage` 监听器消息端口自动关闭
 >  错误信息：`Unchecked runtime.lastError: The message port closed before a response was received.`
 
-* 可能错误原因一： `chrome.runtime.onMessage` 监听器在异步操作完成之前关闭了消息端口，导致无法发送响应。
+* **可能错误原因一:** `chrome.runtime.onMessage` 监听器在异步操作完成之前关闭了消息端口，导致无法发送响应。
 
-* 解决方案一: 保持消息端口打开，使用 return true 提前返回或者二次监听的方法
-https://gitcode.csdn.net/65e95d911a836825ed790a29.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTE3NDg1MSwiZXhwIjoxNzExMzc3NjQ5LCJpYXQiOjE3MTA3NzI4NDksInVzZXJuYW1lIjoidHVmZWlfemhhbmcifQ.TlQuK0xO3uZzlcLs313sgEpqQI_id7CngV4CWIqc5WQ
+* **解决方案一:** 保持消息端口打开，使用 `return true` 提前返回响应 或 二次监听 的方法来保持消息端口开放。
 
-早期的issue: https://github.com/mozilla/webextension-polyfill/issues/130
+```
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'sendRequest') {
+        sendChromeRequest(request, sendResponse);
+    }
+    return true; // 防止消息端口关闭
+});
+```
 
-* 可能错误原因二：`chrome.runtime.sendMessage` 未正确使用回调
+* 早期已经有国外的开发者发现此问题并提出了解决方案，传送门 [https://github.com/mozilla/webextension-polyfill/issues/130](https://github.com/mozilla/webextension-polyfill/issues/130)
+
+* **解决方案二:** 双监听器策略。
+
+```
+// 第一个监听器，返回 true 以保持消息端口开启
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    return true; 
+});
+
+// 第二个监听器，处理实际的接口响应和其他异步操作
+chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+    if (request.action === 'sendRequest') {
+        sendChromeRequest(request, sendResponse);
+    }
+});
+```
+
+* 解决方案参考[这里](https://gitcode.csdn.net/65e95d911a836825ed790a29.html)
+
+* **可能错误原因二:** `chrome.runtime.sendMessage` 未正确使用回调函数 `sendResponse`
+* **解决方案:**
 https://blog.csdn.net/m0_37729058/article/details/89186257
 
-* 可能错误原因三：跨域权限
+* **可能错误原因三:** 跨域权限
 `host_permissions` 权限配置
 
 ### 使用 `fetch` 发送数据后接收不到 `response`

@@ -89,7 +89,7 @@ rep-extension-tool
 * `permissions` : 包含写明的权限列表中的项
 * `optional_permissions ` : 用户运行时授予的权限
 * `content_scripts.matches` :  包含一个或多个匹配模式，可允许内容脚本注入一个或多个主机中
-* `host_permissions`: 包含一个或多个匹配模式，可提供对一个或多个主机的访问权限，多用于 `fetch()` 跨域
+* `host_permissions`: 包含一个或多个匹配模式，可提供对一个或多个主机的访问权限，多用于 `fetch()` 跨域请求
 * `optional_host_permissions`: 由用户在运行时授予
 
 ## 主体页面
@@ -97,6 +97,10 @@ rep-extension-tool
 
 
 ## 运行插件
+* 管理扩展程序
+* 添加已解压的扩展程序
+* 导入文件夹
+* 添加成功
 
 ## 错误排查
 ### `onMessage` 监听器消息端口自动关闭

@@ -6,19 +6,21 @@
 
 > 本文使用 `ChatGPT` 辅助编写
 
+## 写在前面
+* 本次大版本提升从 `Manifest V2` 升级到 `Manifest V3`
+
 ## 目录结构
 * 以下为 `Chrome` 官方文档给出的参考目录结构
 * 可以通过多种方式构建项目目录，唯一的前提条件是将 `manifest.json` 文件放在根目录中
 
 ```
-rep-extension-tool
 |-README.md
-|-manifest.json
-|-popup.html
-|-popup.css
-|-popup.js
-|-service-worker.js
-|-logo.png
+|-manifest.json // 配置文件，必不可少
+|-popup.html // 入口文件
+|-popup.css // 样式文件
+|-popup.js // 用户界面用到的JS文件，运行时加载
+|-service-worker.js // 后台运行JS文件，也就是V2版本的background.js文件
+|-logo.png // 图标文件
 ```
 
 ## Manifest 配置

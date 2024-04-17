@@ -7,7 +7,10 @@
 > 本文使用 `ChatGPT` 辅助编写
 
 ## 写在前面
-* 本次大版本提升从 `Manifest V2` 升级到 `Manifest V3`
+* 本次大版本提升从 `Manifest V2` 升级到 `Manifest V3`，带来了很多新特性和功能变化。以下是按照我认为的重要性变化点:
+	* 使用 `service-worker.js` 替代 `background.js`
+	* 不再允许远程托管代码，所有 `JavaScript` 必须包含在包中
+	* `Promise` 支持，但仍然支持回调
 
 ## 目录结构
 * 以下为 `Chrome` 官方文档给出的参考目录结构

@@ -103,8 +103,8 @@ rep-extension-tool
 * 添加成功
 
 ## 错误排查
-### `onMessage` 监听器消息端口自动关闭
->  错误信息：`Unchecked runtime.lastError: The message port closed before a response was received.`
+### 错误信息：`Unchecked runtime.lastError: The message port closed before a response was received.`
+>  造成此错误的原因一般是`onMessage` 监听器消息端口自动关闭
 
 * **可能错误原因一:** `chrome.runtime.onMessage` 监听器在异步操作完成之前关闭了消息端口，导致无法发送响应。
 

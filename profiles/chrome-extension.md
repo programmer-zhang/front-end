@@ -4,8 +4,6 @@
 
 > 本文也将基于 `Manifest V3` 规范进行扩展程序制作。
 
-> 本文使用 `ChatGPT` 辅助编写
-
 ## 写在前面
 * 本次大版本提升从 `Manifest V2` 升级到 `Manifest V3`，带来了很多新特性和功能变化。以下是按照我认为的重要性变化点:
 	* 使用 `service-worker.js` 替代 `background.js`

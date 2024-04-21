@@ -101,7 +101,13 @@
 
 ## 运行插件
 * 管理扩展程序
+
+![](../images/chromeExtension/extensions-page.png)
+
 * 添加已解压的扩展程序
+
+![](../images/chromeExtension/export-extension-doc.png)
+
 * 导入文件夹
 * 添加成功
 

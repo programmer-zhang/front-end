@@ -96,7 +96,10 @@
 * `optional_host_permissions`: 由用户在运行时授予
 
 ## 主体页面
-
+* 编写popup.html
+* 使用样式调整页面主体
+* 加入JavaScript
+* 使用service-worker发送请求
 
 
 ## 运行插件

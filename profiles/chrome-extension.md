@@ -21,7 +21,7 @@
 |-popup.css // 样式文件
 |-popup.js // 用户界面用到的JS文件，运行时加载
 |-service-worker.js // 后台运行JS文件，也就是V2版本的background.js文件
-|-logo.png // 图标文件
+|-logo.png // 扩展程序LOGO文件
 ```
 
 ## Manifest 配置
@@ -100,7 +100,6 @@
 * 使用样式调整页面主体
 * 加入JavaScript
 * 使用service-worker发送请求
-
 
 ## 运行插件
 * 管理扩展程序

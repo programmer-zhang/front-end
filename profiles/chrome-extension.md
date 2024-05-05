@@ -104,7 +104,6 @@
     <head>
         <meta charset="UTF-8">
         <title>暴力小助手</title>
-        <link href="./popup.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -116,15 +115,43 @@
             </div>
         </div>
     </body>
-    <script src="jquery.min.js"></script> // 引入资源
 </html>
 ```
 
 ## 样式调整
 * 使用样式调整页面主体
 
+```
+<head>
+	    <meta charset="UTF-8">
+	    <title>暴力小助手</title>
+	    <link href="./popup.css" rel="stylesheet"> // 引入样式文件
+</head>
+```
+
 ## 逻辑处理
 * 加入 `JavaScript`
+
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>暴力小助手</title>
+        <link href="./popup.css" rel="stylesheet"> // 引入样式文件
+    </head>
+    <body>
+        <div class="container">
+            ...
+        </div>
+    </body>
+    <script src="popup.js"></script> // 引入样式文件
+    // 当然也可以引入其他JS文件
+	<script src="jquery.min.js"></script>
+	<script src="qrcode.min.js"></script>
+</html>
+
+```
 
 ## 处理请求
 * 使用 `fetch` 在 `service-worker` 中发送请求

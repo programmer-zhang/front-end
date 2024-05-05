@@ -106,12 +106,23 @@
 
 ![](../images/chromeExtension/extensions-page.png)
 
+* 打开开发者模式
+
+![](../images/chromeExtension/open-decode.png)
+
 * 添加已解压的扩展程序
 
 ![](../images/chromeExtension/export-extension-doc.png)
 
 * 导入文件夹
+
+> 导入的是代码文件夹，不是压缩包
+
+![](../images/chromeExtension/open-sources.png)
+
 * 添加成功
+
+![](../images/chromeExtension/export-success.png)
 
 ## 错误排查
 ### 错误信息：`Unchecked runtime.lastError: The message port closed before a response was received.`

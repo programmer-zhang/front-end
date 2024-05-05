@@ -12,7 +12,7 @@
 
 ## 目录结构
 * 以下为 `Chrome` 官方文档给出的参考目录结构
-* 可以通过多种方式构建项目目录，唯一的前提条件是必须将 `manifest.json` 文件放在根目录中
+* 可以通过多种方式构建项目目录，唯一的前提条件是必须将 `manifest.json` 文件放在根目录中。
 
 ```
 |-README.md
@@ -20,7 +20,7 @@
 |-popup.html // 入口文件
 |-popup.css // 样式文件
 |-popup.js // 用户界面用到的JS文件，运行时加载
-|-service-worker.js // 后台运行JS文件，也就是V2版本的background.js文件
+|-service-worker.js // 后台运行JS文件，也就是V2版本的 background.js 文件
 |-logo.png // 扩展程序LOGO文件
 ```
 
@@ -96,10 +96,10 @@
 * `optional_host_permissions`: 由用户在运行时授予
 
 ## 主体页面
-* 编写popup.html
+* 编写 `popup.html`
 * 使用样式调整页面主体
-* 加入JavaScript
-* 使用service-worker发送请求
+* 加入 `JavaScript`
+* 使用 `service-worker` 发送请求
 
 ## 运行插件
 * 管理扩展程序
@@ -177,7 +177,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
 ```
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-     sendResponse({ success: true }); // 必须处理sendResponse回调函数
+     sendResponse({ success: true }); // 必须处理 sendResponse 回调函数
 });
 ```
 

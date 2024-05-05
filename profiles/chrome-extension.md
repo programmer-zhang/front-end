@@ -66,6 +66,7 @@
 	"host_permissions": [
         	"*://api.xxxxxx.com/*"
 	],
+	// 插件中用到的静态资源需要在这里配置
 	"web_accessible_resources": [
 		{
 			"matches": ["<all_urls>"],

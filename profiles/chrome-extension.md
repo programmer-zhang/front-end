@@ -72,7 +72,7 @@
 			"resources": ["qrcode.min.js", "jquery.min.js"]
 		}
 	],
-	// 应用权限配置:cookie 权限，系统通知权限等
+	// 应用权限配置:cookie 权限，tabs 权限，系统通知权限等
 	"permissions": [
 		"contextMenus",
 		"tabs",

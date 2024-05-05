@@ -99,7 +99,7 @@
 * 编写 `popup.html`
 * 使用样式调整页面主体
 * 加入 `JavaScript`
-* 使用 `service-worker` 发送请求
+* 使用 `fetch` 在 `service-worker` 中发送请求
 
 ## 运行插件
 * 管理扩展程序

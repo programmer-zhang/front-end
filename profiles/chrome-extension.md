@@ -98,6 +98,28 @@
 ## 主体页面
 * 编写 `popup.html`
 
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>暴力小助手</title>
+        <link href="./popup.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="tab-content">
+                <ul id="tab">
+                    <li class="tab-item active" data-area="develop">页面二维码</li>
+                    <li class="tab-item" data-area="ipip">IP解析</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script src="jquery.min.js"></script> // 引入资源
+</html>
+```
+
 ## 样式调整
 * 使用样式调整页面主体
 

@@ -97,9 +97,27 @@
 
 ## 主体页面
 * 编写 `popup.html`
+
+## 样式调整
 * 使用样式调整页面主体
+
+## 逻辑处理
 * 加入 `JavaScript`
+
+## 处理请求
 * 使用 `fetch` 在 `service-worker` 中发送请求
+
+```
+fetch(request.url + request.body).then(response => {
+        return response.json();
+}).then(jsonData => {
+        console.log('service-worker.js-fetch', jsonData);
+        sendResponse({success: true, jsonData});
+}).catch(err => {
+        console.error('service-worker.js-fetch', err);
+        sendResponse({success: false, error: 'Failed to send the request'});
+});
+```
 
 ## 运行插件
 * 管理扩展程序

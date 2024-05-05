@@ -182,7 +182,7 @@
 
 > [用 electron 实现一个桌面客户端]
 
-> [谷歌浏览器插件制作指南]
+> [谷歌浏览器扩展程序 V3 制作指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/chrome-extension.md)
 
 > [前端使用 node 实现 读写 Excel文件](https://github.com/programmer-zhang/front-end/tree/master/profiles/node-xlsx.md)
 

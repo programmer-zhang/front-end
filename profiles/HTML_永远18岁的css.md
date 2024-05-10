@@ -71,7 +71,7 @@
 ```
 
 ## 用`:target`实现折叠面板
-* 利用`:target`可以实现以前只能使用JavaScript实现的显示隐藏或者 collapse 折叠面板
+* 利用`:target`可以实现以前只能使用 `JavaScript` 实现的显示隐藏或者 `collapse` 折叠面板
 
 ```
 // HTML
@@ -163,7 +163,7 @@
 ### 方法一：`:target` 伪类选择器
 * 首先，我们要解决的问题是如何接收点击事件，这里第一种方法我们采用 `:target` 伪类接收。
 
-> `:target` 是 `CSS3` 新增的一个伪类，可用于选取当前活动的目标元素。当然 URL 末尾带有锚名称 `#`，就可以指向文档内某个具体的元素。这个被链接的元素就是目标元素(`target element`)。它需要一个 `id` 去匹配文档中的 `target` 。
+> `:target` 是 `CSS3` 新增的一个伪类，可用于选取当前活动的目标元素。当然 `URL` 末尾带有锚名称 `#`，就可以指向文档内某个具体的元素。这个被链接的元素就是目标元素(`target element`)。它需要一个 `id` 去匹配文档中的 `target` 。
 
 * 解释很难理解，看看实际的使用情况，假设我们的 HTML 代码如下：
 
@@ -176,7 +176,7 @@
 <div>列表2内容:abcdefgkijkl</div>
 ```
 
-* 由于要使用 `:target`，需要 HTML 锚点，以及锚点对应的 HTML 片段。所以上面的结构要变成：
+* 由于要使用 `:target`，需要 `HTML` 锚点，以及锚点对应的 `HTML` 片段。所以上面的结构要变成：
 
 ```
 <ul class='nav'>
@@ -188,7 +188,7 @@
 ```
 
 * 这样，上面 `<a href="#content1">` 中的锚点 `#content1` 就对应了列表1 `<div id="content1">` 。锚点2与之相同对应列表2。
-* 接下来，我们就可以使用 `:target` 接受到点击事件，并操作对应的 DOM 了：
+* 接下来，我们就可以使用 `:target` 接受到点击事件，并操作对应的 `DOM` 了：
 
 ```
 #content1,
@@ -202,9 +202,9 @@
 }
 ```
 
-* 上面的 CSS 代码，一开始页面中的 `#content1` 与 `#content2` 都是隐藏的，当点击列表1触发 `href="#content1"` 时，页面的 URL 会发生变化：由 `www.example.com` 变成 `www.example.com#content1`
-* 接下来会触发 `#content1:target{ }` 这条 CSS 规则，`#content1` 元素由 `display:none` 变成 `display:block` ，点击列表2亦是如此。
-* 如此即达到了 Tab 切换。当然除了 content1 content2 的切换，我们的 li 元素样式也要不断变化，这个时候，就需要我们在 DOM 结构布局的时候多留心，在 `#content1:target` 触发的时候可以同时去修改 li 的样式。
+* 上面的 CSS 代码，一开始页面中的 `#content1` 与 `#content2` 都是隐藏的，当点击列表1触发 `href="#content1"` 时，页面的 `URL` 会发生变化：由 `www.example.com` 变成 `www.example.com#content1`
+* 接下来会触发 `#content1:target{ }` 这条 `CSS` 规则，`#content1` 元素由 `display:none` 变成 `display:block` ，点击列表2亦是如此。
+* 如此即达到了 `Tab` 切换。当然除了 `content1` `content2` 的切换，我们的 `li` 元素样式也要不断变化，这个时候，就需要我们在 `DOM` 结构布局的时候多留心，在 `#content1:target` 触发的时候可以同时去修改 `li` 的样式。
 
 * 在上面 HTML 的基础上，再修改一下，变成如下结构：
 
@@ -217,8 +217,8 @@
 </ul>
 ```
 
-* 仔细对比一下与上面结构的异同，这里我只是将 ul 从两个 content 上面挪到了下面，为什么要这样做呢？
-	* 因为这里需要使用兄弟选择符 ~ 。在这样调换位置之后，通过兄弟选择符 ~ 可以操作整个 .nav 的样式。
+* 仔细对比一下与上面结构的异同，这里我只是将 `ul` 从两个 `content` 上面挪到了下面，为什么要这样做呢？
+	* 因为这里需要使用兄弟选择符 ~ 。在这样调换位置之后，通过兄弟选择符 ~ 可以操作整个 `.nav` 的样式。
 
 ```
 #content1:target ~ .nav li{
@@ -238,17 +238,17 @@
 }
 ```
 
-* 上面的 CSS 规则中，我们使用 `~` 选择符，在 `#content1:target` 和 `#content2:target` 触发的时候分别去控制两个导航 li 元素的样式。
-* 至此两个问题，1. 如何接收点击事件 与 2. 如何操作相关DOM 都已经解决，剩下的是一些小样式的修补工作。
+* 上面的 `CSS` 规则中，我们使用 `~` 选择符，在 `#content1:target` 和 `#content2:target` 触发的时候分别去控制两个导航 `li` 元素的样式。
+* 至此两个问题，1. 如何接收点击事件 与 2. 如何操作相关 `DOM` 都已经解决，剩下的是一些小样式的修补工作。
 * [方案参考资料](https://github.com/chokcoco/iCSS/issues/54)
 
 ## oblique字体和italic字体在css样式中的差别
 * 区别
-	* italic: 指的是一种单独的字体风格，对每个字母的结构有一些小改动，来反映外观的变化,不一定每种字体都有这种风格
-	* oblique: 指的是将正常竖直文本倾斜
+	* `italic`: 指的是一种单独的字体风格，对每个字母的结构有一些小改动，来反映外观的变化,不一定每种字体都有这种风格
+	* `oblique`: 指的是将正常竖直文本倾斜
 * 使用
-	* italic：斜体，对于没有斜体变量的特殊字体，将应用oblique
-	* oblique：倾斜的字体
+	* `italic`：斜体，对于没有斜体变量的特殊字体，将应用 `oblique`
+	* `oblique`：倾斜的字体
 
 ## 如何让一段文字强制换行(适用于pre等标签)
 #### 方案一（适合webkit内核的浏览器或移动端浏览器）
@@ -265,12 +265,12 @@ word-wrap: break-word!important;
 
 ## 多行文本溢出显示省略号
 #### 方案一
-* 一个不规范的css属性 ：-webkit-line-clamp 
-	* 限制在一个块元素显示的文本的行数，为了实现该效果，需要组合其他webkit属性
+* 一个不规范的 `css` 属性 ：`-webkit-line-clamp`
+	* 限制在一个块元素显示的文本的行数，为了实现该效果，需要组合其他 `webkit` 属性
 * 相关属性
-	* display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示  
-	* -webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。
-	* text-overflow，可以用来多行文本的情况下，用省略号“...”隐藏超出范围的文本 。
+	* `display: -webkit-box`; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示  
+	* `-webkit-box-orient` 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。
+	* `text-overflow`，可以用来多行文本的情况下，用省略号“...”隐藏超出范围的文本 。
 * 完整css
 
 ```
@@ -302,13 +302,13 @@ p::after {
 }
 ```
 * 注：
-	1. height高度真好是line-height的3倍
-	2. 结束的省略好用了半透明的png做了减淡的效果，或者设置背景颜色；
-	3. IE6-7不显示content内容，所以要兼容IE6-7可以是在内容中加入一个标签，比如用`<span class="line-clamp">...</span>`去模拟；
-	4. 要支持IE8，需要将::after替换成:after；
+	1. `height` 高度正好是 `line-height` 的3倍
+	2. 结束的省略好用了半透明的 `png` 做了减淡的效果，或者设置背景颜色
+	3. `IE6-7` 不显示 `content` 内容，所以要兼容 `IE6-7` 可以是在内容中加入一个标签，比如用`<span class="line-clamp">...</span>`去模拟
+	4. 要支持 `IE8` ，需要将`::after` 替换成 `:after`
 
 #### 方案三
-* 利用float元素进行浮动
+* 利用 `float` 元素进行浮动
 
 ```
 // HTML
@@ -382,11 +382,11 @@ p::after {
 	* `::selection` 选择器匹配元素中被用户选中或处于高亮状态的部分。
 	* `::selection` 只可以应用于少数的CSS属性：color, background, cursor,outline
 * 浏览器支持
-	* IE9+, Opera, Google Chrome和Safari支持 `::selection` 选择器
-	* Firefox 通过其私有属性 `::-moz-selection` 支持
+	* `IE9+` , `Opera` , `Google Chrome` 和 `Safari` 支持 `::selection` 选择器
+	* `Firefox` 通过其私有属性 `::-moz-selection` 支持
 
 ## 手机浏览器支持弹性滚动
-* iOS页面非body元素的滚动操作会非常卡(Android不会出现此情况)，通过 `overflow-scrolling:touch` 调用Safari原生滚动来支持弹性滚动，增加页面滚动的流畅度
+* `iOS` 页面非 `body` 元素的滚动操作会非常卡(`Android`不会出现此情况)，通过 `overflow-scrolling:touch` 调用 `Safari` 原生滚动来支持弹性滚动，增加页面滚动的流畅度
 * 代码实现
 
 ```
@@ -399,5 +399,5 @@ body {
 ```
 
 ## CSS 绝对定位的基准点
-* 设置了 `top` 或 `left`  相对于border以内，padding以外为基准点
-* 未设置 `top`或 `left` 相对于relative定位的content
+* 设置了 `top` 或 `left`  相对于 `border` 以内，`padding` 以外为基准点
+* 未设置 `top`或 `left` 相对于 `relative` 定位的 `content`

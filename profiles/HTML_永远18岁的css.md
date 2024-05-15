@@ -302,7 +302,7 @@ p::after {
 }
 ```
 * 注：
-	1. `height` 高度正好是 `line-height` 的3倍
+	1. `height` 高度正好是 `line-height` 的 3 倍
 	2. 结束的省略好用了半透明的 `png` 做了减淡的效果，或者设置背景颜色
 	3. `IE6-7` 不显示 `content` 内容，所以要兼容 `IE6-7` 可以是在内容中加入一个标签，比如用`<span class="line-clamp">...</span>`去模拟
 	4. 要支持 `IE8` ，需要将`::after` 替换成 `:after`
@@ -380,7 +380,7 @@ p::after {
 ```
 * 官方定义和用法
 	* `::selection` 选择器匹配元素中被用户选中或处于高亮状态的部分。
-	* `::selection` 只可以应用于少数的CSS属性：color, background, cursor,outline
+	* `::selection` 只可以应用于少数的CSS属性：`color`, `background`, `cursor`, `outline`
 * 浏览器支持
 	* `IE9+` , `Opera` , `Google Chrome` 和 `Safari` 支持 `::selection` 选择器
 	* `Firefox` 通过其私有属性 `::-moz-selection` 支持

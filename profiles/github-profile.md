@@ -1,21 +1,21 @@
 # 打造属于自己的 Github 主页
-> 不知在什么时候起，Github 支持创建同名仓库来达到美化 Github 主页的功能, 关注的很多大神也自己设计开发了自己的主页，很有特点，今天就为大家带来 Github 个性主页如何开发~
+> 不知在什么时候起，`Github` 支持创建同名仓库来达到美化 `Github` 主页的功能, 关注的很多大神也自己设计开发了自己的主页，很有特点，今天就为大家带来 `Github` 个性主页如何开发~
 
 ## 阅读本文您将收获
-* 如何进行个性化Github个人主页创建
-* 如何美化Github个人主页
+* 如何进行个性化 `Github` 个人主页创建
+* 如何美化 `Github` 个人主页
 
-> 下方先放上个人 Github 主页 ，笔者是球迷，所以主页也是按照个人兴趣喜好来设计的，如果和您审美有差距，请直接关闭。若有帮助，请记得三联哦~
+> 下方先放上个人 `Github` 主页 ，笔者是球迷，所以主页也是按照个人兴趣喜好来设计的，如果和您审美有差距，请直接关闭。若有帮助，请记得三联哦~
 
 ![](../images/githubProfile/github-screenshot.jpeg)
 
 ## 开发
 ### 创建 Github 仓库
-* 在 Github 中创建与个人 ID 同名的仓库
+* 在 `Github` 中创建与个人 `ID` 同名的仓库
 
 ![](../images/githubProfile/create-resp.png)
 
-* 记得勾选下方「Add a README file」，仓库会自动创建 `readme` 文件，我们需要设计的个人主页，就需要在这个文件中进行开发。
+* 记得勾选下方「`Add a README file`」，仓库会自动创建 `readme` 文件，我们需要设计的个人主页，就需要在这个文件中进行开发。
 	* `readme` 文件为 `MarkDown` 格式，开发时可以使用 `HTML+CSS` 或 `MarkDown` 语法相结合，可以实现更多的个性化样式。
 
 ![](../images/githubProfile/add-readme.png)
@@ -28,7 +28,7 @@
 * `readme` 文件使用 `MarkDown` 语法进行编写，当然你可以使用 `MarkDown` 结合 `HTML` 语言进行编写，这样生成的 `readme` 文件风格多样。
 
 ### 个性化设计
-> 我们在很多大佬的 github 个人主页中经常能看到各种个性化的主页徽章或统计，那这些个性化的图表、统计、徽章都是怎么生成的，接下来我就为大家提供一些自己在开发主页过程中用(bai)到(piao)的小组件。
+> 我们在很多大佬的 	`Github` 个人主页中经常能看到各种个性化的主页徽章或统计，那这些个性化的图表、统计、徽章都是怎么生成的，接下来我就为大家提供一些自己在开发主页过程中用(bai)到(piao)的小组件。
 
 ##### Github 徽章
 ![](https://img.shields.io/badge/nodeJS-1.0.1-yellowgreen) ![](https://img.shields.io/badge/VSCode-1.0.1-brightgreen)
@@ -38,10 +38,10 @@
 
 ![](../images/githubProfile/badge.png)
 
-* 网站还支持自定义复杂 `badge` ,可以实现添加icon等功能，感兴趣就去试一下吧~
+* 网站还支持自定义复杂 `badge` ,可以实现添加 `icon` 等功能，感兴趣就去试一下吧~
 
 ##### Github 统计
-> Github 有很多动态生成的官方统计信息，利用这些统计信息我们可以更清晰地展现个人 Github 中的提交、分类、热门等信息。
+> Github 有很多动态生成的官方统计信息，利用这些统计信息我们可以更清晰地展现个人 `Github` 中的提交、分类、热门等信息。
 
 * [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats/blob/master/docs/readme_cn.md) 官方中文文档可以让你更快速地设置自己的主页，只需要将图片链接地址写入readme文件中，你就可以设置这些多彩且丰富的信息卡片
 * 我在我的个人主页中用到的三个统计图片分别是

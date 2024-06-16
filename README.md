@@ -113,7 +113,7 @@
 ## 网络相关 Network :postbox:
 > [异步通信](https://github.com/programmer-zhang/front-end/tree/master/profiles/异步通信.md)
 
-> [HTTP-请求]
+> [HTTP-请求](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTTP_request.md)
 
 > [HTTP-状态码](https://github.com/programmer-zhang/front-end/tree/master/profiles/HTTP_status.md)
 

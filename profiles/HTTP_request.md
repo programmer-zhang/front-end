@@ -30,9 +30,9 @@
 
 解析出IP地址后，客户端与服务器之间需要建立TCP连接。这个过程包括三次握手：
 
-- 客户端发送SYN包
-- 服务器返回SYN-ACK包
-- 客户端发送ACK包确认
+- 客户端发送 `SYN` 包
+- 服务器返回 `SYN-ACK` 包
+- 客户端发送 `ACK` 包确认
 
 ### 3. 发送HTTP请求
 
@@ -44,22 +44,22 @@ TCP连接建立后，客户端可以通过该连接发送HTTP请求。一个典�
 
 ### 5. 返回HTTP响应
 
-服务器处理完请求后，会通过TCP连接将HTTP响应发送给客户端。HTTP响应包括状态行、响应头和响应体。
+服务器处理完请求后，会通过`TCP`连接将`HTTP` 响应发送给客户端。`HTTP` 响应包括状态行、响应头和响应体。
 
 ### 6. 关闭连接
 
-HTTP/1.1默认使用持久连接（Keep-Alive），允许多个请求复用一个TCP连接，从而减少连接建立和关闭的开销。HTTP/2进一步优化了连接复用机制。
+`HTTP/1.1` 默认使用持久连接（`Keep-Alive`），允许多个请求复用一个`TCP`连接，从而减少连接建立和关闭的开销。`HTTP/2`进一步优化了连接复用机制。
 
-## HTTPS的介绍
+## `HTTPS` 的介绍
 
-HTTPS（HyperText Transfer Protocol Secure）是HTTP的安全版本，通过TLS（Transport Layer Security）协议对数据进行加密传输，确保数据的保密性和完整性。HTTPS的请求过程与HTTP类似，但在TCP连接建立后增加了TLS握手过程。
+`HTTPS（HyperText Transfer Protocol Secure）` 是`HTTP`的安全版本，通过`TLS（Transport Layer Security）`协议对数据进行加密传输，确保数据的保密性和完整性。`HTTPS` 的请求过程与`HTTP` 类似，但在`TCP` 连接建立后增加了 `TLS` 握手过程。
 
 ### TLS握手过程
 
-TLS握手包括以下步骤：
+`TLS` 握手包括以下步骤：
 
-1. 客户端发送ClientHello消息，包含支持的加密算法等信息
-2. 服务器返回ServerHello消息，选择加密算法，并发送证书
+1. 客户端发送 `ClientHello` 消息，包含支持的加密算法等信息
+2. 服务器返回 `ServerHello` 消息，选择加密算法，并发送证书
 3. 客户端验证服务器证书，并生成会话密钥
 4. 客户端和服务器使用会话密钥进行加密通信
 

@@ -34,6 +34,19 @@
 - 服务器返回 `SYN-ACK` 包
 - 客户端发送 `ACK` 包确认
 
+>  `HTTPS` 的介绍
+
+> `HTTPS（HyperText Transfer Protocol Secure）` 是`HTTP`的安全版本，通过`TLS（Transport Layer Security）`协议对数据进行加密传输，确保数据的保密性和完整性。`HTTPS` 的请求过程与`HTTP` 类似，但在`TCP` 连接建立后增加了 `TLS` 握手过程。
+
+* `HTTPS TLS` 握手过程
+
+`TLS` 握手包括以下步骤：
+
+1. 客户端发送 `ClientHello` 消息，包含支持的加密算法等信息
+2. 服务器返回 `ServerHello` 消息，选择加密算法，并发送证书
+3. 客户端验证服务器证书，并生成会话密钥
+4. 客户端和服务器使用会话密钥进行加密通信
+
 ### 3. 发送HTTP请求
 
 TCP连接建立后，客户端可以通过该连接发送HTTP请求。一个典型的HTTP请求包括请求行、请求头和请求体。
@@ -50,18 +63,7 @@ TCP连接建立后，客户端可以通过该连接发送HTTP请求。一个典�
 
 `HTTP/1.1` 默认使用持久连接（`Keep-Alive`），允许多个请求复用一个`TCP`连接，从而减少连接建立和关闭的开销。`HTTP/2`进一步优化了连接复用机制。
 
-## `HTTPS` 的介绍
 
-`HTTPS（HyperText Transfer Protocol Secure）` 是`HTTP`的安全版本，通过`TLS（Transport Layer Security）`协议对数据进行加密传输，确保数据的保密性和完整性。`HTTPS` 的请求过程与`HTTP` 类似，但在`TCP` 连接建立后增加了 `TLS` 握手过程。
-
-### TLS握手过程
-
-`TLS` 握手包括以下步骤：
-
-1. 客户端发送 `ClientHello` 消息，包含支持的加密算法等信息
-2. 服务器返回 `ServerHello` 消息，选择加密算法，并发送证书
-3. 客户端验证服务器证书，并生成会话密钥
-4. 客户端和服务器使用会话密钥进行加密通信
 
 ## HTTP请求各流程耗时情况
 

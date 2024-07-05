@@ -93,7 +93,7 @@
 * `optional_permissions`: 用户运行时授予的权限
 * `content_scripts.matches`: 包含一个或多个匹配模式，可允许内容脚本注入一个或多个主机中
 * `host_permissions`: 包含一个或多个匹配模式，可提供对一个或多个主机的访问权限，多用于 `fetch()` 跨域请求
-* `optional_host_permissions`: 由用户在运行时授予
+* `optional_host_permissions`: 由用户在运行时授予相关权限
 
 ## 主体页面
 * 编写 `popup.html`

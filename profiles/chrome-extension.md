@@ -193,6 +193,8 @@ fetch(request.url + request.body).then(response => {
 
 * 扩展插件栏显示
 
+![](../images/chromeExtension/fix-extension.png)
+
 ## 错误排查
 ### 错误信息：`Unchecked runtime.lastError: The message port closed before a response was received.`
 >  造成此错误的原因归根到底是 `onMessage` 监听器消息端口自动关闭

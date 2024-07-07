@@ -59,7 +59,7 @@
 
 ## 安装时可能出现的问题
 ### 权限不足
-* 安装时使用 root 权限执行脚本
+* 安装时使用 `root` 权限执行脚本
 
 ### 链接被拒绝或无法连接
 * 检查本机网络是否有代理，若有代理，将代理取消后重新操作
@@ -93,12 +93,12 @@ CORE_TAP_REPO = "git://mirrors.ustc.edu.cn/homebrew-core.git".freeze
 
 * 执行命令开始安装过程 `/usr/bin/ruby ~/brew_install`
 
-### 错误信息: in `initialize': Version value must be a string; got a NilClass () (TypeError)`
+### 错误信息: in initialize: Version value must be a string; got a NilClass () (TypeError)
 * 输入 `brew --version` 或直接执行 `brew` 操作报上述错误
-* 原因是升级 MAC 系统后与 Homebrew 不兼容造成的。
+* 原因是升级 `MAC` 系统后与 `Homebrew` 不兼容造成的
 * 解决方式1: 固定版本
 	* 终端输入 `vim /usr/local/Homebrew/Library/Homebrew/version.rb`
-	* 注释掉文件的第369行和372行，将372行版本号固定为 `@version = '11.1'`(不同版本行数有出入，内容相对应就对)
+	* 注释掉文件的第 369 行和 372 行，将 372 行版本号固定为 `@version = '11.1'`(不同版本行数有出入，内容相对应就对)
 	
 	![](../images/homebrew-error.png)
 

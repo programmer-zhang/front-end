@@ -58,7 +58,7 @@ https://github-readme-streak-stats.herokuapp.com/?user=programmer-zhang&theme=hi
 ![](../images/githubProfile/github-stats.png)
 
 ##### Github Icon
-> 善于利用 `Icon` 可以让我们的 `Github` 主页更加简洁，同时图标是个国际公用的语言，很多工具和框架相比文字描述，使用图标更加一目了然，这里我将提供一些我自己使用的图标，这些图标同样都是 svg 图标，如有需要请自取，点个赞就行~
+> 善于利用 `Icon` 可以让我们的 `Github` 主页更加简洁，同时图标是个国际公用的语言，很多工具和框架相比文字描述，使用图标更加一目了然，这里我将提供一些我自己使用的图标，这些图标同样都是 `svg` 图标，如有需要请自取，点个赞就行~
 
 ![](../images/githubProfile/github-icon.png)
 

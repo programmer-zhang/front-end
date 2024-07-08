@@ -274,7 +274,7 @@
 > [计算机硬件相关(持续更新)](https://github.com/programmer-zhang/front-end/tree/master/profiles/计算机硬件相关.md)
 
 ## 其他 Just Fun :hankey:
-> [Github 开源项目记录]
+> [Github 开源项目记录](https://github.com/programmer-zhang/front-end/tree/master/profiles/github_open-source-project.md)
 
 > [攻城狮，你真的会使用搜索引擎么?](https://github.com/programmer-zhang/front-end/tree/master/profiles/search_tips.md)
 

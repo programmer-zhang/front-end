@@ -70,3 +70,8 @@ https://github-readme-streak-stats.herokuapp.com/?user=programmer-zhang&theme=hi
 ![](../images/githubProfile/emoji-chat-sheet.png)
 
 * 全部的 `Emoji-chat-sheet` 图标都在后面这个网址中，[emoji-cheat-sheet](https://www.webfx.com/tools/emoji-cheat-sheet/) 提供了很多 `Emoji` 表情，使用方式也特别的简单粗暴，直接将 `Emoji` 后面的标识复制在 `MarkDown` 文件中即可，提交到远程后，在网页中预览就能看到表情了。
+
+##### Github 仓库星路历程
+[![Stargazers over time](https://starchart.cc/programmer-zhang/front-end.svg?variant=adaptive)](https://starchart.cc/programmer-zhang/front-end)
+
+[![Star History Chart](https://api.star-history.com/svg?repos=programmer-zhang/front-end,programmer-zhang/DuangCalender&type=Date)](https://star-history.com/#programmer-zhang/front-end&programmer-zhang/DuangCalender&Date)

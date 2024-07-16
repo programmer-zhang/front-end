@@ -75,6 +75,14 @@ https://github-readme-streak-stats.herokuapp.com/?user=programmer-zhang&theme=hi
 
 > 网上有很多关于github仓库美化工具和网站，这里展示几个。
 
+* Github 提交散点图
+
+<div style="width:100%;" align="center">
+	<img src="https://ghchart.rshah.org/programmer-zhang" style="width:80%">
+</div>
+
+* Github Star折线图
+
 [![Stargazers over time](https://starchart.cc/programmer-zhang/front-end.svg?variant=adaptive)](https://starchart.cc/programmer-zhang/front-end)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=programmer-zhang/front-end,programmer-zhang/DuangCalender&type=Date)](https://star-history.com/#programmer-zhang/front-end&programmer-zhang/DuangCalender&Date)

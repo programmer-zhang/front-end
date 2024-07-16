@@ -349,3 +349,7 @@
 > [WEB3.0 学习 (四): 合约转账]
 
 > [一些区块链行业有用的网站](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_websites.md)
+
+## 星路历程
+
+[![Stargazers over time](https://starchart.cc/programmer-zhang/front-end.svg?variant=adaptive)](https://starchart.cc/programmer-zhang/front-end)

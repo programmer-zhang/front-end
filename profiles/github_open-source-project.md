@@ -18,4 +18,9 @@
 * [项目官方地址](https://earthworm.cuixueshe.com)
 * [Github 地址](https://github.com/cuixueshe/earthworm)
 
-## 
+## Stellarium
+* 一个开源星象模拟软件
+* 以3D形式展现天空星象
+* 支持接口调试，支持多语言，支持 HTTP 接口
+* [项目官方地址](https://stellarium.org/)
+* [Github 地址](https://github.com/Stellarium/stellarium)

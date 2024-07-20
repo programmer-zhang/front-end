@@ -24,3 +24,10 @@
 * 支持接口调试，支持多语言，支持 HTTP 接口
 * [项目官方地址](https://stellarium.org/)
 * [Github 地址](https://github.com/Stellarium/stellarium)
+
+## tailwind-landing-page-template
+* 落地页模板开源项目
+* 适合快速搭建
+* 使用 `Vue.js` `Next.js` `React` 搭建
+* [项目官方地址](https://cruip.com)
+* [Github 地址](https://github.com/cruip/tailwind-landing-page-template)

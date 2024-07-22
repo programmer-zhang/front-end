@@ -75,12 +75,12 @@
 	],
 	// 应用权限配置: cookie 权限、tabs 权限、系统通知权限等
 	"permissions": [
-		"contextMenus",
-		"tabs",
-		"storage",
-		"cookies",
-		"notifications",
-		"alarms"
+			"contextMenus",
+			"tabs",
+			"storage",
+			"cookies",
+			"notifications",
+			"alarms"
 	  ]
 }
 ```
@@ -119,7 +119,7 @@
 ```
 
 ## 样式调整
-* 使用样式调整页面主体
+* 使用外联方式样式调整页面主体
 
 ```
 <head>
@@ -130,7 +130,7 @@
 ```
 
 ## 逻辑处理
-* 加入 `JavaScript`
+* 使用外联方式加入 `JavaScript`
 
 ```
 <!DOCTYPE html>

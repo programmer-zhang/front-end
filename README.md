@@ -306,7 +306,7 @@
 
 > [MacOS使用 WordPress 快速建站](https://github.com/programmer-zhang/front-end/tree/master/profiles/wordpress.md)
 
-> [Linux 开发 -- sed使用指南]
+> [Linux 开发 -- sed使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/linux_sed.md)
 
 > [MAC VSCode 使用指南]
 

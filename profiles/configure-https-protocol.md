@@ -77,7 +77,7 @@
         	ssl_certificate_key /usr/local/nginx/key/server.key;
         	ssl_session_timeout  5m; #session超时时间(可删除)
         	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;     #指定SSL服务器端支持的协议版本(可删除)
-        	ssl_ciphers  HIGH:!aNULL:!MD5; # (可删除)
+        	ssl_ciphers  HIGH:!aNULL:!MD5; #(可删除)
         	#ssl_ciphers  ALL：!ADH：!EXPORT56：RC4+RSA：+HIGH：+MEDIUM：+LOW：+SSLv2：+EXP;    #指定加密算法(可删除)
        	 ssl_prefer_server_ciphers   on;    #在使用SSLv3和TLS协议时指定服务器的加密算法要优先于客户端的加密算法(可删除)
 	}

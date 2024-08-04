@@ -9,7 +9,7 @@
 
 `sed` 的基本语法如下：
 
-```bash
+```
 sed [选项] '命令' 文件名
 ```
 
@@ -23,7 +23,7 @@ sed [选项] '命令' 文件名
 
 替换是 `sed` 最常用的操作。它的基本语法是：
 
-```bash
+```
 sed 's/旧字符串/新字符串/' 文件名
 ```
 
@@ -42,7 +42,7 @@ Hello sed
 
 要将文件中的 `Hello` 替换为 `Hi`，可以使用以下命令：
 
-```bash
+```
 sed 's/Hello/Hi/' example.txt
 ```
 
@@ -59,7 +59,7 @@ Hi sed
 
 #### 示例
 
-```bash
+```
 sed 's/Hello/Hi/g' example.txt
 ```
 
@@ -78,7 +78,7 @@ Hi sed
 
 删除 `example.txt` 中的第二行：
 
-```bash
+```
 sed '2d' example.txt
 ```
 
@@ -96,7 +96,7 @@ Hello World
 
 在文件的第一行之前插入一行：
 
-```bash
+```
 sed '1i\
 This is a new line
 ' example.txt
@@ -118,7 +118,7 @@ Hello sed
 
 在文件的第二行之后追加一行：
 
-```bash
+```
 sed '2a\
 This is another new line
 ' example.txt

@@ -37,4 +37,4 @@
 * 大学计算机课程中缺少的内容
 * 讲解工具涵盖程序员使用的高频工具
 * [项目官方地址](https://missing-semester-cn.github.io/)
-* [Github 地址]()
+* [Github 地址](https://github.com/missing-semester-cn/missing-semester-cn.github.io)

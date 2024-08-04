@@ -31,3 +31,10 @@
 * 使用 `Vue.js` `Next.js` `React` 搭建
 * [项目官方地址](https://cruip.com)
 * [Github 地址](https://github.com/cruip/tailwind-landing-page-template)
+
+## The Missing Semester of Your CS Education
+* 讲授命令行、强大的文本编辑器的使用、使用版本控制系统提供的多种特性的课程
+* 大学计算机课程中缺少的内容
+* 讲解工具涵盖程序员使用的高频工具
+* [项目官方地址](https://missing-semester-cn.github.io/)
+* [Github 地址]()

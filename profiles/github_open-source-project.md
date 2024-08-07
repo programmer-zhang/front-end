@@ -42,3 +42,12 @@
 ## favicon-service (besticon)
 * 获取网站 `favicon` 图标的服务
 * [Github 地址](https://github.com/mat/besticon)
+
+## excalidraw
+* 免费、开源的基于无限画布的白板应用
+* `Web` 应用
+* 可以创建手绘风格的
+* 支持多语言
+* 支持图片导出
+* [项目官方地址](https://excalidraw.com/)
+* [Github 地址](https://github.com/excalidraw/excalidraw)

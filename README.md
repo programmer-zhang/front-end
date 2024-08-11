@@ -302,6 +302,8 @@
 
 > [使用 Charles 抓包]
 
+> [使用 shell]
+
 > [打造属于自己的 Github 主页](https://github.com/programmer-zhang/front-end/tree/master/profiles/github-profile.md)
 
 > [MacOS使用 WordPress 快速建站](https://github.com/programmer-zhang/front-end/tree/master/profiles/wordpress.md)

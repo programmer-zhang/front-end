@@ -19,3 +19,7 @@
 	* 例如 `Windows` 下的 `explorer.exe` 就是一个典型的图形 `Shell`
 
 ## 使用 `shell`
+
+> 以下内容以 `zsh`举例 
+
+

@@ -13,5 +13,9 @@
 * Shell 通常可以分为两种：命令行 `Shell` 与 图形 `Shell`。
 * 命令行 `Shell`：
 	* 提供一个命令行界面 (`CLI`)
+	* 例如：`bash`、`zsh`、`sh` 等
 * 图形 `Shell`：
-	* 提供一个图形用户界面 (`GUI`)。`Windows` 下的 `explorer.exe` 就是一个典型的图形 `Shell`
+	* 提供一个图形用户界面 (`GUI`)。
+	* 例如 `Windows` 下的 `explorer.exe` 就是一个典型的图形 `Shell`
+
+

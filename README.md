@@ -302,7 +302,7 @@
 
 > [使用 Charles 抓包]
 
-> [使用 shell]
+> [计算机教育中缺失的一课（一）：shell](https://github.com/programmer-zhang/front-end/tree/master/profiles/shell.md)
 
 > [打造属于自己的 Github 主页](https://github.com/programmer-zhang/front-end/tree/master/profiles/github-profile.md)
 

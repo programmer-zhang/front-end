@@ -51,3 +51,10 @@
 * 支持图片导出
 * [项目官方地址](https://excalidraw.com/)
 * [Github 地址](https://github.com/excalidraw/excalidraw)
+
+## JSON Editor
+* 基于web的工具，用于查看、编辑、格式化和验证JSON。
+* 适应各种模式，如树编辑器、代码编辑器和纯文本编辑器。
+* 可用作web应用程序中的组件。可作为CommonJS模块、AMD模块或常规javascript文件加载。
+* [项目官方地址](https://jsoneditoronline.org)
+* [Github 地址](https://github.com/josdejong/jsoneditor)

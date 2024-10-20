@@ -328,6 +328,8 @@
 
 > [区块链基础(六): 如何进行链上交易追踪](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_trace-onchain.md)
 
+> [区块链基础(七): 交易所和钱包]
+
 > [区块链基础(七): UTXO 模型如何进行链上交易追踪]
 
 > [区块链安全(一): USDT 假充值手法]
@@ -337,6 +339,8 @@
 > [区块链安全(三): 加密资产盗窃]
 
 > [区块链安全(四): 涉加密资产态势分析]
+
+> [区块链安全(五): ]
 
 > [智能合约学习(一): Solidity 的第一行代码]
 

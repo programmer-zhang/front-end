@@ -79,3 +79,6 @@
 * 硬件钱包还会有硬件钱包丢失或损坏的风险，会面临资产完全丢失
 
 ### 钱包资产转移体现在链上
+* 钱包地址由于是自托管地址，资产的转移在链上全部都是公开数据展示，任何人都可以查看到资产转移的详情
+
+![](../images/blockChain/exchange_wallet_onchain-address-funds-flow.png)

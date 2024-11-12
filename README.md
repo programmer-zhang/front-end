@@ -328,7 +328,7 @@
 
 > [区块链基础(六): 如何进行链上交易追踪](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_trace-onchain.md)
 
-> [区块链基础(七): 交易所和钱包]
+> [区块链基础(七): 交易所和钱包](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_exchange-and-wallet.md)
 
 > [区块链基础(七): UTXO 模型如何进行链上交易追踪]
 

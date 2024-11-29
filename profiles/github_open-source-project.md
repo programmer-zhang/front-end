@@ -48,7 +48,7 @@
 * `Web` 应用
 * 可以创建手绘风格的
 * 支持多语言
-* 支持图片导出
+* 支持图片导出、支持源文件导出及导入
 * [项目官方地址](https://excalidraw.com/)
 * [Github 地址](https://github.com/excalidraw/excalidraw)
 
@@ -58,3 +58,10 @@
 * 可用作web应用程序中的组件。可作为CommonJS模块、AMD模块或常规javascript文件加载。
 * [项目官方地址](https://jsoneditoronline.org)
 * [Github 地址](https://github.com/josdejong/jsoneditor)
+
+## MoneyPrinterTurbo
+* 通过提示词或关键字，AI生成视频
+* 支持多种形式互转
+* 多端应用，中文友好
+* [项目官方地址](https://reccloud.cn)
+* [Github 地址](https://github.com/harry0703/MoneyPrinterTurbo)

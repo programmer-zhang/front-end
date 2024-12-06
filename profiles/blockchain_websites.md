@@ -16,4 +16,5 @@
 * [socketscan](https://www.socketscan.io/)
 * [celerscan](https://celerscan.com/)
 * [meson finance explorer](https://explorer.meson.fi/)
-* [hop exchange exolorer](https://explorer.hop.exchange/)
+* [hop exchange explorer](https://explorer.hop.exchange/)
+* [jumper exchange explorer](https://jumper.exchange/zh/scan)

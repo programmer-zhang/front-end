@@ -352,13 +352,13 @@
 
 > [智能合约学习(三): 链上合约交互]
 
-> [WEB3.0 学习 (一): 引入项目]
+> [WEB 3.0 学习 (一): 引入项目]
 
-> [WEB3.0 学习 (二): 连接钱包]
+> [WEB 3.0 学习 (二): 连接钱包]
 
-> [WEB3.0 学习 (三): 钱包操作]
+> [WEB 3.0 学习 (三): 钱包操作]
 
-> [WEB3.0 学习 (四): 合约转账]
+> [WEB 3.0 学习 (四): 合约转账]
 
 > [一些区块链行业有用的网站](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_websites.md)
 

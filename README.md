@@ -330,7 +330,7 @@
 
 > [区块链基础(七): 交易所和钱包](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_exchange-and-wallet.md)
 
-> [区块链基础(八): BTC 的 UTXO 模型如何进行链上交易追踪]
+> [区块链基础(八): BTC 的 UTXO 模型如何进行链上交易追踪](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_trace-utxo.md)
 
 > [区块链安全(一): USDT 假充值手法]
 

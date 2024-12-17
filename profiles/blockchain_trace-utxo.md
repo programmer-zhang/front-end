@@ -17,6 +17,7 @@
 
 ![](../images/blockChain/trace_utxo-transaction.png)
 
+* [https://www.oklink.com/zh-hans/btc/tx/6216b12925f9bf817679e4cbaae35e1f5b8da997dc8b12603c6de7dd965af5c1](https://www.oklink.com/zh-hans/btc/tx/6216b12925f9bf817679e4cbaae35e1f5b8da997dc8b12603c6de7dd965af5c1)
 * 上图为一个典型的比特币交易详情，图片中会告知我们涉及交易的很多信息
 * 交易哈希为本次交易的唯一标识
 * 本笔交易涉及的全部比特币数额

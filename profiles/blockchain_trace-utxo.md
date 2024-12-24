@@ -36,3 +36,6 @@
 
 ![](../images/blockChain/trace_utxo-transaction.png)
 
+* 向资金来源方向查找
+	* 地址 34KHsFYcRrZDN89U85RMSaj5KCFQ5hLZT2 资金全部来自 37QM4CVv5eoD14pBsXSCkkfCZ3VDhtBxbL
+	

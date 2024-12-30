@@ -31,12 +31,6 @@
 * 点开交易明细后可以看到本笔比特币交易的交易结构
 * 在区块链浏览器中看到的交易详情并不是比特币交易的原始结构，详情中的比特币交易结构也是经过美化和序列化后的结果，原始的比特币交易结构为 `JSON` 结构数据
 
-## 比特币的交易追踪
-* 以以下交易为例
-
-![](../images/blockChain/trace_utxo-transaction.png)
-
-* 
-* 向资金来源方向查找
-	* 地址 34KHsFYcRrZDN89U85RMSaj5KCFQ5hLZT2 资金全部来自 37QM4CVv5eoD14pBsXSCkkfCZ3VDhtBxbL
-	
+## Coinbase 交易的收入
+* coinbase交易的收入即为创世奖励及交易费
+* 因为`UTXO`的交易形式，在资金追溯后会找到初始 `coinbase` 收入

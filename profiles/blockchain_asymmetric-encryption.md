@@ -29,8 +29,6 @@
 
 ![非对称加密示意图](../images/blockChain/asymmetric-encryption_public-key.jpg)
 
----
-
 ## 在数字货币中的应用
 
 在数字货币中，非对称加密是确保资产和交易安全的核心技术，主要体现在以下两个方面：

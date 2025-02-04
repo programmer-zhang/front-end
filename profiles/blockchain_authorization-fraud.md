@@ -33,10 +33,74 @@ const maliciousContract = {
 **特征**：伪造与知名项目相似的合约地址或界面
 
 ### 3. 授权劫持
-攻击者通过漏洞修改已授权的合约地址，将授权转移到恶意合约。
+* 攻击者通过漏洞修改已授权的合约地址，将授权转移到恶意合约。
+* 当合约存储授权地址时存在设计缺陷，攻击者通过漏洞将授权目标修改为恶意合约地址。典型漏洞场景如下：
 
+```solidity
+// 存在漏洞的质押合约
+contract VulnerableStaking {
+    address public authorizedContract;  // 授权合约地址
+    mapping(address => uint256) public balances;
 
+    // 漏洞点：未设置权限控制
+    function setAuthorizedContract(address _newAddr) public {
+        authorizedContract = _newAddr; // 攻击者可以任意修改授权地址
+    }
 
+    // 用户质押操作
+    function stake(uint256 amount) public {
+        IERC20(token).transferFrom(msg.sender, address(this), amount);
+        balances[msg.sender] += amount;
+    }
+
+    // 提现时使用被篡改的授权地址
+    function withdraw() public {
+        IERC20(token).transferFrom(
+            address(this),
+            msg.sender,
+            balances[msg.sender]
+        );
+    }
+}
+```
+
+* 攻击步骤
+	1. 用户调用stake(100)完成正常质押
+	2. 攻击者调用setAuthorizedContract(恶意合约地址)
+	3. 用户调用withdraw()时，实际向恶意合约转账
+	4. 恶意合约劫持transferFrom操作转移资金
+
+* 安全改进方案
+
+```
+// 修复后的合约
+contract SecureStaking {
+    address private authorizedContract;
+    address private owner;  // 添加权限控制
+    
+    constructor() {
+        owner = msg.sender;
+    }
+
+    // 增加权限修饰符
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Unauthorized");
+        _;
+    }
+
+    // 安全设置方法
+    function setAuthorizedContract(address _newAddr) public onlyOwner {
+        require(_newAddr != address(0), "Invalid address");
+        authorizedContract = _newAddr;
+    }
+}
+```
+
+* 上述改进方案中的主要防御改进点为：
+
+	1. 合约状态修改函数必须设置权限控制（如onlyOwner）
+	2. 重要参数修改需添加地址有效性验证
+	3. 采用Timelock机制延迟关键参数变更
 
 ## 防范措施与代码示例
 
@@ -90,8 +154,6 @@ contract AuthManager {
 }
 ```
 
----
-
 ## 安全实践建议
 
 1. **交易前检查合约地址**：使用Etherscan验证合约验证状态
@@ -101,7 +163,6 @@ contract AuthManager {
 3. **警惕签名请求**：区分普通交易与`approve`/`permit`请求
 4. **隔离钱包**：使用不同地址进行交易与资产存储
 
----
 
 ## 开发者安全建议
 

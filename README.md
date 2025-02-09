@@ -336,7 +336,7 @@
 
 > [区块链安全(一): USDT 假充值手法]
 
-> [区块链安全(二): 授权诈骗]
+> [区块链安全(二): 授权诈骗](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_authorization-fraud.md)
 
 > [区块链安全(三): 加密资产盗窃]
 

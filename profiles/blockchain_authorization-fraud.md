@@ -181,7 +181,5 @@ function decreaseAllowance(address spender, uint256 subtractedValue) public retu
 }
 ```
 
----
-
 ## 总结
 通过合理设置授权额度、定期审查合约权限、使用安全工具和保持警惕，可有效防范授权诈骗。开发者应遵循最小授权原则，用户需养成检查交易内容的习惯，共同维护区块链生态安全。

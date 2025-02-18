@@ -98,7 +98,7 @@
 
 > [一文看懂 JS 中 0.1 + 0.2 !== 0.3](https://github.com/programmer-zhang/front-end/tree/master/profiles/js浮点数计算.md)
 
-> [十进制 与 二进制 的相互转换]
+> [十进制 与 二进制 的相互转换](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_decimal-binary-conversion-guide.md)
 
 > [IEEE 754 的四种舍入方向]
 

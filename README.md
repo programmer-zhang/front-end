@@ -364,6 +364,8 @@
 
 > [一些区块链行业有用的网站](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_websites.md)
 
+> [本地部署 DeepSeek]
+
 ## 星路历程
 
 [![Stargazers over time](https://starchart.cc/programmer-zhang/front-end.svg?variant=adaptive)](https://starchart.cc/programmer-zhang/front-end)

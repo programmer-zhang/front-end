@@ -10,6 +10,9 @@
 * 登录百度云
 
 ## Chat Tool 设置
+> 以 `Anything LLM` 为例
+
+* 
 
 ## 参考资料
 * 网上搜集的DeepSeek使用技巧大全: https://pan.quark.cn/s/69f76c763f93#/list/share

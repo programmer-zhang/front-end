@@ -3,8 +3,9 @@
 > 本文使用 `DeepSeek` 辅助编写
 
 ## 准备工作
-* 百度云账号申请
-* chat工具准备
+### 百度云账号申请
+### Chat Tool 准备
+> 以 `Angthing LLM` 为例
 
 ## API KEY 申请
 * 登录百度云

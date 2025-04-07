@@ -9,6 +9,8 @@
 
 ## API KEY 申请
 * 登录百度云
+* 打开百度智能云管理台
+* 使用 千帆ModelBuilder 授权服务 创建 API Key
 
 ## Chat Tool 设置
 > 以 `Anything LLM` 为例

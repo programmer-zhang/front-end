@@ -23,7 +23,16 @@
 ## Chat Tool 设置
 > 以 `Anything LLM` 为例
 
-* 
+* 根据设备版本下载 [Anything LLM](https://anythingllm.com/desktop)
+
+![](../images/intelligence/anythingllm-website.png)
+
+* 安装成功进行配置
+* 配置百度云 API Key
+	* 填写完整Base URL (https://qianfan.baidubce.com/v2)、API Key、Chat Model Name
+
+![](../images/intelligence/anythingllm-config.png)
+
 
 ## 参考资料
 * 网上搜集的DeepSeek使用技巧大全: https://pan.quark.cn/s/69f76c763f93#/list/share

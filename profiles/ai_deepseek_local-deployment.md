@@ -33,6 +33,10 @@
 
 ![](../images/intelligence/anythingllm-config.png)
 
+* 创建工作区测试 DeepSeek-R1
+
+![](../images/intelligence/anythingllm-check.png)
+
 
 ## 参考资料
 * 网上搜集的DeepSeek使用技巧大全: https://pan.quark.cn/s/69f76c763f93#/list/share

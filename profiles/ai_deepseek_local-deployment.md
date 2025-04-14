@@ -37,6 +37,7 @@
 
 ![](../images/intelligence/anythingllm-check.png)
 
+如上图回复为 DeepSeek-R1 版本即为创建成功，且为最新大模型。
 
 ## 参考资料
 * 网上搜集的DeepSeek使用技巧大全: https://pan.quark.cn/s/69f76c763f93#/list/share

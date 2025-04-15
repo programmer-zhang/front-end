@@ -7,6 +7,12 @@
 ### Chat Tool 准备
 > 以 `Angthing LLM` 为例
 
+* 根据设备版本下载 [Anything LLM](https://anythingllm.com/desktop)
+
+![](../images/intelligence/anythingllm-website.png)
+
+* 安装成功即可
+
 ## API KEY 申请
 * 登录百度云
 * 打开百度智能云管理台
@@ -21,13 +27,7 @@
 * 拿到 API Key
 
 ## Chat Tool 设置
-> 以 `Anything LLM` 为例
 
-* 根据设备版本下载 [Anything LLM](https://anythingllm.com/desktop)
-
-![](../images/intelligence/anythingllm-website.png)
-
-* 安装成功进行配置
 * 配置百度云 API Key
 	* 填写完整Base URL (https://qianfan.baidubce.com/v2)、API Key、Chat Model Name
 

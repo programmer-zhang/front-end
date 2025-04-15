@@ -26,10 +26,16 @@
 
 * 拿到 API Key
 
+**注：** 使用 API Key 部署后仍然可能出现服务繁忙的情况，建议开启付费模式.
+
+* 开启方式：
+	* 百度云控制台 -> 千帆ModelBuilder -> 模型服务 -> 在线推理 -> 找到 DeepSeek-R1 -> 购买配额
+	* 价格很便宜
+
 ## Chat Tool 设置
 
 * 配置百度云 API Key
-	* 填写完整Base URL (https://qianfan.baidubce.com/v2)、API Key、Chat Model Name
+	* 填写完整 Base URL (https://qianfan.baidubce.com/v2)、API Key、Chat Model Name
 
 ![](../images/intelligence/anythingllm-config.png)
 
@@ -41,4 +47,3 @@
 
 ## 参考资料
 * 网上搜集的DeepSeek使用技巧大全: https://pan.quark.cn/s/69f76c763f93#/list/share
-* https://zhuanlan.zhihu.com/p/22939354752

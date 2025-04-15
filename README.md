@@ -364,7 +364,7 @@
 
 > [一些区块链行业有用的网站](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_websites.md)
 
-> [本地部署 DeepSeek]
+> [本地部署 DeepSeek](https://github.com/programmer-zhang/front-end/tree/master/profiles/ai_deepseek_local-deployment.md)
 
 ## 星路历程
 

@@ -6,7 +6,7 @@
 * 前端攻击的部分防范措施
 
 ## 跨站脚本攻击(xss攻击)
-* xss攻击又叫做跨站脚本攻击(`cross site script`)
+* `xss` 攻击又叫做跨站脚本攻击(`cross site script`)
 
 * 主要是用户输入或通过其他方式，向我们的代码中注入了一下其他的js，而我们又没有做任何防范，去执行了这段js
 
@@ -67,11 +67,11 @@ index.html#<img src="404.html" onerror="alert(document.cookie)" />
 * 这里就会发现弹窗内容为我们存取的 `cookie`
 
 * **注意**
-	1. 必须用IE浏览器打开这个链接，因为 chrome 和 safari 等浏览器，会主动将url里的一下字符串进行encode，保证了一定的安全性。
-	2. 为什么我们这里用 img标签 的 onerror 来注入脚本呢？而不是直接用 script 标签来执行，我们修改一下访问的地址 `index.html#<script>alert(document.cookie)</script>`，这时会发现，页面并没有执行这段代码，但是这段代码已经注入到了 `#test` 节点标签中了。所以，一般通过img的onerror来注入是最有效的方法
+	1. 必须用IE浏览器打开这个链接，因为 `Chrome` 和 `Safari` 等浏览器，会主动将 `url` 里的一下字符串进行encode，保证了一定的安全性。
+	2. 为什么我们这里用 `<img>` 标签 的 `onerror` 来注入脚本呢？而不是直接用 `<script>` 标签来执行，我们修改一下访问的地址 `index.html#<script>alert(document.cookie)</script>`，这时会发现，页面并没有执行这段代码，但是这段代码已经注入到了 `#test` 节点标签中了。所以，一般通过 `<img>` 的 `onerror` 来注入是最有效的方法
 
 ### 存储型(持久型XSS攻击)
-* 将xss代码发送到了服务器，在前端请求数据时，将xss代码发送给了前端
+* 将 `xss` 代码发送到了服务器，在前端请求数据时，将 `xss` 代码发送给了前端
 
 ```
 <!DOCTYPE html>
@@ -86,7 +86,7 @@ index.html#<img src="404.html" onerror="alert(document.cookie)" />
 		// 先向页面的cookie存储一个name=1的信息
 		document.cookie = "name=1"
 		// 这里假设是请求了后台的接口 response是我们请求回来的数据
-		var response = '<img src="404.html" onerror="alert(document.cookie)"'
+		var response = '<img src="404.html" onerror="alert(document.cookie)">'
 		var $test = document.querySelector('#test');;
 		$test.innerHTML = response
 	</script>
@@ -94,7 +94,7 @@ index.html#<img src="404.html" onerror="alert(document.cookie)" />
 </html>
 ```
 
-* 这里最常见的情况就是一个富文本编辑器下，由用户输入了一串xss代码，存储在了服务器中，我们在展示用户输入内容时，没有做防范处理。
+* 这里最常见的情况就是一个富文本编辑器下，由用户输入了一串 `xss` 代码，存储在了服务器中，我们在展示用户输入内容时，没有做防范处理。
 
 ```
 <!DOCTYPE html>
@@ -118,11 +118,11 @@ function submit() {
 ```
 
 ### DOM Based XSS
-* 通过修改页面的DOM节点行成的XSS，称之为 `DOM Based XSS`
-* 并非按照“数据是否保存在服务器端”进行划分的，从效果上来说也是属于反射型XSS，单独将它化分为一个类型是因为发现它的安全专家提出了这种类型的XSS，出于历史原因，也就把它单独作为一个分类。
-* 这种类型的攻击是从 JS 中输出数据到 HTML 页面
+* 通过修改页面的 `DOM` 节点行成的 `XSS`，称之为 `DOM Based XSS`
+* 并非按照“数据是否保存在服务器端”进行划分的，从效果上来说也是属于反射型 `XSS`，单独将它化分为一个类型是因为发现它的安全专家提出了这种类型的 `XSS`，出于历史原因，也就把它单独作为一个分类。
+* 这种类型的攻击是从 `JS` 中输出数据到 `HTML` 页面
 	* 例如我们在下面这个例子中输入 `' onclick=alert(/xss/) //` , 页面就能将 `<a>标签` 中注入攻击代码，点击链接后就会执行。
-	* 或者下面这种情况 `' ><img src=# onerror=alert(/xss2/) />< '` ，通过将 `<a>标签` 闭合，注入 `<img>标签`自动执行 onerror 事件，从而达到注入攻击的目的。
+	* 或者下面这种情况 `' ><img src=# onerror=alert(/xss2/) />< '` ，通过将 `<a>标签` 闭合，注入 `<img>标签`自动执行 `onerror` 事件，从而达到注入攻击的目的。
 
 ```
 <script>
@@ -259,12 +259,12 @@ function submit() {
 
 
 ## CSRF  跨站伪造请求
-* CSRF就是利用你所在网站的登录的状态，悄悄提交各种信息， 是一种比xss还要恶劣很多的攻击。
-* CSRF可以在我们不知情的情况下，利用我们登陆的账号信息，去模拟我们的行为，去执行一下操作，也就是所谓的钓鱼。比如我们在登陆某个论坛，但这个网站是个钓鱼网站，我们利用邮箱或者qq登陆后，它就可以拿到我们的登陆态，session和cookie信息。然后利用这些信息去模拟一个另外网站的请求，比如转账的请求。
+* `CSRF` 就是利用你所在网站的登录的状态，悄悄提交各种信息， 是一种比 `xss` 还要恶劣很多的攻击。
+* `CSRF` 可以在我们不知情的情况下，利用我们登陆的账号信息，去模拟我们的行为，去执行一下操作，也就是所谓的钓鱼。比如我们在登陆某个论坛，但这个网站是个钓鱼网站，我们利用邮箱或者 `qq`登陆后，它就可以拿到我们的登陆态，`session` 和 `cookie` 信息。然后利用这些信息去模拟一个另外网站的请求，比如转账的请求。
 
 ![](../images/frontend-security.jpg)
 
-* 我们点击进入了一个 csrf 页面里，我们以为我们只是在 csrf 中点击提交了 `1111` 这个信息，其实这个网站悄悄的把这些信息提交到了本地的csrf上了，而不是我们当前浏览的csrf.html中
+* 我们点击进入了一个 `csrf` 页面里，我们以为我们只是在 `csrf` 中点击提交了 `1111` 这个信息，其实这个网站悄悄的把这些信息提交到了本地的 `csrf` 上了，而不是我们当前浏览的`csrf.html` 中
 
 ```
 // CSRF.html
@@ -283,13 +283,13 @@ function submit() {
 </body>
 </html>
 ```
-* 创建server.js 在命令行中输入node server.js
-这是一个简单的服务，端口为3001，如果我们直接本地登陆localhost:3001会给我们本地注入一个cookie为login=1的登陆态
-此时我们在访问csrf.html，在点击提交按钮的时候，会发现会把这个登陆态也提交上去。这就是一个典型的钓鱼网站。
+* 创建 `server.js` 在命令行中输入 `node server.js`
+这是一个简单的服务，端口为3001，如果我们直接本地登陆 `localhost:3001` 会给我们本地注入一个 `cookie` 为 `login=1` 的登陆态
+此时我们在访问 `csrf.html`，在点击提交按钮的时候，会发现会把这个登陆态也提交上去。这就是一个典型的钓鱼网站。
 
 ## 防范措施
 ### 提交 `method=post` 判断referer
-* HTTP请求中有一个 `referer` 的报文头，用来指明当前流量的来源参考页。如果我们用post就可以将页面的referer带入，从而进行判断请求的来源是不是安全的网站。但是referer在本地起的服务中是没有的，直接请求页面也不会有。这就是为什么我们要用Post请求方式。直接请求页面，因为post请求是肯定会带入referer，但get有可能不会带referer
+* HTTP请求中有一个 `referer` 的报文头，用来指明当前流量的来源参考页。如果我们用 `post` 就可以将页面的 `referer` 带入，从而进行判断请求的来源是不是安全的网站。但是 `referer` 在本地起的服务中是没有的，直接请求页面也不会有。这就是为什么我们要用 `Post` 请求方式。直接请求页面，因为 `post` 请求是肯定会带入 `referer`，但get有可能不会带 `referer`
 
 ### 利用Token
-* Token 简单来说就是由后端生成的一个唯一的登陆态，并传给前端保存在前端，每次前端请求时都会携带着 Token ，后端会先去解析这个 Token ，看看是不是后台给我们的，是否登陆超时，校验通过了，才会同意接口请求。
+* `Token` 简单来说就是由后端生成的一个唯一的登陆态，并传给前端保存在前端，每次前端请求时都会携带着 `Token` ，后端会先去解析这个 `Token` ，看看是不是后台给我们的，是否登陆超时，校验通过了，才会同意接口请求。

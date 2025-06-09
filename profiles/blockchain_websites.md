@@ -2,11 +2,17 @@
 
 > 按需使用，排名不分先后
 
+## 交易类
+* [OKX(欧易)](https://okx.com)
+* [Binance(币安)](https://binance.com)
+
 ## 加密货币数据类
 * [链上数据追踪](https://www.oklink.com)
 * [Tether 冻结资金情况](https://dune.xyz/phabc/usdt---banned-addresses)
 * [Tether合约查询冻结等情况](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#readContract)
 * [链上标签地址转移](https://intel.arkm.com)
+* [DeFi项目数据](https://defillama.com)
+* [加密货币泡泡图](https://cryptobubbles.net/)
 
 ## 跨链桥追踪
 * [Wormholescan](https://wormholescan.io/#/)

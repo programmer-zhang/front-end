@@ -12,7 +12,7 @@
 * [Tether合约查询冻结等情况](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#readContract)
 * [链上标签地址转移](https://intel.arkm.com)
 * [DeFi项目数据](https://defillama.com)
-* [加密货币泡泡图](https://cryptobubbles.net/)
+* [加密货币泡泡图](https://cryptobubbles.net)
 
 ## 跨链桥追踪
 * [Wormholescan](https://wormholescan.io/#/)
@@ -41,5 +41,6 @@
 * [币安 Alpha 空投实时监控工具](https://alpha-nu-self.vercel.app/)
 * [币安 Alpha 空投数据分析工具](https://litangdingzhen.me/)
 * [币安 Alpha 积分计算器](https://aja-money-saver.github.io/Nightflyer_BinanceAlpha/BinanceAlpha.html)
-* [Alpha Point 刷分工具 ](https://alphapoint.fun/)
-* [Alpha 月度利润计算器](https://alpha-cal.vercel.app/)
+* [币安 Alpha Point 刷分工具 ](https://alphapoint.fun/)
+* [币安 Alpha 月度利润计算器](https://alpha-cal.vercel.app/)
+* [币安 Alpha 刷分及损耗计算工具](https://blockai.pro/alpha-tool)

@@ -34,6 +34,7 @@
 * [Wanscan explorer](https://wanscan.org/)
 * [Layerswap explorer](https://layerswap.io/explorer)
 * [Debridge explorer](https://app.debridge.finance/orders)
+* [Cow Protocol explorer](https://explorer.cow.fi/)
 
 ## Binance Alpha
 * [币安 Alpha 交易统计网站](https://www.bn-alpha.site/)
@@ -44,3 +45,6 @@
 * [币安 Alpha Point 刷分工具 ](https://alphapoint.fun/)
 * [币安 Alpha 月度利润计算器](https://alpha-cal.vercel.app/)
 * [币安 Alpha 刷分及损耗计算工具](https://blockai.pro/alpha-tool)
+
+## SOL 链工具
+* [PandaTool 一键发币工具](https://help.pandatool.org/)

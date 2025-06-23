@@ -1,5 +1,5 @@
 # MAC VSCode 使用指南
-> 本文使用 `Deepseek` 辅助编写
+> 本文使用 `DeepSeek` 辅助编写
 
 ### **一、基础环境配置**
 #### 1. **安装与更新**
@@ -146,3 +146,128 @@
 ![](../images/vscode/vscode.png)
 
 通过以上配置和技巧，可大幅提升前端开发效率。建议每季度回顾插件列表，卸载不再使用的扩展保持轻量化。
+
+### **七、插件推荐**
+
+#### **(一)、核心效率工具**
+1. **ESLint**  
+   - 实时 JavaScript/TS 错误检查和自动修复
+   - *必备配置*：`"editor.codeActionsOnSave": { "source.fixAll.eslint": true }`
+
+2. **Prettier - Code formatter**  
+   - 自动代码格式化（与 ESLint 配合使用 `eslint-config-prettier` 避免冲突）
+
+3. **GitLens**  
+   - 增强 Git 功能：代码作者追溯、提交历史、行级 blame 信息
+
+4. **Error Lens**  
+   - **行内显示错误信息**（告别频繁查看底部状态栏）
+
+5. **Tabnine** / **GitHub Copilot**  
+   - AI 智能代码补全（大幅减少重复代码编写）
+
+#### **(二)、框架专属插件**
+##### Vue 生态
+- **Volar** (Vue 3 官方推荐)  
+  - 支持 `<script setup>`、TypeScript、模板语法高亮  
+  - *替代已废弃的 Vetur*
+- **Vue VSCode Snippets**  
+  - 快速生成 `v-for`, `v-model` 等模板代码
+
+##### React 生态
+- **React Refactor**  
+  - 一键提取 JSX 为独立组件
+- **ES7+ React/Redux/React-Native snippets**  
+  - 快捷指令：`rfc` (函数组件), `rafce` (箭头函数组件)
+
+##### CSS/样式工具
+- **Tailwind CSS IntelliSense**  
+  - Tailwind 类名自动补全 + 悬停预览
+- **CSS Modules**  
+  - `*.module.css` 智能提示 + 跳转定义
+- **PostCSS Language Support**  
+  - 支持嵌套语法等现代 CSS 特性
+
+#### **(三)、开发调试神器**
+1. **Auto Close Tag**  
+   - 自动闭合 HTML/JSX 标签（输入 `>` 时自动生成 `</tag>`）
+
+2. **Auto Rename Tag**  
+   - 修改开始标签时自动重命名闭合标签
+
+3. **Import Cost**  
+   - 实时显示 import 的包体积（避免引入巨型依赖）
+
+4. **Live Server**  
+   - 一键启动带热更新的本地服务器（右键 HTML 文件即可运行）
+
+5. **REST Client**  
+   - 直接在 VS Code 发送 API 请求（替代 Postman）  
+   - 创建 `.http` 文件发送请求：
+     ```http
+     GET https://api.example.com/user
+     Authorization: Bearer token
+     ```
+
+#### **(四)、视觉与导航增强**
+1. **Material Icon Theme**  
+   - 直观的文件图标主题（快速识别文件类型）
+
+2. **Bracket Pair Colorizer 2**  
+   - 彩色高亮匹配括号（复杂嵌套代码救星）
+
+3. **Highlight Matching Tag**  
+   - 高亮显示匹配的 HTML/JSX 标签
+
+4. **Code Spell Checker**  
+   - 变量名拼写检查（尤其适合非英语母语者）
+
+#### **(五)、高级工作流工具**
+1. **Turbo Console Log**  
+   - 快速添加/删除 `console.log`（快捷键 `⌥ + ⌘ + L`）
+   - 自动添加变量名注释：
+
+     ```js
+     console.log('file.tsx:27 > data', data)
+     ```
+
+2. **Change Case**  
+   - 快速转换命名风格：`camelCase` ⇄ `PascalCase` ⇄ `snake_case`（快捷键 `⌘ + ⌥ + c`）
+
+3. **Project Manager**  
+   - 快速切换项目（支持 Git 仓库分组）
+
+4. **SVG Preview**  
+   - 实时预览 SVG 文件 + 导出优化
+
+#### **(六)、新兴技术支持**
+| **技术栈**       | **推荐插件**                  | **功能亮点**                     |
+|------------------|-----------------------------|--------------------------------|
+| GraphQL         | **GraphQL**                | 语法高亮 + 自动补全             |
+| WebAssembly     | **Wasm Toolkit**           | .wat 文件支持                  |
+| Monorepo        | **Nx Console**             | 可视化管理 Nx 命令             |
+| 移动端调试      | **weex-devtool**           | 调试 Weex/Uniapp 应用          |
+
+#### **(七)、插件推荐**
+1. **按工作区启用插件**  
+   - 右键插件 → `Disable (Workspace)` 避免全局启用不相关插件
+
+2. **定期清理**  
+
+   ```bash
+   code --list-extensions | xargs -L 1 echo code --uninstall-extension
+   ```
+   
+   生成卸载脚本，移除闲置插件
+
+3. **同步配置**  
+   使用 VS Code 设置同步功能 或 **Settings Sync** 插件跨设备同步
+
+> 💡 **黄金组合建议**：
+> ESLint + Prettier + Volar + Tailwind IntelliSense + GitLens + Error Lens 
+> 覆盖 90% 前端日常开发场景
+
+#### **避免安装的过时插件**
+- ❌ Vetur (Vue 2 项目除外)
+- ❌ TSLint (已被 ESLint 取代)
+- ❌ Babel JavaScript (官方 JS/TS 插件已足够强大)

@@ -310,7 +310,7 @@
 
 > [Linux 开发 -- sed使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/linux_sed.md)
 
-> [MAC VSCode 使用指南]
+> [MAC VSCode 使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/vscode.md)
 
 > [Python MAC 环境安装]
 

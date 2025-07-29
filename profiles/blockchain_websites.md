@@ -13,6 +13,7 @@
 * [链上标签地址转移](https://intel.arkm.com)
 * [DeFi项目数据](https://defillama.com)
 * [加密货币泡泡图](https://cryptobubbles.net)
+* [合约清算地图](https://www.coinglass.com/zh/pro/futures/LiquidationMap)
 
 ## 跨链桥追踪
 * [Wormholescan](https://wormholescan.io/#/)

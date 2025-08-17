@@ -36,6 +36,7 @@
 * [Layerswap explorer](https://layerswap.io/explorer)
 * [Debridge explorer](https://app.debridge.finance/orders)
 * [Cow Protocol explorer](https://explorer.cow.fi/)
+* [hifiswappp explorer](https://hifiswap.io/search)
 
 ## Binance Alpha
 * [币安 Alpha 交易统计网站](https://www.bn-alpha.site/)

@@ -334,7 +334,7 @@
 
 > [区块链基础(九): 非对称加密](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_asymmetric-encryption.md)
 
-> [区块链安全(一): USDT 假充值手法]
+> [区块链安全(一): USDT 假充值手法](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_fake_usdt_deposit.md)
 
 > [区块链安全(二): 授权诈骗](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_authorization-fraud.md)
 

@@ -208,6 +208,21 @@ fatal: Could not read from remote repository.
 	
 	* 填入yes即可正常推送及更新密码了。
 
+## 开启 VPN 后 git push 报错 'Could not read from remote repository. Please make sure you have the correct access rights'
+
+* 解决方案:
+
+    * 在SSH文件夹内新增 `config` 文件
+        * `vim ~/.ssh/config`
+    * 写入以下内容
+
+    ```
+    Host github.com
+    HostName ssh.github.com
+    User git
+    Port 443
+    ```
+
 ## 一张随时可看的指令图片
 
 ![](../images/git-order.jpg)

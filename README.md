@@ -344,7 +344,7 @@
 
 > [区块链安全(五): 加密资产链上AML]
 
-> [区块链安全(六): 套利机器人合约](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_scam-financial-bot.md)
+> [区块链安全(六): 套利机器人合约诈骗](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_scam-financial-bot.md)
 
 > [区块链安全(七): 零转账诈骗]
 

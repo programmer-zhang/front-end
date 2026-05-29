@@ -119,14 +119,12 @@ function withdrawal() public payable {  // 提现函数也是同一个逻辑
 
 | 红旗特征 | 具体表现 | 为什么危险 |
 |----------|----------|-----------|
-| **资金直接转移** | 存在 `contracts.transfer(address(this).balance)` 或类似把余额转走的代码 | 一调用 `start()`/`withdraw()` 钱就被抽走 |
+| **资金直接转移** | 存在 `contracts.transfer(address(this).balance)` 或类似把余额转走的代码 | 调用 `start()`/`withdraw()` 钱就被抽走 |
 | **字符串拼接地址** | 大量 `getMempoolXXX()`、`fetchMempoolData()` 函数拼接地址 | 隐藏诈骗者钱包地址（如 `0xa01...`） |
 | **大量无用代码** | 塞满 `slice`、`findNewContracts`、`keccak` 等复杂无关函数 | 迷惑新手，假装“专业” |
 | **无限授权风险** | 要求 `approve` 无限额度（infinite approval） | 合约可随时掏空你的钱包 |
 | **隐藏后门** | `selfdestruct`、`delegatecall` 无限制使用，或外部调用无检查 | 易被攻击或直接盗币 |
 | **Honeypot特征** | 能买不能卖、卖出有隐藏高税、只有 owner 能卖 | 诱导买入后无法退出 |
-
-**实用技巧**：复制合约代码到 Remix IDE 或 VS Code，用 Slither 等工具静态分析（免费）。
 
 ### 3. **使用专业检测工具（强烈推荐）**
 

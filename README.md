@@ -197,7 +197,7 @@
 
 > [Git 使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/git.md)
 
-> [单元测试(JS篇)]
+> [单元测试(JS篇)](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_unit-tests.md)
 
 > [腾讯云平台个人网站搭建](https://github.com/programmer-zhang/front-end/tree/master/profiles/tencent-cloud.md)
 

@@ -1,4 +1,4 @@
-# [单元测试(JS篇)]
+# 单元测试(JS篇)
 
 ## 阅读本文您将收获
 * 单元测试的定义
@@ -58,7 +58,7 @@ function add(a, b) {
 | **React Testing Library** | 测试组件行为而非实现细节     | React 组件测试         |
 | **Vue Test Utils** | Vue 官方测试工具            | Vue 项目               |
 
-本文以 **Vitest**（推荐新手）为例演示，因为它配置简单、速度快，和 Vite 项目无缝集成。
+> 本文以 **Vitest**（推荐新手）为例演示，因为它配置简单、速度快，和 Vite 项目无缝集成。
 
 ## 4. 环境准备（MacBook + Node）
 

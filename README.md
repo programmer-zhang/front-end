@@ -58,7 +58,7 @@
 
 > [JS 同节点同时绑定【双击】【单击】事件](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_double-click.md)
 
-> [JS 模拟点击事件]
+> [JS 模拟点击事件](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_simulate_click.md)
 
 > [历史上我们都是怎么解决跨域问题的](https://github.com/programmer-zhang/front-end/tree/master/profiles/cross-origin.md)
 

@@ -22,7 +22,7 @@ document.getElementById('SimulateADom').click();
 ![base-click](../images/jsSimulateClick/base-click-dom.gif)
 
 ### 缺点
-* `element.click()` 是浏览器原生提供的一个快捷方法，它内部其实也会触发 `click` 事件，但你无法精细控制事件细节（坐标、按键修饰符、事件阶段等）。
+* `element.click()` 是浏览器原生提供的一个快捷方法，它内部其实也会触发 `click()` 事件，但你无法精细控制事件细节（坐标、按键修饰符、事件阶段等）。
 
 ## 高阶方案: 注册事件进行模拟点击
 > 此方案适合直接使用 `click()` 无效的情况下, 事件的适用场景较广泛。

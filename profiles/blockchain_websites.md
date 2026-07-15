@@ -36,7 +36,16 @@
 * [Layerswap explorer](https://layerswap.io/explorer)
 * [Debridge explorer](https://app.debridge.finance/orders)
 * [Cow Protocol explorer](https://explorer.cow.fi/)
-* [hifiswap explorer](https://hifiswap.io/search)
+* [Hifiswap explorer](https://hifiswap.io/search)
+* [Rango Exchange explorer](https://explorer.rango.exchange)
+* [Chainflip explorer](https://scan.chainflip.io/)
+* [Synapseprotocol explorer](https://explorer.synapseprotocol.com/)
+* [Butterswap explorer](https://explorer.butterswap.io)
+* [Cross-Chain explorer](https://xflow.pulsy.app/bridges)
+* [Relay explorer](https://relay.link/transactions)
+* [Near-Intents explorer](https://explorer.near-intents.org/)
+* [Gas.zip explorer](https://www.gas.zip/scan)
+* [Butter swap explorer](https://explorer.butterswap.io/en)
 
 ## Binance Alpha
 * [币安 Alpha 空投通知及时间线](https://alpha123.uk)

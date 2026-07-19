@@ -15,7 +15,7 @@
 * [加密货币泡泡图](https://cryptobubbles.net)
 * [合约清算地图](https://www.coinglass.com/zh/pro/futures/LiquidationMap)
 
-## 跨链桥追踪
+## 跨链桥&dex兑换追踪
 * [Wormholescan](https://wormholescan.io/#/)
 * [Allbridge explorer](https://core.allbridge.io/explorer)
 * [Allchainbridge explorer](https://explorer.allchainbridge.com/#/)
@@ -46,6 +46,11 @@
 * [Near-Intents explorer](https://explorer.near-intents.org/)
 * [Gas.zip explorer](https://www.gas.zip/scan)
 * [Butter swap explorer](https://explorer.butterswap.io/en)
+* [teleswap explorer](https://teleswap.xyz/network-stats/)
+* [axelarscan](https://axelarscan.io/)
+* [HOT Protocol explorer](https://hotscan.org/)
+* [blockscout explorer](https://www.blockscout.com/)
+* [bitget explorer](https://web3.bitget.com/explorer)
 
 ## Binance Alpha
 * [币安 Alpha 空投通知及时间线](https://alpha123.uk)

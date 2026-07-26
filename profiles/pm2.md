@@ -3,7 +3,9 @@
 > 适用环境：macOS（MacBook）+ Node.js / Bun  
 > 当前最新版本：`pm2@7.0.3`（支持 Node.js ≥18、Bun ≥1）
 
-## 1. PM2 是什么？为什么还要用它？
+> 本文使用 GROK 辅助编写
+
+## 1. PM2 是什么？
 
 PM2（Process Manager 2）是 Node.js / Bun 生态里最常用的**生产级进程管理器**。
 

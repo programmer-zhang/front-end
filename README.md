@@ -166,7 +166,7 @@
 
 > [Vue 源码系列-this.$nextTick]
 
-> [PM2 使用指南]
+> [PM2 使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/pm2.md)
 
 > [Weex 基础使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/weex-base.md)
 

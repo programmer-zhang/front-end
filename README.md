@@ -246,7 +246,7 @@
 ## 编码实践 Coding Demo :paperclip:
 > [JS 实现飞入购物车]
 
-> [JS 实现千分符]
+> [JS 实现千分符](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/jsTest.vue)
 
 > [JS 实现模糊搜索高亮显示的几种方法](https://github.com/programmer-zhang/com.frontend.www/blob/master/src/views/highLight.vue)
 
@@ -315,6 +315,8 @@
 > [Python MAC 环境安装]
 
 > [Python 基础学习]
+
+> [NVM]
 
 > [区块链基础(一): 小白如何理解区块链](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_base.md)
 

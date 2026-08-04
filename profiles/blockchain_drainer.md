@@ -20,26 +20,26 @@ Permit 是 ERC-20 标准的扩展功能，允许用户通过**链下签名**授�
 3. **转移资产**  
    调用 `transferFrom` 将受害者资产转走。
 
-**特点**：受害者链上记录中看不到授权记录，签名通常为一次性使用。
+**特点**：受害者自己不会发起任何上链交易，链上只会出现攻击者调用 `permit` + `transferFrom` 的交易。授权记录存在，但埋在攻击者的交易里，且签名通常为一次性使用（nonce 被消耗后不能重复使用）。
 
 ### 2. Permit2 链下签名钓鱼
 
-Permit2 是 Uniswap 于 2022 年底推出的代币审批合约，旨在提升用户体验：用户一次性授权全部额度给 Permit2 后，后续兑换仅需链下签名即可。
+`Permit2` 是 `Uniswap` 于 2022 年底推出的代币审批合约，旨在提升用户体验：用户一次性授权全部额度给 `Permit2` 后，后续兑换仅需链下签名即可。
 
 攻击流程：
 
-1. 用户此前已将代币额度授权给 Uniswap 的 Permit2 合约（通常为全部余额）。
+1. 用户此前已将代币额度授权给 `Uniswap` 的 `Permit2` 合约（通常为全部余额）。
 2. 攻击者诱导用户进行链下签名。
-3. 攻击者调用 Permit2 的 `permit` 函数完成授权。
+3. 攻击者调用 `Permit2` 的 `permit` 函数完成授权。
 4. 调用 `transferFrom` 转移资产。
 
-**注意**：接收地址通常有多个，其中金额最大的是实际攻击者，其余多为 DaaS 服务商地址（如 PinkDrainer、InfernoDrainer、AngelDrainer 等）。
+**注意**：接收地址通常有多个，其中金额大的多为 DaaS 服务商地址（如 PinkDrainer、InfernoDrainer、AngelDrainer 等），其余的为最终攻击者。
 
 ### 3. eth_sign 链上盲签钓鱼
 
 `eth_sign` 是一种开放式签名方法，可对任意哈希进行签名。攻击者只需构造恶意数据（转账、合约调用、授权等）并诱导用户签名即可完成攻击。
 
-目前 MetaMask 会提示风险，imToken、OneKey 等钱包已禁用或增加风险提示。**强烈建议所有钱包厂商禁用此方法**。
+目前 MetaMask 会提示风险，imToken、OneKey 等钱包已禁用或增加风险提示。
 
 ### 4. personal_sign / signTypedData 链上签名钓鱼
 
@@ -90,12 +90,12 @@ CREATE2 操作码允许在合约部署前预计算地址。攻击者可借此生
 
 以 **Inferno Drainer** 为例：
 
-- 通过 Telegram 频道和网站推广服务。
+- 通过 `Telegram` 频道和网站推广服务。
 - 攻击者可低门槛生成专属钓鱼网站，并通过 X、Discord 等社交媒体传播。
 - 受害者连接钱包并确认交易后，资产被转移。
-- 分成模式：通常 20% 归 Inferno Drainer 组织者，80% 归攻击者（有时服务费高达 30%）。
+- 分成模式：通常 20% 归 `Inferno Drainer` 组织者，80% 归攻击者（有时服务费高达 30%）。
 
-Inferno Drainer 已影响超 100 个加密品牌，相关恶意域名超 16,000 个，并大量伪装成 Seaport、WalletConnect、Coinbase 等流行协议脚本。
+`Inferno Drainer` 已影响超 100 个加密品牌，相关恶意域名超 16,000 个，并大量伪装成 Seaport、WalletConnect、Coinbase 等流行协议脚本。
 
 ## 三、安全防范建议
 

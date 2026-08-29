@@ -348,7 +348,7 @@
 
 > [区块链安全(六): 套利机器人合约诈骗](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_scam-financial-bot.md)
 
-> [区块链安全(七): 零转账诈骗]
+> [区块链安全(七): 零转账诈骗](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_zero-transfer.md)
 
 > [区块链安全(八): 汇旺与易币付](https://github.com/programmer-zhang/front-end/tree/master/profiles/blockchain_huione&yibifu.md)
 

@@ -51,6 +51,7 @@
 * [HOT Protocol explorer](https://hotscan.org/)
 * [blockscout explorer](https://www.blockscout.com/)
 * [bitget explorer](https://web3.bitget.com/explorer)
+* [LI.FI explorer](https://scan.li.fi/)
 
 ## Binance Alpha
 * [币安 Alpha 空投通知及时间线](https://alpha123.uk)

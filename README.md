@@ -312,9 +312,9 @@
 
 > [MAC VSCode 使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/vscode.md)
 
-> [Python MAC 环境安装]
+> [Python MAC 环境安装](https://github.com/programmer-zhang/front-end/tree/master/profiles/python_install.md)
 
-> [Python 基础学习]
+> [Python 基础学习](https://github.com/programmer-zhang/front-end/tree/master/profiles/python_base.md)
 
 > [NVM]
 

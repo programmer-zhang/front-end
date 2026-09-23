@@ -100,13 +100,13 @@
 
 > [十进制 与 二进制 的相互转换](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_decimal-binary-conversion-guide.md)
 
-> [IEEE 754 的四种舍入方向]
+> [IEEE 754 的四种舍入方向](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_IEEE754四种舍入方向.md)
 
 > [手写一个 promise](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_promise.md)
 
 > [使用 promise 手写一个 Ajax 请求](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_ajax-promise.md)
 
-> [JS 中的按位运算]
+> [JS 中的按位运算](https://github.com/programmer-zhang/front-end/tree/master/profiles/js_按位运算.md)
 
 > [浏览器本地存储](https://github.com/programmer-zhang/front-end/tree/master/profiles/browser_local_storage.md)
 

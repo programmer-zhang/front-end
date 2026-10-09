@@ -1,6 +1,8 @@
 # 打造网页版微信(三): 利用 VueX 存储数据
 
-> 前两篇解决了输入框和微信接入 [属性 contenteditable 的用处](./wechat_contenteditable.md) / [利用 wetool 接入微信](./wechat_wetool.md)。数据有了，接下来就是前端最麻烦的一环：**会话、消息、联系人这么多数据，放哪、怎么改、怎么保证视图不乱？** 本篇聊聊 `VueX` 的用法。
+> 前两篇解决了输入框和微信接入 [属性 contenteditable 的用处](./wechat_contenteditable.md) / [利用 wetool 接入微信](./wechat_wetool.md)。
+> 
+> 数据有了，接下来就是前端最麻烦的一环：**会话、消息、联系人这么多数据，放哪、怎么改、怎么保证视图不乱？
 
 ## 阅读本文您将收获
 * 为什么用 `VueX` 而不是 `props` / `EventBus`

@@ -1,6 +1,6 @@
 # 打造网页版微信(四): 封装 WebScoket 进行网络消息传输
 
-> 前三篇我们把输入框、微信接入、数据存储都搞定了 [contenteditable](./wechat_contenteditable.md) / [wetool](./wechat_wetool.md) / [VueX](./wechat_vuex.md)。剩下最后一环：**消息怎么实时进来、怎么可靠发出去？** 本篇把原生 `WebSocket` 封装成一个能复用的网络层。
+> 前三篇我们把输入框、微信接入、数据存储都搞定了。剩下最后一环：**消息怎么实时进来、怎么可靠发出去？** 本篇把原生 `WebSocket` 封装成一个能复用的网络层。
 
 > `WebSocket` 的基础概念之前单独写过，不熟悉的同学建议先看：[WebScoket 基础介绍](https://github.com/programmer-zhang/front-end/tree/master/profiles/webscoket_base.md)。这里不再重复握手、`readyState` 等基础内容。
 
@@ -15,7 +15,7 @@
 	* 长时间无数据来往会被中间层（网关 / 代理）静默断开，`onclose` 都不触发
 	* 每个业务都要自己写 `onmessage` 分发，代码重复且容易漏
 	* 网络抖动时发送失败没有兜底
-* 所以我们把它封装成一个类，对外只暴露 `connect` / `send` / `on` / `close`
+* 所以我们把它封装成一个类，对外只暴露 `connect` / `send` / `on` / `close`，这也是软件开发中的常用方式
 
 ## 设计目标
 * **单例连接**：整个应用共用一个 `WebSocket`，避免多开浪费资源
@@ -163,7 +163,7 @@ class WebSocketClient {
         }
     }
 
-    // 断线重连：指数退避
+    // 断线重连
     reconnect() {
         if (this.reconnectCount >= this.maxReconnect) {
             this.emit('reconnectFail', null)   // 通知业务，让用户手动刷新
@@ -253,4 +253,3 @@ actions: {
 * 至此，`WeHub` 系列四篇完结。回头再看这条链路：
 	* 输入框（第一篇）→ 微信接入（第二篇）→ 数据存储（第三篇）→ 网络传输（第四篇）
 * 如果你对 `WebSocket` 的结构还不太熟，建议配合基础篇一起看：[WebScoket 基础介绍](https://github.com/programmer-zhang/front-end/tree/master/profiles/webscoket_base.md) / [WebScoket 实例](https://github.com/programmer-zhang/front-end/tree/master/profiles/webscoket_example.md)
-* 本实例仅是根据自身需求编写，不一定适合所有项目，欢迎交流 chinajnzhang@hotmail.com

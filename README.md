@@ -170,15 +170,15 @@
 
 > [Weex 基础使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/weex-base.md)
 
-> [WeHub 打造网页版微信]
+> [WeHub 打造网页版微信](https://github.com/programmer-zhang/front-end/tree/master/profiles/wechat_overview.md)
 
-> [打造网页版微信(一): 属性 contenteditable 的用处]
+> [打造网页版微信(一): 属性 contenteditable 的用处](https://github.com/programmer-zhang/front-end/tree/master/profiles/wechat_contenteditable.md)
 
-> [打造网页版微信(二): 利用 wetool 接入微信]
+> [打造网页版微信(二): 利用 wetool 接入微信](https://github.com/programmer-zhang/front-end/tree/master/profiles/wechat_wetool.md)
 
-> [打造网页版微信(三): 利用 VueX 存储数据]
+> [打造网页版微信(三): 利用 VueX 存储数据](https://github.com/programmer-zhang/front-end/tree/master/profiles/wechat_vuex.md)
 
-> [打造网页版微信(四): 封装 WebScoket 进行网络消息传输]
+> [打造网页版微信(四): 封装 WebScoket 进行网络消息传输](https://github.com/programmer-zhang/front-end/tree/master/profiles/wechat_webscoket.md)
 
 > [用 electron 实现一个桌面客户端]
 

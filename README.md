@@ -164,7 +164,7 @@
 
 > [Vue 源码系列-响应式数据](https://github.com/programmer-zhang/front-end/tree/master/profiles/vue_响应式流程.md)
 
-> [Vue 源码系列-this.$nextTick]
+> [Vue 源码系列-this.$nextTick](https://github.com/programmer-zhang/front-end/tree/master/profiles/vue_nextTick.md)
 
 > [PM2 使用指南](https://github.com/programmer-zhang/front-end/tree/master/profiles/pm2.md)
 
